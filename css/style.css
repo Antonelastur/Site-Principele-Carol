@@ -215,16 +215,16 @@ p {
 
 .logo-title {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--navy-blue);
     line-height: 1.2;
 }
 
 .logo-subtitle {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     color: var(--gold-dark);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
