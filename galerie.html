@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Galeria Foto - Școala Gimnazială Principele Carol. Imagini cu săli de clasă, laboratoare, evenimente și activități școlare.">
+    <meta name="keywords" content="galerie foto, imagini școală, săli de clasă, evenimente, Principele Carol">
+    <meta name="author" content="Școala Gimnazială Principele Carol">
+
+    <title>Galerie Foto | Școala Gimnazială „Principele Carol"</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Preconnect pentru performanță -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Pagina principală">
+                <img src="images/logo.png" alt="Logo Școala Gimnazială Principele Carol" class="logo-image">
+                <div class="logo-text">
+                    <span class="logo-title">Școala Gimnazială</span>
+                    <span class="logo-subtitle">„Principele Carol"</span>
+                </div>
+            </a>
+
+            <!-- Navigare -->
+            <nav class="nav" id="nav" aria-label="Navigare principală">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Acasă</a></li>
+                    <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
+                    <li><a href="oferta-educationala.html" class="nav-link">Ofertă Educațională</a></li>
+                    <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
+                    <li><a href="parinti.html" class="nav-link">Părinți</a></li>
+                    <li><a href="documente.html" class="nav-link">Documente</a></li>
+                    <li><a href="index.html#noutati-home" class="nav-link">Noutăți</a></li>
+                    <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta">Contactează-ne</a>
+            </nav>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Meniu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================================
+             PAGE HERO
+             ============================================ -->
+        <section class="page-hero gallery-hero">
+            <div class="container">
+                <h1 class="page-title">Galeria Foto</h1>
+                <p class="page-subtitle">O privire în interiorul școlii noastre</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             GALLERY SECTION
+             ============================================ -->
+        <section class="gallery-section">
+            <div class="container">
+
+                <!-- Filter Buttons -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Toate</button>
+                    <button class="filter-btn" data-filter="sali">Săli de Clasă</button>
+                    <button class="filter-btn" data-filter="laboratoare">Interioare</button>
+                    <button class="filter-btn" data-filter="evenimente">Evenimente</button>
+                    <button class="filter-btn" data-filter="proiecte">Proiecte</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+
+                    <!-- Item 1 -->
+                    <div class="gallery-item" data-category="sali">
+                        <div class="gallery-item-inner">
+                            <img src="images/gallery/sala-clasa-1.jpg" alt="Sală de clasă modernă" class="gallery-img">
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="11" x2="11" y2="11"></line>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-title">Sală de Clasă</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="gallery-item" data-category="laboratoare">
+                        <div class="gallery-item-inner">
+                            <img src="images/gallery/hol-scoala.jpg" alt="Holul școlii" class="gallery-img">
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-title">Holul Principal</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="gallery-item" data-category="sali">
+                        <div class="gallery-item-inner">
+                            <img src="images/gallery/sala-festiva.jpg" alt="Sala de clasă festivă" class="gallery-img">
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-title">Sală de Clasă</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="gallery-item" data-category="evenimente">
+                        <div class="gallery-item-inner">
+                            <img src="images/gallery/activitate-elevi.jpg" alt="Activitate cu elevii"
+                                class="gallery-img">
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-title">Activitate Elevi</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="gallery-item" data-category="sali">
+                        <div class="gallery-item-inner">
+                            <img src="images/gallery/sala-clasa-2.jpg" alt="Sală de clasă" class="gallery-img">
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-title">Sală de Clasă</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 (Duplicate for Demo - Proiecte) -->
+                    <div class="gallery-item" data-category="proiecte">
+                        <div class="gallery-item-inner">
+                            <img src="images/gallery/activitate-elevi.jpg" alt="Proiect școlar" class="gallery-img">
+                            <div class="gallery-overlay">
+                                <div class="gallery-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-title">Proiect Școlar</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Coloana 1: Logo și Nume -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Logo" class="footer-logo-image">
+                    </div>
+                    <p class="footer-brand-name">
+                        Școala Gimnazială<br>„Principele Carol"
+                    </p>
+                    <p class="footer-brand-location">Gura Humorului</p>
+                </div>
+
+                <!-- Coloana 2: Contact -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Contact</h3>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📍</div>
+                        <div class="footer-contact-text">
+                            Bulevardul Bucovinei, Nr. 25<br>
+                            Gura Humorului, Suceava
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📞</div>
+                        <div class="footer-contact-text">
+                            <a href="tel:0230230928">0230 230 928</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">✉️</div>
+                        <div class="footer-contact-text">
+                            <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coloana 3: Link-uri -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Link-uri Utile</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Politica de Confidențialitate</a></li>
+                        <li><a href="#" class="footer-link">Informații Publice</a></li>
+                        <li><a href="https://www.isj.sv.edu.ro" target="_blank" class="footer-link">ISJ Suceava</a></li>
+                        <li><a href="#" class="footer-link">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-caption"></div>
+        </div>
+        <div class="lightbox-controls">
+            <button class="lightbox-prev">&#10094;</button>
+            <button class="lightbox-next">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Gallery Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Filter Functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            // Add animation/fade in here could be nice
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.display = 'none';
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                        }
+                    });
+                });
+            });
+
+            // Lightbox Functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            const galleryImages = document.querySelectorAll('.gallery-img');
+
+            // Open lightbox
+            document.querySelectorAll('.gallery-item-inner').forEach(item => {
+                item.addEventListener('click', function () {
+                    const img = this.querySelector('.gallery-img');
+                    const title = this.querySelector('.gallery-title').textContent;
+
+                    lightbox.style.display = 'flex';
+                    // Small delay to allow display:flex to apply before adding class for opacity transition
+                    setTimeout(() => {
+                        lightbox.classList.add('active');
+                    }, 10);
+
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = title;
+                });
+            });
+
+            // Close lightbox
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    setTimeout(() => {
+                        lightbox.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                    setTimeout(() => {
+                        lightbox.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
