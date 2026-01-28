@@ -238,18 +238,19 @@ p {
 .nav-list {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
+    gap: 2px;
 }
 
 .nav-link {
     display: block;
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.95rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--navy-blue);
     border-radius: var(--radius-md);
     position: relative;
     transition: all var(--transition-fast);
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -5340,5 +5341,514 @@ p {
     .lightbox-caption {
         font-size: 0.95rem;
         padding: 0 var(--spacing-md);
+    }
+}
+
+/* ============================================
+   GALERIA DE ONOARE - PAGINĂ COMPLETĂ
+   ============================================ */
+
+/* Hero Section - Galeria de Onoare */
+.onoare-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--header-height) + var(--spacing-xxl)) 0 var(--spacing-xxl);
+    background: linear-gradient(135deg, #0a1628 0%, #1b264f 50%, #162447 100%);
+    overflow: hidden;
+}
+
+.onoare-hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.laurel-left,
+.laurel-right {
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.laurel-left {
+    left: 5%;
+}
+
+.laurel-right {
+    right: 5%;
+}
+
+.stars-decoration {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.stars-decoration .star {
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.stars-decoration .star:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.stars-decoration .star:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.stars-decoration .star:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.stars-decoration .star:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+.onoare-hero-content {
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    z-index: 2;
+}
+
+.onoare-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, #C5A065 0%, #E8D5B5 50%, #C5A065 100%);
+    color: #1b264f;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 4px 20px rgba(197, 160, 101, 0.4);
+}
+
+.trophy-icon {
+    font-size: 1.2rem;
+}
+
+.onoare-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gold-text {
+    background: linear-gradient(135deg, #C5A065 0%, #F5E6C8 50%, #C5A065 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.onoare-hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+    line-height: 1.7;
+}
+
+.onoare-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(197, 160, 101, 0.3);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #C5A065;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Podiumul Olimpicilor */
+.olimpici-section {
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(180deg, #f8f9fc 0%, var(--white) 100%);
+}
+
+.gold-badge {
+    background: linear-gradient(135deg, #C5A065 0%, #E8D5B5 100%) !important;
+    color: #1b264f !important;
+}
+
+.olimpici-podium {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xl) 0;
+}
+
+.olimpic-card {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+    border: 3px solid transparent;
+}
+
+.olimpic-card.olimpic-gold {
+    border-color: #C5A065;
+    transform: scale(1.1);
+    z-index: 2;
+    box-shadow: 0 20px 60px rgba(197, 160, 101, 0.3);
+}
+
+.olimpic-card.olimpic-silver {
+    border-color: #C0C0C0;
+}
+
+.olimpic-card.olimpic-bronze {
+    border-color: #CD7F32;
+}
+
+.olimpic-crown {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.olimpic-medal {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: 1.5rem;
+}
+
+.olimpic-rank {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #C5A065 0%, #E8D5B5 100%);
+    color: #1b264f;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.olimpic-card.olimpic-silver .olimpic-rank {
+    background: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 100%);
+}
+
+.olimpic-card.olimpic-bronze .olimpic-rank {
+    background: linear-gradient(135deg, #CD7F32 0%, #E8C8A8 100%);
+}
+
+.olimpic-photo {
+    margin: var(--spacing-lg) 0;
+}
+
+.photo-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    border: 3px solid #e2e8f0;
+}
+
+.photo-placeholder.gold-border {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #C5A065;
+    box-shadow: 0 0 30px rgba(197, 160, 101, 0.3);
+}
+
+.olimpic-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin-bottom: var(--spacing-xs);
+}
+
+.olimpic-class {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.olimpic-achievement {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: var(--off-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 50px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.achievement-icon {
+    font-size: 1rem;
+}
+
+.achievement-text {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--navy-blue);
+}
+
+.olimpic-details {
+    font-size: 0.85rem;
+    color: #C5A065;
+    font-weight: 600;
+}
+
+.olimpic-sparkles {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Categoriile de Excelență */
+.excelenta-section {
+    padding: var(--spacing-xxl) 0;
+    background: var(--white);
+}
+
+.excelenta-category {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-subtitle {
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.excelenta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.excelent-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border: 2px solid var(--light-gray);
+}
+
+.excelent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: #C5A065;
+}
+
+.excelent-photo {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.photo-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    border: 3px solid #C5A065;
+}
+
+.photo-circle.sport {
+    border-color: #3b82f6;
+}
+
+.photo-circle.art {
+    border-color: #ec4899;
+}
+
+.photo-badge {
+    position: absolute;
+    bottom: -5px;
+    right: calc(50% - 50px);
+    background: linear-gradient(135deg, #C5A065 0%, #E8D5B5 100%);
+    color: #1b264f;
+    font-weight: 800;
+    font-size: 0.9rem;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sport-badge {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: white;
+    font-size: 0.8rem;
+}
+
+.art-badge {
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    color: white;
+    font-size: 0.8rem;
+}
+
+.excelent-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin-bottom: var(--spacing-xs);
+}
+
+.excelent-detail {
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+/* GDPR Notice */
+.gdpr-notice {
+    padding: var(--spacing-lg) 0;
+    background: var(--off-white);
+    border-top: 1px solid var(--light-gray);
+}
+
+.gdpr-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-align: center;
+}
+
+.gdpr-icon {
+    font-size: 1rem;
+}
+
+/* Responsive - Galeria de Onoare */
+@media (max-width: 992px) {
+    .olimpici-podium {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .olimpic-card.olimpic-gold {
+        transform: scale(1);
+        order: -1;
+    }
+
+    .onoare-hero-stats {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .laurel-left,
+    .laurel-right {
+        font-size: 4rem;
+    }
+
+    .onoare-hero-title {
+        font-size: 2rem;
+    }
+
+    .excelenta-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
