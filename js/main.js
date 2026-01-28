@@ -59,6 +59,61 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ============================================
+    // Search Functionality
+    // ============================================
+    const searchContainer = document.getElementById('searchContainer');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const searchClose = document.getElementById('searchClose');
+
+    if (searchBtn && searchContainer && searchInput) {
+        // Toggle search on button click
+        searchBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            searchContainer.classList.toggle('active');
+
+            // Focus input when opening
+            if (searchContainer.classList.contains('active')) {
+                setTimeout(() => {
+                    searchInput.focus();
+                }, 100);
+            }
+        });
+
+        // Close search on close button click
+        if (searchClose) {
+            searchClose.addEventListener('click', function (e) {
+                e.stopPropagation();
+                searchContainer.classList.remove('active');
+                searchInput.value = '';
+            });
+        }
+
+        // Close search when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                searchContainer.classList.remove('active');
+            }
+        });
+
+        // Close search on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && searchContainer.classList.contains('active')) {
+                searchContainer.classList.remove('active');
+                searchInput.value = '';
+            }
+        });
+
+        // Simple search feedback (placeholder for future functionality)
+        searchInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                // For now, just show an alert - this can be enhanced later
+                alert('Funcția de căutare va fi disponibilă în curând!\n\nAți căutat: "' + this.value + '"');
+            }
+        });
+    }
+
+    // ============================================
     // Smooth Scroll for Anchor Links
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
