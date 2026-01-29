@@ -194,8 +194,8 @@ p {
 .logo-image {
     width: 60px;
     height: 60px;
-    object-fit: contain;
-    border-radius: var(--radius-sm);
+    object-fit: cover;
+    border-radius: 50%;
     transition: transform var(--transition-fast);
 }
 
@@ -2940,8 +2940,8 @@ p {
 .footer-logo-image {
     width: 70px;
     height: 70px;
-    object-fit: contain;
-    border-radius: var(--radius-sm);
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .footer-brand-name {
