@@ -14,7 +14,7 @@ function initScheduleApp() {
 
     // 1. POPULARE DATE (CONSTANTS MOCKED)
     // Vom reconstitui datele pe baza informațiilor disponibile
-    const SCHOOL_YEAR = "2024-2025";
+    const SCHOOL_YEAR = "2025-2026";
     const SCHOOL_NAME = "Școala Gimnazială Principele Carol";
 
     const SCHEDULE_DATA = [
