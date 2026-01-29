@@ -6099,4 +6099,811 @@ p {
         background: var(--navy-blue);
         color: var(--white);
     }
+}/* ============================================
+   PROGRAM ÈÜCOLAR (PAGINA PÄ RINÈaI)
+   ============================================ */
+
+.schedule-section {
+    padding: var(--spacing-xxl) 0;
+    background: var(--gray-light);
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.schedule-title {
+    font-size: 2.2rem;
+    color: var(--navy-blue);
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Tabs */
+.schedule-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gray-dark);
+    background: var(--white);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-btn:hover {
+    color: var(--navy-blue);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: var(--navy-blue);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Accordion pentru Primar */
+.class-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.class-item {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.class-item:last-child {
+    border-bottom: none;
+}
+
+.class-header {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition-fast);
+}
+
+.class-header:hover {
+    background: var(--gray-light);
+}
+
+.class-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.class-teacher {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--gray);
+    margin-top: 4px;
+}
+
+.class-arrow {
+    color: var(--gold);
+    transition: transform var(--transition-fast);
+}
+
+.class-header[aria-expanded="true"] .class-arrow {
+    transform: rotate(180deg);
+}
+
+.class-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #f9f9fc;
+}
+
+.class-schedule-list {
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: 0;
+    list-style: none;
+}
+
+.class-schedule-item {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+    color: var(--text-dark);
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--gold);
+}
+
+/* Tabel pentru Gimnaziu */
+.table-responsive {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
+}
+
+.schedule-table {
+    width: 100%;
+    min-width: 800px; /* Force scroll on small screens */
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 0.95rem;
+}
+
+.schedule-table th {
+    background: var(--navy-blue);
+    color: var(--white);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.schedule-table th:first-child {
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+}
+
+.schedule-table th:last-child {
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+}
+
+.schedule-table tr:hover td {
+    background: #fdfdfd;
+}
+
+.schedule-table .hour-col {
+    font-weight: 700;
+    color: var(--navy-blue);
+    background: #f4f4f4;
+}
+
+.gym-download-container {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .schedule-title {
+        font-size: 1.8rem;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ============================================
+   ORAR INTERACTIV (Stil React-like)
+   ============================================ */
+.schedule-app-container {
+    background-color: #f3f4f6; /* bg-gray-100 */
+    min-height: 600px;
+    padding: var(--spacing-xl) 0;
+    font-family: var(--font-body);
+}
+
+/* Header Orar */
+.schedule-app-header {
+    background-color: var(--navy-blue);
+    color: var(--gold);
+    border-bottom: 4px solid var(--gold);
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.schedule-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+}
+
+.schedule-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.schedule-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--gold);
+}
+
+.schedule-app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.schedule-app-subtitle {
+    font-size: 0.875rem;
+    color: var(--gold);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Selector ClasÄ’ */
+.class-selector-wrapper {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: var(--radius-md);
+    padding: 2px;
+    min-width: 250px;
+}
+
+.class-selector {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    color: var(--white);
+    border: none;
+    padding: 10px 40px 10px 16px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.class-selector option {
+    background-color: var(--navy-blue);
+    color: var(--white);
+}
+
+.selector-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    pointer-events: none;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xxl) var(--spacing-md);
+    animation: fadeIn 0.5s ease;
+}
+
+.empty-icon-circle {
+    width: 96px;
+    height: 96px;
+    background-color: #e0e7ff; /* navy-100 approx */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    border: 2px solid var(--gold);
+}
+
+.empty-state h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Class Info Card */
+.class-info-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--navy-blue);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    animation: fadeIn 0.3s ease;
+}
+
+.class-name-display {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin: 0 0 4px 0;
+}
+
+.class-teacher-display {
+    color: var(--gray-dark);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.teacher-dot {
+    color: var(--gold);
+}
+
+.school-year-badge {
+    background-color: rgba(197, 160, 89, 0.1);
+    color: var(--navy-blue);
+    border: 1px solid var(--gold);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Day Car */
+.day-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.day-header {
+    background-color: var(--navy-blue);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-title {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.day-icon {
+    color: var(--gold);
+    opacity: 0.7;
+}
+
+.day-slots {
+    flex-grow: 1;
+}
+
+/* Slot Item */
+.slot-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+    cursor: default;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.slot-item:last-child {
+    border-bottom: none;
+}
+
+.slot-item:hover {
+    background-color: #f9fafb;
+}
+
+.slot-item.has-details {
+    cursor: pointer;
+}
+
+.slot-item.has-details:hover,
+.slot-item.active {
+    background-color: #eff6ff; /* navy-50 approx */
+    border-left-color: var(--gold);
+}
+
+.slot-time {
+    width: 60px;
+    flex-shrink: 0;
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--gold-dark);
+    padding-top: 2px;
+}
+
+.slot-subject {
+    flex-grow: 1;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: color 0.2s;
+}
+
+.slot-item.active .slot-subject {
+    color: var(--navy-blue);
+}
+
+.slot-info-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    margin-top: 2px;
+    color: var(--gray-light);
+    transition: all 0.2s;
+}
+
+.slot-item:hover .slot-info-icon,
+.slot-item.active .slot-info-icon {
+    color: var(--gold);
+    opacity: 1;
+}
+
+/* Footer Mentions */
+.schedule-mentions {
+    background-color: #eff6ff;
+    border-left: 4px solid var(--navy-blue);
+    padding: 16px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.3s ease;
+}
+
+.mention-icon {
+    color: var(--navy-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mention-text {
+    color: var(--navy-blue);
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tooltip (CSS only version simple, or JS logic) */
+.details-popover {
+    display: none;
+    margin-top: 8px;
+    background: var(--navy-blue);
+    color: var(--white);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    font-size: 0.875rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.slot-item.active .details-popover {
+    display: block;
+}
+
+.popover-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.popover-row:last-child {
+    margin-bottom: 0;
+}
+
+.popover-icon {
+    color: var(--gold);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .schedule-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .class-selector-wrapper {
+        width: 100%;
+    }
+    
+    .class-info-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* ============================================
+   ORGANIGRAMÄ  STYLES (Modern Navy & Gold)
+   ============================================ */
+.org-section {
+    background-color: #020617; /* Very dark navy base */
+    color: #f1f5f9; /* Slate 100 text */
+    padding: 60px 0;
+    font-family: var(--font-body);
+}
+
+.org-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 4px solid var(--gold);
+    padding-bottom: 30px;
+}
+
+.org-inspectorate {
+    color: var(--gold);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.org-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.org-highlight {
+    color: var(--gold);
+}
+
+.org-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8; /* Slate 400 */
+    font-weight: 300;
+}
+
+/* Section Title with Lines */
+.org-section-title-wrapper {
+    text-align: center;
+    margin: 60px 0 40px;
+    position: relative;
+}
+
+.org-section-title {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    color: #f1c40f; /* Brighter gold */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+}
+
+.org-section-title::before,
+.org-section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+.org-section-title::before { left: -40px; }
+.org-section-title::after { right: -40px; }
+
+/* Cards */
+.org-card {
+    background-color: #0f172a; /* Slate 900 */
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.org-card:hover {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+    transform: translateY(-4px);
+    border-color: #f1c40f;
+}
+
+.org-card-icon {
+    color: var(--gold);
+    margin-bottom: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+.org-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.org-card-content {
+    width: 100%;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+}
+
+/* Sub-items in cards */
+.org-subitem {
+    background-color: #1e293b; /* Slate 800 */
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #cbd5e1; /* Slate 300 */
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Director Special Card */
+.org-director-card {
+    background-color: #0f172a;
+    border: 4px solid var(--gold);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.org-director-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--gold);
+    margin: 0 auto 10px;
+}
+
+.org-director-role {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.org-director-name {
+    color: var(--gold);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 5px 0 15px;
+}
+
+.org-director-meta {
+    border-top: 1px solid rgba(212, 175, 55, 0.4);
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Layout Helpers */
+.org-level-1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    flex-wrap: wrap;
+}
+
+.org-level-1 > div {
+    flex: 1;
+    min-width: 280px;
+}
+
+.org-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.org-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto 50px;
+}
+
+.org-footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.75rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .org-level-1 {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .org-title {
+        font-size: 1.8rem;
+    }
+    
+    .org-director-card {
+        margin: 20px 0;
+    }
 }

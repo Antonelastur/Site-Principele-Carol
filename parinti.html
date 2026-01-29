@@ -420,6 +420,69 @@
                 </div>
 
                 <!-- ============================================
+                     SECȚIUNE ORAR ȘCOLAR
+                     ============================================ -->
+                <!-- ============================================
+                     APLICAȚIE ORAR INTERACTIV
+                     ============================================ -->
+                <section class="schedule-section" id="orar">
+                    <div class="container">
+                        <div id="schedule-app-root" class="schedule-app-container">
+                            <!-- Header Aplicație -->
+                            <header class="schedule-app-header">
+                                <div class="schedule-header-inner">
+                                    <div class="schedule-branding">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="schedule-icon"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                        <div>
+                                            <h2 class="schedule-app-title">ORAR ȘCOLAR</h2>
+                                            <p class="schedule-app-subtitle">Anul Școlar 2024-2025</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="class-selector-wrapper">
+                                        <select id="classSelector" class="class-selector">
+                                            <option value="" disabled selected>Selectează Clasa</option>
+                                            <!-- Opțiunile vor fi populate via JS -->
+                                        </select>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="selector-arrow" width="20"
+                                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <!-- Zona de Conținut Dinamic -->
+                            <div id="scheduleContent">
+                                <!-- Stare Inițială (Empty State) -->
+                                <div class="empty-state">
+                                    <div class="empty-icon-circle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                            viewBox="0 0 24 24" fill="none" stroke="var(--navy-blue)"
+                                            stroke-width="1.5">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                    </div>
+                                    <h2>Bine ați venit!</h2>
+                                    <p>Vă rugăm să selectați o clasă din meniul de sus pentru a vizualiza orarul
+                                        specific.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================
                      CTA CONTACT
                      ============================================ -->
                 <div class="parents-cta">
@@ -518,6 +581,9 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Script Orar Interactiv -->
+    <script src="js/orar-app.js"></script>
 </body>
 
 </html>
