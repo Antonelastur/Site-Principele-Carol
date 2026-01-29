@@ -114,8 +114,8 @@
                 <!-- HEADER ORGANIGRAMĂ -->
                 <div class="org-header">
                     <div class="org-inspectorate">Inspectoratul Școlar Județean Suceava</div>
-                    <h2 class="org-title">Organigrama Școlii Gimnaziale<br><span class="org-highlight">„Principele
-                            Carol”</span></h2>
+                    <h2 class="org-title">Organigrama Școlii Gimnaziale<br><span class="org-highlight">"Petru
+                            Comarnescu"</span></h2>
                     <p class="org-subtitle">Gura Humorului | An școlar 2025-2026</p>
                 </div>
 
@@ -143,7 +143,7 @@
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                         <h3 class="org-director-role">Director</h3>
-                        <div class="org-director-name">Prof. Istrategie Corina</div>
+                        <div class="org-director-name">Prof. Lămășanu Enikő</div>
                         <div class="org-director-meta">Președinte Consiliul Profesoral</div>
                     </div>
 
@@ -155,14 +155,14 @@
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                         <h3 class="org-card-title">Director Adjunct</h3>
-                        <p class="org-card-content org-highlight" style="font-weight: 700; margin-bottom: 5px;">Prof.
-                            Livia Ciucă</p>
+                        <p class="org-card-content org-highlight" style="font-weight: 700; margin-bottom: 5px;">p.e.p.
+                            Hanek Rita</p>
                         <p class="org-card-content" style="font-size: 0.75rem;">Coordonează compartimentele educaționale
                         </p>
                     </div>
                 </div>
 
-                <!-- NIVEL 2: CURRICULUM -->
+                <!-- NIVEL 2: CURRICULUM & EDUCAȚIE -->
                 <div class="org-section-title-wrapper">
                     <h3 class="org-section-title">Comisia Pentru Curriculum</h3>
                 </div>
@@ -202,7 +202,7 @@
                         <div class="org-subitem">Ed. Tehnologică, TIC</div>
                     </div>
 
-                    <!-- Om si Societate -->
+                    <!-- Om - Societate - Arte -->
                     <div class="org-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -230,10 +230,9 @@
                         <h3 class="org-card-title">Învățământ Primar</h3>
                         <div class="org-subitem">Catedra Învățătorilor</div>
                         <div class="org-subitem">Catedra Educatorilor</div>
-                        <div class="org-subitem">Clasa Pregătitoare</div>
                     </div>
 
-                    <!-- Consiliere -->
+                    <!-- Consiliere & Orientare -->
                     <div class="org-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -246,7 +245,7 @@
                         <div class="org-subitem">Consiliul Elevilor</div>
                     </div>
 
-                    <!-- Proiecte -->
+                    <!-- Proiecte Educaționale -->
                     <div class="org-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -259,70 +258,100 @@
                     </div>
                 </div>
 
-                <!-- NIVEL 3: COMISII DE LUCRU -->
+                <!-- NIVEL 3: COMISII DE LUCRU (GRID 4 w/ SPAN) -->
                 <div class="org-section-title-wrapper">
                     <h3 class="org-section-title">Comisii și Control</h3>
                 </div>
 
-                <div class="org-grid-3">
-                    <!-- Comisii Permanente -->
-                    <div class="org-card" style="grid-column: span 1 / -1; max-width: 800px; margin: 0 auto;">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                        </svg>
-                        <h3 class="org-card-title">Comisii Permanente</h3>
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; width: 100%;">
-                            <div class="org-subitem">Întocmire orar și serviciu școală</div>
-                            <div class="org-subitem">Revizuire ROI, ROFUIP</div>
-                            <div class="org-subitem">Comisia de Etică</div>
-                            <div class="org-subitem">Activitatea cu părinții</div>
-                            <div class="org-subitem">Comisia Paritară</div>
-                            <div class="org-subitem">Gestionare manuale</div>
-                            <div class="org-subitem">Organizare examene / olimpiade</div>
-                            <div class="org-subitem">Programe susținere educațională</div>
-                            <div class="org-subitem">Cercetare disciplinară</div>
-                            <div class="org-subitem">Mobilitate / OSP / Echivalare CPT</div>
+                <!-- Structura simetrică: 2 coloane + 1 + 1 (total 4 unitați de grid) -->
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1280px; margin: 0 auto 50px;">
+                    <style>
+                        @media (min-width: 1024px) {
+                            .grid-span-2 {
+                                grid-column: span 2;
+                            }
+
+                            .grid-container-custom {
+                                grid-template-columns: repeat(4, 1fr) !important;
+                            }
+                        }
+                    </style>
+                    <div class="org-grid-custom-wrapper" style="display: contents;">
+
+                        <!-- Comisii Permanente - SPAN 2 -->
+                        <div class="org-card grid-span-2" style="width: 100%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                                </path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                            <h3 class="org-card-title">Comisii Permanente</h3>
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; width: 100%;">
+                                <div class="org-subitem">Întocmire orar și serviciu școală</div>
+                                <div class="org-subitem">Revizuire ROI, ROFUIP</div>
+                                <div class="org-subitem">Comisia de Etică</div>
+                                <div class="org-subitem">Activitatea cu părinții</div>
+                                <div class="org-subitem">Comisia Paritară</div>
+                                <div class="org-subitem">Gestionare manuale</div>
+                                <div class="org-subitem">Organizare examene / olimpiade</div>
+                                <div class="org-subitem">Programe susținere educațională</div>
+                                <div class="org-subitem">Cercetare disciplinară</div>
+                                <div class="org-subitem">Mobilitate / OSP / Echivalare CPT</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Calitate -->
-                    <div class="org-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                        <h3 class="org-card-title">Calitate & Control</h3>
-                        <div class="org-subitem">Comisia de Asigurare a Calității</div>
-                        <div class="org-subitem">Control Managerial Intern</div>
-                        <div class="org-subitem">Prevenire Violență, Discriminare</div>
-                    </div>
+                        <!-- Calitate & Control -->
+                        <div class="org-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <h3 class="org-card-title">Calitate & Control</h3>
+                            <div class="org-subitem">Comisia de Asigurare a Calității</div>
+                            <div class="org-subitem">Control Managerial Intern</div>
+                            <div class="org-subitem">Prevenire Violență, Discriminare, Corupție</div>
+                            <div class="org-subitem">Promovare Interculturalitate</div>
+                        </div>
 
-                    <!-- Dezvoltare -->
-                    <div class="org-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path
-                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                            </path>
-                        </svg>
-                        <h3 class="org-card-title">Dezvoltare & Imagine</h3>
-                        <div class="org-subitem">Formare și Dezvoltare în Carieră</div>
-                        <div class="org-subitem">Securitate și Sănătate în Muncă (SSM)</div>
-                        <div class="org-subitem">Promovare a Imaginii Școlii</div>
+                        <!-- Dezvoltare & Imagine -->
+                        <div class="org-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                            <h3 class="org-card-title">Dezvoltare & Imagine</h3>
+                            <div class="org-subitem">Formare și Dezvoltare în Carieră</div>
+                            <div class="org-subitem">Securitate și Sănătate în Muncă (SSM)</div>
+                            <div class="org-subitem">Situații de Urgență</div>
+                            <div class="org-subitem">Promovare a Imaginii Școlii</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- NIVEL 4: ADMINISTRATIV -->
+                <!-- Script-ul de mai sus se aplică doar div-ului părinte direct printr-o clasa helper pe care o injectam direct inline pt stabilitate -->
+                <script>
+                    // Simplu JS pentru a forța gridul pe desktop să fie strict 4 coloane pentru secțiunea Comisii
+                    if (window.innerWidth > 1024) {
+                        const wrappers = document.getElementsByClassName('org-grid-custom-wrapper');
+                        for (let w of wrappers) {
+                            w.parentElement.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                        }
+                    }
+                </script>
+
+                <!-- NIVEL 4: ADMINISTRATIV & PARTENERI -->
                 <div class="org-section-title-wrapper">
                     <h3 class="org-section-title">Administrativ și Parteneri</h3>
                 </div>
 
                 <div class="org-grid-3">
-                    <!-- Parteneri -->
+                    <!-- Parteneri Sociali -->
                     <div class="org-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -332,12 +361,14 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                         <h3 class="org-card-title">Parteneri Sociali</h3>
-                        <div class="org-subitem" style="color: var(--gold); border-color: var(--gold);">Părinți</div>
+                        <div class="org-subitem"
+                            style="color: var(--gold); border-color: var(--gold); font-weight: bold; background: transparent;">
+                            Părinți</div>
                         <div class="org-subitem">Consiliul Reprezentativ al Părinților</div>
                         <div class="org-subitem">Asociația Părinților EDUPART</div>
                     </div>
 
-                    <!-- Auxiliar -->
+                    <!-- Personal Didactic Auxiliar -->
                     <div class="org-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -354,13 +385,13 @@
                         <div class="org-subitem">Bibliotecar</div>
                     </div>
 
-                    <!-- Nedidactic -->
+                    <!-- Personal Nedidactic -->
                     <div class="org-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="org-card-icon" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="3"></circle>
                             <path
-                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l-.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
                             </path>
                         </svg>
                         <h3 class="org-card-title">Personal Nedidactic</h3>
@@ -368,15 +399,17 @@
                         <div class="org-subitem">Fochist</div>
                         <div class="org-subitem">5 Îngrijitori</div>
                         <div class="org-subitem"
-                            style="border-top: 1px solid rgba(212,175,55,0.4); margin-top: 8px; padding-top: 8px; color: #94a3b8;">
+                            style="border-top: 1px solid rgba(212,175,55,0.4); margin-top: 8px; padding-top: 8px; color: #94a3b8; width: 100%;">
                             LOGISTICĂ</div>
                         <div class="org-subitem">Achiziții, Inventar, Casare</div>
+                        <div class="org-subitem">Echipa de Proiect / Dotare</div>
                     </div>
                 </div>
 
+                <!-- FOOTER -->
                 <div class="org-footer">
-                    <p>Document referință actualizat: 2025</p>
-                    <p>© 2025 Școala Gimnazială „Principele Carol”</p>
+                    <p>Document referință: Nr. 150 din 12.09.2025</p>
+                    <p>© 2025 Școala Gimnazială "Petru Comarnescu"</p>
                 </div>
 
             </div>

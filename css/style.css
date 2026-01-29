@@ -4572,7 +4572,7 @@ p {
 }
 
 .btn-cookie-agree:hover {
-    background-color: #f1c40f;
+    background-color: var(--gold-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -6675,7 +6675,7 @@ p {
    ORGANIGRAMÄ  STYLES (Modern Navy & Gold)
    ============================================ */
 .org-section {
-    background-color: #020617; /* Very dark navy base */
+    background-color: var(--navy-blue-dark); /* Very dark navy base */
     color: #f1f5f9; /* Slate 100 text */
     padding: 60px 0;
     font-family: var(--font-body);
@@ -6726,7 +6726,7 @@ p {
 .org-section-title {
     font-size: 1.5rem;
     font-family: var(--font-heading);
-    color: #f1c40f; /* Brighter gold */
+    color: var(--gold-light); /* Brighter gold */
     text-transform: uppercase;
     letter-spacing: 0.1em;
     display: inline-block;
@@ -6749,7 +6749,7 @@ p {
 
 /* Cards */
 .org-card {
-    background-color: #0f172a; /* Slate 900 */
+    background-color: var(--navy-blue); /* Slate 900 */
     border: 2px solid var(--gold);
     border-radius: 12px;
     padding: 24px;
@@ -6766,7 +6766,7 @@ p {
 .org-card:hover {
     box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
     transform: translateY(-4px);
-    border-color: #f1c40f;
+    border-color: var(--gold-light);
 }
 
 .org-card-icon {
@@ -6797,7 +6797,7 @@ p {
 
 /* Sub-items in cards */
 .org-subitem {
-    background-color: #1e293b; /* Slate 800 */
+    background-color: var(--navy-blue-light); /* Slate 800 */
     padding: 8px;
     border-radius: 4px;
     border: 1px solid rgba(212, 175, 55, 0.3);
@@ -6810,7 +6810,7 @@ p {
 
 /* Director Special Card */
 .org-director-card {
-    background-color: #0f172a;
+    background-color: var(--navy-blue);
     border: 4px solid var(--gold);
     border-radius: 16px;
     padding: 30px;
