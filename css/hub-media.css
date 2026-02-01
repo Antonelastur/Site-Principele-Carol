@@ -1,0 +1,299 @@
+/* Hub Media Specific Styles */
+
+:root {
+    --hub-navy: #0e1b42;
+    /* Deep Navy Blue */
+    --hub-gold: #c5a059;
+    /* Sober Noble Gold */
+    --hub-gold-bright: #d4af37;
+    /* Brighter gold for hover/accents */
+    --hub-bg: #f8f9fa;
+    --hub-text: #333;
+}
+
+/* Override existing variables if needed or just use these local ones */
+
+body {
+    background-color: var(--hub-bg);
+}
+
+/* Hero Section */
+.hub-hero {
+    background: linear-gradient(135deg, var(--hub-navy), #000000);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--hub-gold);
+}
+
+.hub-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.text-gold {
+    color: var(--hub-gold);
+}
+
+.hub-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Grid Layout */
+.section-padding {
+    padding: 4rem 0;
+}
+
+.hub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    .hub-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Revista (1) - TV (1.5) - Podcast (1) */
+        align-items: start;
+    }
+}
+
+/* Column/Card Styling */
+.hub-column {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.hub-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.featured-column {
+    border: 2px solid var(--hub-gold);
+    background: #fff;
+    /* Slightly distinct background or style for the main TV section */
+}
+
+.column-header {
+    background-color: var(--hub-navy);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.column-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider-gold {
+    width: 50px;
+    height: 3px;
+    background-color: var(--hub-gold);
+    margin: 10px auto 0;
+}
+
+.column-content {
+    padding: 2rem;
+    color: var(--hub-text);
+}
+
+/* TV Content Specifics */
+.tv-welcome-title {
+    font-size: 1.8rem;
+    color: var(--hub-navy);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.tv-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.tv-features {
+    background-color: rgba(197, 160, 89, 0.1);
+    /* Light gold bg */
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--hub-gold);
+}
+
+.tv-features h4 {
+    color: var(--hub-navy);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* CTA Box */
+.tv-cta-box {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.cta-text {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.cta-quote {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.tv-slogan {
+    font-weight: bold;
+    color: var(--hub-navy);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.tv-slogan span {
+    color: var(--hub-gold-bright);
+}
+
+/* Buttons */
+.btn-hub {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--hub-navy);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-hub:hover {
+    background-color: var(--hub-gold);
+}
+
+.btn-gold-shadow {
+    box-shadow: 0 4px 14px rgba(197, 160, 89, 0.4);
+}
+
+/* Placeholders for Podcast/Revista */
+.placeholder-card {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--hub-navy);
+}
+
+/* Navigation Active State Fix (if needed) */
+/* Assuming .nav-link.active is already styled in style.css */
+
+/* CSS for updated Revista section in Hub Media */
+
+.magazine-cover-wrapper {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: #f0f0f0;
+}
+
+.magazine-cover-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.magazine-card:hover .magazine-cover-img {
+    transform: scale(1.05);
+}
+
+.magazine-archive {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.magazine-archive h4 {
+    font-size: 1rem;
+    color: var(--navy-blue);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+}
+
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.archive-list li {
+    margin-bottom: 0.25rem;
+}
+
+.archive-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.archive-list a:before {
+    content: •;
+    color: var(--gold);
+    margin-right: 0.5rem;
+}
+
+.archive-list a:hover {
+    color: var(--gold);
+}
+
+/* Gold Titles */
+.magazine-card h3,
+.tv-welcome-title,
+.placeholder-card h3 {
+    color: var(--hub-gold);
+}

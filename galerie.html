@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 
 <head>
@@ -9,7 +9,7 @@
     <meta name="keywords" content="galerie foto, imagini școală, săli de clasă, evenimente, Principele Carol">
     <meta name="author" content="Școala Gimnazială Principele Carol">
 
-    <title>Galerie Foto | Școala Gimnazială „Principele Carol"</title>
+    <title>Galerie Foto | Școala Gimnazială „Principele Carol”</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
@@ -33,21 +33,22 @@
                 <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image">
                 <div class="logo-text">
                     <span class="logo-title">Școala Gimnazială</span>
-                    <span class="logo-subtitle">„Principele Carol"</span>
+                    <span class="logo-subtitle">„Principele Carol”</span>
                 </div>
             </a>
 
             <!-- Navigare -->
             <nav class="nav" id="nav" aria-label="Navigare principală">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Acasă</a></li>
+                                                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">AcasÄƒ</a></li>
                     <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
-                    <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
-                    <li><a href="galerie-onoare.html" class="nav-link">Galeria de Onoare</a></li>
+                    <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
                     <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
-                    <li><a href="caroline.html" class="nav-link">CAROLine</a></li>
-                    <li><a href="parinti.html" class="nav-link">Părinți</a></li>
+                    <li><a href="parinti.html" class="nav-link">PÄƒrinÈ›i</a></li>
+                    <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
+                    <li><a href="galerie-onoare.html" class="nav-link">Podium</a></li>
                     <li><a href="documente.html" class="nav-link">Documente</a></li>
+                    <li><a href="galerie.html" class="nav-link active">Galerie Foto</a></li>
                 </ul>
                 <a href="contact.html" class="nav-cta">Contact</a>
 
@@ -107,13 +108,13 @@
                     <button class="filter-btn" data-filter="sali">Săli de Clasă</button>
                     <button class="filter-btn" data-filter="laboratoare">Interioare</button>
                     <button class="filter-btn" data-filter="evenimente">Evenimente</button>
-                    <button class="filter-btn" data-filter="proiecte">Proiecte</button>
+                    <!-- <button class="filter-btn" data-filter="proiecte">Proiecte</button> -->
                 </div>
 
                 <!-- Gallery Grid -->
                 <div class="gallery-grid">
 
-                    <!-- Item 1 -->
+                    <!-- Sala 1 -->
                     <div class="gallery-item" data-category="sali">
                         <div class="gallery-item-inner">
                             <img src="images/gallery/sala-clasa-1.jpg" alt="Sală de clasă modernă" class="gallery-img">
@@ -123,8 +124,6 @@
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
                                         <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                        <line x1="11" y1="11" x2="11" y2="11"></line>
                                     </svg>
                                 </div>
                                 <h3 class="gallery-title">Sală de Clasă</h3>
@@ -132,7 +131,7 @@
                         </div>
                     </div>
 
-                    <!-- Item 2 -->
+                    <!-- Hol -->
                     <div class="gallery-item" data-category="laboratoare">
                         <div class="gallery-item-inner">
                             <img src="images/gallery/hol-scoala.jpg" alt="Holul școlii" class="gallery-img">
@@ -149,7 +148,7 @@
                         </div>
                     </div>
 
-                    <!-- Item 3 -->
+                    <!-- Sala Festiva -->
                     <div class="gallery-item" data-category="sali">
                         <div class="gallery-item-inner">
                             <img src="images/gallery/sala-festiva.jpg" alt="Sala de clasă festivă" class="gallery-img">
@@ -161,12 +160,12 @@
                                         <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="gallery-title">Sală de Clasă</h3>
+                                <h3 class="gallery-title">Sala Festivă</h3>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 4 -->
+                    <!-- Activitate -->
                     <div class="gallery-item" data-category="evenimente">
                         <div class="gallery-item-inner">
                             <img src="images/gallery/activitate-elevi.jpg" alt="Activitate cu elevii"
@@ -184,7 +183,7 @@
                         </div>
                     </div>
 
-                    <!-- Item 5 -->
+                    <!-- Sala 2 -->
                     <div class="gallery-item" data-category="sali">
                         <div class="gallery-item-inner">
                             <img src="images/gallery/sala-clasa-2.jpg" alt="Sală de clasă" class="gallery-img">
@@ -197,23 +196,6 @@
                                     </svg>
                                 </div>
                                 <h3 class="gallery-title">Sală de Clasă</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 6 (Duplicate for Demo - Proiecte) -->
-                    <div class="gallery-item" data-category="proiecte">
-                        <div class="gallery-item-inner">
-                            <img src="images/gallery/activitate-elevi.jpg" alt="Proiect școlar" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <div class="gallery-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="gallery-title">Proiect Școlar</h3>
                             </div>
                         </div>
                     </div>
@@ -236,7 +218,7 @@
                         <img src="images/logo-scoala.jpg" alt="Logo" class="footer-logo-image">
                     </div>
                     <p class="footer-brand-name">
-                        Școala Gimnazială<br>„Principele Carol"
+                        Școala Gimnazială<br>„Principele Carol”
                     </p>
                     <p class="footer-brand-location">Gura Humorului</p>
                 </div>
@@ -283,7 +265,7 @@
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.
+                    © 2026 Școala Gimnazială „Principele Carol”. Toate drepturile rezervate.
                 </p>
                 <p class="footer-webmaster">
                     Webmaster: <span class="webmaster-name">prof. Antoanela Pohoață</span>
@@ -326,7 +308,6 @@
                     galleryItems.forEach(item => {
                         if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                             item.style.display = 'block';
-                            // Add animation/fade in here could be nice
                             setTimeout(() => {
                                 item.style.opacity = '1';
                                 item.style.transform = 'scale(1)';
@@ -345,16 +326,13 @@
             const lightboxImg = lightbox.querySelector('.lightbox-img');
             const lightboxCaption = lightbox.querySelector('.lightbox-caption');
             const closeBtn = lightbox.querySelector('.lightbox-close');
-            const galleryImages = document.querySelectorAll('.gallery-img');
 
-            // Open lightbox
             document.querySelectorAll('.gallery-item-inner').forEach(item => {
                 item.addEventListener('click', function () {
                     const img = this.querySelector('.gallery-img');
                     const title = this.querySelector('.gallery-title').textContent;
 
                     lightbox.style.display = 'flex';
-                    // Small delay to allow display:flex to apply before adding class for opacity transition
                     setTimeout(() => {
                         lightbox.classList.add('active');
                     }, 10);
@@ -364,7 +342,6 @@
                 });
             });
 
-            // Close lightbox
             closeBtn.addEventListener('click', () => {
                 lightbox.classList.remove('active');
                 setTimeout(() => {
@@ -381,7 +358,6 @@
                 }
             });
 
-            // Close on Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                     lightbox.classList.remove('active');
@@ -395,3 +371,4 @@
 </body>
 
 </html>
+
