@@ -1,0 +1,47 @@
+/* ============================================
+   HERO VIDEO OVERLAY
+   ============================================ */
+.hero-video-overlay {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 350px;
+    height: 350px;
+    border-radius: 24px;
+    /* Rotunjire mai potrivită pentru pătrat */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(255, 215, 0, 0.3);
+    z-index: 20;
+    transition: all 0.3s ease;
+    background: #000;
+}
+
+.hero-video-overlay:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border-color: var(--gold);
+}
+
+.hero-video-overlay video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsivitate pentru video overlay */
+@media (max-width: 902px) {
+    .hero-video-overlay {
+        width: 250px;
+        height: 250px;
+        bottom: 80px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-video-overlay {
+        display: none;
+    }
+}
