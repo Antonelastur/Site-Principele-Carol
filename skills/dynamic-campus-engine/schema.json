@@ -1,0 +1,48 @@
+{
+  "campusData": {
+    "events": [
+      {
+        "id": "e1",
+        "title": "Simulare Examen Capacitate",
+        "category": "Examene",
+        "date": "2026-03-15T09:00:00Z",
+        "description": "Sălile 12-15, etajul 2. Accesul permis până la 08:30.",
+        "link": "/documente/ghid-simulare"
+      },
+      {
+        "id": "e2",
+        "title": "Cupa Carol la Fotbal",
+        "category": "Sport",
+        "date": "2026-03-20T14:00:00Z",
+        "description": "Competiție inter-clase pe terenul sintetic.",
+        "link": "/stiri/evenimente-sportive"
+      },
+      {
+        "id": "e3",
+        "title": "Vacanța de Primăvară",
+        "category": "Vacanțe",
+        "date": "2026-04-10",
+        "description": "Perioada de relaxare pentru elevi și profesori.",
+        "isAllDay": true
+      }
+    ],
+    "faculty": [
+      {
+        "id": "f1",
+        "name": "Prof. Maria Ionescu",
+        "role": "Matematică & Informatică",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
+        "bio": "Peste 15 ani de experiență în pregătirea elevilor pentru olimpiade.",
+        "resources": [
+          { "name": "Culegere Clasa a X-a", "url": "/resurse/mate-x.pdf" },
+          { "name": "Platforma de Coding", "url": "https://code.carol.ro" }
+        ],
+        "contact": "maria.ionescu@carol.ro"
+      }
+    ],
+    "searchIndex": [
+      { "type": "document", "title": "Regulament Intern", "tags": ["reguli", "conduitã", "admin"], "url": "/docs/regulament" },
+      { "type": "class", "title": "Sala de Festivități", "tags": ["evenimente", "teatru", "etaj 1"], "url": "/harta/festivitati" }
+    ]
+  }
+}

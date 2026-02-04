@@ -1,0 +1,47 @@
+/*
+ * LIGHTNING HERITAGE OPTIMIZER - Technical Config
+ * Snippets for High-Performance Assets
+ */
+
+/* 1. Font Optimization: Avoid FOIT (Flash of Invisible Text) */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    /* Permite afișarea fontului de sistem până se descarcă cel regal */
+    src: url('https://fonts.gstatic.com/s/playfairdisplay/v37/...woff2') format('woff2');
+}
+
+/* 2. Intelligent Image Delivery (Pattern for index.html) */
+/* 
+Utilizați următorul markup pentru imaginile istorice/mari:
+<picture>
+  <source srcset="images/heritage-1921.avif" type="image/avif">
+  <source srcset="images/heritage-1921.webp" type="image/webp">
+  <img src="images/heritage-1921.jpg" 
+       alt="Carol I la inaugurare" 
+       loading="lazy" 
+       width="800" 
+       height="600"
+       style="content-visibility: auto;">
+</picture> 
+*/
+
+/* 3. Global CSS Optimization */
+.hero-bg {
+    /* Folosiți aspect-ratio pentru a evita Layout Shift-ul */
+    aspect-ratio: 16 / 9;
+    background-color: #002851;
+    /* Placeholder solid navy până la încărcarea imaginii */
+    contain: paint;
+    /* Izolează randarea pentru viteză */
+}
+
+/* 4. Caching Logic (Pseudo-Config for .htaccess or Netlify/Vercel) */
+/*
+  # Cache Static Assets for 1 Year
+  <filesMatch ".(jpg|jpeg|png|gif|webp|avif|woff2|css|js)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </filesMatch>
+*/

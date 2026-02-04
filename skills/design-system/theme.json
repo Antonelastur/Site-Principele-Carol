@@ -1,0 +1,55 @@
+{
+    "themeName": "Principele Carol Royal Heritage",
+    "version": "1.0.0",
+    "colors": {
+        "primary": {
+            "main": "#002851",
+            "contrastText": "#FFFFFF",
+            "label": "Navy Authority"
+        },
+        "secondary": {
+            "main": "#00509E",
+            "contrastText": "#FFFFFF",
+            "label": "Academic Blue"
+        },
+        "accent": {
+            "main": "#D4AF37",
+            "contrastText": "#002851",
+            "label": "Royal Gold"
+        },
+        "background": {
+            "default": "#FFFFFF",
+            "paper": "#F5F5F5"
+        },
+        "text": {
+            "primary": "#1A1A1A",
+            "secondary": "#64748B",
+            "disabled": "#94A3B8"
+        }
+    },
+    "typography": {
+        "display": {
+            "fontFamily": "Playfair Display",
+            "fontWeight": 700,
+            "lineHeight": 1.2
+        },
+        "body": {
+            "fontFamily": "Roboto",
+            "fontWeight": 400,
+            "lineHeight": 1.6
+        }
+    },
+    "spacing": {
+        "unit": 8,
+        "scale": [
+            0,
+            4,
+            8,
+            16,
+            24,
+            32,
+            64,
+            128
+        ]
+    }
+}
