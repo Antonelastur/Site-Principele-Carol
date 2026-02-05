@@ -1,4 +1,4 @@
-/* ============================================
+ï»¿/* ============================================
    È˜coala GimnazialÄƒ â€žPrincipele Carol"
    CSS Principal - Design Academic Elegant
    ============================================ */
@@ -62,7 +62,7 @@
     --radius-full: 50%;
 
     /* Header Height */
-    --header-height: 80px;
+    --header-height: 120px;
 }
 
 /* ---- Reset È™i BazÄƒ ---- */
@@ -166,6 +166,8 @@ p {
     box-shadow: var(--shadow-md);
     z-index: 1000;
     transition: all var(--transition-medium);
+    display: flex;
+    align-items: center;
 }
 
 .header.scrolled {
@@ -179,6 +181,7 @@ p {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
@@ -211,6 +214,9 @@ p {
 .logo-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    /* CoborÃ¢re accentuatÄƒ */
 }
 
 .logo-title {
@@ -239,6 +245,8 @@ p {
     display: flex;
     align-items: center;
     gap: 2px;
+    padding-top: 20px;
+    /* Aliniere cu textul coborÃ¢t */
 }
 
 .nav-link {
@@ -6099,8 +6107,10 @@ p {
         background: var(--navy-blue);
         color: var(--white);
     }
-}/* ============================================
-   PROGRAM ÈÜCOLAR (PAGINA PÄ RINÈaI)
+}
+
+/* ============================================
+   PROGRAM ï¿½ï¿½COLAR (PAGINA Pï¿½ RINï¿½aI)
    ============================================ */
 
 .schedule-section {
@@ -6253,7 +6263,8 @@ p {
 
 .schedule-table {
     width: 100%;
-    min-width: 800px; /* Force scroll on small screens */
+    min-width: 800px;
+    /* Force scroll on small screens */
     border-collapse: collapse;
 }
 
@@ -6298,25 +6309,34 @@ p {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
     .schedule-title {
         font-size: 1.8rem;
     }
-    
+
     .tab-btn {
         width: 100%;
         text-align: center;
     }
 }
+
 /* ============================================
    ORAR INTERACTIV (Stil React-like)
    ============================================ */
 .schedule-app-container {
-    background-color: #f3f4f6; /* bg-gray-100 */
+    background-color: #f3f4f6;
+    /* bg-gray-100 */
     min-height: 600px;
     padding: var(--spacing-xl) 0;
     font-family: var(--font-body);
@@ -6419,7 +6439,8 @@ p {
 .empty-icon-circle {
     width: 96px;
     height: 96px;
-    background-color: #e0e7ff; /* navy-100 approx */
+    background-color: #e0e7ff;
+    /* navy-100 approx */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -6554,7 +6575,8 @@ p {
 
 .slot-item.has-details:hover,
 .slot-item.active {
-    background-color: #eff6ff; /* navy-50 approx */
+    background-color: #eff6ff;
+    /* navy-50 approx */
     border-left-color: var(--gold);
 }
 
@@ -6630,7 +6652,7 @@ p {
     border-radius: 8px;
     border: 1px solid var(--gold);
     font-size: 0.875rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .slot-item.active .details-popover {
@@ -6661,22 +6683,25 @@ p {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .class-selector-wrapper {
         width: 100%;
     }
-    
+
     .class-info-card {
         flex-direction: column;
         align-items: flex-start;
     }
 }
+
 /* ============================================
-   ORGANIGRAMÄ  STYLES (Modern Navy & Gold)
+   ORGANIGRAMï¿½  STYLES (Modern Navy & Gold)
    ============================================ */
 .org-section {
-    background-color: var(--navy-blue-dark); /* Very dark navy base */
-    color: #f1f5f9; /* Slate 100 text */
+    background-color: var(--navy-blue-dark);
+    /* Very dark navy base */
+    color: #f1f5f9;
+    /* Slate 100 text */
     padding: 60px 0;
     font-family: var(--font-body);
 }
@@ -6712,7 +6737,8 @@ p {
 
 .org-subtitle {
     font-size: 1.25rem;
-    color: #94a3b8; /* Slate 400 */
+    color: #94a3b8;
+    /* Slate 400 */
     font-weight: 300;
 }
 
@@ -6726,7 +6752,8 @@ p {
 .org-section-title {
     font-size: 1.5rem;
     font-family: var(--font-heading);
-    color: var(--gold-light); /* Brighter gold */
+    color: var(--gold-light);
+    /* Brighter gold */
     text-transform: uppercase;
     letter-spacing: 0.1em;
     display: inline-block;
@@ -6744,12 +6771,18 @@ p {
     background-color: var(--gold);
 }
 
-.org-section-title::before { left: -40px; }
-.org-section-title::after { right: -40px; }
+.org-section-title::before {
+    left: -40px;
+}
+
+.org-section-title::after {
+    right: -40px;
+}
 
 /* Cards */
 .org-card {
-    background-color: var(--navy-blue); /* Slate 900 */
+    background-color: var(--navy-blue);
+    /* Slate 900 */
     border: 2px solid var(--gold);
     border-radius: 12px;
     padding: 24px;
@@ -6797,11 +6830,13 @@ p {
 
 /* Sub-items in cards */
 .org-subitem {
-    background-color: var(--navy-blue-light); /* Slate 800 */
+    background-color: var(--navy-blue-light);
+    /* Slate 800 */
     padding: 8px;
     border-radius: 4px;
     border: 1px solid rgba(212, 175, 55, 0.3);
-    color: #cbd5e1; /* Slate 300 */
+    color: #cbd5e1;
+    /* Slate 300 */
     font-size: 0.75rem;
     margin-bottom: 6px;
     width: 100%;
@@ -6863,7 +6898,7 @@ p {
     flex-wrap: wrap;
 }
 
-.org-level-1 > div {
+.org-level-1>div {
     flex: 1;
     min-width: 280px;
 }
@@ -6898,18 +6933,12 @@ p {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .org-title {
         font-size: 1.8rem;
     }
-    
+
     .org-director-card {
         margin: 20px 0;
     }
 }
-/ *  
- F o r c e  
- u p d a t e  
- b u i l d  
- * /  
- 

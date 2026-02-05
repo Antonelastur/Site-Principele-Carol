@@ -22,106 +22,7 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-<style>
-    /* REGLAJE FINALE: SIMETRIE ȘI VIZIBILITATE */
-    :root {
-        --h-height: 100px;
-    }
 
-    .header {
-        height: var(--h-height) !important;
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: #fff !important;
-        display: flex !important;
-        align-items: center !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-    }
-
-    main {
-        padding-top: var(--h-height) !important;
-        /* Rezolvă suprapunerea titlurilor */
-    }
-
-    .header-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-
-    /* LOGO CIRCULAR (NU TURTIT) */
-    .logo {
-        display: flex !important;
-        align-items: center !important;
-        gap: 15px !important;
-        text-decoration: none !important;
-    }
-
-    .logo-image {
-        width: 65px !important;
-        height: 65px !important;
-        border-radius: 50% !important;
-        object-fit: cover !important;
-        /* Previne turtirea */
-        border: 2px solid var(--royal-gold) !important;
-    }
-
-    .logo-text {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        line-height: 1.2 !important;
-    }
-
-    .logo-title {
-        font-family: 'Playfair Display', serif !important;
-        font-size: 1.2rem !important;
-        font-weight: 700 !important;
-        color: var(--royal-navy) !important;
-    }
-
-    .logo-subtitle {
-        font-family: 'Playfair Display', serif !important;
-        font-size: 0.9rem !important;
-        color: var(--royal-navy) !important;
-    }
-
-    /* TITLURI PAGINĂ CENTRATE */
-    .page-title {
-        text-align: center !important;
-        font-family: 'Playfair Display', serif !important;
-        color: var(--royal-gold) !important;
-        font-size: 3rem !important;
-        padding: 40px 0 10px 0 !important;
-    }
-
-    .page-subtitle {
-        text-align: center !important;
-        color: #666 !important;
-        margin-bottom: 50px !important;
-    }
-
-    .nav-list {
-        display: flex !important;
-        align-items: center !important;
-        gap: 15px !important;
-        list-style: none !important;
-    }
-
-    /* Fix Imagini Activități */
-    .activitate-poster {
-        object-fit: contain !important;
-        background: #f4f4f4 !important;
-        border-radius: 12px !important;
-    }
-</style>
 
 <body>
     <!-- ============================================
@@ -142,14 +43,14 @@
             <nav class="nav" id="nav" aria-label="Navigare principală">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
-                    <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
-                    <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
-                    <li><a href="consiliu-elevi.html" class="nav-link active">Consiliul Elevilor</a></li>
+                    <li><a href="despre.html" class="nav-link">Despre noi</a></li>
+                    <li><a href="hub-media.html" class="nav-link">Hub media</a></li>
+                    <li><a href="consiliu-elevi.html" class="nav-link active">Consiliul elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
                     <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
                     <li><a href="galerie-onoare.html" class="nav-link">Podium</a></li>
                     <li><a href="documente.html" class="nav-link">Documente</a></li>
-                    <li><a href="galerie.html" class="nav-link">Galerie Foto</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie foto</a></li>
                 </ul>
                 <a href="contact.html" class="nav-cta">Contact</a>
 
@@ -196,20 +97,20 @@
             <div class="container relative z-10 text-center">
                 <div class="consiliu-logo-wrapper antigravity-float" style="margin-bottom: 2rem;">
                     <img src="images/logo-consiliu-elevi.jpg" alt="Logo Consiliul Elevilor" class="consiliu-logo"
-                        style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--royal-gold); box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+                        style="width: 220px; height: 220px; border-radius: 50%; border: 4px solid var(--royal-gold); box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
                 </div>
-                <h1 class="page-title font-royal gold-shimmer">Consiliul Elevilor</h1>
-                <p class="page-subtitle">Reprezentare, Implicare și Democrație Școlară</p>
+                <h1 class="page-title font-royal gold-shimmer">Consiliul elevilor</h1>
+                <p class="page-subtitle">Reprezentare, implicare și democrație școlară</p>
                 <div
                     style="width: 60px; height: 3px; background: var(--royal-gold); margin: 2rem auto; border-radius: 2px;">
                 </div>
                 <div class="hero-cta" style="margin-top: 3rem; display: flex; gap: 1.5rem; justify-content: center;">
                     <a href="#biroul-executiv" class="btn-hub"
                         style="padding: 1rem 2rem; background: var(--royal-gold); color: var(--royal-navy);">Cunoaște
-                        Echipa</a>
+                        echipa</a>
                     <a href="#propune-idee" class="btn-hub"
                         style="padding: 1rem 2rem; border: 2px solid white; color: white; background: transparent;">Propune
-                        o Idee</a>
+                        o idee</a>
                 </div>
             </div>
         </section>
@@ -219,17 +120,16 @@
              ============================================ -->
         <section class="leadership-section" id="biroul-executiv" style="padding: 150px 0 100px 0; background: #fff;">
             <div class="container">
-                <div class="section-header-centered" style="margin-bottom: 5rem;">
-                    <h2 class="section-title-premium font-royal" style="font-size: 3rem;">Reprezentanții Aleși
-                        Democratic</h2>
+                <div class="section-header-centered" style="margin-bottom: 8rem;">
+                    <h2 class="section-title-premium font-royal" style="font-size: 3rem;">Reprezentanții aleși
+                        democratic</h2>
                     <p class="section-subtitle">Liderii care transformă ideile în realitate</p>
                 </div>
 
                 <div class="leadership-grid"
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                    <!-- Președinte -->
                     <div class="leader-card premium-card"
-                        style="background: white; border-radius: 24px; padding: 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,40,81,0.08); border: 1px solid rgba(0,40,81,0.05);">
+                        style="background: white; border-radius: 24px; padding: 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,40,81,0.08); border: 1px solid rgba(0,40,81,0.05); overflow: visible !important; margin-top: 4rem;">
                         <div class="leader-avatar-wrapper antigravity-float"
                             style="width: 200px; height: 200px; margin: -6rem auto 2rem; position: relative;">
                             <img src="images/echipa-sabrina.jpg" alt="Sabrina Mangu"
@@ -248,7 +148,7 @@
 
                     <!-- Vicepreședinte -->
                     <div class="leader-card premium-card"
-                        style="background: white; border-radius: 24px; padding: 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,40,81,0.08); border: 1px solid rgba(0,40,81,0.05);">
+                        style="background: white; border-radius: 24px; padding: 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,40,81,0.08); border: 1px solid rgba(0,40,81,0.05); overflow: visible !important; margin-top: 4rem;">
                         <div class="leader-avatar-wrapper antigravity-float"
                             style="width: 200px; height: 200px; margin: -6rem auto 2rem; position: relative; animation-delay: -2s;">
                             <img src="images/echipa-ana.jpg" alt="Ana Maria Antonesi"
@@ -268,7 +168,7 @@
 
                     <!-- Casier -->
                     <div class="leader-card premium-card"
-                        style="background: white; border-radius: 24px; padding: 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,40,81,0.08); border: 1px solid rgba(0,40,81,0.05);">
+                        style="background: white; border-radius: 24px; padding: 2rem; text-align: center; box-shadow: 0 30px 60px rgba(0,40,81,0.08); border: 1px solid rgba(0,40,81,0.05); overflow: visible !important; margin-top: 4rem;">
                         <div class="leader-avatar-wrapper antigravity-float"
                             style="width: 200px; height: 200px; margin: -6rem auto 2rem; position: relative; animation-delay: -4s;">
                             <img src="images/echipa-selina.jpg" alt="Selina Sarah Filip"
@@ -570,10 +470,10 @@
 
                 <!-- Coloana 3: Link-uri -->
                 <div class="footer-section">
-                    <h3 class="footer-section-title">Link-uri Utile</h3>
+                    <h3 class="footer-section-title">Link-uri utile</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Politica de Confidențialitate</a></li>
-                        <li><a href="#" class="footer-link">Informații Publice</a></li>
+                        <li><a href="#" class="footer-link">Politica de confidențialitate</a></li>
+                        <li><a href="#" class="footer-link">Informații publice</a></li>
                         <li><a href="https://www.isj.sv.edu.ro" target="_blank" class="footer-link">ISJ Suceava</a></li>
                         <li><a href="#" class="footer-link">GDPR</a></li>
                     </ul>
