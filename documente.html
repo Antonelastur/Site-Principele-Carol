@@ -1,26 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="ro">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Documente oficiale - Școala Gimnazială Principele Carol din Gura Humorului. Regulamente, rapoarte, buget și informații publice.">
-    <meta name="keywords" content="documente, regulamente, GDPR, buget, rapoarte, Principele Carol, Gura Humorului">
-    <meta name="author" content="Școala Gimnazială Principele Carol">
+<!-- Security Headers (LOKI Shield) -->
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Documente | Școala Gimnazială „Principele Carol"</title>
+<title>Documente | Școala Gimnazială „Principele Carol”</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/premium_heritage.css">
 
-    <!-- Preconnect pentru performanță -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
 <body>
     <!-- ============================================
@@ -39,9 +39,10 @@
 
             <!-- Navigare -->
             <nav class="nav" id="nav" aria-label="Navigare principală">
-                                                <ul class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
                     <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
+                    <li><a href="muzeu-virtual.html" class="nav-link">Muzeu Virtual</a></li>
                     <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
                     <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
@@ -89,20 +90,19 @@
         <!-- ============================================
              PAGE HERO
              ============================================ -->
-        <section class="page-hero documents-hero">
-            <div class="container">
-                <div class="documents-hero-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.5">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
+        <section class="page-hero"
+            style="background: linear-gradient(to bottom, var(--royal-navy), var(--academic-blue)); position: relative; overflow: hidden; padding: 60px 0;">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container relative z-10 text-center">
+                <h1 class="page-title font-royal gold-shimmer" style="font-size: 3rem; margin-bottom: 0.5rem;">Arhiva
+                    Documente</h1>
+                <p class="page-subtitle"
+                    style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 1rem; opacity: 0.9; color: white;">
+                    Documente și Informații Publice</p>
+                <div class="antigravity-float"
+                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
                 </div>
-                <h1 class="page-title">Documente Oficiale</h1>
-                <p class="page-subtitle">Transparență și acces la informații publice</p>
             </div>
         </section>
 
@@ -113,11 +113,41 @@
             <div class="container">
 
                 <!-- HEADER ORGANIGRAMĂ -->
-                <div class="org-header">
-                    <div class="org-inspectorate">Inspectoratul Școlar Județean Suceava</div>
-                    <h2 class="org-title">Organigrama Școlii Gimnaziale<br><span class="org-highlight">"Petru
-                            Comarnescu"</span></h2>
-                    <p class="org-subtitle">Gura Humorului | An școlar 2025-2026</p>
+                <div class="org-header text-center" style="margin-bottom: 3rem;">
+                    <div class="org-inspectorate"
+                        style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; color: var(--royal-gold); margin-bottom: 1rem; font-weight: 800;">
+                        Inspectoratul Școlar Județean Suceava</div>
+                    <h2 class="section-title-premium" style="font-size: 2rem; margin-bottom: 1rem;">Organigrama</h2>
+                    <p class="org-subtitle" style="font-size: 1.1rem; opacity: 0.7;">Școala Gimnazială „Principele
+                        Carol” | 2025-2026</p>
+                </div>
+
+                <!-- OFFICIAL ORGANIGRAM VIEWER (NEW) -->
+                <div class="official-org-viewer antigravity-float" style="margin-bottom: 5rem; text-align: center;">
+                    <div class="royal-glass"
+                        style="padding: 2rem; border-radius: 20px; border: 1px solid var(--royal-gold); background: rgba(0,40,81,0.4); max-width: 1000px; margin: 0 auto; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+                        <p
+                            style="color: var(--royal-gold); font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 1.5rem; letter-spacing: 0.05em;">
+                            Document Oficial: Schema de Organizare și Funcționare</p>
+                        <div class="org-image-wrapper"
+                            style="overflow: hidden; border-radius: 10px; border: 2px solid var(--royal-gold); cursor: zoom-in;"
+                            onclick="this.requestFullscreen()">
+                            <img src="images/Organigrama.png" alt="Organigrama Oficială"
+                                style="width: 100%; height: auto; display: block; filter: contrast(1.05) brightness(1.02);">
+                        </div>
+                        <div
+                            style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 0.85rem;">
+                            <span>Nr. 1501 din 12.09.2025</span>
+                            <a href="images/Organigrama.png" download class="btn-gold"
+                                style="padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; font-size: 0.8rem; font-weight: 700;">
+                                Descărcare PDF / Image
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="antigravity-float"
+                    style="width: 120px; height: 1px; background: var(--royal-gold); margin: 0 auto 5rem; opacity: 0.3;">
                 </div>
 
                 <!-- NIVEL 1: CONDUCERE -->
@@ -978,7 +1008,14 @@
                     <h3 class="footer-section-title">Contact</h3>
 
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📍</div>
+                        <div class="footer-contact-icon" style="color: var(--royal-gold);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
                         <div class="footer-contact-text">
                             Bulevardul Bucovinei, Nr. 25<br>
                             Gura Humorului, Suceava
@@ -986,14 +1023,30 @@
                     </div>
 
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📞</div>
+                        <div class="footer-contact-icon" style="color: var(--royal-gold);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
                         <div class="footer-contact-text">
                             <a href="tel:0230230928">0230 230 928</a>
                         </div>
                     </div>
 
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon">✉️</div>
+                        <div class="footer-contact-icon" style="color: var(--royal-gold);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
                         <div class="footer-contact-text">
                             <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a>
                         </div>
@@ -1063,4 +1116,3 @@
 </body>
 
 </html>
-

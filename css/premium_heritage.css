@@ -1,0 +1,110 @@
+/* 
+   ==========================================================================
+   PREMIUM HERITAGE & ANTIGRAVITY ENGINE
+   Școala Gimnazială "Principele Carol"
+   LOKI - Creative Studio 
+   ========================================================================== 
+*/
+
+:root {
+    --royal-navy: #002147;
+    /* Oxford Navy */
+    --royal-gold: #C5A059;
+    /* Pale Metallic Gold */
+    --academic-blue: #002851;
+    --white-space: #FFFFFF;
+    --gold-glow: rgba(197, 160, 89, 0.3);
+    --navy-glow: rgba(0, 33, 71, 0.1);
+}
+
+/* Typography Overrides */
+h1,
+h2,
+.font-royal {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Antigravity Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(0.5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.antigravity-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Premium Gold Shimmer Effect */
+.gold-shimmer {
+    background: linear-gradient(90deg, #D4AF37 0%, #F5DEB3 50%, #D4AF37 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Page Hero Component - Standardized & Compact */
+.page-hero {
+    padding: 60px 0 !important;
+    background: linear-gradient(to bottom, var(--royal-navy), var(--academic-blue));
+    position: relative;
+    overflow: hidden;
+}
+
+.page-title {
+    font-size: 2.8rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.page-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.15em !important;
+    font-size: 0.9rem !important;
+    opacity: 0.8;
+    color: white;
+}
+
+/* 
+   ==========================================================================
+   MUSEUM SPECIFIC STYLES
+   ========================================================================== 
+*/
+
+.virtual-museum-section {
+    padding: 120px 0;
+    background: var(--royal-navy);
+}
+
+.museum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+}
+
+.museum-card {
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.museum-card:hover {
+    transform: translateY(-10px);
+}

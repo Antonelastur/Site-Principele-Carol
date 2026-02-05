@@ -1,26 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="ro">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Galeria de Onoare - Școala Gimnazială Principele Carol. Sărbătorim excelența școlară și elevii care ne inspiră prin muncă, talent și perseverență.">
-    <meta name="keywords" content="galerie onoare, olimpici, excelență, premii, elevi performanți, Principele Carol">
-    <meta name="author" content="Școala Gimnazială Principele Carol">
+<!-- Security Headers (LOKI Shield) -->
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Podium | Școala Gimnazială „Principele Carol”</title>
+<title>Podium | Școala Gimnazială „Principele Carol”</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/premium_heritage.css">
 
-    <!-- Preconnect pentru performanță -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
 <body>
     <!-- ============================================
@@ -42,6 +42,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
                     <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
+                    <li><a href="muzeu-virtual.html" class="nav-link">Muzeu Virtual</a></li>
                     <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
                     <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
@@ -89,25 +90,14 @@
         <!-- ============================================
              HERO SECTION - GALERIA DE ONOARE
              ============================================ -->
-        <section class="onoare-hero">
-            <div class="onoare-hero-bg">
-                <!-- Laurel decorations -->
-                <div class="laurel-left">🏆</div>
-                <div class="laurel-right">🏆</div>
-                <div class="stars-decoration">
-                    <span class="star">⭐</span>
-                    <span class="star">⭐</span>
-                    <span class="star">⭐</span>
-                    <span class="star">⭐</span>
-                    <span class="star">⭐</span>
-                </div>
-            </div>
-            <div class="container">
-                <div class="onoare-hero-content">
-                    <h1 class="onoare-hero-title hero-title-highlight">✨ Podium ✨<br><span class="gold-text">Principele
-                            Carol</span></h1>
-                    <p class="onoare-hero-subtitle">Ei sunt elevii care ne inspiră prin muncă, talent și perseverență.
-                    </p>
+        <section class="page-hero">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container relative z-10 text-center">
+                <h1 class="page-title font-royal gold-shimmer">Podium de Onoare</h1>
+                <p class="page-subtitle">Recunoașterea performanțelor academice</p>
+                <div class="antigravity-float"
+                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
                 </div>
             </div>
         </section>
@@ -117,10 +107,13 @@
              ============================================ -->
         <section class="olimpici-section" id="olimpici">
             <div class="container">
-                <div class="section-header-centered">
-                    <span class="section-badge gold-badge">Elita școlii</span>
-                    <h2 class="section-title section-title-center">Podiumul Olimpicilor</h2>
-                    <p class="section-subtitle">Rezultate de excepție la Olimpiade și Concursuri Naționale</p>
+                <div class="section-header-centered" style="margin-bottom: 4rem;">
+                    <span class="section-badge gold-badge"
+                        style="background: var(--royal-gold); color: var(--royal-navy); padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; display: inline-block; margin-bottom: 1.5rem;">Performanță</span>
+                    <h2 class="section-title-premium" style="font-size: 2.5rem; margin-bottom: 1rem;">Rezultate Olimpice
+                    </h2>
+                    <p class="section-subtitle" style="font-size: 1rem; opacity: 0.7;">Rezultate de excepție care
+                        onorează tradiția școlii noastre</p>
                 </div>
 
                 <div class="olimpici-podium">

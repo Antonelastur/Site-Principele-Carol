@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Muzeul Virtual de Istorie al Școlii Gimnaziale „Principele Carol” - O incursiune în trecutul nostru regal.">
+    <title>Muzeu Virtual | Școala Gimnazială „Principele Carol”</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/premium_heritage.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Pagina principală">
+                <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image">
+                <div class="logo-text">
+                    <span class="logo-title">Școala Gimnazială</span>
+                    <span class="logo-subtitle">„Principele Carol"</span>
+                </div>
+            </a>
+
+            <!-- Navigare -->
+            <nav class="nav" id="nav" aria-label="Navigare principală">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Acasă</a></li>
+                    <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
+                    <li><a href="muzeu-virtual.html" class="nav-link active">Muzeu Virtual</a></li>
+                    <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
+                    <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
+                    <li><a href="parinti.html" class="nav-link">Părinți</a></li>
+                    <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
+                    <li><a href="galerie-onoare.html" class="nav-link">Podium</a></li>
+                    <li><a href="documente.html" class="nav-link">Documente</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie Foto</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta">Contact</a>
+
+                <!-- Search Button -->
+                <div class="search-container" id="searchContainer">
+                    <button class="search-btn" id="searchBtn" aria-label="Caută">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <div class="search-input-wrapper">
+                        <input type="text" class="search-input" id="searchInput" placeholder="Caută..."
+                            aria-label="Caută pe site">
+                        <button class="search-close" id="searchClose" aria-label="Închide căutarea">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Meniu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================================
+             PAGE HERO
+             ============================================ -->
+        <section class="page-hero">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container relative z-10 text-center">
+                <h1 class="page-title font-royal gold-shimmer">Muzeul Virtual</h1>
+                <p class="page-subtitle">Moștenirea vizuală a Școlii „Principele Carol”</p>
+                <div class="antigravity-float"
+                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             MUSEUM CONTENT
+             ============================================ -->
+        <section class="museum-section"
+            style="padding: 120px 0; background: var(--royal-navy); color: white; position: relative; overflow: hidden;">
+            <div class="absolute inset-0 opacity-5"
+                style="background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');">
+            </div>
+            <div class="container relative z-10">
+                <div class="museum-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem;">
+
+                    <!-- Imagine 1 -->
+                    <div class="museum-card premium-card royal-glass"
+                        style="padding: 2rem; background: rgba(255,255,255,0.05); border-color: rgba(212,175,55,0.3);">
+                        <div
+                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="images/muzeu/Elevi 1952 Școala pedagogică de fete AM.jpeg" alt="Generația 1952"
+                                style="width: 100%; height: 350px; object-fit: cover; filter: sepia(0.3) contrast(1.1);">
+                        </div>
+                        <h3 class="font-royal"
+                            style="color: var(--royal-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Generația 1952
+                        </h3>
+                        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9;">Imagine istorică a elevilor
+                            și cadrelor didactice, surprinsă în perioada postbelică a instituției. O rară mărturie a
+                            disciplinei și rigori pedagogice din epoca respectivă.</p>
+                    </div>
+
+                    <!-- Imagine 2 -->
+                    <div class="museum-card premium-card royal-glass"
+                        style="padding: 2rem; background: rgba(255,255,255,0.05); border-color: rgba(212,175,55,0.3); animation-delay: -1s;">
+                        <div
+                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="images/muzeu/3.jpeg" alt="Arhiva Instituțională"
+                                style="width: 100%; height: 350px; object-fit: cover; filter: sepia(0.3) contrast(1.1);">
+                        </div>
+                        <h3 class="font-royal"
+                            style="color: var(--royal-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Arhiva
+                            Instituțională</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9;">Documente factologice și
+                            fotografii de epocă ce atestă activitatea neîntreruptă a școlii, păstrând vie flacăra
+                            educației prin toate marile schimbări istorice.</p>
+                    </div>
+
+                    <!-- Imagine 3 -->
+                    <div class="museum-card premium-card royal-glass"
+                        style="padding: 2rem; background: rgba(255,255,255,0.05); border-color: rgba(212,175,55,0.3); animation-delay: -2s;">
+                        <div
+                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="images/muzeu/Imagine veche înscrieri.jpeg" alt="Istorie Vie"
+                                style="width: 100%; height: 350px; object-fit: cover; filter: sepia(0.3) contrast(1.1);">
+                        </div>
+                        <h3 class="font-royal"
+                            style="color: var(--royal-gold); font-size: 1.8rem; margin-bottom: 1.5rem;">Istoric și
+                            Tradiție</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9;">Momente autentice din viața
+                            școlară, reflectând simbioza profundă dintre instituție și comunitatea locală a Gura
+                            Humorului de la începutul secolului XX.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-scoala.jpg" alt="Logo" class="footer-logo-image">
+                    </div>
+                    <p class="footer-brand-name">Școala Gimnazială<br>„Principele Carol"</p>
+                    <p class="footer-brand-location">Gura Humorului</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Contact</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📍</div>
+                        <div class="footer-contact-text">Bulevardul Bucovinei, Nr. 25<br>Gura Humorului, Suceava</div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Link-uri Utile</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Acasă</a></li>
+                        <li><a href="despre.html" class="footer-link">Despre Noi</a></li>
+                        <li><a href="documente.html" class="footer-link">Documente</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

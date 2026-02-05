@@ -1,25 +1,27 @@
-﻿<!DOCTYPE html>
-<html lang="ro">
+﻿<!-- Security Headers (Antigravity Shield) -->
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Despre Școala Gimnazială „Principele Carol" - Identitate, tradiție și viziune
-        educațională în Gura Humorului.">
-    <meta name="keywords" content="despre noi, școală gimnazială, Principele Carol, istorie, tradiție, Gura Humorului">
-    <meta name="author" content="Școala Gimnazială Principele Carol">
+<title>Identitate Regală | Școala Gimnazială „Principele Carol”</title>
 
-    <title>Prezentare | Școala Gimnazială „Principele Carol"</title>
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/premium_heritage.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Preconnect pentru performanță -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preconnect pentru performanță -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
@@ -39,9 +41,10 @@
 
             <!-- Navigare -->
             <nav class="nav" id="nav" aria-label="Navigare principală">
-                                                <ul class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
                     <li><a href="despre.html" class="nav-link active">Despre Noi</a></li>
+                    <li><a href="muzeu-virtual.html" class="nav-link">Muzeu Virtual</a></li>
                     <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
                     <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
@@ -90,126 +93,103 @@
              PAGE HERO - TITLU PAGINĂ
              ============================================ -->
         <section class="page-hero">
-            <div class="container">
-                <h1 class="page-title">Identitate și Tradiție</h1>
-                <p class="page-subtitle">Descoperă povestea școlii noastre</p>
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container relative z-10 text-center">
+                <h1 class="page-title font-royal gold-shimmer">Despre Noi</h1>
+                <p class="page-subtitle">Istoric și Identitate</p>
+                <div class="antigravity-float"
+                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
+                </div>
             </div>
         </section>
 
         <!-- ============================================
              ISTORIC (Mutat de pe Homepage)
              ============================================ -->
-        <section class="about-section" style="padding-top: var(--spacing-xxxl); padding-bottom: 0;">
+        <section class="about-section" style="padding: var(--spacing-xxxl) 0; background: #fff;">
             <div class="container">
-                <div class="about-grid">
+                <div class="about-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
                     <!-- Coloana Stângă - Text -->
                     <div class="about-content">
-                        <h2 class="section-title">O școală cu istorie regală</h2>
-                        <p class="about-text" style="font-size: 1.1rem; line-height: 1.8;">
-                            De la înființarea Liceului Principele Carol în 1921 și până astăzi,
+                        <h2 class="section-title-premium" style="font-size: 2.5rem; margin-bottom: 2rem;">O școală cu
+                            istorie regală</h2>
+                        <p class="about-text"
+                            style="font-size: 1.2rem; line-height: 1.8; color: var(--royal-navy); font-weight: 300; margin-bottom: 1.5rem;">
+                            De la înființarea Liceului Principele Carol în <span class="gold-shimmer font-royal"
+                                style="font-weight: 900;">1921</span> și până astăzi,
                             am rămas un pilon al educației în Gura Humorului. Îmbinăm tradiția
                             bucovineană cu metodele moderne de predare.
                         </p>
-                        <p class="about-text" style="font-size: 1.1rem; line-height: 1.8;">
+                        <p class="about-text" style="font-size: 1.1rem; line-height: 1.8; color: #64748b;">
                             Școala noastră a format generații de absolvenți care au contribuit
-                            la dezvoltarea comunității locale și a societății românești.
+                            la dezvoltarea comunității locale și a societății românești, sub egida valorilor regale de
+                            integritate și onoare.
                         </p>
                     </div>
 
                     <!-- Coloana Dreaptă - Imagine -->
                     <div class="about-image-wrapper">
-                        <div class="about-image-frame">
-                            <img src="images/scoala-veche.jpg" alt="Clădirea școlii în 1952" class="about-image">
-                            <div class="about-year-badge">
-                                <span class="year-text">1952</span>
+                        <div class="about-image-frame premium-card"
+                            style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,40,81,0.15);">
+                            <img src="images/scoala-veche.jpg" alt="Clădirea școlii în 1952" class="about-image"
+                                style="width: 100%; height: auto; transform: scale(1.05); transition: transform 0.8s ease;">
+                            <div class="about-year-badge antigravity-float"
+                                style="position: absolute; bottom: 2rem; right: 2rem; background: var(--royal-gold); color: var(--royal-navy); padding: 1rem 1.5rem; border-radius: 12px; font-weight: 900; font-family: 'Playfair Display'; font-size: 1.5rem; box-shadow: 0 10px 30px rgba(212,175,55,0.4);">
+                                1952
                             </div>
                         </div>
-                        <div class="about-image-decoration"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============================================
-             CUVÂNTUL DIRECTORULUI
-             ============================================ -->
-        <section class="director-section" id="director">
-            <div class="container">
-                <div class="director-grid">
-                    <!-- Imaginea Directorului -->
-                    <div class="director-image-wrapper">
-                        <div class="director-image-frame">
-                            <img src="images/director.jpg" alt="Director Eniko Lămășanu" class="director-photo">
-                        </div>
-                        <p class="director-name">Eniko Lămășanu</p>
-                        <p class="director-role">Director</p>
-                    </div>
-
-                    <!-- Mesajul Directorului -->
-                    <div class="director-content">
-                        <h2 class="section-title">Cuvântul Directorului</h2>
-                        <div class="director-quote">
-                            <p>
-                                „Bine ați venit la Școala Gimnazială «Principele Carol»!
-                                Suntem o instituție cu tradiție care pune în centrul atenției
-                                elevul și dezvoltarea sa armonioasă.
-                            </p>
-                            <p>
-                                Viziunea noastră managerială se bazează pe excelență, inovație
-                                și parteneriat autentic cu familia și comunitatea. Credem că
-                                fiecare elev are un potențial unic pe care noi îl cultivăm
-                                cu dedicare și profesionalism.
-                            </p>
-                            <p>
-                                Împreună construim viitorul, păstrând vie flacăra tradiției
-                                bucovinene și a valorilor care ne definesc de peste un secol."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ============================================
              MISIUNE ȘI VIZIUNE
              ============================================ -->
-        <section class="mission-section" id="misiune">
+        <section class="mission-section" id="misiune" style="padding: 120px 0; background: #f8fafc;">
             <div class="container">
-                <div class="mission-grid">
+                <div class="mission-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
                     <!-- Misiune -->
-                    <div class="mission-card">
-                        <div class="mission-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                    <div class="mission-card premium-card royal-glass" style="padding: 4rem; text-align: center;">
+                        <div class="mission-icon antigravity-float"
+                            style="display: inline-block; margin-bottom: 2rem; color: var(--royal-gold);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.5">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <circle cx="12" cy="12" r="6"></circle>
                                 <circle cx="12" cy="12" r="2"></circle>
                             </svg>
                         </div>
-                        <h3 class="mission-title">Misiunea Noastră</h3>
-                        <p class="mission-text">
+                        <h3 class="mission-title font-royal"
+                            style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--royal-navy);">Misiunea Noastră
+                        </h3>
+                        <p class="mission-text" style="color: #64748b; line-height: 1.8;">
                             Să oferim elevilor puterea de a reuși prin educație de calitate,
                             dezvoltare personală și valori morale solide. Ne angajăm să formăm
-                            cetățeni responsabili, creativi și pregătiți pentru provocările
-                            lumii contemporane.
+                            cetățeni responsabili, creativi și pregătiți pentru provocările viitorului.
                         </p>
                     </div>
 
                     <!-- Viziune -->
-                    <div class="mission-card">
-                        <div class="mission-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                    <div class="mission-card premium-card royal-glass" style="padding: 4rem; text-align: center;">
+                        <div class="mission-icon antigravity-float"
+                            style="display: inline-block; margin-bottom: 2rem; color: var(--royal-gold); animation-delay: -3s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
                         </div>
-                        <h3 class="mission-title">Viziunea Noastră</h3>
-                        <p class="mission-text">
+                        <h3 class="mission-title font-royal"
+                            style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--royal-navy);">Viziunea Noastră
+                        </h3>
+                        <p class="mission-text" style="color: #64748b; line-height: 1.8;">
                             Să fim un partener de încredere al comunității în educație,
                             o școală unde tradiția întâlnește inovația, unde fiecare elev
-                            este valorizat și unde excelența academică se îmbină armonios
-                            cu dezvoltarea caracterului.
+                            este valorizat și unde excelența academică se îmbină armonios.
                         </p>
                     </div>
                 </div>
@@ -219,84 +199,149 @@
         <!-- ============================================
              ISTORIC INTERACTIV - TIMELINE
              ============================================ -->
-        <section class="timeline-section" id="istoric">
+        <section class="timeline-section" id="istoric" style="padding: 100px 0; background: white;">
             <div class="container">
-                <h2 class="section-title section-title-center">Istoria Noastră</h2>
-                <p class="section-subtitle">O călătorie prin timp de peste un secol</p>
+                <h2 class="section-title-premium"
+                    style="display: block; text-align: center; margin: 0 auto 1rem; font-size: 3rem;">Moștenirea în Timp
+                </h2>
+                <p class="section-subtitle" style="text-align: center; margin-bottom: 5rem;">O călătorie prin timp de
+                    peste un secol</p>
 
-                <div class="timeline">
+                <div class="timeline" style="position: relative; max-width: 1000px; margin: 0 auto;">
+                    <div
+                        style="position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: var(--royal-gold); opacity: 0.2;">
+                    </div>
+
                     <!-- Eveniment 1: 1921 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-year">1921</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Înființarea Liceului Principele Carol</h3>
-                            <p class="timeline-text">
-                                În anul 1921, sub patronajul regal, se înființează Liceul
-                                „Principele Carol" în Gura Humorului. Școala devine rapid
-                                un far al educației în Bucovina, formând generații de
-                                intelectuali și patrioți.
+                    <div class="timeline-item"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 6rem; align-items: center;">
+                        <div class="timeline-content text-right">
+                            <h3 class="timeline-title font-royal"
+                                style="font-size: 1.8rem; color: var(--royal-navy); margin-bottom: 1rem;">Înființarea
+                                Liceului</h3>
+                            <p class="timeline-text" style="color: #64748b; line-height: 1.7;">
+                                Sub patronajul regal, se înființează Liceul „Principele Carol”. Școala devine rapid un
+                                far al educației în Bucovina.
                             </p>
-                            <div class="timeline-badge">
-                                <span>🏛️ Înființare</span>
+                        </div>
+                        <div class="timeline-marker-wrapper" style="position: relative;">
+                            <div class="antigravity-float"
+                                style="width: 80px; height: 80px; background: var(--royal-navy); color: var(--royal-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Playfair Display'; border: 3px solid var(--royal-gold); z-index: 10; position: relative; font-size: 1.2rem;">
+                                1921
                             </div>
                         </div>
                     </div>
 
-                    <!-- Eveniment 2: Perioada Comunistă -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-year">1948</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Perioada Comunistă</h3>
-                            <p class="timeline-text">
-                                Odată cu instaurarea regimului comunist, școala trece
-                                prin transformări profunde. Numele regal este înlăturat,
-                                dar vocația educațională continuă să definească instituția.
-                            </p>
-                            <div class="timeline-badge">
-                                <span>⚡ Schimbare</span>
+                    <!-- Eveniment 2: 2025 -->
+                    <div class="timeline-item"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 6rem; align-items: center;">
+                        <div class="timeline-marker-wrapper" style="position: relative; order: 2;">
+                            <div class="antigravity-float"
+                                style="width: 80px; height: 80px; background: var(--royal-gold); color: var(--royal-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Playfair Display'; border: 3px solid var(--royal-navy); z-index: 10; position: relative; font-size: 1.2rem; animation-delay: -2s;">
+                                2025
                             </div>
+                        </div>
+                        <div class="timeline-content text-left" style="order: 1;">
+                            <h3 class="timeline-title font-royal gold-shimmer"
+                                style="font-size: 1.8rem; margin-bottom: 1rem;">Renașterea Regală</h3>
+                            <p class="timeline-text" style="color: #64748b; line-height: 1.7;">
+                                Revenirea la denumirea istorică „Principele Carol”, marcând o nouă eră de modernizare și
+                                excelență digitală.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             TEZAURUL HERITAGE (ARTIFACT INTEGRATION)
+             ============================================ -->
+        <!-- ============================================
+             MUZEUL VIRTUAL - TEZAURUL PRINCIPELE CAROL
+             ============================================ -->
+        <section class="heritage-gallery-section"
+            style="padding: 120px 0; background: var(--royal-navy); color: white; position: relative; overflow: hidden;">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container text-center relative z-10">
+                <h2 class="section-title-premium gold-shimmer"
+                    style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--royal-gold);">Tezaurul „Principele
+                    Carol”</h2>
+                <p
+                    style="text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; margin-bottom: 5rem; opacity: 0.8; color: white;">
+                    Fragmente autentice din patrimoniul nostru secular</p>
+
+                <div class="heritage-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
+                    <!-- Card 1: Elevi 1952 -->
+                    <div class="heritage-card premium-card royal-glass"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); padding: 1.5rem;">
+                        <div
+                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="images/muzeu/Elevi 1952 Școala pedagogică de fete AM.jpeg"
+                                alt="Școala Pedagogică 1952"
+                                style="width: 100%; height: 250px; object-fit: cover; filter: brightness(1.1) contrast(1.1);">
+                        </div>
+                        <h3 class="font-royal"
+                            style="font-size: 1.6rem; color: var(--royal-gold); margin-bottom: 1rem;">Catedra de Fete
+                            (1952)</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6; color: #cbd5e1;">O rară mărturie
+                            vizuală a cursantelor de la Școala Pedagogică de Fete, reflectând disciplina și rigoarea
+                            acelor ani.</p>
+                        <div
+                            style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <span
+                                style="font-size: 0.75rem; color: var(--royal-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Arhivă
+                                Istorică</span>
+                            <span style="font-size: 0.75rem; color: #94a3b8;">Ref. IP-1952</span>
                         </div>
                     </div>
 
-                    <!-- Eveniment 3: Școala Petru Comarnescu -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-year">1960</span>
+                    <!-- Card 2: Arhiva -->
+                    <div class="heritage-card premium-card royal-glass"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); padding: 1.5rem; animation-delay: -2s;">
+                        <div
+                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="images/muzeu/3.jpeg" alt="Patrimoniu Arhivistic"
+                                style="width: 100%; height: 250px; object-fit: cover; filter: brightness(1.1) contrast(1.1);">
                         </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Școala „Petru Comarnescu"</h3>
-                            <p class="timeline-text">
-                                Școala primește numele scriitorului Petru Comarnescu.
-                                Sub această denumire, generații de elevi sunt educați
-                                cu dedicare de dascăli pasionați, păstrând vie flacăra
-                                învățăturii în comunitate.
-                            </p>
-                            <div class="timeline-badge">
-                                <span>📚 Continuitate</span>
-                            </div>
+                        <h3 class="font-royal"
+                            style="font-size: 1.6rem; color: var(--royal-gold); margin-bottom: 1rem;">Documente Istorice
+                        </h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6; color: #cbd5e1;">Documente
+                            administrative și însemnări care atestă parcursul istoric și recunoașterea școlii în Gura
+                            Humorului.</p>
+                        <div
+                            style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <span
+                                style="font-size: 0.75rem; color: var(--royal-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Colecția
+                                Muzeală</span>
+                            <span style="font-size: 0.75rem; color: #94a3b8;">Ref. AR-003</span>
                         </div>
                     </div>
 
-                    <!-- Eveniment 4: 2025 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-year">2025</span>
+                    <!-- Card 3: Înscrieri -->
+                    <div class="heritage-card premium-card royal-glass"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); padding: 1.5rem; animation-delay: -4s;">
+                        <div
+                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+                            <img src="images/muzeu/Imagine veche înscrieri.jpeg" alt="Tradiția înscrierilor"
+                                style="width: 100%; height: 250px; object-fit: cover; filter: brightness(1.1) contrast(1.1);">
                         </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Revenirea la Numele Regal</h3>
-                            <p class="timeline-text">
-                                În anul 2025, școala revine la denumirea istorică
-                                „Principele Carol", marcând o nouă eră de modernizare
-                                și excelență. Îmbinăm tradiția bucovineană cu tehnologiile
-                                educaționale moderne.
-                            </p>
-                            <div class="timeline-badge timeline-badge-gold">
-                                <span>👑 Renaștere</span>
-                            </div>
+                        <h3 class="font-royal"
+                            style="font-size: 1.5rem; color: var(--royal-gold); margin-bottom: 1rem;">Originile
+                            Instituției</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6; color: #cbd5e1;">Arhiva
+                            fotografică
+                            surprinde momente din viața școlară de la începutul secolului XX, reflectând tradiția și
+                            comunitatea locală.</p>
+                        <div
+                            style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <span
+                                style="font-size: 0.75rem; color: var(--royal-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Istorie
+                                Locală</span>
+                            <span style="font-size: 0.75rem; color: #94a3b8;">Ref. IM-VEC</span>
                         </div>
                     </div>
                 </div>
@@ -306,156 +351,89 @@
         <!-- ============================================
              CORP PROFESORAL
              ============================================ -->
-        <section class="teachers-section" id="profesori">
+        <section class="teachers-section" id="profesori"
+            style="padding: 120px 0; background: #f8fafc; position: relative;">
             <div class="container">
-                <h2 class="section-title section-title-center">Corpul Profesoral</h2>
-                <p class="section-subtitle">Dascăli dedicați, pasionați de educație</p>
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2 class="section-title-premium" style="font-size: 2.5rem; margin-bottom: 1rem;">Corp Profesoral
+                    </h2>
+                    <div style="width: 60px; height: 3px; background: var(--royal-gold); margin: 0 auto;"></div>
+                </div>
 
                 <!-- Catedra Limba Română -->
-                <div class="teachers-category">
-                    <h3 class="teachers-category-title">Catedra Limba și Literatura Română</h3>
-                    <div class="teachers-grid">
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
+                <div class="teachers-category" style="margin-bottom: 6rem;">
+                    <h3 class="font-royal"
+                        style="color: var(--royal-navy); font-size: 2rem; margin-bottom: 3rem; border-left: 5px solid var(--royal-gold); padding-left: 1.5rem;">
+                        Limba și Literatura Română</h3>
+                    <div class="teachers-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3rem;">
+                        <div class="teacher-card premium-card royal-glass"
+                            style="padding: 3rem 2rem; text-align: center; border-radius: 24px;">
+                            <div class="teacher-avatar antigravity-float"
+                                style="width: 140px; height: 140px; background: var(--royal-navy); color: var(--royal-gold); border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; border: 4px solid var(--royal-gold);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
                             </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Limba Română</p>
+                            <h4 class="teacher-name font-royal"
+                                style="font-size: 1.6rem; color: var(--royal-navy); margin-bottom: 0.5rem;">Prof. Dr.
+                                Titular</h4>
+                            <p class="teacher-role"
+                                style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--royal-gold); font-weight: 700;">
+                                Limba Română</p>
                         </div>
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
+
+                        <div class="teacher-card premium-card royal-glass"
+                            style="padding: 3rem 2rem; text-align: center; border-radius: 24px;">
+                            <div class="teacher-avatar antigravity-float"
+                                style="width: 140px; height: 140px; background: var(--royal-navy); color: var(--royal-gold); border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; border: 4px solid var(--royal-gold); animation-delay: -1.5s;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
                             </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Limba Română</p>
+                            <h4 class="teacher-name font-royal"
+                                style="font-size: 1.6rem; color: var(--royal-navy); margin-bottom: 0.5rem;">Prof. Grad I
+                            </h4>
+                            <p class="teacher-role"
+                                style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--royal-gold); font-weight: 700;">
+                                Limba Română</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Catedra Matematică -->
                 <div class="teachers-category">
-                    <h3 class="teachers-category-title">Catedra Matematică</h3>
-                    <div class="teachers-grid">
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
+                    <h3 class="font-royal"
+                        style="color: var(--royal-navy); font-size: 2rem; margin-bottom: 3rem; border-left: 5px solid var(--royal-gold); padding-left: 1.5rem;">
+                        Matematică și Științe</h3>
+                    <div class="teachers-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3rem;">
+                        <div class="teacher-card premium-card royal-glass"
+                            style="padding: 3rem 2rem; text-align: center; border-radius: 24px;">
+                            <div class="teacher-avatar antigravity-float"
+                                style="width: 140px; height: 140px; background: var(--royal-navy); color: var(--royal-gold); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; border: 4px solid var(--royal-gold); animation-delay: -3s;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
                             </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Matematică</p>
-                        </div>
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Matematică</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Catedra Științe -->
-                <div class="teachers-category">
-                    <h3 class="teachers-category-title">Catedra Științe</h3>
-                    <div class="teachers-grid">
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Fizică</p>
-                        </div>
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Chimie</p>
-                        </div>
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Biologie</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Catedra Limbi Străine -->
-                <div class="teachers-category">
-                    <h3 class="teachers-category-title">Catedra Limbi Străine</h3>
-                    <div class="teachers-grid">
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Limba Engleză</p>
-                        </div>
-                        <div class="teacher-card">
-                            <div class="teacher-image">
-                                <div class="teacher-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h4 class="teacher-name">Nume Profesor</h4>
-                            <p class="teacher-subject">Limba Franceză</p>
+                            <h4 class="teacher-name font-royal"
+                                style="font-size: 1.6rem; color: var(--royal-navy); margin-bottom: 0.5rem;">Prof.
+                                Titular</h4>
+                            <p class="teacher-role"
+                                style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--royal-gold); font-weight: 700;">
+                                Matematică</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        </div>
         </section>
     </main>
 
@@ -532,4 +510,3 @@
 </body>
 
 </html>
-

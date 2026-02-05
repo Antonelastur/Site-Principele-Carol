@@ -11,12 +11,12 @@
         content="Carol TV, media hub, școala principele carol, revista școlară, podcast, educație digitală">
     <meta name="author" content="Școala Gimnazială Principele Carol">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Carol TV - Hub Media | Școala Gimnazială Principele Carol">
-    <meta property="og:description"
-        content="Platforma media a elevilor: Revista, TV, Podcast. Tradiție Regală în format digital.">
-    <meta property="og:image" content="images/logo-scoala.jpg">
+    <!-- Security Headers (LOKI Shield) -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>Studio 360 - Hub Media | Școala Gimnazială „Principele Carol”</title>
 
@@ -26,10 +26,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/hub-media.css">
+    <link rel="stylesheet" href="css/premium_heritage.css">
 
-    <!-- Preconnect pentru performanță -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -52,6 +54,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
                     <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
+                    <li><a href="muzeu-virtual.html" class="nav-link">Muzeu Virtual</a></li>
                     <li><a href="hub-media.html" class="nav-link active">HUB Media</a></li>
                     <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
@@ -99,10 +102,15 @@
         <!-- ============================================
              HERO SECTION SPECIFIC PENTRU HUB MEDIA
              ============================================ -->
-        <section class="hub-hero"> <!-- Force Refresh Build -->
-            <div class="container">
-                <h1 class="hub-title">Studio 360 <span class="text-gold">CAROLine</span></h1>
-                <p class="hub-subtitle">Hub Media - Vocea elevilor, inima școlii</p>
+        <section class="page-hero">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container relative z-10 text-center">
+                <h1 class="page-title font-royal gold-shimmer">Hub Media</h1>
+                <p class="page-subtitle">Revista, TV și Podcast</p>
+                <div class="antigravity-float"
+                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
+                </div>
             </div>
         </section>
 
@@ -114,27 +122,41 @@
                 <div class="hub-grid">
 
                     <!-- COLOANA 1: REVISTA -->
-                    <article class="hub-column hub-magazine">
-                        <div class="column-header">
-                            <h2>Revista</h2>
-                            <div class="divider-gold"></div>
+                    <article class="hub-column hub-magazine premium-card royal-glass" style="border: none; padding: 0;">
+                        <div class="column-header" style="background: var(--royal-navy); padding: 2rem;">
+                            <h2 class="font-royal" style="color: var(--royal-gold) !important; font-size: 1.8rem;">
+                                Revista</h2>
+                            <div style="width: 40px; height: 2px; background: var(--royal-gold); margin: 10px auto;">
+                            </div>
                         </div>
-                        <div class="column-content">
+                        <div class="column-content"
+                            style="padding: 2.5rem; background: var(--royal-navy); color: white;">
                             <div class="magazine-card">
-                                <div class="magazine-cover-wrapper">
+                                <div class="magazine-cover-wrapper antigravity-float"
+                                    style="box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
                                     <img src="images/caroline-coperta.jpg" alt="Coperta Revista CAROLine"
                                         class="magazine-cover-img">
                                 </div>
-                                <h3>Revista CAROLine</h3>
-                                <a href="#" class="btn-hub" style="margin-bottom: 1rem; width: 100%;">Citește ediția
-                                    curentă</a>
-                                <p>Articole, creații literare și jurnalism școlar.</p>
-                                <div class="magazine-archive">
-                                    <h4>Numere anterioare:</h4>
-                                    <ul class="archive-list">
-                                        <li><a href="#">Ediția Iunie 2025</a></li>
-                                        <li><a href="#">Ediția Decembrie 2024</a></li>
-                                        <li><a href="#">Arhiva completă...</a></li>
+                                <h3 class="font-royal"
+                                    style="color: var(--royal-gold); text-align: center; margin-bottom: 1.5rem;">Revista
+                                    CAROLine</h3>
+                                <a href="caroline.html" class="btn-hub"
+                                    style="width: 100%; text-align: center; background: var(--royal-gold); color: var(--royal-navy); border-radius: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem;">Citește
+                                    ediția curentă</a>
+                                <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9;">Articole, creații
+                                    literare și jurnalism școlar sub patronajul regal.</p>
+                                <div class="magazine-archive"
+                                    style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.3); padding-top: 1.5rem;">
+                                    <h4 class="font-royal"
+                                        style="font-size: 1.1rem; color: var(--royal-gold); margin-bottom: 1rem;">Numere
+                                        Anterioare:</h4>
+                                    <ul class="archive-list" style="padding-left: 0; list-style: none;">
+                                        <li style="margin-bottom: 8px;"><a href="#"
+                                                style="color: white; font-weight: 500; opacity: 0.8;">Ediția Iunie
+                                                2025</a></li>
+                                        <li style="margin-bottom: 8px;"><a href="#"
+                                                style="color: white; font-weight: 500; opacity: 0.8;">Ediția Decembrie
+                                                2024</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -142,117 +164,93 @@
                     </article>
 
                     <!-- COLOANA 2: TV (CENTRAL) -->
-                    <article class="hub-column hub-tv featured-column">
-                        <div class="column-header">
-                            <h2>Carol TV</h2>
-                            <div class="divider-gold"></div>
+                    <article class="hub-column hub-tv featured-column premium-card"
+                        style="box-shadow: 0 30px 70px rgba(0,40,81,0.2); border: 2px solid var(--royal-gold); transform: scale(1.05); z-index: 5;">
+                        <div class="column-header"
+                            style="background: linear-gradient(135deg, var(--royal-navy), var(--academic-blue)); padding: 2.5rem;">
+                            <h2 class="font-royal gold-shimmer" style="font-size: 2.2rem;">Carol TV</h2>
+                            <p
+                                style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; opacity: 0.7; color: white;">
+                                Canalul Oficial al Școlii</p>
                         </div>
-                        <div class="column-content text-left">
-                            <h3 class="tv-welcome-title">Carol TV</h3>
-                            <a href="https://youtu.be/nkKY6-pE7jQ" target="_blank"
-                                class="btn btn-primary btn-gold-shadow"
-                                style="width: 100%; margin-bottom: 1.5rem; text-align: center;">Vizionează Primul
-                                Video</a>
+                        <div class="column-content"
+                            style="padding: 2.5rem; background: var(--royal-navy); color: white;">
                             <div class="video-embed-container"
-                                style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                                <iframe width="100%" height="315"
-                                    src="https://www.youtube-nocookie.com/embed/nkKY6-pE7jQ?rel=0"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); margin-bottom: 2.5rem;">
+                                <iframe width="100%" height="250"
+                                    src="https://www.youtube-nocookie.com/embed/nkKY6-pE7jQ?rel=0" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                             </div>
-                            <p class="tv-intro">
-                                Canalul oficial al Școlii Gimnaziale „Principele Carol” din Gura Humorului!
-                                Aici <strong>Tradiția Regală</strong> întâlnește <strong>„Educația pentru
-                                    Viitor”</strong> în format digital.
-                            </p>
-                            <p>
-                                Carol TV este <strong>Vocea Elevilor</strong>, platforma unde creativitatea, performanța
-                                școlară și spiritul de echipă prind viață video. Ne propunem să conectăm elevii,
-                                părinții, profesorii și comunitatea locală printr-un conținut educativ și dinamic.
-                            </p>
+                            <h3 class="font-royal"
+                                style="color: var(--royal-gold); font-size: 1.6rem; margin-bottom: 1rem;">Noutăți
+                                Video</h3>
+                            <p
+                                style="font-size: 1rem; line-height: 1.7; color: white; opacity: 0.9; margin-bottom: 2rem;">
+                                Canalul
+                                oficial YouTube al școlii.
+                                Abonează-te pentru a urmări activitățile, proiectele și evenimentele noastre
+                                educaționale.</p>
 
-                            <div class="tv-features">
-                                <h4>Ce vei găsi pe canalul nostru?</h4>
-                                <ul class="feature-list">
-                                    <li>
-                                        <span class="feature-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                                            </svg>
-                                        </span>
-                                        <div><strong>Noutăți și Evenimente:</strong> Momente artistice, serbări și
-                                            pulsul școlii.</div>
-                                    </li>
-                                    <li>
-                                        <span class="feature-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path
-                                                    d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z">
-                                                </path>
-                                                <path d="M9 21h6"></path>
-                                            </svg>
-                                        </span>
-                                        <div><strong>Edutainment:</strong> Tutoriale, experimente și proiecte școlare
-                                            creative.</div>
-                                    </li>
-                                    <li>
-                                        <span class="feature-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                                <line x1="12" y1="19" x2="12" y2="23"></line>
-                                                <line x1="8" y1="23" x2="16" y2="23"></line>
-                                            </svg>
-                                        </span>
-                                        <div><strong>Podcast-uri:</strong> Interviuri cu profesori, elevi și absolvenți
-                                            de succes.</div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="tv-cta-box">
-                                <p class="cta-text">Abonarea la Carol TV te ține conectat la inima școlii noastre.</p>
-                                <p class="cta-quote">"Fii parte din povestea noastră de peste 100 de ani de excelență!"
-                                </p>
-                                <div class="tv-slogan">Sloganul Carol TV: <span>Vocea elevilor, inima școlii.</span>
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; border-left: 5px solid var(--royal-gold); margin-bottom: 2rem;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <div class="antigravity-float" style="color: var(--royal-gold);"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                        </svg></div>
+                                    <span style="font-weight: 700; color: white;">Noutăți &
+                                        Evenimente</span>
                                 </div>
-                                <a href="https://youtu.be/nkKY6-pE7jQ" target="_blank"
-                                    class="btn btn-primary btn-gold-shadow">Abonează-te Acum</a>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div class="antigravity-float" style="color: var(--royal-gold);"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                        </svg></div>
+                                    <span style="font-weight: 700; color: white;">Podcast-uri
+                                        Exclusive</span>
+                                </div>
                             </div>
+
+                            <a href="https://youtu.be/nkKY6-pE7jQ" target="_blank" class="btn-hub"
+                                style="width: 100%; text-align: center; background: var(--royal-gold); color: var(--royal-navy); font-weight: 800; box-shadow: 0 10px 20px var(--gold-glow);">Abonează-te
+                                pe YouTube</a>
                         </div>
                     </article>
 
                     <!-- COLOANA 3: PODCAST -->
-                    <article class="hub-column hub-podcast">
-                        <div class="column-header">
-                            <h2>Podcast</h2>
-                            <div class="divider-gold"></div>
-                        </div>
-                        <div class="column-content">
-                            <div class="placeholder-card">
-                                <div class="icon-large">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                        <line x1="12" y1="19" x2="12" y2="23"></line>
-                                        <line x1="8" y1="23" x2="16" y2="23"></line>
-                                    </svg>
-                                </div>
-                                <h3>Vocea Carol Podcast</h3>
-                                <a href="#" class="btn-hub" style="margin-bottom: 1rem; width: 100%;">Ascultă
-                                    episoade</a>
-                                <p>Poveștile oamenilor care inspiră comunitatea noastră.</p>
+                    <article class="hub-column hub-podcast premium-card royal-glass" style="border: none; padding: 0;">
+                        <div class="column-header" style="background: var(--royal-navy); padding: 2rem;">
+                            <h2 class="font-royal" style="color: var(--royal-gold) !important; font-size: 1.8rem;">
+                                Podcast</h2>
+                            <div style="width: 40px; height: 2px; background: var(--royal-gold); margin: 10px auto;">
                             </div>
+                        </div>
+                        <div class="column-content"
+                            style="padding: 2.5rem; text-align: center; background: var(--royal-navy); color: white;">
+                            <div class="antigravity-float"
+                                style="width: 100px; height: 100px; background: rgba(255,255,255,0.05); color: var(--royal-gold); border: 2px solid var(--royal-gold); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 30px rgba(212,175,55,0.3);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                </svg>
+                            </div>
+                            <h3 class="font-royal"
+                                style="color: var(--royal-gold); font-size: 1.8rem; margin-bottom: 1rem;">Podcast-ul
+                                Școlii
+                            </h3>
+                            <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9; margin-bottom: 2rem;">
+                                Poveștile oamenilor care inspiră comunitatea noastră. Interviuri cu profesori, elevi și
+                                absolvenți de succes.</p>
+                            <a href="#" class="btn-hub"
+                                style="width: 100%; text-align: center; border: 2px solid var(--royal-gold); background: transparent; color: var(--royal-gold); font-weight: 700;">Ascultă
+                                Episoade</a>
                         </div>
                     </article>
 

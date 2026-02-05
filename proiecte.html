@@ -1,27 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="ro">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Proiecte Europene și Activități Educative - Școala Gimnazială Principele Carol. Erasmus+, Clubul Lumea Magică a Limbilor Străine, Eco-Școala.">
-    <meta name="keywords"
-        content="proiecte europene, erasmus+, limbi străine, eco-școala, școala altfel, Principele Carol">
-    <meta name="author" content="Școala Gimnazială Principele Carol">
+<!-- Security Headers (LOKI Shield) -->
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Proiecte | Școala Gimnazială „Principele Carol"</title>
+<title>Proiecte | Școala Gimnazială „Principele Carol”</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/premium_heritage.css">
 
-    <!-- Preconnect pentru performanță -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
 <body>
     <!-- ============================================
@@ -40,9 +39,10 @@
 
             <!-- Navigare -->
             <nav class="nav" id="nav" aria-label="Navigare principală">
-                                                <ul class="nav-list">
+                <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
                     <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
+                    <li><a href="muzeu-virtual.html" class="nav-link">Muzeu Virtual</a></li>
                     <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
                     <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
@@ -90,45 +90,59 @@
         <!-- ============================================
              PROJECTS HERO
              ============================================ -->
-        <section class="page-hero projects-hero">
-            <div class="container">
-                <h1 class="page-title">Deschidere către Europa</h1>
-                <p class="page-subtitle">Prin proiectele noastre, elevii Școlii Principele Carol devin cetățeni
-                    europeni.</p>
+        <section class="page-hero">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+            <div class="container relative z-10 text-center">
+                <h1 class="page-title font-royal gold-shimmer">Proiecte</h1>
+                <p class="page-subtitle">Proiecte Erasmus+ și inițiative locale</p>
+                <div class="antigravity-float"
+                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
+                </div>
             </div>
         </section>
 
         <!-- ============================================
              ERASMUS+ SECTION (HIGHLIGHT)
              ============================================ -->
-        <section class="erasmus-section">
+        <section class="erasmus-section" style="padding: 100px 0; background: #fff;">
             <div class="container">
-                <div class="erasmus-content-wrapper">
+                <div class="erasmus-content-wrapper premium-card"
+                    style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; background: white; padding: 4rem; border-radius: 32px; box-shadow: 0 40px 100px rgba(0,40,81,0.1); border: 1px solid rgba(212,175,55,0.2);">
                     <!-- Logo / Visual -->
-                    <div class="erasmus-logo-container">
-                        <img src="images/logo-erasmus-life.jpg" alt="Logo Proiect Erasmus+ LIFE"
-                            class="erasmus-logo-img">
+                    <div class="erasmus-logo-container text-center">
+                        <div class="antigravity-float">
+                            <img src="images/logo-erasmus-life.jpg" alt="Logo Proiect Erasmus+ LIFE"
+                                class="erasmus-logo-img"
+                                style="width: 100%; max-width: 300px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        </div>
                     </div>
 
                     <!-- Text Content -->
                     <div class="erasmus-text">
-                        <span class="section-tag">Proiect European</span>
-                        <h2 class="erasmus-title">Programul ERASMUS+ și Mobilități</h2>
-                        <p class="erasmus-description">
+                        <span class="section-tag"
+                            style="background: var(--royal-gold); color: var(--royal-navy); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Elite
+                            Exchange</span>
+                        <h2 class="erasmus-title font-royal"
+                            style="font-size: 2.8rem; color: var(--royal-navy); margin-bottom: 2rem;">Programul ERASMUS+
+                        </h2>
+                        <p class="erasmus-description"
+                            style="font-size: 1.1rem; line-height: 1.8; color: #475569; margin-bottom: 2.5rem;">
                             Schimburi de experiență, călătorii educaționale în țările partenere și acces la metode
                             moderne de învățare.
-                            Elevii și profesorii noștri călătoresc, învață și aduc acasă cele mai bune practici
-                            europene.
-                            Proiectul nostru, <strong>LIFE - Learning Intelligently For Evaluations</strong>, pune
-                            accent pe inovație și adaptabilitate.
+                            Proiectul nostru flagship, <strong>LIFE - Learning Intelligently For Evaluations</strong>,
+                            redefinește excelența academică prin mobilitatea tinerilor noștri lideri.
                         </p>
 
                         <!-- Erasmus Gallery -->
-                        <div class="erasmus-mini-gallery">
-                            <img src="images/gallery/activitate-elevi.jpg" alt="Mobilitate Erasmus"
-                                class="erasmus-thumb">
-                            <img src="images/gallery/sala-festiva.jpg" alt="Activitate de grup" class="erasmus-thumb">
-                            <img src="images/gallery/hol-scoala.jpg" alt="Schimb de experiență" class="erasmus-thumb">
+                        <div class="erasmus-mini-gallery"
+                            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                            <img src="images/gallery/activitate-elevi.jpg" alt="Mobilitate"
+                                style="border-radius: 12px; width: 100%; height: 100px; object-fit: cover; border: 2px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                            <img src="images/gallery/sala-festiva.jpg" alt="Activitate"
+                                style="border-radius: 12px; width: 100%; height: 100px; object-fit: cover; border: 2px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                            <img src="images/gallery/hol-scoala.jpg" alt="Schimb"
+                                style="border-radius: 12px; width: 100%; height: 100px; object-fit: cover; border: 2px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
                         </div>
                     </div>
                 </div>
@@ -275,4 +289,3 @@
 </body>
 
 </html>
-
