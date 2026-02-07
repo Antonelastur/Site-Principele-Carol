@@ -111,7 +111,59 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!rawValue) return;
 
             const safeValue = rawValue.replace(/<[^>]*>?/gm, '');
-            alert(`Funcția de căutare va fi disponibilă în curând!\n\nAți căutat: "${safeValue}"`);
+            const lowerValue = safeValue.toLowerCase();
+
+            // Hartă de cuvinte cheie pentru navigare rapidă
+            const pageMap = {
+                'acasa': 'index.html',
+                'home': 'index.html',
+                'despre': 'despre.html',
+                'istoric': 'despre.html',
+                'cine suntem': 'despre.html',
+                'hub': 'hub-media.html',
+                'media': 'hub-media.html',
+                'radio': 'hub-media.html',
+                'tv': 'hub-media.html',
+                'podcast': 'hub-media.html',
+                'caroline': 'hub-media.html',
+                'consiliu': 'consiliu-elevi.html',
+                'elevi': 'consiliu-elevi.html',
+                'parinti': 'parinti.html',
+                'părinți': 'parinti.html',
+                'sedinte': 'parinti.html',
+                'inscriere': 'parinti.html',
+                'înscriere': 'parinti.html',
+                'orar': 'parinti.html#orar',
+                'proiecte': 'proiecte.html',
+                'erasmus': 'proiecte.html',
+                'activitati': 'proiecte.html',
+                'podium': 'galerie-onoare.html',
+                'onoare': 'galerie-onoare.html',
+                'premii': 'galerie-onoare.html',
+                'documente': 'documente.html',
+                'regulament': 'documente.html',
+                'rapoarte': 'documente.html',
+                'galerie': 'galerie.html',
+                'foto': 'galerie.html',
+                'poze': 'galerie.html',
+                'contact': 'contact.html',
+                'adresa': 'contact.html',
+                'telefon': 'contact.html',
+                'secretariat': 'contact.html'
+            };
+
+            // 1. Verificăm dacă există o potrivire directă
+            for (const [key, url] of Object.entries(pageMap)) {
+                if (lowerValue.includes(key)) {
+                    window.location.href = url;
+                    this.closeSearch();
+                    return;
+                }
+            }
+
+            // 2. Dacă nu, căutăm pe Google în site
+            window.open(`https://www.google.com/search?q=site:principelecarol.ro+${encodeURIComponent(safeValue)}`, '_blank');
+            this.closeSearch();
         },
 
         initAnchorLinks() {

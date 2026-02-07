@@ -22,6 +22,22 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
+<!-- Page Specific Styles -->
+<style>
+    .info-card-title,
+    .info-block-title,
+    .schedule-app-title,
+    .parents-cta-content h3,
+    .info-number {
+        color: var(--royal-gold) !important;
+    }
+
+    .info-number {
+        border-color: var(--royal-gold) !important;
+        background: rgba(197, 160, 89, 0.1) !important;
+    }
+</style>
+
 <body>
     <!-- ============================================
          HEADER
@@ -109,12 +125,11 @@
                 <div class="info-cards-grid">
 
                     <!-- ========== CARD 1: ÎNSCRIERI & GRĂDINIȚĂ ========== -->
-                    <div class="info-card royal-glass premium-card"
-                        style="border-radius: 24px; padding: 3rem; background: rgba(255,255,255,0.9); border: 1px solid var(--royal-gold);">
+                    <div class="info-card">
                         <div class="info-card-header"
                             style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
                             <div class="info-card-icon antigravity-float"
-                                style="background: var(--royal-navy); color: var(--royal-gold); padding: 1.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,40,81,0.2);">
+                                style="background: var(--royal-gold); color: var(--royal-navy); padding: 1.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,40,81,0.2);">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
@@ -123,15 +138,16 @@
                                     <line x1="22" y1="11" x2="16" y2="11"></line>
                                 </svg>
                             </div>
-                            <h2 class="info-card-title font-royal" style="font-size: 2.2rem; color: var(--royal-navy);">
-                                Înscrieri & clasa pregătitoare</h2>
+                            <h2 class="info-card-title font-royal" style="font-size: 1.8rem; color: var(--royal-gold);">
+                                Înscrieri clasa pregătitoare</h2>
                         </div>
 
                         <div class="info-card-content">
                             <!-- Metodologie -->
                             <div class="info-block">
                                 <h3 class="info-block-title">
-                                    <span class="info-number">1</span>
+                                    <span class="info-number"
+                                        style="background-color: var(--royal-navy); color: #fff; border: none;">1</span>
                                     Metodologie de înscriere
                                 </h3>
                                 <p class="info-text">
@@ -146,14 +162,15 @@
                                         <polyline points="7 10 12 15 17 10"></polyline>
                                         <line x1="12" y1="15" x2="12" y2="3"></line>
                                     </svg>
-                                    Descarcă metodologia 2025
+                                    Descarcă metodologia 2026
                                 </a>
                             </div>
 
                             <!-- Acte necesare -->
                             <div class="info-block">
                                 <h3 class="info-block-title">
-                                    <span class="info-number">2</span>
+                                    <span class="info-number"
+                                        style="background-color: var(--royal-navy); color: #fff; border: none;">2</span>
                                     Acte necesare
                                 </h3>
                                 <ul class="info-list">
@@ -169,7 +186,8 @@
                             <!-- Circumscripție -->
                             <div class="info-block">
                                 <h3 class="info-block-title">
-                                    <span class="info-number">3</span>
+                                    <span class="info-number"
+                                        style="background-color: var(--royal-navy); color: #fff; border: none;">3</span>
                                     Circumscripția școlară
                                 </h3>
                                 <p class="info-text">
