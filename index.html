@@ -436,38 +436,8 @@
     <!-- 1. Integrity Shield (Quality Assurance) -->
     <script src="skills/integrity-shield/shield-core.js"></script>
 
-    <!-- 2. Kinetic Neural Mesh (Aetheric Grid) -->
-    <script src="skills/kinetic-neural-mesh/aetheric-grid.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Kinetic Grid on Hero Section
-            const heroSection = document.getElementById('hero');
-            if (heroSection && window.AethericGrid) {
-                // Create container
-                const gridDiv = document.createElement('div');
-                gridDiv.id = 'aetheric-grid-container';
-                gridDiv.style.position = 'absolute';
-                gridDiv.style.top = '0';
-                gridDiv.style.left = '0';
-                gridDiv.style.width = '100%';
-                gridDiv.style.height = '100%';
-                gridDiv.style.zIndex = '2'; // Above overlay, below content (content is likely higher)
-                gridDiv.style.opacity = '0.5'; // Subtle effect
-                gridDiv.style.pointerEvents = 'auto'; // Enable interaction
-
-                // Insert into hero
-                heroSection.insertBefore(gridDiv, heroSection.firstChild);
-
-                // Init Grid
-                new AethericGrid('aetheric-grid-container', {
-                    particleCount: 80,
-                    particleColor: '#D4AF37', // Royal Gold
-                    lineColor: 'rgba(212, 175, 55, 0.15)',
-                    repulsionRadius: 120
-                });
-            }
-        });
-    </script>
+    <!-- 2. Kinetic Neural Mesh (Aetheric Grid) - DISABLED -->
+    <!-- <script src="skills/kinetic-neural-mesh/aetheric-grid.js"></script> -->
 </body>
 
 </html>
