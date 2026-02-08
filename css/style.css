@@ -7481,272 +7481,212 @@ p {
 }
 
 /* ============================================
-   NOUA ORGANIGRAMĂ & DOCUMENTE (2026) - REVIZUITĂ
+   NOUA ORGANIGRAMĂ & DOCUMENTE (2026) - HIGH CONTRAST & ACCESSIBLE
    ============================================ */
 
-/* --- Layout & Typography --- */
+/* --- Layout & Color Scheme --- */
 .org-section {
-    padding: 100px 0;
-    background: linear-gradient(to bottom, #fdfbf7 0%, #ffffff 100%);
-    /* Cald, premium */
+    padding: 80px 0;
+    background-color: var(--royal-navy);
+    /* High Contrast Blue Background */
+    color: var(--white);
     position: relative;
-    overflow: hidden;
 }
 
-.org-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-    opacity: 0.03;
-    pointer-events: none;
-}
-
+/* --- Section Titles --- */
 .section-title-premium {
     font-family: 'Playfair Display', serif;
-    color: var(--royal-navy);
+    color: var(--white);
+    /* White text for contrast */
     position: relative;
     display: inline-block;
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .section-title-premium::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, var(--royal-gold), transparent);
+    background: var(--royal-gold);
     margin: 15px auto 0;
     border-radius: 2px;
 }
 
-.org-inspectorate {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 3px;
-    font-size: 0.75rem !important;
-    opacity: 0.8;
+.org-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+    /* Ensure visibility */
+    opacity: 1 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- Level 1: Management (Vizual) --- */
+/* --- Level 1: Management (Director) --- */
 .org-level-1 {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 80px;
-    position: relative;
-    z-index: 2;
+    margin-bottom: 60px;
 }
 
-/* Director Card - Centerpiece */
 .org-director-card {
-    background: var(--white);
-    border: 1px solid rgba(197, 160, 89, 0.4);
-    border-radius: 24px;
-    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent white on blue */
+    border: 2px solid var(--royal-gold);
+    border-radius: 20px;
+    padding: 40px;
     text-align: center;
-    box-shadow: 0 30px 80px rgba(197, 160, 89, 0.2);
-    position: relative;
-    max-width: 420px;
-    margin: 0 auto;
-    flex: 1 1 350px;
-    transform: scale(1.05);
-    background: linear-gradient(145deg, #ffffff, #fffcf5);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.org-director-card:hover {
-    transform: scale(1.08) translateY(-5px);
-    box-shadow: 0 40px 100px rgba(197, 160, 89, 0.3);
-    border-color: var(--royal-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(10px);
 }
 
 .org-director-icon {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     color: var(--royal-gold);
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 4px 6px rgba(197, 160, 89, 0.3));
+    margin-bottom: 1rem;
 }
 
 .org-director-role {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    color: var(--royal-navy);
+    color: var(--royal-gold);
     margin-bottom: 0.5rem;
-    font-weight: 800;
 }
 
 .org-director-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #334155;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
     margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
 }
 
 .org-director-meta {
-    font-size: 0.85rem;
-    color: var(--royal-gold);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Standard Organigram Cards */
-.org-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 33, 71, 0.06);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-top: 4px solid var(--royal-navy);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-}
 
-.org-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 60px rgba(0, 33, 71, 0.12);
-    border-color: rgba(197, 160, 89, 0.3);
-    border-top-color: var(--royal-gold);
-}
-
-.org-card-icon {
-    width: 48px;
-    height: 48px;
-    color: var(--navy-blue);
-    margin-bottom: 1.2rem;
-    padding: 10px;
-    background: rgba(0, 33, 71, 0.04);
-    border-radius: 14px;
-    transition: all 0.3s ease;
-}
-
-.org-card:hover .org-card-icon {
-    background: var(--royal-navy);
-    color: var(--royal-gold);
-    transform: rotateY(180deg);
-}
-
-.org-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--royal-navy);
-    margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.org-card-content {
-    font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.6;
-}
-
-.org-highlight {
-    color: var(--royal-gold);
-    font-weight: 700;
-}
-
-/* --- Grids & Text --- */
+/* --- Management Grid (Cards Alignment) --- */
 .org-grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    /* Force 3 columns for alignment */
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.org-section-title-wrapper {
+/* Responsive adjustment for grid */
+@media (max-width: 992px) {
+    .org-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .org-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.org-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Darker transparent bg */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px 20px;
     text-align: center;
-    margin: 60px 0 40px;
-    position: relative;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 3px solid var(--royal-gold);
+    height: 100%;
+}
+
+.org-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.org-card-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--royal-gold);
+    margin-bottom: 1rem;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.org-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    min-height: 3rem;
+    /* Align titles */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
 
-.org-section-title-wrapper::before,
-.org-section-title-wrapper::after {
-    content: '';
-    height: 1px;
-    width: 100px;
-    background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
-    opacity: 0.5;
-}
-
-.org-section-title {
-    font-size: 2rem;
-    color: var(--royal-navy);
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin: 0;
-}
-
-/* --- Subitems (Pills style) --- */
+/* --- Subitems (Text visibility fix) --- */
 .org-subitem {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 10px 16px;
-    border-radius: 50px;
-    /* Pill shape for modern look */
-    font-size: 0.9rem;
-    color: var(--dark-gray);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--white) !important;
+    /* FORCE WHITE TEXT */
     width: 100%;
     margin-bottom: 10px;
-    transition: all 0.3s;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
 .org-subitem:hover {
-    background: var(--royal-navy);
-    border-color: var(--royal-navy);
-    color: var(--white);
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 33, 71, 0.15);
+    background: var(--royal-gold);
+    color: var(--royal-navy) !important;
+    border-color: var(--royal-gold);
+    font-weight: 600;
 }
 
-/* --- Accordions (Premium Heritage Style) --- */
+
+/* --- Accordions (Blue Theme) --- */
 .accordion-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin: 50px auto;
+    gap: 20px;
+    margin: 40px auto;
     max-width: 1000px;
-    position: relative;
-    z-index: 2;
 }
 
 .accordion-item {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 15px rgba(0, 0, 0, 0.01);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+    /* Very subtle white tint */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Slightly clearer border */
+    border-radius: 12px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
 }
 
 .accordion-item.active {
-    box-shadow: 0 20px 50px rgba(0, 33, 71, 0.1);
-    border-color: rgba(197, 160, 89, 0.4);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+    /* Brighter when active */
+    border-color: var(--royal-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .accordion-header {
@@ -7754,116 +7694,78 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
-    background: var(--white);
+    padding: 20px 25px;
+    background: transparent;
     border: none;
     cursor: pointer;
     text-align: left;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
 }
 
-.accordion-header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--royal-gold);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.accordion-item.active .accordion-header::before {
-    opacity: 1;
-}
-
-.accordion-item.active .accordion-header {
-    background: linear-gradient(to right, rgba(197, 160, 89, 0.03), transparent);
-}
-
-.accordion-header-content {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+.accordion-header:hover {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .accordion-icon {
-    width: 56px;
-    height: 56px;
-    min-width: 56px;
-    background: linear-gradient(135deg, var(--royal-navy) 0%, #1a3c61 100%);
-    border-radius: 16px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    /* Darken icon background for contrast */
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--royal-gold);
-    box-shadow: 0 10px 25px rgba(0, 33, 71, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.accordion-item:hover .accordion-icon {
-    transform: rotate(5deg) scale(1.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .accordion-title-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
 }
 
 .accordion-title {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--royal-navy);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
     margin: 0;
     font-family: 'Playfair Display', serif;
-    line-height: 1.2;
 }
 
 .accordion-subtitle {
-    font-size: 0.95rem;
-    color: #64748b;
-    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    /* Increased opacity for readability */
+    font-weight: 400;
 }
 
 .accordion-arrow {
-    color: #cbd5e1;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #f1f5f9;
-    padding: 8px;
-    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease;
 }
 
 .accordion-item.active .accordion-arrow {
     transform: rotate(180deg);
-    background: var(--royal-gold);
-    color: var(--royal-navy);
-    box-shadow: 0 4px 10px rgba(197, 160, 89, 0.4);
+    color: var(--royal-gold);
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #fcfcfc;
+    background: rgba(0, 0, 0, 0.25);
+    /* Darker background for content legibility */
 }
 
-.accordion-item.active .accordion-content {
-    border-top: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-/* --- Document Lists in Accordion --- */
+/* --- Document Lists (White text) --- */
 .documents-list {
     list-style: none;
-    padding: 30px 40px;
+    padding: 25px;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
 }
 
 .document-item {
@@ -7871,76 +7773,50 @@ p {
     align-items: center;
 }
 
+.document-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    /* Slight tint for clickable area */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.document-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--royal-gold);
+}
+
 .document-name {
     font-size: 1rem;
-    color: #334155;
-    line-height: 1.5;
-    font-weight: 500;
-    position: relative;
-    padding-left: 5px;
+    color: var(--white);
+    line-height: 1.4;
 }
 
-/* Custom bullet styling if needed, but the current HTML uses text bullets. 
-   Let's enhance the spans. */
-.document-name strong {
-    color: var(--royal-navy);
-    font-weight: 700;
+.document-icon.pdf {
+    color: #ff6b6b;
+    /* Lighter red for visibility on dark bg */
 }
 
-.document-item span span {
-    /* For the smaller text in brackets */
-    font-size: 0.85em;
-    color: #94a3b8;
-    font-style: italic;
+.document-meta {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
     display: block;
-    margin-top: 2px;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .org-section {
-        padding: 60px 0;
-    }
+.document-download {
+    color: var(--royal-gold);
+}
 
-    .org-director-card {
-        padding: 30px 20px;
-        transform: scale(1);
-    }
-
-    .org-director-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .accordion-header {
-        padding: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .accordion-arrow {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    .accordion-header-content {
-        width: 100%;
-        gap: 15px;
-    }
-
-    .accordion-icon {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
-    }
-
-    .accordion-title {
-        font-size: 1.2rem;
-    }
-
-    .documents-list {
-        padding: 20px;
-        grid-template-columns: 1fr;
-    }
+/* Footer override for Org Section */
+.org-footer {
+    color: rgba(255, 255, 255, 0.7) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 2rem;
 }
