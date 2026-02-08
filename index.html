@@ -87,7 +87,8 @@
         <div class="header-container">
             <!-- Logo -->
             <a href="index.html" class="logo" aria-label="Pagina principală">
-                <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image">
+                <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image"
+                    fetchpriority="high">
                 <div class="logo-text">
                     <span class="logo-title">Școala Gimnazială</span>
                     <span class="logo-subtitle">„Principele Carol"</span>
@@ -149,7 +150,8 @@
         <section class="hero" id="hero">
             <!-- Background Image -->
             <div class="hero-background">
-                <img src="images/hero-main.png" alt="Clădirea Școlii Gimnaziale Principele Carol" loading="eager">
+                <img src="images/hero-main.png" alt="Clădirea Școlii Gimnaziale Principele Carol" loading="eager"
+                    fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
 
@@ -428,6 +430,44 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- SKILLS ACTIVATION -->
+
+    <!-- 1. Integrity Shield (Quality Assurance) -->
+    <script src="skills/integrity-shield/shield-core.js"></script>
+
+    <!-- 2. Kinetic Neural Mesh (Aetheric Grid) -->
+    <script src="skills/kinetic-neural-mesh/aetheric-grid.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Kinetic Grid on Hero Section
+            const heroSection = document.getElementById('hero');
+            if (heroSection && window.AethericGrid) {
+                // Create container
+                const gridDiv = document.createElement('div');
+                gridDiv.id = 'aetheric-grid-container';
+                gridDiv.style.position = 'absolute';
+                gridDiv.style.top = '0';
+                gridDiv.style.left = '0';
+                gridDiv.style.width = '100%';
+                gridDiv.style.height = '100%';
+                gridDiv.style.zIndex = '2'; // Above overlay, below content (content is likely higher)
+                gridDiv.style.opacity = '0.5'; // Subtle effect
+                gridDiv.style.pointerEvents = 'auto'; // Enable interaction
+
+                // Insert into hero
+                heroSection.insertBefore(gridDiv, heroSection.firstChild);
+
+                // Init Grid
+                new AethericGrid('aetheric-grid-container', {
+                    particleCount: 80,
+                    particleColor: '#D4AF37', // Royal Gold
+                    lineColor: 'rgba(212, 175, 55, 0.15)',
+                    repulsionRadius: 120
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
