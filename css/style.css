@@ -475,8 +475,8 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 85%;
-    /* Focalizare pe intrarea în școală */
+    /* Cheia pentru proporții corecte */
+    object-position: center center;
 }
 
 .hero-overlay {
@@ -485,10 +485,11 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Creștem opacitatea pentru contrast perfect (Lizibilitate) */
     background: linear-gradient(180deg,
-            rgba(27, 38, 79, 0.4) 0%,
-            rgba(27, 38, 79, 0.3) 50%,
-            rgba(27, 38, 79, 0.5) 100%);
+            rgba(27, 38, 79, 0.9) 0%,
+            rgba(27, 38, 79, 0.7) 50%,
+            rgba(27, 38, 79, 0.95) 100%);
 }
 
 .hero-content {
@@ -496,7 +497,8 @@ p {
     z-index: 1;
     text-align: center;
     max-width: 1000px;
-    padding: var(--spacing-xxl);
+    padding: var(--spacing-xxxl) var(--spacing-lg);
+    /* Mai mult spațiu (Aerisire) */
     animation: fadeInUp 1s ease-out;
 }
 
