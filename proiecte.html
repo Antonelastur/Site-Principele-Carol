@@ -213,14 +213,7 @@
                 box-shadow: 0 20px 60px rgba(0, 51, 102, 0.3);
             }
 
-            .sherlock-header::after {
-                content: '🔍';
-                position: absolute;
-                top: -30px;
-                right: 40px;
-                font-size: 60px;
-                opacity: 0.15;
-            }
+
 
             .sherlock-badge {
                 display: inline-block;
@@ -567,6 +560,98 @@
                 font-weight: 600;
                 border: 1px solid rgba(0, 51, 102, 0.15);
             }
+
+            /* Detective Photo Styles */
+            .detective-photo {
+                background: #fff;
+                padding: 10px;
+                border: 1px solid #ddd;
+                box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15);
+                border-radius: 4px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .detective-photo:hover {
+                transform: rotate(-1deg) scale(1.02);
+                box-shadow: 0 12px 35px rgba(0, 51, 102, 0.2);
+            }
+
+            .detective-photo img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 2px;
+            }
+
+            .detective-photo-caption {
+                text-align: center;
+                font-size: 0.8rem;
+                color: #6b7280;
+                margin-top: 8px;
+                font-style: italic;
+            }
+
+            .detective-photo--right {
+                float: right;
+                width: 200px;
+                margin: 0 0 1rem 1.5rem;
+                transform: rotate(2deg);
+            }
+
+            .detective-photo--left {
+                float: left;
+                width: 220px;
+                margin: 0 1.5rem 1rem 0;
+                transform: rotate(-2deg);
+            }
+
+            .detective-photo--center {
+                display: block;
+                max-width: 500px;
+                margin: 3rem auto 0;
+                transform: rotate(0deg);
+            }
+
+            /* Audio Player Styles */
+            .sherlock-audio-wrapper {
+                text-align: center;
+                margin-top: 2rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+            }
+
+            .sherlock-audio-label {
+                font-size: 0.9rem;
+                color: #D4AF37;
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+
+            .sherlock-audio-wrapper audio {
+                width: 100%;
+                max-width: 400px;
+                border-radius: 30px;
+            }
+
+            /* Mobile Responsive for Photos */
+            @media (max-width: 768px) {
+
+                .detective-photo--right,
+                .detective-photo--left {
+                    float: none;
+                    width: 100%;
+                    max-width: 280px;
+                    margin: 1.5rem auto;
+                    display: block;
+                    transform: rotate(0deg);
+                }
+
+                .detective-photo--center {
+                    max-width: 100%;
+                }
+            }
         </style>
 
         <section class="sherlock-section" id="sherlock-project">
@@ -578,6 +663,15 @@
                     <p class="sherlock-theme-title">„Sherlock Holmes și Misterul Cuvintelor – O călătorie
                         multiculturală"</p>
                     <p class="sherlock-period">Anul școlar 2025 – 2026</p>
+
+                    <!-- Audio Player -->
+                    <div class="sherlock-audio-wrapper">
+                        <p class="sherlock-audio-label">Ascultă Imnul Clubului</p>
+                        <audio controls preload="metadata">
+                            <source src="Club/imn-club.mp3" type="audio/mpeg">
+                            Browserul tău nu suportă elementul audio.
+                        </audio>
+                    </div>
                 </div>
 
                 <!-- Main Cards Grid -->
@@ -606,6 +700,13 @@
                     <!-- Argument Card -->
                     <div class="sherlock-card">
                         <h3 class="sherlock-card-title">Argument</h3>
+
+                        <!-- Foto 1 - Float Right -->
+                        <div class="detective-photo detective-photo--right">
+                            <img src="Club/foto-1.jpg" alt="Activitate Club Sherlock Holmes">
+                            <p class="detective-photo-caption">Detectivii în acțiune</p>
+                        </div>
+
                         <p>
                             Înființat din <strong>dragoste pentru copii</strong>, clubul nostru își propune să
                             transforme învățarea limbilor străine dintr-o materie școlară într-o <strong>aventură
@@ -615,9 +716,10 @@
                         <p style="margin-top: 1rem;">
                             De ce această temă? Pentru că <strong>investigația seamănă perfect cu învățarea unei
                                 limbi</strong>: ai nevoie de atenție, de logică, cauți indicii (cuvinte cheie) și
-                            rezolvi mistere (traducerea și înțelegerea textului). Vom naviga printre limba română,
+                            rezolvi mistere (traducerea și înțelegerea textului). Vom naviga printre limbile română,
                             engleză și spaniolă, stimulând nu doar memoria, ci și <strong>gândirea critică</strong>.
                         </p>
+                        <div style="clear: both;"></div>
                     </div>
 
                     <!-- Objectives Card -->
@@ -659,10 +761,18 @@
 
                 <!-- Timeline Section -->
                 <div class="sherlock-timeline-wrapper">
+
+                    <!-- Foto 2 - Float Left -->
+                    <div class="detective-photo detective-photo--left">
+                        <img src="Club/foto-2.jpg" alt="Ședință Club Limbi Străine">
+                        <p class="detective-photo-caption">La lucru!</p>
+                    </div>
+
                     <div class="timeline-header">
                         <h3>Calendarul Activităților</h3>
                         <p>Cele patru module ale aventurii noastre</p>
                     </div>
+                    <div style="clear: both;"></div>
 
                     <div class="timeline-grid">
                         <!-- Module 1 -->
@@ -735,6 +845,12 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Foto 3 - Large Centered -->
+                <div class="detective-photo detective-photo--center">
+                    <img src="Club/foto-3.jpg" alt="Echipa Clubului Lumea Magică a Limbilor Străine">
+                    <p class="detective-photo-caption">Echipa noastră de detectivi lingviști</p>
+                </div>
             </div>
         </section>
 
@@ -746,13 +862,6 @@
                 <h2 class="section-title text-center mb-5">Alte inițiative educative</h2>
 
                 <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card eco-project">
-                        <div class="project-icon">🌱</div>
-                        <h3 class="project-card-title">Eco-Școala</h3>
-                        <p class="project-card-desc">Educație pentru mediu, reciclare și responsabilitate față de
-                            natură. Suntem gardienii planetei!</p>
-                    </div>
 
                     <!-- Project 2 -->
                     <div class="project-card green-project">
