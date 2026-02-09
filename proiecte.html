@@ -179,6 +179,566 @@
         </section>
 
         <!-- ============================================
+             SHERLOCK HOLMES PROJECT SECTION
+             Tema: „Sherlock Holmes și Misterul Cuvintelor"
+             ============================================ -->
+        <style>
+            /* Sherlock Holmes Project Styles */
+            .sherlock-section {
+                padding: 100px 0;
+                background: linear-gradient(180deg, #f8f6f3 0%, #fdfbf7 50%, #fff 100%);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .sherlock-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #003366, #D4AF37, #003366);
+            }
+
+            /* Header Card */
+            .sherlock-header {
+                text-align: center;
+                margin-bottom: 4rem;
+                padding: 3rem;
+                background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+                border-radius: 24px;
+                color: #fff;
+                position: relative;
+                box-shadow: 0 20px 60px rgba(0, 51, 102, 0.3);
+            }
+
+            .sherlock-header::after {
+                content: '🔍';
+                position: absolute;
+                top: -30px;
+                right: 40px;
+                font-size: 60px;
+                opacity: 0.15;
+            }
+
+            .sherlock-badge {
+                display: inline-block;
+                background: #D4AF37;
+                color: #003366;
+                padding: 0.5rem 1.5rem;
+                border-radius: 50px;
+                font-weight: 800;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                margin-bottom: 1.5rem;
+            }
+
+            .sherlock-main-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                color: #fff;
+            }
+
+            .sherlock-theme-title {
+                font-size: 1.3rem;
+                color: #D4AF37;
+                font-style: italic;
+                margin-bottom: 0.5rem;
+            }
+
+            .sherlock-period {
+                font-size: 1rem;
+                opacity: 0.85;
+            }
+
+            /* Cards Grid */
+            .sherlock-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-bottom: 4rem;
+            }
+
+            @media (max-width: 900px) {
+                .sherlock-cards {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .sherlock-card {
+                background: #fdfbf7;
+                border-radius: 20px;
+                padding: 2.5rem;
+                box-shadow: 0 8px 30px rgba(0, 51, 102, 0.08);
+                border: 1px solid rgba(0, 51, 102, 0.1);
+                position: relative;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .sherlock-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 51, 102, 0.12);
+            }
+
+            .sherlock-card--team {
+                grid-column: span 2;
+                background: linear-gradient(135deg, #fff 0%, #fdfbf7 100%);
+                border: 2px solid #D4AF37;
+            }
+
+            @media (max-width: 900px) {
+                .sherlock-card--team {
+                    grid-column: span 1;
+                }
+            }
+
+            .sherlock-card-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.4rem;
+                color: #003366;
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .sherlock-card-title::before {
+                content: '';
+                width: 4px;
+                height: 28px;
+                background: #D4AF37;
+                border-radius: 2px;
+            }
+
+            .sherlock-card p {
+                color: #4a5568;
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .sherlock-card strong {
+                color: #003366;
+            }
+
+            /* Team List */
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+
+            @media (max-width: 768px) {
+                .team-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .team-member {
+                text-align: center;
+                padding: 1.5rem;
+                background: rgba(212, 175, 55, 0.08);
+                border-radius: 16px;
+                border: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            .team-member-role {
+                font-size: 0.8rem;
+                color: #D4AF37;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 0.5rem;
+            }
+
+            .team-member-name {
+                font-size: 1.1rem;
+                color: #003366;
+                font-weight: 600;
+            }
+
+            .team-member--group .team-member-name {
+                font-size: 1rem;
+            }
+
+            /* Objectives List */
+            .objectives-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .objectives-list li {
+                position: relative;
+                padding-left: 28px;
+                margin-bottom: 1.2rem;
+                color: #4a5568;
+                line-height: 1.7;
+            }
+
+            .objectives-list li::before {
+                content: '◆';
+                position: absolute;
+                left: 0;
+                color: #D4AF37;
+                font-size: 0.8rem;
+            }
+
+            .objectives-list li strong {
+                color: #003366;
+            }
+
+            /* Timeline Section */
+            .sherlock-timeline-wrapper {
+                background: #003366;
+                border-radius: 24px;
+                padding: 3rem;
+                margin-bottom: 3rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .sherlock-timeline-wrapper::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 300px;
+                height: 300px;
+                background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            }
+
+            .timeline-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .timeline-header h3 {
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                color: #fff;
+                margin-bottom: 0.5rem;
+            }
+
+            .timeline-header p {
+                color: #D4AF37;
+                font-size: 1rem;
+            }
+
+            /* Timeline Grid */
+            .timeline-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+                position: relative;
+            }
+
+            @media (max-width: 1100px) {
+                .timeline-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .timeline-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .timeline-module {
+                background: #fdfbf7;
+                border-radius: 16px;
+                padding: 2rem;
+                position: relative;
+                transition: transform 0.3s ease;
+            }
+
+            .timeline-module:hover {
+                transform: scale(1.02);
+            }
+
+            .timeline-module::before {
+                content: attr(data-module);
+                position: absolute;
+                top: -12px;
+                left: 20px;
+                background: #D4AF37;
+                color: #003366;
+                padding: 0.3rem 1rem;
+                border-radius: 20px;
+                font-weight: 800;
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+
+            .timeline-period {
+                font-size: 0.85rem;
+                color: #D4AF37;
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+                margin-top: 0.5rem;
+            }
+
+            .timeline-module-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.15rem;
+                color: #003366;
+                margin-bottom: 1rem;
+                line-height: 1.3;
+            }
+
+            .timeline-activities {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .timeline-activities li {
+                font-size: 0.9rem;
+                color: #4a5568;
+                padding: 0.4rem 0;
+                padding-left: 18px;
+                position: relative;
+            }
+
+            .timeline-activities li::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                color: #D4AF37;
+                font-weight: bold;
+            }
+
+            /* Bottom Cards */
+            .sherlock-bottom-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            @media (max-width: 768px) {
+                .sherlock-bottom-cards {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .sherlock-card--evaluation {
+                background: linear-gradient(135deg, #fdfbf7 0%, #f8f5f0 100%);
+            }
+
+            .sherlock-card--final {
+                background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+                color: #fff;
+            }
+
+            .sherlock-card--final .sherlock-card-title {
+                color: #D4AF37;
+            }
+
+            .sherlock-card--final .sherlock-card-title::before {
+                background: #D4AF37;
+            }
+
+            .sherlock-card--final p {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .sherlock-card--final strong {
+                color: #D4AF37;
+            }
+
+            .evaluation-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                margin-top: 1.5rem;
+            }
+
+            .evaluation-badge {
+                background: rgba(0, 51, 102, 0.08);
+                color: #003366;
+                padding: 0.6rem 1.2rem;
+                border-radius: 50px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                border: 1px solid rgba(0, 51, 102, 0.15);
+            }
+        </style>
+
+        <section class="sherlock-section" id="sherlock-project">
+            <div class="container">
+                <!-- Header Card -->
+                <div class="sherlock-header">
+                    <span class="sherlock-badge">Proiect Educațional</span>
+                    <h2 class="sherlock-main-title">CLUBUL „LUMEA MAGICĂ A LIMBILOR STRĂINE"</h2>
+                    <p class="sherlock-theme-title">„Sherlock Holmes și Misterul Cuvintelor – O călătorie
+                        multiculturală"</p>
+                    <p class="sherlock-period">Anul școlar 2025 – 2026</p>
+                </div>
+
+                <!-- Main Cards Grid -->
+                <div class="sherlock-cards">
+                    <!-- Team Card (Full Width) -->
+                    <div class="sherlock-card sherlock-card--team">
+                        <h3 class="sherlock-card-title">Echipa de Proiect</h3>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <p class="team-member-role">Coordonator Limba Engleză</p>
+                                <p class="team-member-name">Prof. Simona Varvaroi</p>
+                            </div>
+                            <div class="team-member">
+                                <p class="team-member-role">Coordonator Limba Spaniolă</p>
+                                <p class="team-member-name">Prof. Antoanela Pohoață</p>
+                            </div>
+                            <div class="team-member team-member--group">
+                                <p class="team-member-role">Grup Țintă</p>
+                                <p class="team-member-name"><strong>15 elevi</strong><br><small
+                                        style="color: #6b7280;">Selecționați pe criterii de performanță și talent
+                                        lingvistic</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Argument Card -->
+                    <div class="sherlock-card">
+                        <h3 class="sherlock-card-title">Argument</h3>
+                        <p>
+                            Înființat din <strong>dragoste pentru copii</strong>, clubul nostru își propune să
+                            transforme învățarea limbilor străine dintr-o materie școlară într-o <strong>aventură
+                                pasionantă</strong>. Pentru anul școlar 2025-2026, am ales ca ghid universul de detectiv
+                            al lui <strong>Sherlock Holmes</strong>.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            De ce această temă? Pentru că <strong>investigația seamănă perfect cu învățarea unei
+                                limbi</strong>: ai nevoie de atenție, de logică, cauți indicii (cuvinte cheie) și
+                            rezolvi mistere (traducerea și înțelegerea textului). Vom naviga printre limba română,
+                            engleză și spaniolă, stimulând nu doar memoria, ci și <strong>gândirea critică</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Objectives Card -->
+                    <div class="sherlock-card">
+                        <h3 class="sherlock-card-title">Obiectivele Proiectului</h3>
+                        <ul class="objectives-list">
+                            <li><strong>Dezvoltarea vocabularului:</strong> Îmbogățirea cunoștințelor de limbă engleză
+                                și spaniolă prin termeni specifici literaturii de mister și aventură.</li>
+                            <li><strong>Stimularea logicii:</strong> Folosirea metodelor deductive (specifice lui
+                                Holmes) pentru a înțelege texte și situații noi.</li>
+                            <li><strong>Culturalizare:</strong> Familiarizarea copiilor cu literatura clasică (Sir
+                                Arthur Conan Doyle), dar și cu elemente de cultură hispanică.</li>
+                            <li><strong>Coeziunea grupului:</strong> Crearea unui sentiment de apartenență printr-un imn
+                                propriu și activități de echipă.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources Card -->
+                    <div class="sherlock-card" style="grid-column: span 2;">
+                        <h3 class="sherlock-card-title">Resurse și Metode</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <p
+                                    style="color: #D4AF37; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">
+                                    Texte Suport</p>
+                                <p><strong>„Scandal în Boemia"</strong> de Sir Arthur Conan Doyle (text de bază),
+                                    adaptări scurte, articole de ziar din epocă, benzi desenate.</p>
+                            </div>
+                            <div>
+                                <p
+                                    style="color: #D4AF37; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">
+                                    Metode</p>
+                                <p><strong>Lectura explicativă</strong>, jocul de rol, conversația dirijată, exerciții
+                                    de deducție, ascultare muzicală.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="sherlock-timeline-wrapper">
+                    <div class="timeline-header">
+                        <h3>Calendarul Activităților</h3>
+                        <p>Cele patru module ale aventurii noastre</p>
+                    </div>
+
+                    <div class="timeline-grid">
+                        <!-- Module 1 -->
+                        <div class="timeline-module" data-module="Modulul I">
+                            <p class="timeline-period">Septembrie – Noiembrie</p>
+                            <h4 class="timeline-module-title">INIȚIEREA<br>„Bun venit în Baker Street!"</h4>
+                            <ul class="timeline-activities">
+                                <li>Selecția detectivilor</li>
+                                <li>Crearea Imnului Clubului (RO/EN/ES)</li>
+                                <li>Prezentarea personajelor Sherlock și Watson</li>
+                            </ul>
+                        </div>
+
+                        <!-- Module 2 -->
+                        <div class="timeline-module" data-module="Modulul II">
+                            <p class="timeline-period">Decembrie – Februarie</p>
+                            <h4 class="timeline-module-title">INVESTIGAȚIA LITERARĂ<br>„Misterul din Boemia și alte
+                                enigme"</h4>
+                            <ul class="timeline-activities">
+                                <li>Lectură și analiză text</li>
+                                <li>Atelier de traducere creativă</li>
+                                <li>Dezbateri („Ce ai fi făcut tu?")</li>
+                            </ul>
+                        </div>
+
+                        <!-- Module 3 -->
+                        <div class="timeline-module" data-module="Modulul III">
+                            <p class="timeline-period">Martie – Aprilie</p>
+                            <h4 class="timeline-module-title">JOC ȘI LOGICĂ<br>„Antrenamentul Minții"</h4>
+                            <ul class="timeline-activities">
+                                <li>Vânătoarea de comori și rebusuri</li>
+                                <li>Vizionare filme/desene</li>
+                                <li>Frământări de limbă (tongue twisters)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Module 4 -->
+                        <div class="timeline-module" data-module="Modulul IV">
+                            <p class="timeline-period">Mai – Iunie</p>
+                            <h4 class="timeline-module-title">MAREA FINALĂ<br>„Dosarul este Închis"</h4>
+                            <ul class="timeline-activities">
+                                <li>Redactarea finalului propriu pentru o poveste</li>
+                                <li>Festivitatea de încheiere</li>
+                                <li>Diplome de Maestru Detectiv</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Cards -->
+                <div class="sherlock-bottom-cards">
+                    <!-- Evaluation Card -->
+                    <div class="sherlock-card sherlock-card--evaluation">
+                        <h3 class="sherlock-card-title">Evaluarea</h3>
+                        <p><strong>Nu vom da note.</strong> Evaluarea se face prin:</p>
+                        <div class="evaluation-badges">
+                            <span class="evaluation-badge">Portofoliul Detectivului</span>
+                            <span class="evaluation-badge">Observarea directă a implicării</span>
+                            <span class="evaluation-badge">Entuziasmul participării</span>
+                        </div>
+                    </div>
+
+                    <!-- Final Card -->
+                    <div class="sherlock-card sherlock-card--final">
+                        <h3 class="sherlock-card-title">Finalitatea</h3>
+                        <p>
+                            La sfârșitul anului școlar, cei <strong>15 copii</strong> vor stăpâni un <strong>vocabular
+                                extins</strong>, vor avea o gândire mai structurată și vor veni la orele de limbi
+                            străine cu <strong>zâmbetul pe buze</strong>, nu cu teama de a greși.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
              OTHER PROJECTS GRID
              ============================================ -->
         <section class="other-projects-section">
