@@ -5,30 +5,490 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Galeria Foto - Școala Gimnazială Principele Carol. Imagini cu săli de clasă, laboratoare, evenimente și activități școlare.">
-    <meta name="keywords" content="galerie foto, imagini școală, săli de clasă, evenimente, Principele Carol">
+        content="Galeria Foto - Școala Gimnazială Principele Carol Gura Humorului. Imagini din proiecte Erasmus+, activități didactice, evenimente școlare și excursii.">
+    <meta name="keywords"
+        content="galerie foto școală, Erasmus+ LIFE, activități didactice, evenimente școlare, excursii, Principele Carol">
     <meta name="author" content="Școala Gimnazială Principele Carol">
+    <link rel="canonical" href="https://principelecarol.ro/galerie.html">
 
-    <!-- Security Headers (LOKI Shield) -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://principelecarol.ro/galerie.html">
+    <meta property="og:title" content="Galerie Foto | Școala Gimnazială Principele Carol">
+    <meta property="og:description" content="Explorează momentele speciale din viața școlii noastre prin imagini.">
+    <meta property="og:image" content="https://principelecarol.ro/images/gallery/hero1.jpg">
+
+    <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; frame-src https://www.google.com https://www.youtube.com;">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Galerie Foto | Școala Gimnazială „Principele Carol”</title>
+    <title>Galerie Foto | Școala Gimnazială „Principele Carol"</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
+
+    <!-- Preload Hero Images -->
+    <link rel="preload" as="image" href="images/gallery/activitate-elevi.jpg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/premium_heritage.css">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">
+
+    <!-- Schema.org pentru Galerie Foto Educațională -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Galerie Foto - Școala Gimnazială Principele Carol",
+        "description": "Colecție de imagini din activitățile educaționale ale școlii",
+        "url": "https://principelecarol.ro/galerie.html",
+        "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "Școala Gimnazială Principele Carol",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Gura Humorului",
+                "addressRegion": "Suceava",
+                "addressCountry": "RO"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* ===========================================
+           HERO CAROUSEL STYLES
+           =========================================== */
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            min-height: 500px;
+            margin-top: var(--header-height, 120px);
+            overflow: hidden;
+        }
+
+        .hero-carousel .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-carousel .swiper-slide {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slide-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(27, 38, 79, 0.85) 0%, rgba(27, 38, 79, 0.6) 50%, rgba(27, 38, 79, 0.85) 100%);
+        }
+
+        .hero-slide-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-slide-desc {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-slide-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #D4A84B 0%, #B8923F 100%);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(212, 168, 75, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-slide-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212, 168, 75, 0.5);
+            color: #fff;
+        }
+
+        /* Swiper Navigation */
+        .hero-carousel .swiper-button-next,
+        .hero-carousel .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .hero-carousel .swiper-button-next:hover,
+        .hero-carousel .swiper-button-prev:hover {
+            background: rgba(212, 168, 75, 0.9);
+        }
+
+        .hero-carousel .swiper-button-next::after,
+        .hero-carousel .swiper-button-prev::after {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .hero-carousel .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .hero-carousel .swiper-pagination-bullet-active {
+            background: #D4A84B;
+            transform: scale(1.2);
+        }
+
+        /* ===========================================
+           GALLERY SECTION STYLES
+           =========================================== */
+        .gallery-main {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1B264F;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-header p {
+            color: #6C757D;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #D4A84B, #E8C97A);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Filter Buttons */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: #fff;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1B264F;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-btn:hover {
+            border-color: #D4A84B;
+            color: #D4A84B;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #1B264F 0%, #2a3a6b 100%);
+            color: #D4A84B;
+            border-color: #1B264F;
+            box-shadow: 0 4px 20px rgba(27, 38, 79, 0.3);
+        }
+
+        /* Gallery Grid - Masonry Style */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:nth-child(3n+1) {
+            aspect-ratio: 3/4;
+        }
+
+        .gallery-item:nth-child(5n) {
+            aspect-ratio: 16/9;
+            grid-column: span 2;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(27, 38, 79, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(27, 38, 79, 0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-title {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-title {
+            transform: translateY(0);
+        }
+
+        .gallery-item-category {
+            color: #D4A84B;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-item-category {
+            transform: translateY(0);
+        }
+
+        .gallery-item-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 168, 75, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-icon {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .gallery-item-icon svg {
+            width: 24px;
+            height: 24px;
+            color: #fff;
+        }
+
+        /* Folder Style for Albums */
+        .gallery-folder {
+            background: linear-gradient(135deg, #1B264F 0%, #2a3a6b 100%);
+        }
+
+        .gallery-folder .gallery-item-overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.3);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .folder-badge {
+            background: #D4A84B;
+            color: #1B264F;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES
+           =========================================== */
+        @media (max-width: 1200px) {
+            .gallery-item:nth-child(5n) {
+                grid-column: span 1;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-carousel {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .hero-slide-content {
+                padding: 1.5rem;
+            }
+
+            .hero-carousel .swiper-button-next,
+            .hero-carousel .swiper-button-prev {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .gallery-item:nth-child(3n+1) {
+                aspect-ratio: 4/3;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-carousel {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                flex: 1 1 45%;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,31 +497,28 @@
          ============================================ -->
     <header class="header" id="header">
         <div class="header-container">
-            <!-- Logo -->
             <a href="index.html" class="logo" aria-label="Pagina principală">
                 <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image">
                 <div class="logo-text">
                     <span class="logo-title">Școala Gimnazială</span>
-                    <span class="logo-subtitle">„Principele Carol”</span>
+                    <span class="logo-subtitle">„Principele Carol"</span>
                 </div>
             </a>
 
-            <!-- Navigare -->
             <nav class="nav" id="nav" aria-label="Navigare principală">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Acasă</a></li>
-                    <li><a href="despre.html" class="nav-link">Despre Noi</a></li>
-                    <li><a href="hub-media.html" class="nav-link">HUB Media</a></li>
-                    <li><a href="consiliu-elevi.html" class="nav-link">Consiliul Elevilor</a></li>
+                    <li><a href="despre.html" class="nav-link">Despre noi</a></li>
+                    <li><a href="hub-media.html" class="nav-link">Hub media</a></li>
+                    <li><a href="consiliu-elevi.html" class="nav-link">Consiliul elevilor</a></li>
                     <li><a href="parinti.html" class="nav-link">Părinți</a></li>
                     <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
                     <li><a href="galerie-onoare.html" class="nav-link">Podium</a></li>
                     <li><a href="documente.html" class="nav-link">Documente</a></li>
-                    <li><a href="galerie.html" class="nav-link active">Galerie Foto</a></li>
+                    <li><a href="galerie.html" class="nav-link active">Galerie foto</a></li>
                 </ul>
                 <a href="contact.html" class="nav-cta">Contact</a>
 
-                <!-- Search Button -->
                 <div class="search-container" id="searchContainer">
                     <button class="search-btn" id="searchBtn" aria-label="Caută">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -75,8 +532,7 @@
                             aria-label="Caută pe site">
                         <button class="search-close" id="searchClose" aria-label="Închide căutarea">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                                fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
@@ -85,7 +541,6 @@
                 </div>
             </nav>
 
-            <!-- Hamburger Menu (Mobile) -->
             <button class="hamburger" id="hamburger" aria-label="Meniu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -96,271 +551,503 @@
 
     <main>
         <!-- ============================================
-             PAGE HERO
+             HERO CAROUSEL
              ============================================ -->
-        <section class="page-hero">
-            <div class="absolute inset-0 opacity-10"
-                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
-            <div class="container relative z-10 text-center">
-                <h1 class="page-title font-royal gold-shimmer">Galerie Foto</h1>
-                <p class="page-subtitle">Imagini din activitatea școlii</p>
-                <div class="antigravity-float"
-                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
+        <section class="hero-carousel" aria-label="Slideshow Galerie">
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Erasmus+ LIFE -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide-bg">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80"
+                                alt="Proiect Erasmus+ LIFE - Elevi în activitate" loading="eager">
+                        </div>
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                            <h2 class="hero-slide-title">Erasmus+ LIFE</h2>
+                            <p class="hero-slide-desc">Explorăm Europa împreună! Proiecte internaționale care deschid
+                                orizonturi și construiesc prietenii durabile.</p>
+                            <a href="proiecte.html" class="hero-slide-btn" aria-label="Vezi proiectele Erasmus+">
+                                Vezi proiectele
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Activități Didactice -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide-bg">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1920&q=80"
+                                alt="Activități didactice interactive" loading="lazy">
+                        </div>
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                            <h2 class="hero-slide-title">Învățare Interactivă</h2>
+                            <p class="hero-slide-desc">Lecții care inspiră și transformă. Descoperă metodele moderne de
+                                predare din școlile noastre.</p>
+                            <a href="despre.html" class="hero-slide-btn">
+                                Descoperă mai mult
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Evenimente Școlare -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide-bg">
+                            <img src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?w=1920&q=80"
+                                alt="Eveniment școlar festiv" loading="lazy">
+                        </div>
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                            <h2 class="hero-slide-title">Evenimente Speciale</h2>
+                            <p class="hero-slide-desc">Sărbătorim împreună reușitele și momentele importante din viața
+                                comunității noastre școlare.</p>
+                            <a href="#gallery-section" class="hero-slide-btn">
+                                Vezi galeria
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Excursii -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide-bg">
+                            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1920&q=80"
+                                alt="Excursie școlară în natură" loading="lazy">
+                        </div>
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                            <h2 class="hero-slide-title">Aventuri Educaționale</h2>
+                            <p class="hero-slide-desc">Excursii care îmbină natura cu descoperirea. România văzută prin
+                                ochii curioși ai elevilor noștri.</p>
+                            <a href="#gallery-section" class="hero-slide-btn">
+                                Explorează
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Z.I.C.I. -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide-bg">
+                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&q=80"
+                                alt="Ziua Cititului Împreună - Z.I.C.I." loading="lazy">
+                        </div>
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                            <h2 class="hero-slide-title">Z.I.C.I.</h2>
+                            <p class="hero-slide-desc">Ziua Internațională a Cititului Împreună - promovăm lectura și
+                                bucuria de a descoperi povești.</p>
+                            <a href="#gallery-section" class="hero-slide-btn">
+                                Vezi albumul
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Navigation -->
+                <div class="swiper-button-next" aria-label="Următorul slide"></div>
+                <div class="swiper-button-prev" aria-label="Slide-ul anterior"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
         <!-- ============================================
              GALLERY SECTION
              ============================================ -->
-        <section class="gallery-section">
+        <section class="gallery-main" id="gallery-section">
             <div class="container">
+                <div class="gallery-header">
+                    <h2>Galeria Noastră</h2>
+                    <div class="gallery-divider"></div>
+                    <p>Explorează momentele speciale din activitatea școlii noastre</p>
+                </div>
 
                 <!-- Filter Buttons -->
-                <div class="gallery-filters"
-                    style="margin-bottom: 4rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-                    <button class="filter-btn active premium-card" data-filter="all"
-                        style="padding: 0.8rem 2rem; border-radius: 50px;">Toate</button>
-                    <button class="filter-btn premium-card" data-filter="sali"
-                        style="padding: 0.8rem 2rem; border-radius: 50px;">Săli de Clasă</button>
-                    <button class="filter-btn premium-card" data-filter="laboratoare"
-                        style="padding: 0.8rem 2rem; border-radius: 50px;">Interioare</button>
-                    <button class="filter-btn premium-card" data-filter="evenimente"
-                        style="padding: 0.8rem 2rem; border-radius: 50px;">Evenimente</button>
-                    <button class="filter-btn premium-card mobile-full" data-filter="activitati"
-                        style="padding: 0.8rem 2rem; border-radius: 50px; background: var(--royal-gold); color: var(--royal-navy); font-weight: 700; border: 2px solid var(--royal-gold);">Activități</button>
+                <div class="gallery-filters" role="group" aria-label="Filtrare galerie">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">Toate</button>
+                    <button class="filter-btn" data-filter="erasmus" aria-pressed="false">Erasmus+ Proiecte</button>
+                    <button class="filter-btn" data-filter="didactice" aria-pressed="false">Activități
+                        Didactice</button>
+                    <button class="filter-btn" data-filter="evenimente" aria-pressed="false">Evenimente Școlare</button>
+                    <button class="filter-btn" data-filter="excursii" aria-pressed="false">Excursii</button>
                 </div>
 
-                <!-- Gallery Grid (Main View) -->
-                <div class="gallery-grid" id="main-gallery-grid">
-
-                    <!-- FOLDER: Z.I.C.I. -->
-                    <div class="gallery-item gallery-folder" data-category="activitati"
-                        onclick="openAlbum('album-zici')">
-                        <div class="gallery-item-inner premium-card royal-glass"
-                            style="border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;">
-                            <img src="1.jpeg" alt="Copertă Z.I.C.I." class="gallery-img"
-                                style="filter: brightness(0.7);">
-                            <div class="gallery-overlay"
-                                style="opacity: 1; background: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                <div class="folder-icon"
-                                    style="background: var(--royal-gold); padding: 15px; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="var(--royal-navy)" stroke-width="2">
-                                        <path
-                                            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="gallery-title font-royal"
-                                    style="font-size: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Z.I.C.I.</h3>
-                                <p style="color: white; font-size: 0.9rem; margin-top: 5px;">Ziua Cititului Împreună</p>
-                                <span
-                                    style="margin-top: 10px; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 15px; font-size: 0.8rem; color: white;">Vezi
-                                    albumul</span>
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Item 1 - Z.I.C.I. Album FOLDER (click opens album view) -->
+                    <div class="gallery-item gallery-folder" data-category="didactice" onclick="openAlbum('album-zici')"
+                        style="cursor: pointer;">
+                        <img src="1.jpeg" alt="Z.I.C.I. - Ziua Cititului Împreună" loading="lazy">
+                        <div class="gallery-item-overlay"
+                            style="opacity: 1; background: linear-gradient(180deg, rgba(27,38,79,0.3) 0%, rgba(27,38,79,0.85) 100%);">
+                            <div class="gallery-item-icon"
+                                style="transform: translate(-50%, -50%) scale(1); background: #D4A84B;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="#1B264F" stroke-width="2.5">
+                                    <path
+                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                    </path>
+                                </svg>
                             </div>
+                            <h3 class="gallery-item-title" style="transform: translateY(0);">Z.I.C.I.</h3>
+                            <span class="gallery-item-category" style="transform: translateY(0);">Ziua Cititului
+                                Împreună • 10 imagini</span>
+                            <span
+                                style="margin-top: 8px; background: rgba(212,168,75,0.9); color: #1B264F; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">Deschide
+                                Albumul →</span>
                         </div>
                     </div>
 
-                    <!-- Hol -->
-                    <div class="gallery-item" data-category="laboratoare">
-                        <div class="gallery-item-inner">
-                            <img src="images/gallery/hol-scoala.jpg" alt="Holul școlii" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <div class="gallery-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="gallery-title">Holul Principal</h3>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Hidden Z.I.C.I. images for Fancybox lightbox group (accessed from album view) -->
+                    <a href="1.jpeg" data-fancybox="zici" data-caption="Z.I.C.I. - Clasa I A"
+                        style="display: none;"></a>
+                    <a href="2.jpeg" data-fancybox="zici" data-caption="Z.I.C.I. - Clasa I B"
+                        style="display: none;"></a>
+                    <a href="Clasa a II-a B/1.jpeg" data-fancybox="zici" data-caption="Z.I.C.I. - Clasa II B"
+                        style="display: none;"></a>
+                    <a href="Clasa a II-a B/2.jpeg" data-fancybox="zici" data-caption="Z.I.C.I. - Clasa II B"
+                        style="display: none;"></a>
+                    <a href="Clasa a II-a B/3.jpeg" data-fancybox="zici" data-caption="Z.I.C.I. - Clasa II B"
+                        style="display: none;"></a>
+                    <a href="Clasa pregătitoare A - Ștrumfii isteți/1.jpeg" data-fancybox="zici"
+                        data-caption="Z.I.C.I. - Clasa Pregătitoare A" style="display: none;"></a>
+                    <a href="Clasa pregătitoare A - Ștrumfii isteți/2.jpeg" data-fancybox="zici"
+                        data-caption="Z.I.C.I. - Clasa Pregătitoare A" style="display: none;"></a>
+                    <a href="Clasa pregătitoare A - Ștrumfii isteți/3.jpeg" data-fancybox="zici"
+                        data-caption="Z.I.C.I. - Clasa Pregătitoare A" style="display: none;"></a>
+                    <a href="Clasa pregătitoare A - Ștrumfii isteți/4.jpeg" data-fancybox="zici"
+                        data-caption="Z.I.C.I. - Clasa Pregătitoare A" style="display: none;"></a>
+                    <a href="Clasa pregătitoare A - Ștrumfii isteți/5.jpeg" data-fancybox="zici"
+                        data-caption="Z.I.C.I. - Clasa Pregătitoare A" style="display: none;"></a>
+                    <a href="Clasa I B - Fluturașii/1.jpeg" data-fancybox="zici"
+                        data-caption="Z.I.C.I. - Clasa I B Fluturașii" style="display: none;"></a>
 
-                    <!-- Sala Clasa -->
-                    <div class="gallery-item" data-category="sali">
-                        <div class="gallery-item-inner">
-                            <img src="images/gallery/sala-festiva.jpg" alt="Sală de clasă" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <div class="gallery-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="gallery-title">Sală de Clasă</h3>
+                    <!-- Item 2 -->
+                    <a href="images/gallery/hol-scoala.jpg" class="gallery-item" data-fancybox="gallery"
+                        data-caption="Holul principal al școlii" data-category="evenimente">
+                        <img src="images/gallery/hol-scoala.jpg" alt="Holul principal al școlii Principele Carol"
+                            loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                    <path d="M11 8v6M8 11h6"></path>
+                                </svg>
                             </div>
+                            <h3 class="gallery-item-title">Holul Principal</h3>
+                            <span class="gallery-item-category">Interioare</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Activitate -->
-                    <div class="gallery-item" data-category="evenimente">
-                        <div class="gallery-item-inner">
-                            <img src="images/gallery/activitate-elevi.jpg" alt="Activitate cu elevii"
-                                class="gallery-img">
-                            <div class="gallery-overlay">
-                                <div class="gallery-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="gallery-title">Activitate Elevi</h3>
+                    <!-- Item 3 -->
+                    <a href="images/gallery/sala-festiva.jpg" class="gallery-item" data-fancybox="gallery"
+                        data-caption="Sală de clasă modernă" data-category="didactice">
+                        <img src="images/gallery/sala-festiva.jpg" alt="Sală de clasă modernă și luminoasă"
+                            loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                    <path d="M11 8v6M8 11h6"></path>
+                                </svg>
                             </div>
+                            <h3 class="gallery-item-title">Sală de Clasă</h3>
+                            <span class="gallery-item-category">Spații Didactice</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Sala 2 -->
-                    <div class="gallery-item" data-category="sali">
-                        <div class="gallery-item-inner">
-                            <img src="images/gallery/sala-clasa-2.jpg" alt="Sală de clasă" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <div class="gallery-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="gallery-title">Sală de Clasă</h3>
+                    <!-- Item 4 -->
+                    <a href="images/gallery/activitate-elevi.jpg" class="gallery-item" data-fancybox="gallery"
+                        data-caption="Activitate interactivă cu elevii" data-category="didactice">
+                        <img src="images/gallery/activitate-elevi.jpg" alt="Elevi participând la activități interactive"
+                            loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                    <path d="M11 8v6M8 11h6"></path>
+                                </svg>
                             </div>
+                            <h3 class="gallery-item-title">Activități Interactive</h3>
+                            <span class="gallery-item-category">Didactice</span>
                         </div>
-                    </div>
+                    </a>
 
+                    <!-- Item 5 -->
+                    <a href="images/gallery/sala-clasa-2.jpg" class="gallery-item" data-fancybox="gallery"
+                        data-caption="Clasă echipată modern" data-category="didactice">
+                        <img src="images/gallery/sala-clasa-2.jpg" alt="Sală de clasă echipată cu tehnologie modernă"
+                            loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                    <path d="M11 8v6M8 11h6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="gallery-item-title">Clasă Modernă</h3>
+                            <span class="gallery-item-category">Spații Didactice</span>
+                        </div>
+                    </a>
+
+                    <!-- Item 6 - Z.I.C.I. 2 -->
+                    <a href="2.jpeg" class="gallery-item" data-fancybox="zici" data-caption="Z.I.C.I. - Clasa I B"
+                        data-category="didactice">
+                        <img src="2.jpeg" alt="Z.I.C.I. activitate de citit împreună" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                    <path d="M11 8v6M8 11h6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="gallery-item-title">Z.I.C.I. - Clasa I B</h3>
+                            <span class="gallery-item-category">Activități</span>
+                        </div>
+                    </a>
                 </div>
 
-                <!-- ALBUM VIEW: Z.I.C.I. -->
-                <div id="album-zici" class="album-container" style="display: none; animation: fadeIn 0.5s ease;">
+                <!-- ============================================
+                     ALBUM VIEW: Z.I.C.I.
+                     ============================================ -->
+                <div id="album-zici" class="album-container" style="display: none;">
                     <div class="album-header"
                         style="margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                        <button onclick="closeAlbum('album-zici')" class="premium-card"
-                            style="padding: 10px 25px; border-radius: 30px; cursor: pointer; display: flex; align-items: center; gap: 10px; background: var(--royal-navy); color: var(--royal-gold); border: 1px solid var(--royal-gold);">
+                        <button onclick="closeAlbum('album-zici')" class="album-back-btn"
+                            style="padding: 12px 28px; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #1B264F 0%, #2a3a6b 100%); color: #D4A84B; border: 2px solid #D4A84B; font-weight: 700; font-size: 0.95rem; transition: all 0.3s ease;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                                fill="none" stroke="currentColor" stroke-width="2.5">
                                 <line x1="19" y1="12" x2="5" y2="12"></line>
                                 <polyline points="12 19 5 12 12 5"></polyline>
                             </svg>
                             Înapoi la Galerie
                         </button>
-                        <h2 class="font-royal" style="color: var(--royal-navy); margin: 0; font-size: 1.8rem;">
-                            Activități:
-                            Z.I.C.I.</h2>
+                        <h2
+                            style="color: #1B264F; margin: 0; font-size: 1.8rem; font-family: 'Playfair Display', serif;">
+                            Activități: <span style="color: #D4A84B;">Z.I.C.I.</span>
+                        </h2>
+                        <p style="width: 100%; text-align: center; color: #6C757D; margin: 0;">Ziua Internațională a
+                            Cititului Împreună</p>
                     </div>
 
                     <div class="gallery-grid">
                         <!-- Clasa I A -->
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="1.jpeg" alt="Z.I.C.I. - Clasa I A" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa I A</h3>
+                        <a href="1.jpeg" class="gallery-item" data-fancybox="zici-album"
+                            data-caption="Z.I.C.I. - Clasa I A">
+                            <img src="1.jpeg" alt="Z.I.C.I. - Clasa I A" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
                                 </div>
+                                <h3 class="gallery-item-title">Clasa I A</h3>
+                                <span class="gallery-item-category">Z.I.C.I.</span>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Clasa I B -->
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="2.jpeg" alt="Z.I.C.I. - Clasa I B" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa I B</h3>
+                        <a href="2.jpeg" class="gallery-item" data-fancybox="zici-album"
+                            data-caption="Z.I.C.I. - Clasa I B">
+                            <img src="2.jpeg" alt="Z.I.C.I. - Clasa I B" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
                                 </div>
+                                <h3 class="gallery-item-title">Clasa I B</h3>
+                                <span class="gallery-item-category">Z.I.C.I.</span>
                             </div>
-                        </div>
+                        </a>
 
-                        <!-- Clasa II B -->
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa a II-a B/1.jpeg" alt="Z.I.C.I. - Clasa II B" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa II B</h3>
+                        <!-- Clasa II B - 1 -->
+                        <a href="Clasa a II-a B/1.jpeg" class="gallery-item" data-fancybox="zici-album"
+                            data-caption="Z.I.C.I. - Clasa II B">
+                            <img src="Clasa a II-a B/1.jpeg" alt="Z.I.C.I. - Clasa II B" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
                                 </div>
+                                <h3 class="gallery-item-title">Clasa II B</h3>
+                                <span class="gallery-item-category">Z.I.C.I.</span>
                             </div>
-                        </div>
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa a II-a B/2.jpeg" alt="Z.I.C.I. - Clasa II B" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa II B</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa a II-a B/3.jpeg" alt="Z.I.C.I. - Clasa II B" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa II B</h3>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
 
-                        <!-- Clasa Pregatitoare A -->
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa pregătitoare A - Ștrumfii isteți/1.jpeg"
-                                    alt="Z.I.C.I. - Clasa Pregătitoare A" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa Pregătitoare A</h3>
+                        <!-- Clasa II B - 2 -->
+                        <a href="Clasa a II-a B/2.jpeg" class="gallery-item" data-fancybox="zici-album"
+                            data-caption="Z.I.C.I. - Clasa II B">
+                            <img src="Clasa a II-a B/2.jpeg" alt="Z.I.C.I. - Clasa II B" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
                                 </div>
+                                <h3 class="gallery-item-title">Clasa II B</h3>
+                                <span class="gallery-item-category">Z.I.C.I.</span>
                             </div>
-                        </div>
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa pregătitoare A - Ștrumfii isteți/2.jpeg"
-                                    alt="Z.I.C.I. - Clasa Pregătitoare A" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa Pregătitoare A</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa pregătitoare A - Ștrumfii isteți/3.jpeg"
-                                    alt="Z.I.C.I. - Clasa Pregătitoare A" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa Pregătitoare A</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa pregătitoare A - Ștrumfii isteți/4.jpeg"
-                                    alt="Z.I.C.I. - Clasa Pregătitoare A" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa Pregătitoare A</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" style="display: block;">
-                            <div class="gallery-item-inner premium-card royal-glass"
-                                style="border-radius: 20px; overflow: hidden; position: relative;">
-                                <img src="Clasa pregătitoare A - Ștrumfii isteți/5.jpeg"
-                                    alt="Z.I.C.I. - Clasa Pregătitoare A" class="gallery-img">
-                                <div class="gallery-overlay">
-                                    <h3 class="gallery-title font-royal">Clasa Pregătitoare A</h3>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
 
+                        <!-- Clasa II B - 3 -->
+                        <a href="Clasa a II-a B/3.jpeg" class="gallery-item" data-fancybox="zici-album"
+                            data-caption="Z.I.C.I. - Clasa II B">
+                            <img src="Clasa a II-a B/3.jpeg" alt="Z.I.C.I. - Clasa II B" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-item-title">Clasa II B</h3>
+                                <span class="gallery-item-category">Z.I.C.I.</span>
+                            </div>
+                        </a>
+
+                        <!-- Clasa Pregătitoare A - 1 -->
+                        <a href="Clasa pregătitoare A - Ștrumfii isteți/1.jpeg" class="gallery-item"
+                            data-fancybox="zici-album" data-caption="Z.I.C.I. - Clasa Pregătitoare A - Ștrumfii Isteți">
+                            <img src="Clasa pregătitoare A - Ștrumfii isteți/1.jpeg"
+                                alt="Z.I.C.I. - Clasa Pregătitoare A" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-item-title">Clasa Pregătitoare A</h3>
+                                <span class="gallery-item-category">Ștrumfii Isteți</span>
+                            </div>
+                        </a>
+
+                        <!-- Clasa Pregătitoare A - 2 -->
+                        <a href="Clasa pregătitoare A - Ștrumfii isteți/2.jpeg" class="gallery-item"
+                            data-fancybox="zici-album" data-caption="Z.I.C.I. - Clasa Pregătitoare A - Ștrumfii Isteți">
+                            <img src="Clasa pregătitoare A - Ștrumfii isteți/2.jpeg"
+                                alt="Z.I.C.I. - Clasa Pregătitoare A" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-item-title">Clasa Pregătitoare A</h3>
+                                <span class="gallery-item-category">Ștrumfii Isteți</span>
+                            </div>
+                        </a>
+
+                        <!-- Clasa Pregătitoare A - 3 -->
+                        <a href="Clasa pregătitoare A - Ștrumfii isteți/3.jpeg" class="gallery-item"
+                            data-fancybox="zici-album" data-caption="Z.I.C.I. - Clasa Pregătitoare A - Ștrumfii Isteți">
+                            <img src="Clasa pregătitoare A - Ștrumfii isteți/3.jpeg"
+                                alt="Z.I.C.I. - Clasa Pregătitoare A" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-item-title">Clasa Pregătitoare A</h3>
+                                <span class="gallery-item-category">Ștrumfii Isteți</span>
+                            </div>
+                        </a>
+
+                        <!-- Clasa Pregătitoare A - 4 -->
+                        <a href="Clasa pregătitoare A - Ștrumfii isteți/4.jpeg" class="gallery-item"
+                            data-fancybox="zici-album" data-caption="Z.I.C.I. - Clasa Pregătitoare A - Ștrumfii Isteți">
+                            <img src="Clasa pregătitoare A - Ștrumfii isteți/4.jpeg"
+                                alt="Z.I.C.I. - Clasa Pregătitoare A" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-item-title">Clasa Pregătitoare A</h3>
+                                <span class="gallery-item-category">Ștrumfii Isteți</span>
+                            </div>
+                        </a>
+
+                        <!-- Clasa Pregătitoare A - 5 -->
+                        <a href="Clasa pregătitoare A - Ștrumfii isteți/5.jpeg" class="gallery-item"
+                            data-fancybox="zici-album" data-caption="Z.I.C.I. - Clasa Pregătitoare A - Ștrumfii Isteți">
+                            <img src="Clasa pregătitoare A - Ștrumfii isteți/5.jpeg"
+                                alt="Z.I.C.I. - Clasa Pregătitoare A" loading="lazy">
+                            <div class="gallery-item-overlay">
+                                <div class="gallery-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                        <path d="M11 8v6M8 11h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="gallery-item-title">Clasa Pregătitoare A</h3>
+                                <span class="gallery-item-category">Ștrumfii Isteți</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
-
     </main>
 
     <!-- ============================================
@@ -369,195 +1056,244 @@
     <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-main">
-                <!-- Coloana 1: Logo și Nume -->
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <img src="images/logo-scoala.jpg" alt="Logo" class="footer-logo-image">
                     </div>
-                    <p class="footer-brand-name">
-                        Școala Gimnazială<br>„Principele Carol”
-                    </p>
+                    <p class="footer-brand-name">Școala Gimnazială<br>„Principele Carol"</p>
                     <p class="footer-brand-location">Gura Humorului</p>
                 </div>
 
-                <!-- Coloana 2: Contact -->
                 <div class="footer-section">
                     <h3 class="footer-section-title">Contact</h3>
-
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📍</div>
-                        <div class="footer-contact-text">
-                            Bulevardul Bucovinei, Nr. 25<br>
-                            Gura Humorului, Suceava
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
                         </div>
+                        <div class="footer-contact-text">Bulevardul Bucovinei, Nr. 25<br>Gura Humorului, Suceava</div>
                     </div>
-
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📞</div>
-                        <div class="footer-contact-text">
-                            <a href="tel:0230230928">0230 230 928</a>
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
                         </div>
+                        <div class="footer-contact-text"><a href="tel:0230230928">0230 230 928</a></div>
                     </div>
-
                     <div class="footer-contact-item">
-                        <div class="footer-contact-icon">✉️</div>
-                        <div class="footer-contact-text">
-                            <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a>
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
                         </div>
+                        <div class="footer-contact-text"><a
+                                href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a></div>
                     </div>
                 </div>
 
-                <!-- Coloana 3: Link-uri -->
                 <div class="footer-section">
-                    <h3 class="footer-section-title">Link-uri Utile</h3>
+                    <h3 class="footer-section-title">Link-uri utile</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Politica de Confidențialitate</a></li>
-                        <li><a href="#" class="footer-link">Informații Publice</a></li>
+                        <li><a href="#" class="footer-link">Politica de confidențialitate</a></li>
+                        <li><a href="#" class="footer-link">Informații publice</a></li>
                         <li><a href="https://www.isj.sv.edu.ro" target="_blank" class="footer-link">ISJ Suceava</a></li>
                         <li><a href="#" class="footer-link">GDPR</a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2026 Școala Gimnazială „Principele Carol”. Toate drepturile rezervate.
-                </p>
-                <p class="footer-webmaster">
-                    Webmaster: <span class="webmaster-name">prof. Antoanela Pohoață</span>
-                </p>
+                <p class="footer-copyright">© 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.</p>
+                <p class="footer-webmaster">Webmaster: <span class="webmaster-name">prof. Antoanela Pohoață</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <div class="lightbox-content">
-            <img src="" alt="" class="lightbox-img">
-            <div class="lightbox-caption"></div>
-        </div>
-        <div class="lightbox-controls">
-            <button class="lightbox-prev">&#10094;</button>
-            <button class="lightbox-next">&#10095;</button>
-        </div>
-    </div>
-
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 
-    <!-- Gallery Script -->
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+
     <script>
+        // ============================================
+        // HERO CAROUSEL - Swiper.js
+        // ============================================
+        const heroSwiper = new Swiper('.heroSwiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 800,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            keyboard: {
+                enabled: true,
+            },
+            a11y: {
+                prevSlideMessage: 'Slide-ul anterior',
+                nextSlideMessage: 'Următorul slide',
+                paginationBulletMessage: 'Mergi la slide-ul {{index}}'
+            }
+        });
+
+        // ============================================
+        // FANCYBOX LIGHTBOX
+        // ============================================
+        Fancybox.bind('[data-fancybox]', {
+            Thumbs: {
+                autoStart: true,
+            },
+            Toolbar: {
+                display: ['zoom', 'slideshow', 'fullscreen', 'download', 'thumbs', 'close']
+            },
+            Images: {
+                zoom: true,
+            },
+            Carousel: {
+                infinite: true,
+            },
+            l10n: {
+                CLOSE: 'Închide',
+                NEXT: 'Următorul',
+                PREV: 'Anterior',
+                ZOOM: 'Zoom',
+                TOGGLE_SLIDESHOW: 'Slideshow',
+                TOGGLE_FULLSCREEN: 'Ecran complet',
+                DOWNLOAD: 'Descarcă',
+                TOGGLE_THUMBS: 'Miniaturi'
+            }
+        });
+
+        // ============================================
+        // GALLERY FILTERS
+        // ============================================
         document.addEventListener('DOMContentLoaded', function () {
-            // Filter Functionality
             const filterBtns = document.querySelectorAll('.filter-btn');
             const galleryItems = document.querySelectorAll('.gallery-item');
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
                     btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
 
                     const filterValue = btn.getAttribute('data-filter');
 
-                    galleryItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    galleryItems.forEach((item, index) => {
+                        const category = item.getAttribute('data-category');
+
+                        if (filterValue === 'all' || category === filterValue) {
                             item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 50);
+                            item.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s forwards`;
                         } else {
                             item.style.display = 'none';
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.8)';
                         }
                     });
                 });
             });
 
-            // Lightbox Functionality
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = lightbox.querySelector('.lightbox-img');
-            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-            const closeBtn = lightbox.querySelector('.lightbox-close');
+            // Lazy loading animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '50px'
+            };
 
-            document.querySelectorAll('.gallery-item-inner').forEach(item => {
-                item.addEventListener('click', function () {
-                    const img = this.querySelector('.gallery-img');
-                    const title = this.querySelector('.gallery-title').textContent;
-
-                    lightbox.style.display = 'flex';
-                    setTimeout(() => {
-                        lightbox.classList.add('active');
-                    }, 10);
-
-                    lightboxImg.src = img.src;
-                    lightboxCaption.textContent = title;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
                 });
-            });
+            }, observerOptions);
 
-            closeBtn.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-                setTimeout(() => {
-                    lightbox.style.display = 'none';
-                }, 300);
-            });
-
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.classList.remove('active');
-                    setTimeout(() => {
-                        lightbox.style.display = 'none';
-                    }, 300);
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                    lightbox.classList.remove('active');
-                    setTimeout(() => {
-                        lightbox.style.display = 'none';
-                    }, 300);
-                }
-            });
+            galleryItems.forEach(item => observer.observe(item));
         });
 
-        // Album Navigation Functions
+        // Keyboard navigation for gallery
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                Fancybox.close();
+                // Also close any open album
+                const openAlbums = document.querySelectorAll('.album-container');
+                openAlbums.forEach(album => {
+                    if (album.style.display !== 'none') {
+                        closeAlbum(album.id);
+                    }
+                });
+            }
+        });
+
+        // ============================================
+        // ALBUM NAVIGATION FUNCTIONS
+        // ============================================
         function openAlbum(albumId) {
-            const mainGrid = document.getElementById('main-gallery-grid');
-            const filters = document.querySelector('.gallery-filters');
+            const galleryGrid = document.getElementById('galleryGrid');
+            const galleryFilters = document.querySelector('.gallery-filters');
             const album = document.getElementById(albumId);
 
-            if (mainGrid && filters && album) {
-                mainGrid.style.display = 'none';
-                filters.style.display = 'none';
+            if (galleryGrid && album) {
+                // Hide main gallery and filters
+                galleryGrid.style.display = 'none';
+                if (galleryFilters) galleryFilters.style.display = 'none';
+
+                // Show album
                 album.style.display = 'block';
+                album.style.animation = 'fadeInUp 0.5s ease-out forwards';
 
-                // Add fade-in animation
-                album.style.opacity = '0';
-                setTimeout(() => {
-                    album.style.opacity = '1';
-                    album.style.transition = 'opacity 0.5s ease';
-                }, 10);
-
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Scroll to album
+                album.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
         function closeAlbum(albumId) {
-            const mainGrid = document.getElementById('main-gallery-grid');
-            const filters = document.querySelector('.gallery-filters');
+            const galleryGrid = document.getElementById('galleryGrid');
+            const galleryFilters = document.querySelector('.gallery-filters');
             const album = document.getElementById(albumId);
 
-            if (mainGrid && filters && album) {
+            if (galleryGrid && album) {
+                // Hide album
                 album.style.display = 'none';
-                mainGrid.style.removeProperty('display'); // Revert to CSS grid
-                filters.style.display = 'flex'; // Revert to flex
 
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Show main gallery and filters
+                galleryGrid.style.display = 'grid';
+                if (galleryFilters) galleryFilters.style.display = 'flex';
+
+                // Scroll back to gallery section
+                const gallerySection = document.getElementById('gallery-section');
+                if (gallerySection) {
+                    gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }
         }
     </script>
