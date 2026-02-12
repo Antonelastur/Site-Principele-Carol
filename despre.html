@@ -29,6 +29,526 @@
     <!-- Preconnect pentru performanță -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Muzeu Virtual Gallery & Lightbox Styles -->
+    <style>
+        /* ===== MUZEU GALLERY GRID ===== */
+        .muzeu-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .muzeu-thumb {
+            position: relative;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .muzeu-thumb::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .muzeu-thumb::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 56px;
+            height: 56px;
+            background: rgba(197, 160, 89, 0.9);
+            border-radius: 50%;
+            z-index: 2;
+            transition: transform 0.3s ease;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23002147' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3Cpath d='M11 8v6M8 11h6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+        }
+
+        .muzeu-thumb:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: var(--royal-gold);
+            box-shadow: 0 20px 50px rgba(197, 160, 89, 0.2);
+        }
+
+        .muzeu-thumb:hover::after {
+            opacity: 1;
+        }
+
+        .muzeu-thumb:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .muzeu-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: brightness(0.95) contrast(1.05);
+        }
+
+        .muzeu-thumb:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ===== MUZEU LIGHTBOX ===== */
+        .muzeu-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .muzeu-lightbox.active {
+            display: flex;
+        }
+
+        .muzeu-lightbox-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(20px);
+            animation: lbFadeIn 0.3s ease;
+        }
+
+        .muzeu-lightbox-content {
+            position: relative;
+            z-index: 2;
+            max-width: 90vw;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: lbZoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .muzeu-lightbox-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        .muzeu-lightbox-caption {
+            margin-top: 1.5rem;
+            color: #e2e8f0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 700px;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .muzeu-lightbox-counter {
+            margin-top: 0.8rem;
+            color: var(--royal-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .muzeu-lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .muzeu-lightbox-close:hover {
+            background: rgba(197, 160, 89, 0.9);
+            color: #002147;
+            border-color: var(--royal-gold);
+        }
+
+        .muzeu-lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .muzeu-lightbox-nav:hover {
+            background: rgba(197, 160, 89, 0.9);
+            color: #002147;
+        }
+
+        .muzeu-lightbox-prev {
+            left: 1.5rem;
+        }
+
+        .muzeu-lightbox-next {
+            right: 1.5rem;
+        }
+
+        @keyframes lbFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes lbZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .muzeu-gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .muzeu-thumb {
+                height: 280px;
+            }
+
+            .muzeu-lightbox-nav {
+                width: 42px;
+                height: 42px;
+            }
+
+            .muzeu-lightbox-prev {
+                left: 0.5rem;
+            }
+
+            .muzeu-lightbox-next {
+                right: 0.5rem;
+            }
+
+            .muzeu-lightbox-caption {
+                font-size: 0.9rem;
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        /* ===== HIDE RUBRICAS (galleries hidden, shown via modal) ===== */
+        .muzeu-rubrica {
+            display: none;
+        }
+
+        /* ===== MUZEU CATEGORY MODAL ===== */
+        .muzeu-cat-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9000;
+            background: linear-gradient(180deg, #060b18 0%, #0d1b2a 100%);
+            overflow-y: auto;
+            animation: catModalIn 0.4s ease;
+        }
+
+        .muzeu-cat-modal.active {
+            display: block;
+        }
+
+        .muzeu-cat-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 3rem;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            position: sticky;
+            top: 0;
+            background: rgba(6, 11, 24, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 2;
+        }
+
+        .muzeu-cat-modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--royal-gold);
+            margin: 0;
+        }
+
+        .muzeu-cat-modal-close {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .muzeu-cat-modal-close:hover {
+            background: rgba(197, 160, 89, 0.9);
+            color: #002147;
+        }
+
+        .muzeu-cat-modal-body {
+            padding: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .muzeu-cat-modal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .muzeu-cat-modal-grid .muzeu-thumb {
+            height: 260px;
+        }
+
+        @keyframes catModalIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .muzeu-cat-modal-header {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .muzeu-cat-modal-body {
+                padding: 1.5rem;
+            }
+
+            .muzeu-cat-modal-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .muzeu-cat-modal-grid .muzeu-thumb {
+                height: 280px;
+            }
+
+            .muzeu-cat-modal-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ===== DOOR BUTTON ===== */
+        .muzeu-door-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            border-radius: 8px;
+            color: var(--royal-gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .muzeu-door:hover .muzeu-door-btn {
+            background: rgba(197, 160, 89, 0.9);
+            color: #002147;
+            border-color: var(--royal-gold);
+        }
+
+        /* ===== MUZEU CATEGORY DOORS ===== */
+        .muzeu-doors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 5rem;
+        }
+
+        .muzeu-door {
+            position: relative;
+            height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid rgba(197, 160, 89, 0.25);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+        }
+
+        .muzeu-door img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .muzeu-door-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.75) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            transition: background 0.4s ease;
+        }
+
+        .muzeu-door-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--royal-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .muzeu-door-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+        }
+
+        .muzeu-door-arrow {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--royal-gold);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(5px);
+        }
+
+        .muzeu-door:hover {
+            transform: translateY(-8px);
+            border-color: var(--royal-gold);
+            box-shadow: 0 25px 60px rgba(197, 160, 89, 0.25);
+        }
+
+        .muzeu-door:hover img {
+            transform: scale(1.08);
+        }
+
+        .muzeu-door:hover .muzeu-door-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.85) 100%);
+        }
+
+        .muzeu-door:hover .muzeu-door-arrow {
+            opacity: 1;
+            transform: translateY(0);
+            background: rgba(197, 160, 89, 0.9);
+            color: #002147;
+        }
+
+        @media (max-width: 768px) {
+            .muzeu-doors-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .muzeu-door {
+                height: 260px;
+            }
+
+            .muzeu-door-overlay {
+                padding: 1.2rem;
+            }
+
+            .muzeu-door-title {
+                font-size: 1.1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .muzeu-door-desc {
+                font-size: 0.7rem;
+                line-height: 1.3;
+            }
+
+            .muzeu-door-btn {
+                font-size: 0.65rem;
+                padding: 0.35rem 0.8rem;
+                margin-top: 0.5rem;
+            }
+
+            .muzeu-door-year {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
+        /* ===== DOOR YEAR BADGE ===== */
+        .muzeu-door-year {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            color: var(--royal-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.7rem;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
+            z-index: 3;
+        }
+    </style>
 </head>
 
 <body>
@@ -113,23 +633,25 @@
         <!-- ============================================
              ISTORIC (Mutat de pe Homepage)
              ============================================ -->
-        <section class="about-section" style="padding: var(--spacing-xxxl) 0; background: #fff;">
+        <section class="about-section"
+            style="padding: var(--spacing-xxxl) 0; background: linear-gradient(180deg, #0a1628 0%, #0d1b2a 100%);">
             <div class="container">
                 <div class="about-grid"
                     style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
                     <!-- Coloana Stângă - Text -->
                     <div class="about-content">
                         <h2 class="section-title-premium"
-                            style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--royal-navy);">O școală cu
+                            style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--royal-gold);">O școală cu
                             istorie regală</h2>
                         <p class="about-text"
-                            style="font-size: 1.2rem; line-height: 1.8; color: var(--royal-navy); font-weight: 300; margin-bottom: 1.5rem;">
+                            style="font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.9); font-weight: 300; margin-bottom: 1.5rem;">
                             De la înființarea Liceului Principele Carol în <span class="gold-shimmer font-royal"
                                 style="font-weight: 900;">1921</span> și până astăzi,
                             am rămas un pilon al educației în Gura Humorului. Îmbinăm tradiția
                             bucovineană cu metodele moderne de predare.
                         </p>
-                        <p class="about-text" style="font-size: 1.1rem; line-height: 1.8; color: #64748b;">
+                        <p class="about-text"
+                            style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.6);">
                             Școala noastră a format generații de absolvenți care au contribuit
                             la dezvoltarea comunității locale și a societății românești, sub egida valorilor regale de
                             integritate și onoare.
@@ -140,11 +662,11 @@
                     <div class="about-image-wrapper">
                         <div class="about-image-frame premium-card"
                             style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,40,81,0.15);">
-                            <img src="images/scoala-veche.jpg" alt="Clădirea școlii în 1952" class="about-image"
+                            <img src="images/LPC.jpeg" alt="Liceul Principele Carol" class="about-image"
                                 style="width: 100%; height: auto; transform: scale(1.05); transition: transform 0.8s ease;">
                             <div class="about-year-badge antigravity-float"
-                                style="position: absolute; bottom: 2rem; right: 2rem; background: var(--royal-gold); color: var(--royal-navy); padding: 1rem 1.5rem; border-radius: 12px; font-weight: 900; font-family: 'Playfair Display'; font-size: 1.5rem; box-shadow: 0 10px 30px rgba(212,175,55,0.4);">
-                                1952
+                                style="position: absolute; bottom: 2rem; right: 2rem; background: var(--royal-gold); color: var(--royal-navy); padding: 0.6rem 1rem; border-radius: 10px; font-weight: 900; font-family: 'Playfair Display'; font-size: 1rem; box-shadow: 0 10px 30px rgba(212,175,55,0.4);">
+                                1926
                             </div>
                         </div>
                     </div>
@@ -156,11 +678,13 @@
         <!-- ============================================
              MISIUNE ȘI VIZIUNE
              ============================================ -->
-        <section class="mission-section" id="misiune" style="padding: 120px 0; background: #f8fafc;">
+        <section class="mission-section" id="misiune"
+            style="padding: 120px 0; background: linear-gradient(180deg, #0d1b2a 0%, #1a2740 50%, #0d1b2a 100%);">
             <div class="container">
                 <div class="mission-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
                     <!-- Misiune -->
-                    <div class="mission-card premium-card royal-glass" style="padding: 4rem; text-align: center;">
+                    <div class="mission-card premium-card"
+                        style="padding: 4rem; text-align: center; background: linear-gradient(145deg, #0a1628 0%, #152238 100%); border: 1px solid rgba(197,160,89,0.3); border-radius: 20px;">
                         <div class="mission-icon antigravity-float"
                             style="display: inline-block; margin-bottom: 2rem; color: var(--royal-gold);">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
@@ -171,9 +695,9 @@
                             </svg>
                         </div>
                         <h3 class="mission-title font-royal"
-                            style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--royal-navy);">Misiunea noastră
+                            style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--royal-gold);">Misiunea noastră
                         </h3>
-                        <p class="mission-text" style="color: #64748b; line-height: 1.8;">
+                        <p class="mission-text" style="color: rgba(255,255,255,0.7); line-height: 1.8;">
                             Să oferim elevilor puterea de a reuși prin educație de calitate,
                             dezvoltare personală și valori morale solide. Ne angajăm să formăm
                             cetățeni responsabili, creativi și pregătiți pentru provocările viitorului.
@@ -181,7 +705,8 @@
                     </div>
 
                     <!-- Viziune -->
-                    <div class="mission-card premium-card royal-glass" style="padding: 4rem; text-align: center;">
+                    <div class="mission-card premium-card"
+                        style="padding: 4rem; text-align: center; background: linear-gradient(145deg, #0a1628 0%, #152238 100%); border: 1px solid rgba(197,160,89,0.3); border-radius: 20px;">
                         <div class="mission-icon antigravity-float"
                             style="display: inline-block; margin-bottom: 2rem; color: var(--royal-gold); animation-delay: -3s;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
@@ -191,9 +716,9 @@
                             </svg>
                         </div>
                         <h3 class="mission-title font-royal"
-                            style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--royal-navy);">Viziunea noastră
+                            style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--royal-gold);">Viziunea noastră
                         </h3>
-                        <p class="mission-text" style="color: #64748b; line-height: 1.8;">
+                        <p class="mission-text" style="color: rgba(255,255,255,0.7); line-height: 1.8;">
                             Să fim un partener de încredere al comunității în educație,
                             o școală unde tradiția întâlnește inovația, unde fiecare elev
                             este valorizat și unde excelența academică se îmbină armonios.
@@ -301,92 +826,235 @@
         </section>
 
         <!-- ============================================
-             TEZAURUL HERITAGE (ARTIFACT INTEGRATION)
+             MUZEUL VIRTUAL - GALERIE INTERACTIVĂ
              ============================================ -->
-        <!-- ============================================
-             MUZEUL VIRTUAL - TEZAURUL PRINCIPELE CAROL
-             ============================================ -->
-        <section class="heritage-gallery-section"
-            style="padding: 120px 0; background: var(--royal-navy); color: white; position: relative; overflow: hidden;">
-            <div class="absolute inset-0 opacity-10"
-                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
-            <div class="container text-center relative z-10">
-                <h2 class="section-title-premium gold-shimmer"
-                    style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--royal-gold);">Muzeu virtual</h2>
-                <p
-                    style="text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; margin-bottom: 5rem; opacity: 0.8; color: white;">
-                    O istorie de peste un secol</p>
+        <section class="muzeu-virtual-section" id="muzeu-virtual"
+            style="padding: 100px 0; background: linear-gradient(180deg, #0a0f1e 0%, #0d1b2a 50%, #0a0f1e 100%); color: white; position: relative; overflow: hidden;">
 
-                <div class="heritage-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
-                    <!-- Card 1: Elevi 1952 -->
-                    <div class="heritage-card premium-card royal-glass"
-                        style="background: rgba(255,255,255,0.05); border: 3px solid var(--royal-gold); border-radius: 24px; padding: 1.5rem;">
-                        <div
-                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
+            <!-- Textură subtilă de fundal -->
+            <div
+                style="position: absolute; inset: 0; opacity: 0.04; background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <!-- Titlu secțiune -->
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2 class="section-title-premium gold-shimmer"
+                        style="font-size: 3.5rem; margin-bottom: 0.8rem; color: var(--royal-gold);">Muzeu virtual</h2>
+                    <p
+                        style="text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.8rem; opacity: 0.7; color: #cbd5e1;">
+                        O istorie de peste un secol</p>
+                    <div
+                        style="width: 80px; height: 3px; background: linear-gradient(90deg, transparent, var(--royal-gold), transparent); margin: 1.5rem auto;">
+                    </div>
+                </div>
+
+                <!-- ========== MENIU CATEGORII (3 UȘI) ========== -->
+                <div class="muzeu-doors-grid">
+                    <!-- Ușa 1: Chipuri și destine -->
+                    <a class="muzeu-door" href="#"
+                        onclick="event.preventDefault(); openCategoryGallery('chipuri', 'Chipuri și destine')">
+                        <img src="images/muzeu/Elevi 1952 Școala pedagogică de fete AM.jpeg" alt="Chipuri și destine"
+                            loading="lazy">
+                        <div class="muzeu-door-overlay">
+                            <h3 class="muzeu-door-title">Chipuri și destine</h3>
+                            <p class="muzeu-door-desc">Oamenii care au scris istoria școlii noastre.</p>
+                            <span class="muzeu-door-btn">Vezi galeria →</span>
+                        </div>
+                        <div class="muzeu-door-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <!-- Ușa 2: Documente istorice -->
+                    <a class="muzeu-door" href="#"
+                        onclick="event.preventDefault(); openCategoryGallery('documente', 'Documente istorice')">
+                        <img src="images/muzeu/Imagine veche înscrieri.jpeg" alt="Documente istorice" loading="lazy">
+                        <div class="muzeu-door-overlay">
+                            <h3 class="muzeu-door-title">Documente istorice</h3>
+                            <p class="muzeu-door-desc">Anuare, documente și însemnări din arhiva școlii.</p>
+                            <span class="muzeu-door-btn">Vezi galeria →</span>
+                        </div>
+                        <div class="muzeu-door-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <!-- Ușa 3: Martori tăcuți -->
+                    <a class="muzeu-door" href="#"
+                        onclick="event.preventDefault(); openCategoryGallery('origini', 'Martori tăcuți')">
+                        <img src="images/muzeu/3.jpeg" alt="Martori tăcuți" loading="lazy">
+                        <span class="muzeu-door-year">1926</span>
+                        <div class="muzeu-door-overlay">
+                            <h3 class="muzeu-door-title">Martori tăcuți</h3>
+                            <p class="muzeu-door-desc">Clădirea și spațiile care au găzduit generații de elevi.</p>
+                            <span class="muzeu-door-btn">Vezi galeria →</span>
+                        </div>
+                        <div class="muzeu-door-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ========== RUBRICA 1: CHIPURI ȘI DESTINE ========== -->
+                <div class="muzeu-rubrica" id="galerie-chipuri" style="margin-bottom: 5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 4px; height: 40px; background: var(--royal-gold); border-radius: 2px;"></div>
+                        <h3 class="font-royal" style="font-size: 2rem; color: var(--royal-gold); margin: 0;">Chipuri și
+                            destine</h3>
+                    </div>
+                    <p
+                        style="color: #8899aa; font-size: 0.95rem; margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">
+                        Oamenii care au scris istoria școlii noastre.</p>
+
+                    <div class="muzeu-gallery-grid" data-gallery="chipuri">
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 0)">
                             <img src="images/muzeu/Elevi 1952 Școala pedagogică de fete AM.jpeg"
-                                alt="Școala Pedagogică 1952"
-                                style="width: 100%; height: 250px; object-fit: cover; filter: brightness(1.1) contrast(1.1);">
+                                alt="Eleve și profesori ai Școlii Pedagogice de Fete, 1952"
+                                data-caption="Elevele și profesorii Școlii Pedagogice de Fete — o rară mărturie vizuală a disciplinei și rigorii acelor ani."
+                                loading="lazy">
                         </div>
-                        <h3 class="font-royal"
-                            style="font-size: 1.6rem; color: var(--royal-gold); margin-bottom: 1rem;">Elevele și
-                            profesorii (1952)</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6; color: #cbd5e1;">O rară mărturie
-                            vizuală a elevelor de la Școala Pedagogică de Fete și a profesorilor lor, reflectând
-                            disciplina și rigoarea
-                            acelor ani.</p>
-                        <div style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1.5rem;">
-                            <span
-                                style="font-size: 0.75rem; color: var(--royal-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Arhivă
-                                Istorică</span>
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 1)">
+                            <img src="images/muzeu/chipuri-si-destine/Școala Pedagogică de Fete. Promoția 1950-1951.jpeg"
+                                alt="Tabloul promoției 1950-1951 — Școala Pedagogică de Fete, Gura Humorului"
+                                data-caption="Promoția 1950–1951 a Școlii Pedagogice de Fete, Gura Humorului. Tablou comemorativ cu portretele absolventelor și ale corpului didactic."
+                                loading="lazy">
+                        </div>
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 2)">
+                            <img src="images/muzeu/chipuri-si-destine/Promotia 1950-1951.jpeg" alt="Promoția 1950-1951"
+                                data-caption="Promoția 1950–1951 — o altă imagine de arhivă cu absolventele și cadrele didactice ale Școlii Pedagogice."
+                                loading="lazy">
+                        </div>
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 3)">
+                            <img src="images/muzeu/chipuri-si-destine/promotia-1950.jpeg" alt="Promoția 1950"
+                                data-caption="Promoția 1950 a Școlii Pedagogice de Fete din Gura Humorului."
+                                loading="lazy">
+                        </div>
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 4)">
+                            <img src="images/muzeu/chipuri-si-destine/promotia-1950-b.jpeg"
+                                alt="Promoția 1950 — fotografie alternativă"
+                                data-caption="Fotografie de grup a promoției 1950 — variantă alternativă din arhiva școlii."
+                                loading="lazy">
+                        </div>
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 5)">
+                            <img src="images/muzeu/chipuri-si-destine/elevi-1952.jpeg" alt="Elevii promoției 1952"
+                                data-caption="Elevi ai promoției 1952 — chipuri care au scris istoria educației locale."
+                                loading="lazy">
+                        </div>
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('chipuri', 6)">
+                            <img src="images/muzeu/chipuri-si-destine/LPC.jpeg"
+                                alt="Liceul Principele Carol — fotografie de arhivă"
+                                data-caption="Fotografie de arhivă a Liceului Principele Carol — un reper al educației din Gura Humorului."
+                                loading="lazy">
                         </div>
                     </div>
+                </div>
 
-                    <!-- Card 2: Arhiva -->
-                    <div class="heritage-card premium-card royal-glass"
-                        style="background: rgba(255,255,255,0.05); border: 3px solid var(--royal-gold); border-radius: 24px; padding: 1.5rem; animation-delay: -2s;">
-                        <div
-                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
-                            <img src="images/muzeu/Imagine veche înscrieri.jpeg" alt="Patrimoniu Arhivistic"
-                                style="width: 100%; height: 250px; object-fit: cover; filter: brightness(1.1) contrast(1.1);">
-                        </div>
-                        <h3 class="font-royal"
-                            style="font-size: 1.6rem; color: var(--royal-gold); margin-bottom: 1rem;">Documente istorice
-                        </h3>
-                        <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6; color: #cbd5e1;">Documente
-                            administrative și însemnări care atestă parcursul istoric și recunoașterea școlii în Gura
-                            Humorului.</p>
-                        <div style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1.5rem;">
-                            <span
-                                style="font-size: 0.75rem; color: var(--royal-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Colecția
-                                Muzeală</span>
+                <!-- ========== RUBRICA 2: DOCUMENTE ISTORICE ========== -->
+                <div class="muzeu-rubrica" id="galerie-marturii" style="margin-bottom: 5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 4px; height: 40px; background: var(--royal-gold); border-radius: 2px;"></div>
+                        <h3 class="font-royal" style="font-size: 2rem; color: var(--royal-gold); margin: 0;">Documente
+                            istorice</h3>
+                    </div>
+                    <p
+                        style="color: #8899aa; font-size: 0.95rem; margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">
+                        Documente administrative și însemnări care atestă parcursul istoric și recunoașterea școlii în
+                        Gura Humorului.</p>
+
+                    <div class="muzeu-gallery-grid" data-gallery="documente">
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('documente', 0)">
+                            <img src="images/muzeu/Imagine veche înscrieri.jpeg"
+                                alt="Document vechi de înscriere la Școala Pedagogică"
+                                data-caption="Formulare de înscriere din arhiva școlii — dovezi ale tradiției educaționale continuate de-a lungul deceniilor."
+                                loading="lazy">
                         </div>
                     </div>
+                </div>
 
-                    <!-- Card 3: Înscrieri -->
-                    <div class="heritage-card premium-card royal-glass"
-                        style="background: rgba(255,255,255,0.05); border: 3px solid var(--royal-gold); border-radius: 24px; padding: 1.5rem; animation-delay: -4s;">
-                        <div
-                            style="border-radius: 15px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2);">
-                            <img src="images/muzeu/3.jpeg" alt="Tradiția înscrierilor"
-                                style="width: 100%; height: 250px; object-fit: cover; filter: brightness(1.1) contrast(1.1);">
-                        </div>
-                        <h3 class="font-royal"
-                            style="font-size: 1.6rem; color: var(--royal-gold); margin-bottom: 1rem;">Originile
+                <!-- ========== RUBRICA 3: ORIGINILE ȘCOLII ========== -->
+                <div class="muzeu-rubrica" id="galerie-locul">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 4px; height: 40px; background: var(--royal-gold); border-radius: 2px;"></div>
+                        <h3 class="font-royal" style="font-size: 2rem; color: var(--royal-gold); margin: 0;">Originile
                             școlii</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6; color: #cbd5e1;">Arhiva
-                            fotografică
-                            surprinde momente din viața școlară de la începutul secolului XX, reflectând tradiția și
-                            comunitatea locală.</p>
-                        <div style="margin-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1.5rem;">
-                            <span
-                                style="font-size: 0.75rem; color: var(--royal-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Istorie
-                                Locală</span>
+                    </div>
+                    <p
+                        style="color: #8899aa; font-size: 0.95rem; margin-bottom: 2rem; max-width: 700px; line-height: 1.7;">
+                        Arhiva fotografică surprinde momente din viața școlară de la începutul secolului XX, reflectând
+                        tradiția și comunitatea locală.</p>
+
+                    <div class="muzeu-gallery-grid" data-gallery="origini">
+                        <div class="muzeu-thumb" onclick="openMuzeuLightbox('origini', 0)">
+                            <img src="images/muzeu/3.jpeg" alt="Fotografie istorică de la începuturile școlii"
+                                data-caption="Imagini de la începuturile școlii din Gura Humorului — tradiție și comunitate la începutul secolului XX."
+                                loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ============================================
+             MUZEU VIRTUAL - CATEGORY GALLERY MODAL
+             ============================================ -->
+        <div class="muzeu-cat-modal" id="muzeuCatModal">
+            <div class="muzeu-cat-modal-header">
+                <h2 class="muzeu-cat-modal-title font-royal" id="muzeuCatModalTitle">Titlu</h2>
+                <button class="muzeu-cat-modal-close" onclick="closeCategoryGallery()" aria-label="Închide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="muzeu-cat-modal-body">
+                <div class="muzeu-cat-modal-grid" id="muzeuCatModalGrid">
+                    <!-- Images injected by JS -->
+                </div>
+            </div>
+        </div>
+        <!-- ============================================
+             MUZEU VIRTUAL - LIGHTBOX MODAL
+             ============================================ -->
+        <div class="muzeu-lightbox" id="muzeuLightbox">
+            <div class="muzeu-lightbox-backdrop" onclick="closeMuzeuLightbox()"></div>
+            <button class="muzeu-lightbox-close" onclick="closeMuzeuLightbox()" aria-label="Închide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="muzeu-lightbox-nav muzeu-lightbox-prev" onclick="navigateMuzeuLightbox(-1)"
+                aria-label="Imaginea anterioară">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="muzeu-lightbox-nav muzeu-lightbox-next" onclick="navigateMuzeuLightbox(1)"
+                aria-label="Imaginea următoare">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="muzeu-lightbox-content">
+                <img id="muzeuLightboxImg" src="" alt="">
+                <div class="muzeu-lightbox-caption" id="muzeuLightboxCaption"></div>
+                <div class="muzeu-lightbox-counter" id="muzeuLightboxCounter"></div>
+            </div>
+        </div>
+
 
         <!-- ============================================
              CORP PROFESORAL
@@ -547,6 +1215,178 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Muzeu Virtual Lightbox Script -->
+    <script>
+        // === MUZEU VIRTUAL LIGHTBOX ===
+        (function () {
+            let currentGallery = '';
+            let currentIndex = 0;
+            let galleryImages = [];
+
+            // Collect images from a gallery group
+            function getGalleryImages(galleryName) {
+                const grid = document.querySelector('[data-gallery="' + galleryName + '"]');
+                if (!grid) return [];
+                const imgs = grid.querySelectorAll('.muzeu-thumb img');
+                return Array.from(imgs).map(function (img) {
+                    return {
+                        src: img.src,
+                        alt: img.alt,
+                        caption: img.getAttribute('data-caption') || img.alt
+                    };
+                });
+            }
+
+            // Open lightbox
+            window.openMuzeuLightbox = function (galleryName, index) {
+                currentGallery = galleryName;
+                galleryImages = getGalleryImages(galleryName);
+                if (galleryImages.length === 0) return;
+                currentIndex = index;
+                showImage();
+                document.getElementById('muzeuLightbox').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                updateNavVisibility();
+            };
+
+            // Close lightbox
+            window.closeMuzeuLightbox = function () {
+                document.getElementById('muzeuLightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            // Navigate
+            window.navigateMuzeuLightbox = function (direction) {
+                currentIndex += direction;
+                if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+                if (currentIndex >= galleryImages.length) currentIndex = 0;
+                showImage();
+                updateNavVisibility();
+            };
+
+            function showImage() {
+                var img = galleryImages[currentIndex];
+                var lbImg = document.getElementById('muzeuLightboxImg');
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                document.getElementById('muzeuLightboxCaption').textContent = img.caption;
+                document.getElementById('muzeuLightboxCounter').textContent =
+                    (currentIndex + 1) + ' / ' + galleryImages.length;
+            }
+
+            function updateNavVisibility() {
+                var prevBtn = document.querySelector('.muzeu-lightbox-prev');
+                var nextBtn = document.querySelector('.muzeu-lightbox-next');
+                var counter = document.getElementById('muzeuLightboxCounter');
+                if (galleryImages.length <= 1) {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                    counter.style.display = 'none';
+                } else {
+                    prevBtn.style.display = 'flex';
+                    nextBtn.style.display = 'flex';
+                    counter.style.display = 'block';
+                }
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                var lb = document.getElementById('muzeuLightbox');
+                if (!lb.classList.contains('active')) return;
+                if (e.key === 'Escape') closeMuzeuLightbox();
+                if (e.key === 'ArrowRight') navigateMuzeuLightbox(1);
+                if (e.key === 'ArrowLeft') navigateMuzeuLightbox(-1);
+            });
+
+            // Touch swipe support
+            var touchStartX = 0;
+            document.getElementById('muzeuLightbox').addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            document.getElementById('muzeuLightbox').addEventListener('touchend', function (e) {
+                var diff = touchStartX - e.changedTouches[0].screenX;
+                if (Math.abs(diff) > 50) {
+                    navigateMuzeuLightbox(diff > 0 ? 1 : -1);
+                }
+            }, { passive: true });
+        })();
+    </script>
+
+    <!-- CATEGORY GALLERY MODAL JS -->
+    <script>
+        var currentCatGallery = null;
+
+        function openCategoryGallery(galleryKey, title) {
+            console.log('openCategoryGallery called:', galleryKey, title);
+            currentCatGallery = galleryKey;
+            var modal = document.getElementById('muzeuCatModal');
+            var titleEl = document.getElementById('muzeuCatModalTitle');
+            var grid = document.getElementById('muzeuCatModalGrid');
+
+            if (!modal || !titleEl || !grid) {
+                console.error('Modal elements not found!', modal, titleEl, grid);
+                return;
+            }
+
+            titleEl.textContent = title;
+
+            // Find images from the hidden gallery grid
+            var sourceGrid = document.querySelector('.muzeu-gallery-grid[data-gallery="' + galleryKey + '"]');
+            if (!sourceGrid) {
+                console.error('Source grid not found for:', galleryKey);
+                return;
+            }
+
+            var images = sourceGrid.querySelectorAll('img');
+            console.log('Found images:', images.length);
+            grid.innerHTML = '';
+
+            images.forEach(function (img, index) {
+                var thumb = document.createElement('div');
+                thumb.className = 'muzeu-thumb';
+                thumb.style.cursor = 'pointer';
+                thumb.onclick = function () { openMuzeuLightbox(galleryKey, index); };
+
+                var newImg = document.createElement('img');
+                newImg.src = img.src;
+                newImg.alt = img.alt;
+                newImg.setAttribute('data-caption', img.getAttribute('data-caption') || '');
+                newImg.loading = 'lazy';
+                newImg.style.width = '100%';
+                newImg.style.height = '100%';
+                newImg.style.objectFit = 'cover';
+
+                thumb.appendChild(newImg);
+                grid.appendChild(thumb);
+            });
+
+            // Force display
+            modal.style.display = 'block';
+            modal.classList.add('active');
+            modal.scrollTop = 0;
+            document.body.style.overflow = 'hidden';
+            console.log('Modal opened successfully');
+        }
+
+        function closeCategoryGallery() {
+            var modal = document.getElementById('muzeuCatModal');
+            modal.style.display = 'none';
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            currentCatGallery = null;
+        }
+
+        // Close on Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                var modal = document.getElementById('muzeuCatModal');
+                if (modal && modal.style.display === 'block') {
+                    closeCategoryGallery();
+                }
+            }
+        });
+    </script>
 
     <!-- SKILLS ACTIVATION -->
     <!-- 1. Integrity Shield (Quality Assurance) -->
