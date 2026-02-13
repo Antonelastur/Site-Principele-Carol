@@ -525,7 +525,25 @@ input[type="button"],
 
     /* --- Mission Grid --- */
     .mission-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .mission-section {
+        padding: 60px 0 !important;
+    }
+
+    .mission-card {
+        padding: 2.5rem 1.5rem !important;
+    }
+
+    .mission-title {
+        font-size: 1.5rem !important;
+    }
+
+    .mission-icon svg {
+        width: 45px;
+        height: 45px;
     }
 
     /* --- Carol TV Grid --- */
