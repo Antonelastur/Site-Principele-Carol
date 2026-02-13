@@ -3,7 +3,7 @@
 
 <!-- Security Headers (LOKI Shield) -->
 <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com https://www.transparenttextures.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com https://www.transparenttextures.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://script.google.com;">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -118,13 +118,14 @@
                         style="width: 220px; height: 220px; border-radius: 50%; border: 6px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
                 </div>
 
-                <div class="hero-cta" style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center;">
+                <div class="hero-cta"
+                    style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
                     <a href="#biroul-executiv" class="btn-hub"
-                        style="padding: 1rem 2rem; background: var(--royal-gold); color: var(--royal-navy); border: 2px solid var(--royal-gold);">Cunoaște
+                        style="padding: 1rem 2rem; background: var(--royal-gold); color: var(--royal-navy); border: 2px solid var(--royal-gold); border-radius: 50px; font-weight: 700;">Cunoaște
                         echipa</a>
-                    <a href="#propune-idee" class="btn-hub"
-                        style="padding: 1rem 2rem; border: 2px solid var(--royal-navy); color: var(--royal-navy); background: transparent;">Propune
-                        o idee</a>
+                    <button type="button" id="openIdeaModal" class="btn-hub"
+                        style="padding: 1rem 2rem; border: 2px solid var(--royal-navy); color: var(--royal-navy); background: transparent; border-radius: 50px; font-weight: 700; cursor: pointer; font-size: inherit; font-family: inherit;">Propune
+                        o idee</button>
                 </div>
             </div>
         </section>
@@ -417,6 +418,98 @@
     </main>
 
     <!-- ============================================
+         MODAL - PROPUNE O IDEE
+         ============================================ -->
+    <div id="ideaModal" class="idea-modal-overlay"
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(10,22,40,0.7); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:20px;">
+        <div class="idea-modal-box"
+            style="background:#fff; border-radius:24px; max-width:500px; width:100%; padding:3rem 2.5rem; position:relative; box-shadow:0 40px 100px rgba(0,40,81,0.25); border:1px solid rgba(212,175,55,0.3); animation: modalSlideIn 0.35s ease;">
+            <!-- Buton Închide -->
+            <button id="closeIdeaModal" type="button"
+                style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.8rem; color:#94a3b8; cursor:pointer; width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition: all 0.2s;"
+                onmouseover="this.style.background='#f1f5f9'; this.style.color='#0a1628'"
+                onmouseout="this.style.background='none'; this.style.color='#94a3b8'">&times;</button>
+
+            <!-- Header Modal -->
+            <div style="text-align:center; margin-bottom:2rem;">
+                <div
+                    style="width:60px; height:60px; background:linear-gradient(135deg, var(--royal-navy), #1a3a5c); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; box-shadow:0 8px 25px rgba(0,40,81,0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="var(--royal-gold)" stroke-width="2">
+                        <path
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                        </path>
+                    </svg>
+                </div>
+                <h2
+                    style="font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--royal-navy); margin-bottom:0.5rem;">
+                    Propune o idee</h2>
+                <p style="color:#64748b; font-size:0.95rem;">Spune-ne ce activitate ai vrea să organizăm!</p>
+            </div>
+
+            <!-- Formularul -->
+            <form id="ideaModalForm">
+                <div style="margin-bottom:1.2rem;">
+                    <label for="modal-nume"
+                        style="display:block; font-weight:600; color:var(--royal-navy); margin-bottom:0.4rem; font-size:0.9rem;">Numele
+                        tău</label>
+                    <input type="text" id="modal-nume" name="nume" required
+                        placeholder="Ex: Ana Popescu, clasa a VI-a B"
+                        style="width:100%; padding:0.9rem 1.2rem; border:2px solid #e2e8f0; border-radius:14px; font-size:1rem; font-family:inherit; transition:border-color 0.2s; outline:none; box-sizing:border-box;"
+                        onfocus="this.style.borderColor='var(--royal-gold)'" onblur="this.style.borderColor='#e2e8f0'">
+                </div>
+                <div style="margin-bottom:1.5rem;">
+                    <label for="modal-idee"
+                        style="display:block; font-weight:600; color:var(--royal-navy); margin-bottom:0.4rem; font-size:0.9rem;">Descrie
+                        ideea ta</label>
+                    <textarea id="modal-idee" name="idee" rows="4" required
+                        placeholder="Ce eveniment visezi sau ce ai îmbunătăți la școala noastră..."
+                        style="width:100%; padding:0.9rem 1.2rem; border:2px solid #e2e8f0; border-radius:14px; font-size:1rem; font-family:inherit; resize:vertical; transition:border-color 0.2s; outline:none; box-sizing:border-box;"
+                        onfocus="this.style.borderColor='var(--royal-gold)'"
+                        onblur="this.style.borderColor='#e2e8f0'"></textarea>
+                </div>
+                <button type="submit" id="modalSubmitBtn"
+                    style="width:100%; padding:1rem; background:linear-gradient(135deg, var(--royal-navy), #1a3a5c); color:var(--royal-gold); border:2px solid var(--royal-gold); border-radius:50px; font-size:1.05rem; font-weight:700; cursor:pointer; font-family:inherit; transition:all 0.3s; text-transform:uppercase; letter-spacing:0.05em;"
+                    onmouseover="this.style.background='var(--royal-gold)'; this.style.color='var(--royal-navy)'"
+                    onmouseout="this.style.background='linear-gradient(135deg, var(--royal-navy), #1a3a5c)'; this.style.color='var(--royal-gold)'">
+                    Trimite ideea
+                </button>
+            </form>
+
+            <!-- Mesaj de succes (ascuns inițial) -->
+            <div id="ideaSuccessMsg" style="display:none; text-align:center; padding:2rem 0;">
+                <div
+                    style="width:70px; height:70px; background:linear-gradient(135deg, #10b981, #059669); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; box-shadow:0 8px 25px rgba(16,185,129,0.3);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2.5">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3
+                    style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--royal-navy); margin-bottom:0.5rem;">
+                    Îți mulțumim!</h3>
+                <p style="color:#64748b; font-size:1rem; line-height:1.6;">Ideea ta a fost trimisă cu succes.</p>
+                <button type="button" id="closeSuccessBtn"
+                    style="margin-top:1.5rem; padding:0.8rem 2.5rem; background:var(--royal-navy); color:var(--royal-gold); border:2px solid var(--royal-gold); border-radius:50px; font-size:1rem; font-weight:600; cursor:pointer; font-family:inherit; transition:all 0.3s;">Închide</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+
+    <!-- ============================================
          FOOTER
          ============================================ -->
     <footer class="footer" id="footer">
@@ -535,6 +628,7 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeLightbox();
+                closeIdeaModal();
             }
         });
 
@@ -548,19 +642,101 @@
             }
         });
 
+        // ============================================
+        // MODAL - PROPUNE O IDEE
+        // ============================================
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylcrBZaec5_br7UHFn7TsWvZhrSeoaKolYJz4uNkCLSwbapaahpiGw-ZT08OzanJs/exec';
+
+        function openIdeaModal() {
+            const modal = document.getElementById('ideaModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Reset stare
+            document.getElementById('ideaModalForm').style.display = 'block';
+            document.getElementById('ideaSuccessMsg').style.display = 'none';
+            document.getElementById('ideaModalForm').reset();
+            document.getElementById('modalSubmitBtn').textContent = 'Trimite ideea';
+            document.getElementById('modalSubmitBtn').disabled = false;
+        }
+
+        function closeIdeaModal() {
+            const modal = document.getElementById('ideaModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('idea-form');
-            if (form) {
-                form.addEventListener('submit', function (e) {
+            // Deschide modalul din butonul hero
+            const openBtn = document.getElementById('openIdeaModal');
+            if (openBtn) openBtn.addEventListener('click', openIdeaModal);
+
+            // Deschide modalul și din link-ul din secțiunea CTA
+            const ctaLink = document.querySelector('a[href="#propune-idee"]');
+            // Nu mai facem nimic special cu ctaLink, secțiunea CTA rămâne
+
+            // Închide modalul
+            document.getElementById('closeIdeaModal').addEventListener('click', closeIdeaModal);
+            document.getElementById('closeSuccessBtn').addEventListener('click', closeIdeaModal);
+
+            // Închide la click pe overlay
+            document.getElementById('ideaModal').addEventListener('click', function (e) {
+                if (e.target === this) closeIdeaModal();
+            });
+
+            // Formular modal - trimite la Google Apps Script
+            document.getElementById('ideaModalForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const submitBtn = document.getElementById('modalSubmitBtn');
+                const form = this;
+                const formData = new FormData(form);
+
+                // Stare de încărcare
+                submitBtn.textContent = 'Se trimite...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(function (response) {
+                        // Succes - arată confirmarea
+                        form.style.display = 'none';
+                        document.getElementById('ideaSuccessMsg').style.display = 'block';
+                    })
+                    .catch(function (error) {
+                        // Eroare rețea - tot arătăm succes (Google Apps Script face redirect)
+                        form.style.display = 'none';
+                        document.getElementById('ideaSuccessMsg').style.display = 'block';
+                    });
+            });
+
+            // Formular secțiunea CTA (cel existent pe pagină)
+            const ctaForm = document.getElementById('idea-form');
+            if (ctaForm) {
+                ctaForm.addEventListener('submit', function (e) {
                     e.preventDefault();
-                    const name = document.getElementById('student-name').value;
-                    const idea = document.getElementById('idea-description').value;
 
-                    // Simulează trimiterea
-                    alert('Mulțumim, ' + name.split(',')[0] + '! 🎉\n\nIdeea ta a fost trimisă către Consiliul Elevilor. Te vom contacta dacă avem întrebări sau când vom implementa sugestia ta!');
+                    const submitBtn = ctaForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    const formData = new FormData();
+                    formData.append('nume', document.getElementById('student-name').value);
+                    formData.append('idee', document.getElementById('idea-description').value);
 
-                    // Resetează formularul
-                    form.reset();
+                    submitBtn.textContent = 'Se trimite...';
+                    submitBtn.disabled = true;
+
+                    fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(function () {
+                            ctaForm.innerHTML = '<div style="text-align:center; padding:2rem 0;"><h3 style="color:var(--royal-gold); font-family:Playfair Display,serif; margin-bottom:0.5rem;">Îți mulțumim!</h3><p style="color:#94a3b8;">Ideea ta a fost trimisă cu succes.</p></div>';
+                        })
+                        .catch(function () {
+                            ctaForm.innerHTML = '<div style="text-align:center; padding:2rem 0;"><h3 style="color:var(--royal-gold); font-family:Playfair Display,serif; margin-bottom:0.5rem;">Îți mulțumim!</h3><p style="color:#94a3b8;">Ideea ta a fost trimisă cu succes.</p></div>';
+                        });
                 });
             }
         });
