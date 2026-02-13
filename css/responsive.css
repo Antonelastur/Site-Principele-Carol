@@ -1,0 +1,827 @@
+/* ============================================
+   RESPONSIVE DESIGN - OPTIMIZARE MOBILĂ COMPLETĂ
+   Școala Gimnazială „Principele Carol"
+   ============================================ 
+   
+   Breakpoints:
+   - Desktop:  > 992px
+   - Tablet:   768px - 992px    
+   - Mobile:   480px - 768px
+   - Small:    < 480px
+   ============================================ */
+
+/* ---- REGULI GLOBALE PENTRU TOATE ECRANELE ---- */
+
+/* 1. Prevenim scroll-ul orizontal pe ORICE dispozitiv */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* 2. Toate imaginile sunt fluide - nu depășesc containerul */
+img,
+video,
+iframe,
+embed,
+object,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Zona minimă de atingere 44x44px pe ORICE buton/link interactiv */
+a,
+button,
+input[type="submit"],
+input[type="button"],
+.btn,
+.nav-link,
+.nav-cta,
+.btn-news,
+.quick-card,
+.footer-link,
+.search-btn,
+.search-close {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* ============================================
+   TABLET (max-width: 992px)
+   ============================================ */
+@media (max-width: 992px) {
+
+    /* --- Header & Navigare --- */
+    .header {
+        height: 70px;
+    }
+
+    .header-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .logo-text {
+        padding-top: 0;
+    }
+
+    .logo-title {
+        font-size: 1.1rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Hamburger - Afișat pe tablet */
+    .hamburger {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+    }
+
+    /* Meniu mobil - slide-in plin ecran */
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: var(--spacing-xl) var(--spacing-lg);
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        z-index: 1000;
+        flex-direction: column;
+    }
+
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding-top: 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 14px var(--spacing-lg);
+        font-size: 1.05rem;
+        border-radius: var(--radius-md);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--off-white);
+    }
+
+    .nav-cta {
+        margin-left: 0;
+        margin-top: var(--spacing-lg);
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 14px var(--spacing-lg);
+        min-height: 48px;
+    }
+
+    /* Search pe mobil */
+    .search-container {
+        margin-left: 0;
+        margin-top: var(--spacing-md);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-container.active .search-input-wrapper {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* --- Container cu padding de respirație --- */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* --- Hero ajustat --- */
+    .hero {
+        min-height: 80vh;
+        padding-top: 70px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-xxl) 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 7vw, 3.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    /* --- Quick Access Cards --- */
+    .quick-access {
+        margin-top: -50px;
+    }
+
+    .quick-access-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .quick-card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .quick-card-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .quick-card-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* --- Director Section --- */
+    .director-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-xl);
+    }
+
+    .director-content {
+        text-align: left;
+    }
+
+    .section-title-premium {
+        text-align: center;
+    }
+
+    /* --- Museum Grid: Muzeu Virtual 3→1 --- */
+    .museum-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 10px;
+    }
+
+    .museum-card {
+        padding: 1.5rem !important;
+    }
+
+    .museum-card img {
+        height: 280px !important;
+        object-fit: cover;
+    }
+
+    .museum-card h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .museum-card p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Museum Section pe tablet */
+    .museum-section {
+        padding: 80px 0 !important;
+    }
+
+    /* --- Page Hero ajustat --- */
+    .page-hero {
+        padding: 100px 0 40px 0 !important;
+    }
+
+    .page-title {
+        font-size: 2rem !important;
+    }
+
+    .page-subtitle {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ============================================
+   MOBILE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* --- Container - margini de respirație --- */
+    .container {
+        padding: 0 18px;
+    }
+
+    /* --- Tipografie adaptivă --- */
+    h1,
+    .page-title {
+        font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+    }
+
+    h2 {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+    }
+
+    h3 {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+
+    /* --- Hero pe telefon --- */
+    .hero {
+        min-height: 70vh;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-xl) 18px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+        letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-location {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    /* Logo animat video - mai mic pe telefon */
+    .hero-video-overlay {
+        transform: scale(0.8);
+    }
+
+    /* Scroll Indicator - ascuns pe telefon */
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* --- Quick Access - 1 coloană pe telefon --- */
+    .quick-access {
+        margin-top: -30px;
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .quick-access-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: var(--spacing-md);
+    }
+
+    .quick-card {
+        flex-direction: row;
+        text-align: left;
+        padding: var(--spacing-md) var(--spacing-lg);
+        gap: var(--spacing-md);
+    }
+
+    .quick-card-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .quick-card-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .quick-card-featured {
+        transform: scale(1);
+        order: -1;
+    }
+
+    .quick-card-featured:hover {
+        transform: translateY(-5px);
+    }
+
+    /* --- Director Section - Mobil --- */
+    .director-section {
+        padding: var(--spacing-xxl) 0;
+    }
+
+    .director-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-xl);
+    }
+
+    .director-image-frame {
+        width: 160px;
+        height: 160px;
+    }
+
+    .director-quote {
+        padding: var(--spacing-lg);
+    }
+
+    .director-quote p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* --- News Section --- */
+    .news-section {
+        padding: var(--spacing-xxl) 0;
+    }
+
+    .news-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .news-card-title {
+        font-size: 1.1rem;
+    }
+
+    .news-card-text {
+        font-size: 0.93rem;
+        line-height: 1.7;
+    }
+
+    .btn-news {
+        display: inline-flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* --- Museum Grid - 1 coloană pe telefon --- */
+    .museum-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0;
+    }
+
+    .museum-card {
+        padding: 1.2rem !important;
+    }
+
+    .museum-card img {
+        height: 220px !important;
+        border-radius: 10px !important;
+    }
+
+    .museum-card h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .museum-card p {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .museum-section {
+        padding: 60px 0 !important;
+    }
+
+    /* --- Footer pe mobil --- */
+    .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-xl);
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    /* --- About Grid (Despre page - "O Școală cu Istorie Regală") --- */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* Imaginea apare ÎNAINTEA textului pe mobil */
+    .about-image-wrapper {
+        order: -1 !important;
+        width: 100%;
+    }
+
+    .about-image-frame {
+        border-radius: 16px !important;
+    }
+
+    .about-image {
+        width: 100% !important;
+        height: auto !important;
+        transform: scale(1) !important;
+        border-radius: 16px;
+    }
+
+    /* Textul se distribuie pe tot ecranul */
+    .about-content {
+        padding-right: 0;
+        order: 1;
+        text-align: left;
+        width: 100%;
+    }
+
+    .about-content h2,
+    .about-content .section-title-premium {
+        font-size: 1.8rem !important;
+        text-align: center;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .about-content .about-text {
+        font-size: 1rem !important;
+        line-height: 1.75 !important;
+        text-align: left;
+        padding: 0;
+    }
+
+    /* --- Media Grid --- */
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Team Grid --- */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Mission Grid --- */
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Carol TV Grid --- */
+    .caroltv-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .video-card-main {
+        grid-row: auto;
+    }
+
+    /* --- Magazine Grid (CAROLine) --- */
+    .magazine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .magazine-cover {
+        width: 250px;
+        height: 330px;
+        margin: 0 auto;
+    }
+
+    /* --- Info Cards (Părinți) --- */
+    .info-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card-primary {
+        grid-column: span 1;
+    }
+
+    /* --- Offer Grid --- */
+    .offer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Page Hero pe mobil --- */
+    .page-hero {
+        padding: 90px 0 35px 0 !important;
+    }
+}
+
+/* ============================================
+   SMALL PHONE (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* --- Container - margini de respirație maxime --- */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* --- Header ajustat pentru ecrane mici --- */
+    .header {
+        height: 60px;
+    }
+
+    .header-container {
+        padding: 0 12px;
+    }
+
+    .logo-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    /* Navigare pe ecran mic */
+    .nav {
+        top: 60px;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 12px var(--spacing-md);
+    }
+
+    /* --- Hero pe ecran mic --- */
+    .hero {
+        min-height: 60vh;
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-lg) 15px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 9vw, 2.2rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-location {
+        font-size: 0.8rem;
+    }
+
+    /* Logo video overlay mai mic */
+    .hero-video-overlay {
+        transform: scale(0.6);
+    }
+
+    /* --- Quick Cards simplificat --- */
+    .quick-card {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .quick-card-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .quick-card-title {
+        font-size: 0.95rem;
+    }
+
+    .quick-card-desc {
+        font-size: 0.8rem;
+    }
+
+    /* --- Museum Cards pe ecran mic --- */
+    .museum-card img {
+        height: 180px !important;
+    }
+
+    .museum-card h3 {
+        font-size: 1.15rem !important;
+    }
+
+    .museum-card p {
+        font-size: 0.85rem !important;
+    }
+
+    .museum-section {
+        padding: 40px 0 !important;
+    }
+
+    /* --- Director Section pe ecran mic --- */
+    .director-image-frame {
+        width: 130px;
+        height: 130px;
+    }
+
+    .director-name {
+        font-size: 1.1rem;
+    }
+
+    .director-quote p {
+        font-size: 0.88rem;
+        line-height: 1.65;
+    }
+
+    /* --- News pe ecran mic --- */
+    .news-badge {
+        font-size: 0.65rem;
+    }
+
+    .news-title {
+        font-size: 1.2rem;
+    }
+
+    .news-card-title {
+        font-size: 1rem;
+    }
+
+    .news-card-text {
+        font-size: 0.88rem;
+    }
+
+    /* --- Page Hero pe ecran mic --- */
+    .page-hero {
+        padding: 80px 0 30px 0 !important;
+    }
+
+    .page-title {
+        font-size: 1.5rem !important;
+    }
+
+    .page-subtitle {
+        font-size: 0.75rem !important;
+    }
+
+    /* --- Footer pe ecran mic --- */
+    .footer {
+        padding-top: var(--spacing-xxl);
+    }
+
+    .footer-logo-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-brand-name {
+        font-size: 0.95rem;
+    }
+
+    .footer-section-title {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   ORIENTARE PEISAJ (Landscape) PE TELEFON
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-md) 20px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .page-hero {
+        padding: 70px 0 20px 0 !important;
+    }
+}
+
+/* ============================================
+   ACCESBILITATE & INTERACȚIUNE TOUCH
+   ============================================ */
+
+/* Focus vizibil pe toate elementele interactive (accesibilitate) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Eliminarea animațiilor pentru utilizatorii cu preferințe de mișcare redusă */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .antigravity-float {
+        animation: none !important;
+    }
+
+    .gold-shimmer {
+        animation: none !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES (pentru cazuri de tipărire)
+   ============================================ */
+@media print {
+
+    .header,
+    .hamburger,
+    .scroll-indicator,
+    .hero-video-overlay,
+    .footer,
+    .search-container {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+}
