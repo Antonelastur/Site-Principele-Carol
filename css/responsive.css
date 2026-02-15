@@ -1761,6 +1761,124 @@ textarea:focus-visible {
 }
 
 /* ============================================
+   ULTIMATE MOBILE FIXES (Final Override)
+   Ensures single column layout on all mobile devices
+   ============================================ */
+
+@media (max-width: 992px) {
+
+    /* --- GLOBAL GRID RESET (1 Col automatically) --- */
+    .leadership-grid,
+    .museum-grid,
+    .offer-grid,
+    .org-grid-3,
+    .hub-grid,
+    .excelenta-grid,
+    .magic-club-grid,
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    /* --- GLOBAL IMAGES & IFRAMES --- */
+    img,
+    iframe,
+    video {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* --- Consiliul Elevilor SPECIFIC --- */
+    .leader-card {
+        margin-top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .consiliu-logo-wrapper {
+        width: 150px !important;
+        height: 150px !important;
+        margin-top: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .consiliu-logo {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .hero-cta {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    /* --- Documente & Galerie Onoare --- */
+    .olimpici-podium {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+    }
+
+    /* Podium Reordering: Gold(1), Silver(2), Bronze(3) */
+    .olimpic-gold {
+        order: 1 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        transform: none !important;
+    }
+
+    .olimpic-silver {
+        order: 2 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+
+    .olimpic-bronze {
+        order: 3 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+
+    /* --- Typography Fixes --- */
+    h1,
+    .page-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+    }
+
+    .section-title-premium {
+        font-size: 1.8rem !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Documente */
+    .org-level-1 {
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .page-hero {
+        padding-top: 80px !important;
+    }
+
+    .museum-section,
+    .offer-section,
+    .leadership-section {
+        padding: 40px 0 !important;
+    }
+}
+
+/* ============================================
    PRINT STYLES (pentru cazuri de tipărire)
    ============================================ */
 @media print {
