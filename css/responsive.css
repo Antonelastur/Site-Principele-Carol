@@ -1323,6 +1323,382 @@ input[type="button"],
 }
 
 /* ============================================
+   PAGINI INTERIOARE - OVERRIDE-URI SUPLIMENTARE
+   (pentru inline styles pe care media queries
+   existente nu le acopereau)
+   ============================================ */
+
+/* --- TABLET (max-width: 992px) --- */
+@media (max-width: 992px) {
+
+    /* --- Muzeu Virtual --- */
+    .museum-section {
+        padding: 60px 0 !important;
+    }
+
+    .museum-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+
+    .museum-card {
+        padding: 1.5rem !important;
+    }
+
+    .museum-card img {
+        height: 250px !important;
+    }
+
+    .museum-card h3 {
+        font-size: 1.5rem !important;
+    }
+
+    /* --- Oferta Educațională --- */
+    .offer-section {
+        padding: 60px 0 !important;
+    }
+
+    .offer-grid.three-columns {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .offer-card {
+        padding: 2rem 1.5rem !important;
+        border-radius: 20px !important;
+    }
+
+    .offer-card .offer-title {
+        font-size: 1.5rem !important;
+    }
+
+    /* --- Proiecte: Erasmus gap fix --- */
+    .erasmus-content-wrapper {
+        gap: 2rem !important;
+    }
+
+    /* --- Noutăți: articol padding --- */
+    .news-article-full.royal-glass.premium-card {
+        padding: 2rem !important;
+        border-radius: 20px !important;
+    }
+
+    /* --- Hub Media: column content --- */
+    .hub-column .column-content {
+        padding: 1.5rem !important;
+    }
+
+    .hub-column .column-header {
+        padding: 1.5rem !important;
+    }
+}
+
+/* --- MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+
+    /* --- Muzeu Virtual --- */
+    .museum-section {
+        padding: 40px 0 !important;
+    }
+
+    .museum-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .museum-card {
+        padding: 1.2rem !important;
+    }
+
+    .museum-card img {
+        height: 200px !important;
+    }
+
+    .museum-card h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .museum-card p {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+    }
+
+    /* --- Oferta Educațională --- */
+    .offer-section {
+        padding: 40px 0 !important;
+    }
+
+    .offer-section .text-center {
+        margin-bottom: 2rem !important;
+    }
+
+    .offer-section .section-title-premium {
+        font-size: 1.6rem !important;
+    }
+
+    .offer-section .text-center p {
+        font-size: 1rem !important;
+    }
+
+    .offer-grid.three-columns {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+
+    .offer-card {
+        padding: 1.5rem !important;
+        border-radius: 18px !important;
+    }
+
+    .offer-card .offer-icon-wrapper {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .offer-card .offer-title {
+        font-size: 1.3rem !important;
+    }
+
+    .offer-card .offer-desc {
+        font-size: 0.95rem !important;
+    }
+
+    /* --- Proiecte: Erasmus override-uri suplimentare --- */
+    .erasmus-content-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .erasmus-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .erasmus-description {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* --- Noutăți: articol --- */
+    .news-article-full.royal-glass.premium-card {
+        padding: 1.2rem !important;
+        border-radius: 16px !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .news-article-full .news-full-title {
+        font-size: 1.4rem !important;
+    }
+
+    .news-article-full .lead {
+        font-size: 0.95rem !important;
+    }
+
+    .news-full-content ul {
+        padding-left: 0 !important;
+    }
+
+    .news-full-content ul li {
+        padding-left: 12px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* --- Hub Media: coloane stack vertical --- */
+    .hub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .hub-column .column-content {
+        padding: 1.2rem !important;
+    }
+
+    .hub-column .column-header {
+        padding: 1.2rem !important;
+    }
+
+    .hub-column .column-header h2 {
+        font-size: 1.3rem !important;
+    }
+
+    /* --- Magic Club (Proiecte) --- */
+    .magic-club-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .magic-title {
+        font-size: 1.4rem !important;
+    }
+
+    .magic-desc {
+        font-size: 0.95rem !important;
+    }
+
+    .magic-club-img {
+        max-width: 200px !important;
+        margin: 0 auto;
+    }
+
+    /* --- Galerie Onoare (Podium) --- */
+    .olimpici-podium {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        margin-top: 0 !important;
+    }
+
+    /* Reordonare pe mobil: Aur primul, apoi Argint, apoi Bronz */
+    .olimpic-gold {
+        order: 1 !important;
+        margin-top: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+
+    .olimpic-silver {
+        order: 2 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+
+    .olimpic-bronze {
+        order: 3 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+
+    .olimpici-section .section-header-centered {
+        margin-bottom: 2rem !important;
+    }
+
+    .olimpici-section .section-title-premium {
+        font-size: 1.8rem !important;
+    }
+
+    .excelenta-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* --- Documente (Organigramă) --- */
+    .org-grid-3 {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .org-level-1 {
+        margin-bottom: 2rem !important;
+    }
+
+    /* --- Consiliul Elevilor (Override-uri CRITICE) --- */
+    .leadership-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    /* Anulăm margin-top: 4rem inline care decala totul */
+    .leader-card {
+        margin-top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .consiliu-logo-wrapper {
+        margin-top: 0 !important;
+        margin-bottom: 1.5rem !important;
+        width: 140px !important;
+        height: 140px !important;
+    }
+
+    .consiliu-logo {
+        width: 140px !important;
+        height: 140px !important;
+        border-width: 4px !important;
+    }
+
+    .hero-cta {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+    }
+
+    .hero-cta .btn-hub {
+        width: 100% !important;
+        max-width: 280px !important;
+        font-size: 0.9rem !important;
+        padding: 0.8rem 1.5rem !important;
+    }
+
+    .leadership-section {
+        padding: 60px 0 40px 0 !important;
+    }
+
+    .leadership-section .section-header-centered {
+        margin-bottom: 3rem !important;
+    }
+}
+
+/* --- SMALL PHONE (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+    /* --- Muzeu Virtual --- */
+    .museum-section {
+        padding: 30px 0 !important;
+    }
+
+    .museum-card img {
+        height: 180px !important;
+    }
+
+    .museum-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    /* --- Oferta Educațională --- */
+    .offer-section {
+        padding: 30px 0 !important;
+    }
+
+    .offer-card {
+        padding: 1.2rem !important;
+        border-radius: 14px !important;
+    }
+
+    /* --- Noutăți --- */
+    .news-article-full .news-full-title {
+        font-size: 1.2rem !important;
+    }
+
+    /* --- Hub Media --- */
+    .hub-column .column-content {
+        padding: 1rem !important;
+    }
+
+    /* --- Consiliul Elevilor --- */
+    .leadership-section .section-title-premium {
+        font-size: 1.6rem !important;
+    }
+
+    .leader-card {
+        padding: 1.5rem !important;
+    }
+
+    .leader-avatar-wrapper {
+        width: 140px !important;
+        height: 140px !important;
+        margin-top: -4rem !important;
+    }
+}
+
+/* ============================================
    ORIENTARE PEISAJ (Landscape) PE TELEFON
    ============================================ */
 @media (max-height: 500px) and (orientation: landscape) {
