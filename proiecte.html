@@ -144,7 +144,7 @@
                             <div class="showcase-logo-wrapper"
                                 style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
                                 <img src="images/logo-club-magic.jpg" alt="Logo Club Magic"
-                                    style="max-height: 100%; max-width: 100%; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                                    style="max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
                             </div>
                             <h2 class="font-royal"
                                 style="color: var(--royal-navy); font-size: 1.8rem; margin-bottom: 1rem;">Clubul de
@@ -475,6 +475,12 @@
 
             .magic-club-img {
                 width: 100%;
+                height: auto;
+                object-fit: contain;
+                max-height: 400px;
+                /* Prevent becoming huge on desktop */
+                display: block;
+                margin: 0 auto;
                 border-radius: 20px;
                 box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
                 transition: transform 0.3s ease;
