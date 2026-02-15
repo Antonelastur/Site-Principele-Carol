@@ -412,6 +412,108 @@
         <!-- ============================================
              MAGIC CLUB SECTION
              ============================================ -->
+        <style>
+            .magic-club-section {
+                padding: 100px 0;
+                background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .magic-club-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                /* Desktop: 2 columns */
+                gap: 4rem;
+                align-items: center;
+            }
+
+            .magic-icon {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+                background: rgba(37, 99, 235, 0.1);
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                color: #2563eb;
+            }
+
+            .magic-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 2.5rem;
+                color: var(--royal-navy);
+                margin-bottom: 1.5rem;
+                line-height: 1.2;
+            }
+
+            .magic-desc {
+                font-size: 1.1rem;
+                color: #555;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+            }
+
+            .magic-badges {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .magic-badge {
+                padding: 0.5rem 1.5rem;
+                background: white;
+                border: 1px solid #e5e7eb;
+                border-radius: 50px;
+                font-size: 0.9rem;
+                color: var(--royal-navy);
+                font-weight: 600;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            .magic-club-img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+                transition: transform 0.3s ease;
+            }
+
+            .magic-club-img:hover {
+                transform: scale(1.02);
+            }
+
+            /* Responsive Mobile */
+            @media (max-width: 900px) {
+                .magic-club-grid {
+                    grid-template-columns: 1fr;
+                    /* Stack vertically on mobile */
+                    gap: 3rem;
+                    text-align: center;
+                }
+
+                .magic-icon {
+                    margin: 0 auto 1.5rem auto;
+                    /* Center icon */
+                }
+
+                .magic-badges {
+                    justify-content: center;
+                    /* Center badges */
+                }
+
+                .magic-title {
+                    font-size: 2rem;
+                    /* Smaller title on mobile */
+                }
+
+                .magic-club-section {
+                    padding: 60px 0;
+                    /* Less padding on mobile */
+                }
+            }
+        </style>
         <section class="magic-club-section">
             <div class="container">
                 <div class="magic-club-grid">
