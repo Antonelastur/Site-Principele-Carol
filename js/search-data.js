@@ -8,7 +8,7 @@ const SEARCH_DATA = [
     {
         title: "Director - Prof. Lămașanu Enikő",
         content: "Directorul Școlii Gimnaziale Principele Carol. Conducere, management executiv, președinte Consiliul Profesoral, audiențe.",
-        tags: ["director", "eniko", "lamasanu", "conducere", "manager"],
+        tags: ["director", "enikö", "lamasanu", "conducere", "manager"],
         url: "documente.html"
     },
     {

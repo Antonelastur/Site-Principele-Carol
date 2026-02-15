@@ -752,6 +752,577 @@ input[type="button"],
 }
 
 /* ============================================
+   PAGINI INTERIOARE - RESPONSIVE COMPLET
+   Override-uri pentru inline styles problematice
+   ============================================ */
+
+/* --- TABLET (max-width: 992px) --- */
+@media (max-width: 992px) {
+
+    /* --- Consiliu Elevi: Leadership Section --- */
+    .leadership-section {
+        padding: 80px 0 60px 0 !important;
+    }
+
+    .leadership-section .section-header-centered {
+        margin-bottom: 4rem !important;
+    }
+
+    .leadership-section .section-title-premium {
+        font-size: 2.2rem !important;
+    }
+
+    .leadership-section .section-subtitle {
+        font-size: 1.1rem !important;
+    }
+
+    .leadership-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 2rem !important;
+    }
+
+    .leader-card {
+        margin-top: 3rem !important;
+        padding: 1.5rem !important;
+        border-radius: 20px !important;
+    }
+
+    .leader-avatar-wrapper {
+        width: 160px !important;
+        height: 160px !important;
+        margin-top: -4.5rem !important;
+    }
+
+    .leader-card h3 {
+        font-size: 1.5rem !important;
+    }
+
+    /* --- Noutăți: Articol Premium --- */
+    .news-article-full.royal-glass.premium-card {
+        padding: 2.5rem !important;
+        border-radius: 24px !important;
+        margin-bottom: 3rem !important;
+    }
+
+    .news-article-full .news-full-title {
+        font-size: 2.2rem !important;
+    }
+
+    .news-article-full .lead {
+        font-size: 1.1rem !important;
+    }
+
+    /* --- Proiecte: Erasmus Section --- */
+    .erasmus-section {
+        padding: 60px 0 !important;
+    }
+
+    .erasmus-content-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 2.5rem !important;
+        border-radius: 24px !important;
+    }
+
+    .erasmus-title {
+        font-size: 2rem !important;
+    }
+
+    .erasmus-mini-gallery {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* --- Proiecte: Sherlock Section --- */
+    .sherlock-section {
+        padding: 60px 0 !important;
+    }
+
+    .sherlock-header {
+        padding: 2rem !important;
+    }
+
+    .sherlock-main-title {
+        font-size: 2rem !important;
+    }
+
+    /* --- Hub Media --- */
+    .hub-hero {
+        padding: calc(70px + 3rem) 1rem 3rem !important;
+    }
+
+    .hub-hero-title {
+        font-size: 2rem !important;
+    }
+
+    /* --- Consiliu: Idea Modal --- */
+    .idea-modal-box {
+        padding: 2rem 1.8rem !important;
+        border-radius: 20px !important;
+    }
+
+    .idea-modal-box h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* --- MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+
+    /* --- Consiliu Elevi: Leadership Section --- */
+    .leadership-section {
+        padding: 60px 0 50px 0 !important;
+    }
+
+    .leadership-section .section-header-centered {
+        margin-bottom: 3rem !important;
+    }
+
+    .leadership-section .section-title-premium {
+        font-size: 1.8rem !important;
+    }
+
+    .leadership-section .section-subtitle {
+        font-size: 1rem !important;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .leader-card {
+        margin-top: 3rem !important;
+        padding: 1.5rem !important;
+        border-radius: 18px !important;
+    }
+
+    .leader-avatar-wrapper {
+        width: 150px !important;
+        height: 150px !important;
+        margin-top: -4rem !important;
+    }
+
+    .leader-card h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .role-badge {
+        font-size: 0.7rem !important;
+        padding: 0.4rem 1.2rem !important;
+    }
+
+    /* --- Consiliu: Logo intro --- */
+    .consiliu-logo-wrapper {
+        width: 160px !important;
+        margin-top: -35px !important;
+    }
+
+    .consiliu-logo {
+        width: 160px !important;
+        height: 160px !important;
+    }
+
+    .hero-cta {
+        gap: 1rem !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-cta .btn-hub {
+        width: 100% !important;
+        max-width: 280px;
+        text-align: center !important;
+        padding: 0.9rem 1.5rem !important;
+    }
+
+    /* --- Consiliu: Activități --- */
+    .activitate-card {
+        flex-direction: column !important;
+    }
+
+    .activitate-image {
+        min-height: 250px !important;
+    }
+
+    .activitate-content {
+        padding: 1.5rem !important;
+    }
+
+    /* --- Consiliu: Democratic Process Box --- */
+    .democratic-process-box {
+        padding: 1.5rem !important;
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    /* --- Noutăți: Articol Premium --- */
+    .news-article-full.royal-glass.premium-card {
+        padding: 1.5rem !important;
+        border-radius: 18px !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    .news-article-full .news-full-header {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .news-article-full .news-full-title {
+        font-size: 1.6rem !important;
+    }
+
+    .news-article-full .lead {
+        font-size: 1rem !important;
+    }
+
+    .news-date-badge {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* --- Noutăți: Calendar sidebar items --- */
+    .news-full-content ul li {
+        padding-left: 15px !important;
+        border-left-width: 2px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* --- Proiecte: Erasmus Section --- */
+    .erasmus-section {
+        padding: 40px 0 !important;
+    }
+
+    .erasmus-content-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem !important;
+        border-radius: 18px !important;
+    }
+
+    .erasmus-logo-container {
+        order: -1;
+    }
+
+    .erasmus-logo-img {
+        max-width: 200px !important;
+        border-radius: 16px !important;
+    }
+
+    .erasmus-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .erasmus-description {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .section-tag {
+        font-size: 0.7rem !important;
+        padding: 0.4rem 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .erasmus-mini-gallery {
+        gap: 0.5rem !important;
+    }
+
+    .erasmus-mini-gallery img {
+        height: 80px !important;
+        border-radius: 8px !important;
+    }
+
+    /* --- Proiecte: Sherlock Section --- */
+    .sherlock-section {
+        padding: 40px 0 !important;
+    }
+
+    .sherlock-header {
+        padding: 1.5rem !important;
+        margin-bottom: 2rem !important;
+        border-radius: 16px !important;
+    }
+
+    .sherlock-main-title {
+        font-size: 1.5rem !important;
+    }
+
+    .sherlock-theme-title {
+        font-size: 1rem !important;
+    }
+
+    .sherlock-cards {
+        gap: 1.2rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .sherlock-card {
+        padding: 1.5rem !important;
+        border-radius: 14px !important;
+    }
+
+    .sherlock-card--team {
+        grid-column: span 1 !important;
+    }
+
+    /* --- Proiecte: Projects Grid --- */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-card {
+        padding: 1.5rem !important;
+    }
+
+    /* --- Documente: Org Section --- */
+    .org-section {
+        padding: 40px 0 !important;
+    }
+
+    .org-header .section-title-premium {
+        font-size: 1.6rem !important;
+    }
+
+    .org-header .org-subtitle {
+        font-size: 0.95rem !important;
+    }
+
+    .org-director-card {
+        padding: 1.5rem !important;
+    }
+
+    .org-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+
+    .org-card {
+        padding: 1rem !important;
+    }
+
+    /* --- Documente: Accordion --- */
+    .accordion-header {
+        padding: 1rem !important;
+    }
+
+    .accordion-title {
+        font-size: 1rem !important;
+    }
+
+    .accordion-subtitle {
+        font-size: 0.8rem !important;
+    }
+
+    .accordion-content {
+        padding: 1rem !important;
+    }
+
+    /* --- Hub Media --- */
+    .hub-hero {
+        padding: calc(60px + 2rem) 1rem 2rem !important;
+    }
+
+    .hub-hero-title {
+        font-size: 1.6rem !important;
+    }
+
+    .hub-hero-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .hub-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Consiliu: Idea Modal --- */
+    .idea-modal-overlay {
+        padding: 10px !important;
+    }
+
+    .idea-modal-box {
+        padding: 1.5rem 1.2rem !important;
+        border-radius: 18px !important;
+        max-width: 100% !important;
+    }
+
+    .idea-modal-box h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .idea-modal-box p {
+        font-size: 0.9rem !important;
+    }
+
+    .idea-modal-box input,
+    .idea-modal-box textarea {
+        padding: 0.8rem 1rem !important;
+        font-size: 0.95rem !important;
+        border-radius: 12px !important;
+    }
+
+    .idea-modal-box button[type="submit"] {
+        padding: 0.9rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* --- Oferta Educațională: 3-columns → 1 column --- */
+    .offer-grid.three-columns {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Galeria de Onoare --- */
+    .olimpici-podium {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .olimpic-card.olimpic-gold {
+        transform: scale(1) !important;
+        order: -1;
+    }
+
+    .onoare-hero-stats {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    /* --- Galerie Foto --- */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.8rem !important;
+    }
+
+    .gallery-filters {
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+
+    .gallery-filter-btn {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+/* --- SMALL PHONE (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+    /* --- Consiliu Leadership --- */
+    .leadership-section {
+        padding: 50px 0 40px 0 !important;
+    }
+
+    .leadership-section .section-header-centered {
+        margin-bottom: 2rem !important;
+    }
+
+    .leadership-section .section-title-premium {
+        font-size: 1.4rem !important;
+    }
+
+    .leadership-grid {
+        max-width: 100%;
+    }
+
+    .leader-card {
+        margin-top: 2.5rem !important;
+        padding: 1.2rem !important;
+    }
+
+    .leader-avatar-wrapper {
+        width: 120px !important;
+        height: 120px !important;
+        margin-top: -3.5rem !important;
+    }
+
+    .leader-card h3 {
+        font-size: 1.2rem !important;
+    }
+
+    /* --- Consiliu Logo intro --- */
+    .consiliu-logo-wrapper {
+        width: 130px !important;
+        margin-top: -25px !important;
+    }
+
+    .consiliu-logo {
+        width: 130px !important;
+        height: 130px !important;
+        border-width: 4px !important;
+    }
+
+    /* --- Noutăți --- */
+    .news-article-full.royal-glass.premium-card {
+        padding: 1.2rem !important;
+        border-radius: 14px !important;
+    }
+
+    .news-article-full .news-full-title {
+        font-size: 1.3rem !important;
+    }
+
+    /* --- Proiecte: Erasmus --- */
+    .erasmus-content-wrapper {
+        padding: 1rem !important;
+        border-radius: 14px !important;
+    }
+
+    .erasmus-title {
+        font-size: 1.3rem !important;
+    }
+
+    .erasmus-mini-gallery img {
+        height: 60px !important;
+    }
+
+    /* --- Proiecte: Sherlock --- */
+    .sherlock-header {
+        padding: 1.2rem !important;
+        border-radius: 14px !important;
+    }
+
+    .sherlock-main-title {
+        font-size: 1.3rem !important;
+    }
+
+    .sherlock-card {
+        padding: 1.2rem !important;
+    }
+
+    /* --- Documente --- */
+    .org-grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .org-director-card {
+        padding: 1.2rem !important;
+    }
+
+    /* --- Lightbox (Afișe) --- */
+    .poster-lightbox img {
+        max-width: 95vw !important;
+        max-height: 85vh !important;
+    }
+
+    .lightbox-close {
+        top: 10px !important;
+        right: 10px !important;
+    }
+
+    /* --- Hub Media --- */
+    .hub-hero-title {
+        font-size: 1.3rem !important;
+    }
+
+    /* --- Galerie Foto --- */
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.6rem !important;
+    }
+}
+
+/* ============================================
    ORIENTARE PEISAJ (Landscape) PE TELEFON
    ============================================ */
 @media (max-height: 500px) and (orientation: landscape) {
