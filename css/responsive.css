@@ -584,6 +584,11 @@ input[type="button"],
     /* --- Page Hero pe mobil --- */
     .page-hero {
         padding: 90px 0 35px 0 !important;
+        min-height: 40vh;
+        /* Req 7: Inaltime adaptiva */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 

@@ -1,0 +1,446 @@
+/* 
+   ==========================================================================
+   Erasmus+ Modern Re-design
+   ========================================================================== 
+*/
+
+:root {
+    --erasmus-navy: #002147;
+    --erasmus-gold: #C5A059;
+    --erasmus-bg: #f8f9fa;
+    --erasmus-card-bg: #ffffff;
+    --erasmus-text: #4a5568;
+    --erasmus-title: #2d3748;
+}
+
+.erasmus-modern-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    overflow: hidden;
+}
+
+/* Header */
+.erasmus-header {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.erasmus-badge {
+    display: inline-block;
+    background: var(--erasmus-gold);
+    color: var(--erasmus-navy);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.erasmus-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--erasmus-navy);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.text-gold {
+    color: var(--erasmus-gold);
+}
+
+.erasmus-subtitle {
+    font-size: 1.2rem;
+    color: var(--erasmus-text);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Intro Card */
+.erasmus-intro-card {
+    background: var(--erasmus-card-bg);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 33, 71, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    overflow: hidden;
+    margin-bottom: 80px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.intro-content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--erasmus-navy);
+    margin-bottom: 24px;
+}
+
+.intro-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--erasmus-text);
+    margin-bottom: 20px;
+}
+
+.intro-image {
+    position: relative;
+    background: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.intro-image img {
+    max-width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+}
+
+.intro-image:hover img {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Grids */
+.section-divider {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-divider h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--erasmus-navy);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-divider h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--erasmus-gold);
+    border-radius: 2px;
+}
+
+.erasmus-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+/* Modern Card Styles */
+.erasmus-card {
+    background: var(--erasmus-card-bg);
+    border-radius: 20px;
+    padding: 35px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    height: 100%;
+}
+
+.erasmus-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+/* Need Cards Specifics */
+.need-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 33, 71, 0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--erasmus-navy);
+    font-size: 24px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.need-card:hover .card-icon {
+    background: var(--erasmus-navy);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.need-card h4 {
+    font-size: 1.4rem;
+    color: var(--erasmus-navy);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Objective Cards Specifics */
+.objective-card {
+    overflow: hidden;
+}
+
+.objective-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--erasmus-navy), var(--erasmus-gold));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.objective-card:hover::before {
+    opacity: 1;
+}
+
+.card-number {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: rgba(0, 33, 71, 0.08);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.objective-card h4 {
+    position: relative;
+    z-index: 2;
+    font-size: 1.35rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.objective-card p {
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Activities & Results Split */
+.erasmus-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: var(--erasmus-navy);
+    border-radius: 30px;
+    padding: 60px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.erasmus-split-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.split-col h3 {
+    color: var(--erasmus-gold);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom List */
+.modern-list {
+    list-style: none;
+    padding: 0;
+}
+
+.modern-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.list-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--erasmus-gold);
+    flex-shrink: 0;
+}
+
+.list-content h5 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.list-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .erasmus-intro-card {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-image {
+        padding: 40px;
+        order: -1;
+    }
+
+    .intro-content {
+        padding: 40px;
+    }
+
+    .erasmus-split-section {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+}
+
+/* 
+   ==========================================================================
+   EXTRA MOBILE ADJUSTMENTS (Max-width: 768px)
+   ========================================================================== 
+*/
+@media (max-width: 768px) {
+
+    .erasmus-modern-section {
+        padding: 40px 0;
+    }
+
+    /* 1. Single Column Layout & 5. Consistent Spacing */
+    .erasmus-card-grid,
+    .needs-grid,
+    .objectives-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-bottom: 40px;
+    }
+
+    /* 2. Full Width Cards with Margins */
+    .erasmus-card,
+    .need-card,
+    .objective-card {
+        width: 100% !important;
+        margin-bottom: 15px;
+        /* Spacing handled by gap, but good for flow */
+        padding: 25px !important;
+        /* Adjusted padding for mobile */
+    }
+
+    /* 3. Readable Text (min 14px) */
+    .erasmus-card p,
+    .need-card p,
+    .objective-card p,
+    .intro-content p,
+    .list-content p {
+        font-size: clamp(14px, 4vw, 1rem) !important;
+        line-height: 1.6;
+    }
+
+    /* 4. Proportional Images */
+    .intro-image img {
+        width: 100%;
+        height: auto;
+        transform: rotate(0deg) !important;
+        /* No rotation on mobile */
+        border-radius: 12px;
+    }
+
+    .intro-image {
+        padding: 0;
+        min-height: 200px;
+    }
+
+    /* Header Adjustments */
+    .erasmus-header {
+        margin-bottom: 30px;
+    }
+
+    .erasmus-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .erasmus-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Intro Card Mobile */
+    .erasmus-intro-card {
+        margin-bottom: 40px;
+        border-radius: 16px;
+    }
+
+    .intro-content {
+        padding: 25px 20px;
+    }
+
+    .intro-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    /* Split Section Mobile */
+    .erasmus-split-section {
+        padding: 30px 20px;
+        border-radius: 20px;
+        background: var(--erasmus-navy);
+        /* Ensure background persists */
+    }
+
+    .split-col h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .modern-list li {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .list-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        min-width: 40px;
+        /* Prevent shrinking */
+    }
+
+    /* Section Divider */
+    .section-divider h3 {
+        font-size: 1.6rem;
+    }
+}
