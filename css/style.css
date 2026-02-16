@@ -700,7 +700,7 @@ p {
 }
 
 /* ============================================
-   QUICK ACCESS CARDS
+   QUICK ACCESS CARDS (GLASSMORPHISM REDESIGN)
    ============================================ */
 .quick-access {
     position: relative;
@@ -713,99 +713,151 @@ p {
 .quick-access-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-    max-width: 1000px;
+    gap: 30px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.quick-card {
+/* Base Glass Card */
+.glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--spacing-xl) var(--spacing-lg);
-    background: var(--white);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-xl);
-    transition: all var(--transition-medium);
-    cursor: pointer;
+    align-items: flex-start;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
     text-decoration: none;
-    border: 2px solid transparent;
 }
 
-.quick-card:hover {
+/* Hover Effect */
+.glass-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(27, 38, 79, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
     border-color: var(--gold);
 }
 
-.quick-card:hover .quick-card-icon {
-    transform: scale(1.1);
-    color: var(--gold);
+/* Featured Card (Center) - Redesigned to be Navy Blue/Gold */
+.glass-card.featured {
+    background: linear-gradient(135deg, var(--navy-blue), var(--navy-blue-dark));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.quick-card-icon {
-    width: 80px;
-    height: 80px;
+.glass-card.featured:hover {
+    box-shadow: 0 20px 50px rgba(27, 38, 79, 0.4);
+    border-color: var(--gold);
+    transform: translateY(-12px);
+}
+
+/* Icon Wrapper */
+.quick-card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(27, 38, 79, 0.05);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--off-white);
-    border-radius: var(--radius-full);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
     color: var(--navy-blue);
-    transition: all var(--transition-medium);
+}
+
+.glass-card.featured .quick-card-icon-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gold);
+}
+
+.glass-card:hover .quick-card-icon-wrapper {
+    background: var(--navy-blue);
+    color: white;
+    transform: scale(1.1);
+}
+
+.glass-card.featured:hover .quick-card-icon-wrapper {
+    background: var(--white);
+    color: var(--navy-blue);
 }
 
 .quick-card-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
 }
 
+/* Typography */
 .quick-card-title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
     color: var(--navy-blue);
-    margin-bottom: var(--spacing-sm);
-}
-
-.quick-card-desc {
-    font-size: 0.9rem;
-    color: var(--gray);
     margin: 0;
-    line-height: 1.5;
+    font-family: var(--font-heading);
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
 }
 
-/* Card Featured (Orar Elevi) */
-.quick-card-featured {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-    transform: scale(1.05);
-    border: none;
+.glass-card.featured .quick-card-title {
+    color: white;
 }
 
-.quick-card-featured .quick-card-icon {
-    background: rgba(255, 255, 255, 0.25);
-    color: var(--white);
-}
-
-.quick-card-featured .quick-card-title {
-    color: var(--navy-blue);
-}
-
-.quick-card-featured .quick-card-desc {
+.glass-card:hover .quick-card-title {
     color: var(--navy-blue-light);
 }
 
-.quick-card-featured:hover {
-    transform: scale(1.08) translateY(-10px);
-    border-color: transparent;
+.glass-card.featured:hover .quick-card-title {
+    color: var(--gold);
 }
 
-.quick-card-featured:hover .quick-card-icon {
-    background: rgba(255, 255, 255, 0.4);
-    color: var(--white);
+.quick-card-desc {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 500;
 }
+
+.glass-card.featured .quick-card-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Arrow */
+.card-arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--navy-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.glass-card.featured .card-arrow {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.glass-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 
 /* ============================================
    ABOUT SECTION (Prezentare)

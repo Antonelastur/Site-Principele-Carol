@@ -84,28 +84,225 @@ h2,
 
 /* 
    ==========================================================================
-   MUSEUM SPECIFIC STYLES
+   MUSEUM SPECIFIC STYLES - REFACTORED
    ========================================================================== 
 */
 
-.virtual-museum-section {
+.museum-section {
     padding: 120px 0;
     background: var(--royal-navy);
+    color: var(--white-space);
+    position: relative;
+}
+
+.museum-rubric {
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.rubric-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.rubric-title {
+    font-size: 2rem;
+    color: var(--royal-gold);
+    margin: 0;
 }
 
 .museum-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
 }
 
+/* Card Design */
 .museum-card {
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    border-radius: 12px;
     overflow: hidden;
-    padding: 30px;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .museum-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    border-color: rgba(197, 160, 89, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.museum-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    cursor: pointer;
+}
+
+.museum-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+    filter: sepia(0.2) grayscale(0.4) contrast(1.1);
+}
+
+.museum-card:hover img {
+    transform: scale(1.08);
+    filter: sepia(0) grayscale(0) contrast(1.05);
+}
+
+.museum-overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.3s ease;
+    background: rgba(0, 33, 71, 0.8);
+    border-radius: 50%;
+    padding: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--royal-gold);
+}
+
+.museum-card:hover .museum-overlay-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.museum-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.museum-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--white-space);
+}
+
+.museum-year {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--royal-gold);
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.museum-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+/* Rubric Footer */
+.rubric-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
+}
+
+.rubric-source {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Lightbox Styles */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 9, 20, 0.95);
+    z-index: 10000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border: 1px solid var(--royal-gold);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-caption {
+    margin-top: 1rem;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--royal-gold);
+}
+
+@media (max-width: 768px) {
+    .museum-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rubric-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 }

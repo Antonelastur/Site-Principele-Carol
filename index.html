@@ -84,12 +84,16 @@
     <!-- ============================================
          HEADER
          ============================================ -->
+    <!-- ============================================
+         HEADER
+         ============================================ -->
     <header class="header" id="header">
         <div class="header-container">
             <!-- Logo -->
             <a href="index.html" class="logo" aria-label="Pagina principală">
+                <!-- Optimizare: Folosim JPG (170KB) în loc de SVG (1.9MB) -->
                 <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image"
-                    fetchpriority="high">
+                    width="60" height="60" fetchpriority="high">
                 <div class="logo-text">
                     <span class="logo-title">Școala Gimnazială</span>
                     <span class="logo-subtitle">„Principele Carol"</span>
@@ -151,8 +155,9 @@
         <section class="hero" id="hero">
             <!-- Background Image -->
             <div class="hero-background">
-                <img src="images/hero-main.png" alt="Clădirea Școlii Gimnaziale Principele Carol" loading="eager"
-                    fetchpriority="high">
+                <!-- Optimizare: Folosim JPG (112KB) în loc de PNG (950KB) -->
+                <img src="images/hero-main.jpg" alt="Clădirea Școlii Gimnaziale Principele Carol" loading="eager"
+                    fetchpriority="high" width="1920" height="1080">
                 <div class="hero-overlay"></div>
             </div>
 
@@ -173,7 +178,8 @@
 
             <!-- Logo Animat Overlay -->
             <div class="hero-video-overlay">
-                <video autoplay loop muted playsinline>
+                <!-- Optimizare: Preload none pentru a nu bloca încărcarea inițială -->
+                <video autoplay loop muted playsinline preload="none" poster="images/logo-scoala.jpg">
                     <source src="videos/Logo animat.mp4" type="video/mp4">
                 </video>
             </div>
@@ -192,48 +198,57 @@
             <div class="container">
                 <div class="quick-access-cards">
                     <!-- Card 1: Catalog Electronic -->
-                    <a href="#" class="quick-card premium-card">
-                        <div class="quick-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                <line x1="8" y1="6" x2="16" y2="6"></line>
-                                <line x1="8" y1="10" x2="16" y2="10"></line>
-                                <line x1="8" y1="14" x2="12" y2="14"></line>
-                            </svg>
+                    <a href="#" class="quick-card glass-card">
+                        <div class="quick-card-icon-wrapper">
+                            <div class="quick-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                    <line x1="8" y1="6" x2="16" y2="6"></line>
+                                    <line x1="8" y1="10" x2="16" y2="10"></line>
+                                    <line x1="8" y1="14" x2="12" y2="14"></line>
+                                </svg>
+                            </div>
                         </div>
                         <h3 class="quick-card-title">Catalog electronic</h3>
                         <p class="quick-card-desc">Accesează notele și situația școlară</p>
+                        <div class="card-arrow">→</div>
                     </a>
 
                     <!-- Card 2: Orar Elevi (evidențiat) -->
-                    <a href="parinti.html#orar" class="quick-card quick-card-featured premium-card antigravity-float">
-                        <div class="quick-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
+                    <a href="parinti.html#orar" class="quick-card glass-card featured">
+                        <div class="quick-card-icon-wrapper">
+                            <div class="quick-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
                         </div>
                         <h3 class="quick-card-title">Orar elevi</h3>
                         <p class="quick-card-desc">Vezi orarul pe zile și clase</p>
+                        <div class="card-arrow">→</div>
                     </a>
 
                     <!-- Card 3: Anunțuri Importante -->
-                    <a href="#noutati-recente" class="quick-card premium-card">
-                        <div class="quick-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                            </svg>
+                    <a href="#noutati-recente" class="quick-card glass-card">
+                        <div class="quick-card-icon-wrapper">
+                            <div class="quick-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h3 class="quick-card-title">Anunțuri importante</h3>
-                        <p class="quick-card-desc" style="font-size: 0.9rem;">Noutăți de ultimă oră</p>
+                        <p class="quick-card-desc">Noutăți de ultimă oră</p>
+                        <div class="card-arrow">→</div>
                     </a>
                 </div>
             </div>
@@ -252,7 +267,9 @@
                     <div class="director-image-wrapper">
                         <div class="director-image-frame"
                             style="border: 4px solid var(--royal-gold) !important; background-color: var(--royal-navy) !important; padding: 6px !important; border-radius: 50%;">
+                            <!-- Optimizare: Lazy loading -->
                             <img src="images/director.jpg" alt="Director Enikö Lămășanu" class="director-photo"
+                                loading="lazy" width="300" height="300"
                                 style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h4 class="director-name gold-shimmer">Enikö Lămășanu</h4>
