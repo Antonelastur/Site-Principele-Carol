@@ -6,18 +6,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const museumData = {
-        "Muzeu_Virtual/Chipuri_si_destine": [
+        "images/Muzeu_Virtual/Chipuri_si_destine": [
             "Elevi 1952 Școala Pedagogică de Fete.jpeg",
             "LPC.jpeg",
             "Promotia 1950-1951.jpeg",
             "elevi-1952.jpeg",
             "Școala Pedagogică de Fete. Promoția 1950-1951.jpeg"
         ],
-        "Muzeu_Virtual/Documente_istorice": [
+        "images/Muzeu_Virtual/Documente_istorice": [
             "Anunț înscrieri-epoca interbelică.jpeg",
             "inscrieri-vechi.jpeg"
         ],
-        "Muzeu_Virtual/Martori_tacuti": [
+        "images/Muzeu_Virtual/Martori_tacuti": [
             "Liceul Principele Carol -1929.jpg",
             "originile-1.jpeg",
             "scoala-1929.jpg",
@@ -29,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleries = document.querySelectorAll('.galerie-imagini');
 
     galleries.forEach(gallery => {
-        const folder = gallery.getAttribute('data-folder');
-        const images = museumData[folder] || [];
+        const folder = gallery.getAttribute('data-folder').replace(/\\/g, '/');
+        // Find the key that matches the end of the folder path to handle relative/absolute nuances
+        const matchingKey = Object.keys(museumData).find(key => folder.endsWith(key) || key.endsWith(folder));
+        const images = matchingKey ? museumData[matchingKey] : [];
 
         images.forEach(imageName => {
             const card = createMuseumCard(folder, imageName);
