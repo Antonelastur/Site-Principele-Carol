@@ -101,18 +101,42 @@ h2,
 }
 
 .rubric-header {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.medalion-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--royal-gold);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px var(--gold-glow);
+    position: relative;
+}
+
+.medalion-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.3) contrast(1.1);
+    transition: transform 0.5s ease;
+}
+
+.medalion-container:hover .medalion-img {
+    transform: scale(1.1);
 }
 
 .rubric-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--royal-gold);
     margin: 0;
+    font-family: 'Playfair Display', serif;
 }
 
 .museum-grid {

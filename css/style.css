@@ -3437,7 +3437,7 @@ p {
     }
 
     .timeline::before {
-        left: 10px;
+        left: 16px;
     }
 
     .timeline-marker {
