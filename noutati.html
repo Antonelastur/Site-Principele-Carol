@@ -1,369 +1,129 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security Headers (LOKI Shield) -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com https://www.transparenttextures.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-
-    <title>Noutăți | Școala Gimnazială „Principele Carol”</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/logo-scoala.jpg">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/premium_heritage.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
+    <title>Noutăți | Școala Gimnazială „Principele Carol"</title>
+    <meta name="description" content="Știri și anunțuri de la Școala Gimnazială „Principele Carol", Gura Humorului.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=4">
+</head>
 <body>
-    <!-- ============================================
-         HEADER
-         ============================================ -->
-    <header class="header" id="header">
-        <div class="header-container">
-            <!-- Logo -->
-            <a href="index.html" class="logo" aria-label="Pagina principală">
-                <img src="images/logo-scoala.jpg" alt="Logo Școala Gimnazială Principele Carol" class="logo-image"
-                    width="60" height="60">
-                <div class="logo-text">
-                    <span class="logo-title">Școala Gimnazială</span>
-                    <span class="logo-subtitle">„Principele Carol"</span>
-                </div>
-            </a>
-
-            <!-- Navigare -->
-            <nav class="nav" id="nav" aria-label="Navigare principală">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Acasă</a></li>
-                    <li><a href="despre.html" class="nav-link">Despre noi</a></li>
-                    <li><a href="hub-media.html" class="nav-link">Hub media</a></li>
-                    <li><a href="consiliu-elevi.html" class="nav-link">Consiliul elevilor</a></li>
-                    <li><a href="parinti.html" class="nav-link">Părinți</a></li>
-                    <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
-                    <li><a href="galerie-onoare.html" class="nav-link">Podium</a></li>
-                    <li><a href="documente.html" class="nav-link">Documente</a></li>
-                    <li><a href="galerie.html" class="nav-link">Galerie foto</a></li>
-                </ul>
-                <a href="contact.html" class="nav-cta">Contact</a>
-
-                <!-- Search Button -->
-                <div class="search-container" id="searchContainer">
-                    <button class="search-btn" id="searchBtn" aria-label="Caută">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </button>
-                    <div class="search-input-wrapper">
-                        <input type="text" class="search-input" id="searchInput" placeholder="Caută..."
-                            aria-label="Caută pe site">
-                        <button class="search-close" id="searchClose" aria-label="Închide căutarea">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Hamburger Menu (Mobile) -->
-            <button class="hamburger" id="hamburger" aria-label="Meniu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <!-- ============================================
-             PAGE HERO
-             ============================================ -->
-        <section class="page-hero">
-            <div class="absolute inset-0 opacity-10"
-                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
-            <div class="container relative z-10 text-center">
-                <h1 class="page-title font-royal gold-shimmer">Noutăți și evenimente</h1>
-                <p class="page-subtitle">Știri și anunțuri importante</p>
-                <div class="antigravity-float"
-                    style="width: 60px; height: 3px; background: var(--royal-gold); margin: 1.5rem auto; border-radius: 2px;">
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================================
-             NEWS ARTICLES
-             ============================================ -->
-        <section class="news-feed-section">
-            <div class="container">
-
-                <!-- Articol 1: Nume Nou -->
-                <article id="nume-nou" class="news-article-full royal-glass premium-card"
-                    style="padding: 4rem; border-radius: 32px; background: white; border: 1px solid rgba(212,175,55,0.2); margin-bottom: 5rem;">
-                    <div class="news-full-header" style="margin-bottom: 3rem;">
-                        <span class="news-date-badge gold-shimmer"
-                            style="background: var(--royal-navy); color: var(--royal-gold); padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; display: inline-block;">27
-                            Ianuarie 2026</span>
-                        <h2 class="news-full-title font-royal" style="font-size: 3rem; color: var(--royal-navy);">
-                            Oficial: Identitatea „Principele Carol”</h2>
-                    </div>
-
-                    <div class="news-full-image">
-                        <img src="images/hero-main.jpg" alt="Fațada Școlii - Noua Identitate" loading="lazy"
-                            width="1920" height="1080">
-                    </div>
-
-                    <div class="news-full-content">
-                        <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: var(--navy-blue);">
-                            Este un moment istoric pentru comunitatea noastră educațională. Începând cu acest an școlar,
-                            instituția noastră revine la o denumire încărcată de semnificație: Școala Gimnazială
-                            „Principele Carol". Această schimbare nu este doar una de formă, ci marchează un angajament
-                            reînnoit față de excelență, tradiție și valori morale.
-                        </p>
-
-                        <p>Decizia a fost primită cu entuziasm atât de cadrele didactice, cât și de părinți și elevi.
-                            Noul nume onorează o pagină importantă din istoria locală a orașului Gura Humorului și ne
-                            conectează la valorile regale de demnitate, educație continuă și serviciu în folosul
-                            comunității.</p>
-
-                        <h3>Ce înseamnă această schimbare pentru noi?</h3>
-                        <p>Dincolo de noua plăcuță de la intrare, revenirea la numele "Principele Carol" aduce cu sine o
-                            serie de noi inițiative:</p>
-                        <ul style="list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 15px; padding-left: 20px; border-left: 3px solid var(--gold);">
-                                <strong>Identitate vizuală nouă:</strong> Am adoptat culorile Navy Blue și Auriu,
-                                simbolizând seriozitatea și prestigiul, vizibile deja în uniformele elevilor și în
-                                materialele școlare.
-                            </li>
-                            <li style="margin-bottom: 15px; padding-left: 20px; border-left: 3px solid var(--gold);">
-                                <strong>Parteneriate culturale:</strong> Vom intensifica colaborările cu instituțiile de
-                                cultură locale și naționale pentru a le oferi elevilor acces la o educație complexă.
-                            </li>
-                            <li style="margin-bottom: 15px; padding-left: 20px; border-left: 3px solid var(--gold);">
-                                <strong>O școală a viitorului cu rădăcini în trecut:</strong> Deși ne mândrim cu
-                                trecutul, privirea noastră este spre viitor, integrând tehnologia modernă în fiecare
-                                sală de clasă.
-                            </li>
-                        </ul>
-
-                        <p>„Este o onoare și o responsabilitate imensă pentru noi. Noul nume ne obligă la standarde
-                            înalte și la o conduită exemplară. Ne dorim ca fiecare elev care trece pragul acestei școli
-                            să se simtă mândru că este parte din familia «Principele Carol»", a declarat directorul
-                            instituției în cadrul ceremoniei de inaugurare.</p>
-
-                        <p>Vă invităm să fim mândri împreună de noua noastră identitate și să continuăm să construim
-                            viitorul copiilor noștri sub acest nume nobil!</p>
-                    </div>
-                </article>
-
-                <hr class="news-divider">
-
-                <!-- Articol 2: Platforma CAROLine -->
-                <article id="platforma-caroline" class="news-article-full">
-                    <div class="news-full-header">
-                        <span class="news-date-badge">25 Ianuarie 2026</span>
-                        <h2 class="news-full-title">Lansare digitală: Platforma și revista „CAROLine"</h2>
-                    </div>
-
-                    <div class="news-full-image">
-                        <!-- Placeholder vizual pentru hub media -->
-                        <div
-                            style="background: linear-gradient(135deg, #2d3436 0%, #00cec9 100%); height: 350px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; border-radius: var(--radius-lg); text-align: center; padding: 20px;">
-                            <span style="font-size: 4rem; margin-bottom: 10px;">🎙️ 📸 📝</span>
-                            <span style="font-size: 2rem; font-weight: bold; font-family: var(--font-heading);">Hub
-                                Media CAROLine</span>
-                            <span style="opacity: 0.9; margin-top: 10px;">Vocea tinerei generații</span>
-                        </div>
-                    </div>
-
-                    <div class="news-full-content">
-                        <p><strong>Creativitate fără limite.</strong> Suntem încântați să anunțăm lansarea oficială a
-                            hub-ului media al școlii, „CAROLine". Acesta este mai mult decât un simplu proiect școlar;
-                            este un spațiu de exprimare liberă și creativă dedicat elevilor noștri pasionați de
-                            jurnalism, fotografie, vlogging, design grafic și podcasting.</p>
-
-                        <h3>O platformă creată 100% de elevi</h3>
-                        <p>Sub coordonarea profesorilor de Limba Română și Informatică, echipa editorială CAROLine
-                            (formată din elevi de gimnaziu) va produce conținut original care reflectă viața școlii prin
-                            ochii lor.</p>
-
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
-                                <h4 style="color: var(--navy-blue); margin-top: 0;">📰 Revista școlii</h4>
-                                <p style="font-size: 0.95rem; margin-bottom: 0;">Reportaje, interviuri cu colegi
-                                    talentați, recenzii de carte și film, și pagini de creație literară.</p>
-                            </div>
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
-                                <h4 style="color: var(--navy-blue); margin-top: 0;">🎧 Podcast-uri</h4>
-                                <p style="font-size: 0.95rem; margin-bottom: 0;">Discuții relaxate despre hobby-uri,
-                                    carieră și provocările vieții de elev, cu invitați surpriză.</p>
-                            </div>
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
-                                <h4 style="color: var(--navy-blue); margin-top: 0;">🎥 Vlog</h4>
-                                <p style="font-size: 0.95rem; margin-bottom: 0;">Jurnale video de la excursii, serbări
-                                    și competiții sportive. Vezi școala în mișcare!</p>
-                            </div>
-                        </div>
-
-                        <p>„CAROLine este șansa noastră de a arăta lumii ce putem face. Aici nu luăm note, aici ne
-                            descoperim pasiunile", spune Andrei, elev în clasa a VII-a și redactor-șef adjunct.</p>
-
-                        <div style="text-align: center; margin-top: 40px;">
-                            <a href="caroline.html" class="btn btn-primary">Vizitează pagina CAROLine</a>
-                        </div>
-                    </div>
-                </article>
-
-                <hr class="news-divider">
-
-                <!-- Articol 3: Simulări -->
-                <article id="simulari" class="news-article-full">
-                    <div class="news-full-header">
-                        <span class="news-date-badge">20 Ianuarie 2026</span>
-                        <h2 class="news-full-title">Informații importante: Calendarul simulărilor pentru Evaluarea
-                            Națională</h2>
-                    </div>
-
-                    <div class="news-full-content">
-                        <p><strong>Pregătirea intră în linie dreaptă!</strong> Pentru elevii claselor a VIII-a, emoțiile
-                            primului mare examen din viața lor se apropie. Ministerul Educației a publicat calendarul
-                            oficial al simulărilor naționale, o etapă crucială pentru verificarea nivelului de
-                            cunoștințe și pentru familiarizarea cu rigoarea examenului.</p>
-
-                        <div
-                            style="background: #fff3cd; padding: 25px; border-radius: 12px; border-left: 5px solid #ffc107; margin: 30px 0;">
-                            <h3 style="margin-top: 0; color: #856404;">📅 Calendar oficial simulări 2025</h3>
-                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li
-                                    style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; justify-content: space-between;">
-                                    <span><strong>17 Martie 2025</strong></span>
-                                    <span>Limba și literatura română (probă scrisă)</span>
-                                </li>
-                                <li
-                                    style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; justify-content: space-between;">
-                                    <span><strong>18 Martie 2025</strong></span>
-                                    <span>Matematică (probă scrisă)</span>
-                                </li>
-                                <li style="padding: 10px 0; display: flex; justify-content: space-between;">
-                                    <span><strong>19 Martie 2025</strong></span>
-                                    <span>Limba și literatura maternă (acolo unde este cazul)</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <h3>Informații utile pentru elevi și părinți:</h3>
-                        <ul>
-                            <li><strong>Accesul în săli:</strong> Elevii vor intra în sălile de examen până la ora
-                                <strong>08:30</strong>. Probele încep la ora 09:00.
-                            </li>
-                            <li><strong>Comunicarea rezultatelor:</strong> Notele vor fi comunicate individual pe data
-                                de <strong>31 Martie 2025</strong>.</li>
-                            <li><strong>Trecerea notelor în catalog:</strong> Notele obținute la simulare
-                                <strong>NU</strong> se trec în catalog din oficiu. Ele pot fi trecute doar la
-                                solicitarea scrisă a elevului sau a părintelui/tutorelui.
-                            </li>
-                        </ul>
-
-                        <p>Școala Gimnazială „Principele Carol" organizează în această perioadă și sesiuni suplimentare
-                            de pregătire la matematică și limba română. Încurajăm toți elevii să participe activ la
-                            aceste ore și să trateze simularea cu maximă seriozitate, ca pe un antrenament real pentru
-                            succes.</p>
-                        <p><strong>Mult succes tuturor absolvenților noștri!</strong></p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer class="footer" id="footer">
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="index.html">
+            <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+            <span class="brand-name"><span>Școala Gimnazială</span><span>„Principele Carol"</span></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Deschide meniul"><span></span><span></span><span></span></button>
+        <nav class="main-nav" aria-label="Meniu principal">
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="istoric.html">Despre noi</a><ul class="submenu"><li><a href="istoric.html">Istoric</a></li><li><a href="misiune-valori.html">Misiune și valori</a></li><li><a href="echipa.html">Echipă</a></li><li><a href="baza-materiala.html">Bază materială</a></li><li><a href="oferta-educationala.html">Oferta educațională</a></li><li><a href="muzeu-virtual.html">Muzeul virtual</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="podium.html">Elevi</a><ul class="submenu"><li><a href="podium.html">Podium</a></li><li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li><li><a href="orar.html">Orarul claselor</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="inscriere.html">Părinți</a><ul class="submenu"><li><a href="inscriere.html">Înscriere</a></li><li><a href="burse.html">Burse și tichete</a></li><li><a href="avizier.html">Avizier</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="erasmus.html">Proiecte</a><ul class="submenu"><li><a href="erasmus.html">Erasmus+</a></li><li><a href="club-limbi-straine.html">Lumea magică a limbilor străine</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="caroline-revista.html">CAROLine</a><ul class="submenu"><li><a href="caroline-revista.html">Revista</a></li><li><a href="caroline-tv.html">CAROLine TV</a></li></ul></li>
+                <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link" href="documente.html">Documente</a></li>
+                <li class="nav-item active"><a class="nav-link" href="noutati.html">Noutăți</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol><li><a href="index.html">Acasă</a></li><li aria-current="page">Noutăți</li></ol></div></nav>
+<main>
+    <section class="page-hero">
         <div class="container">
-            <div class="footer-main">
-                <!-- Coloana 1: Logo și Nume -->
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="images/logo-scoala.jpg" alt="Logo" class="footer-logo-image" width="70" height="70"
-                            loading="lazy">
+            <h1 class="gold-text">Noutăți</h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-3">
+                <article class="card news-card reveal">
+                    <img src="images/scoala-hero.jpg" alt="Clădirea școlii" loading="lazy">
+                    <div class="card-body">
+                        <span class="news-date">27 ianuarie 2026</span>
+                        <h3><a href="stire-model.html">Oficial: Identitatea „Principele Carol"</a></h3>
+                        <p>Instituția noastră revine la o denumire încărcată de semnificație: un angajament reînnoit față de excelență, tradiție și valori morale.</p>
+                        <p style="margin-top:12px;"><a href="stire-model.html" style="color:var(--color-accent-dark); font-weight:700; text-decoration:none;">Citește articolul →</a></p>
                     </div>
-                    <p class="footer-brand-name">
-                        Școala Gimnazială<br>„Principele Carol"
-                    </p>
-                    <p class="footer-brand-location">Gura Humorului</p>
-                </div>
-
-                <!-- Coloana 2: Contact -->
-                <div class="footer-section">
-                    <h3 class="footer-section-title">Contact</h3>
-
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📍</div>
-                        <div class="footer-contact-text">
-                            Bulevardul Bucovinei, Nr. 25<br>
-                            Gura Humorului, Suceava
-                        </div>
+                </article>
+                <article class="card news-card reveal" id="caroline">
+                    <img src="images/caroline-coperta.jpg" alt="Coperta revistei CAROLine" loading="lazy">
+                    <div class="card-body">
+                        <span class="news-date">25 ianuarie 2026</span>
+                        <h3>Lansare digitală: Platforma și revista „CAROLine"</h3>
+                        <p style="margin-bottom:.8em;">Suntem încântați să anunțăm lansarea oficială a hubului media al școlii, „CAROLine": un spațiu de exprimare liberă și creativă dedicat elevilor pasionați de jurnalism, fotografie, vlogging, design grafic și podcasting.</p>
+                        <p style="margin-bottom:.8em;">Sub coordonarea profesorilor de limba română și informatică, echipa editorială CAROLine, formată din elevi de gimnaziu, va produce conținut original care reflectă viața școlii prin ochii lor: revista școlii, podcasturi și vlog.</p>
+                        <p style="font-style:italic; margin-bottom:.8em;">„CAROLine este șansa noastră de a arăta lumii ce putem face. Aici nu luăm note, aici ne descoperim pasiunile", spune un elev din clasa a VII-a, redactor-șef adjunct.</p>
+                        <p><a href="caroline-revista.html" style="color:var(--color-accent-dark); font-weight:700; text-decoration:none;">Vizitează pagina CAROLine →</a></p>
                     </div>
-
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📞</div>
-                        <div class="footer-contact-text">
-                            <a href="tel:0230230928">0230 230 928</a>
-                        </div>
+                </article>
+                <article class="card news-card reveal" id="simulari">
+                    <img src="images/gallery/sala-clasa-1.jpg" alt="Sală de clasă" loading="lazy">
+                    <div class="card-body">
+                        <span class="news-date">20 ianuarie 2026</span>
+                        <h3>Calendarul simulărilor pentru Evaluarea Națională</h3>
+                        <p style="margin-bottom:.8em;">Pregătirea intră în linie dreaptă! Ministerul Educației a publicat calendarul oficial al simulărilor naționale, o etapă importantă pentru verificarea nivelului de cunoștințe și familiarizarea cu rigoarea examenului.</p>
+                        <ul style="padding-left:1.2em; color:var(--color-text-muted); font-size:.92rem; margin-bottom:.8em;">
+                            <li>Accesul în săli: până la ora 08:30; probele încep la 09:00</li>
+                            <li>Notele se comunică individual, la data anunțată de minister</li>
+                            <li>Notele NU se trec în catalog din oficiu, ci doar la solicitarea scrisă a elevului sau a părintelui</li>
+                        </ul>
+                        <p style="margin-bottom:.8em;">Școala organizează sesiuni suplimentare de pregătire la matematică și limba română. Mult succes tuturor absolvenților noștri!</p>
+                        <p><a href="avizier.html" style="color:var(--color-accent-dark); font-weight:700; text-decoration:none;">Vezi calendarul complet la avizier →</a></p>
                     </div>
-
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">✉️</div>
-                        <div class="footer-contact-text">
-                            <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coloana 3: Link-uri -->
-                <div class="footer-section">
-                    <h3 class="footer-section-title">Link-uri utile</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Politica de confidențialitate</a></li>
-                        <li><a href="#" class="footer-link">Informații publice</a></li>
-                        <li><a href="https://www.isj.sv.edu.ro" target="_blank" class="footer-link">ISJ Suceava</a></li>
-                        <li><a href="#" class="footer-link">GDPR</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.
-                </p>
-                <p class="footer-webmaster">
-                    Webmaster: <span class="webmaster-name">prof. Antoanela Pohoață</span>
-                </p>
+                </article>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+                <h4>Școala Gimnazială „Principele Carol"</h4>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Bulevardul Bucovinei, Nr. 25<br>Gura Humorului, Suceava</li>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> <a href="tel:0230230928">0230 230 928</a></li>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Linkuri utile</h4>
+                <ul>
+                    <li><a href="documente.html">Informații publice</a></li>
+                    <li><a href="documente.html#gdpr">Politica de confidențialitate (GDPR)</a></li>
+                    <li><a href="https://www.isj.sv.edu.ro" target="_blank" rel="noopener">ISJ Suceava</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Comunitate</h4>
+                <ul>
+                    <li><a href="caroline-revista.html">Revista CAROLine</a></li>
+                    <li><a href="caroline-tv.html">CAROLine TV</a></li>
+                    <li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li>
+                    <li><a href="inscriere.html#asociatia">Asociația de părinți</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.<br>Webmaster: prof. Antoanela Pohoață</p>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js?v=4"></script>
 </body>
-
 </html>
