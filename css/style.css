@@ -456,3 +456,26 @@ table.styled { border: 1.5px solid transparent; background: linear-gradient(#fff
 
 /* Citate: linia din stânga în degrade */
 .article-page blockquote, blockquote.gold-line { border-left: 4px solid transparent; border-image: var(--gold-gradient) 1; }
+
+
+/* Miniatură video cu buton de redare (deschide pe YouTube) */
+.video-thumb { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 2px solid transparent; background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box; text-decoration: none; }
+.video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .3s ease; }
+.video-thumb:hover img { transform: scale(1.04); filter: brightness(.85); }
+.video-thumb::after {
+    content: ""; position: absolute; inset: 0; margin: auto;
+    width: 84px; height: 84px; border-radius: 50%;
+    background: var(--gold-gradient);
+    box-shadow: 0 6px 22px rgba(0, 15, 31, .5);
+    clip-path: circle(42px at center);
+    transition: transform .3s ease;
+}
+.video-thumb::before {
+    content: ""; position: absolute; inset: 0; margin: auto; z-index: 2;
+    width: 0; height: 0; border-style: solid;
+    border-width: 15px 0 15px 26px; border-color: transparent transparent transparent var(--color-primary);
+    transform: translateX(5px);
+    transition: transform .3s ease;
+}
+.video-thumb:hover::after { transform: scale(1.08); }
+.video-caption { margin-top: 12px; color: var(--color-text-muted); font-size: .92rem; }
