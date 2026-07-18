@@ -330,7 +330,7 @@ svg.ico { width: 1.05em; height: 1.05em; vertical-align: -0.14em; color: var(--c
     scrollbar-color: var(--color-accent) transparent;
 }
 .car-slide {
-    flex: 0 0 min(300px, 76vw); margin: 0;
+    flex: 0 0 min(430px, 82vw); margin: 0;
     scroll-snap-align: start;
 }
 .car-btn {
@@ -345,7 +345,7 @@ svg.ico { width: 1.05em; height: 1.05em; vertical-align: -0.14em; color: var(--c
 .car-prev { left: -8px; }
 .car-next { right: -8px; }
 @media (max-width: 767px) {
-    .car-slide { flex-basis: 82vw; }
+    .car-slide { flex-basis: 86vw; }
     .car-btn { width: 34px; height: 34px; }
 }
 
