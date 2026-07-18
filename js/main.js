@@ -87,17 +87,41 @@
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* Ticker: dublează conținutul pentru buclă continuă */
+    /* Ticker: se alimentează automat din noutati.html; textele din HTML rămân rezervă */
     var tickerContent = document.querySelector('.ticker-content');
     if (tickerContent) {
-        tickerContent.innerHTML += tickerContent.innerHTML;
-        /* viteză constantă: 22 px/s, indiferent de lungimea textului sau de CSS */
         var setSpeed = function () {
             var half = tickerContent.scrollWidth / 2;
             if (half > 0) tickerContent.style.setProperty('--ticker-dur', (half / 22) + 's');
         };
-        setSpeed();
+        var startTicker = function () {
+            tickerContent.innerHTML += tickerContent.innerHTML; /* buclă continuă */
+            setSpeed();
+        };
         window.addEventListener('resize', setSpeed);
+
+        fetch('noutati.html')
+            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+            .then(function (html) {
+                var doc = new DOMParser().parseFromString(html, 'text/html');
+                var items = [];
+                doc.querySelectorAll('.news-card').forEach(function (card) {
+                    var titlu = card.querySelector('h3');
+                    var data = card.querySelector('.news-date');
+                    if (titlu) {
+                        items.push(titlu.textContent.trim() + (data ? ' (' + data.textContent.trim() + ')' : ''));
+                    }
+                });
+                if (items.length) {
+                    tickerContent.innerHTML = items.slice(0, 6).map(function (x) {
+                        var s = document.createElement('span');
+                        s.textContent = x;
+                        return s.outerHTML;
+                    }).join('');
+                }
+            })
+            .catch(function () { /* rezervă: textele statice din HTML */ })
+            .finally(startTicker);
     }
 
     /* Lightbox pentru galerie */

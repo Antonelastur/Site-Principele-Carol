@@ -76,7 +76,7 @@ Header-ul, footer-ul și breadcrumb-ul sunt COPIATE identic în fiecare pagină 
 1. Duplică `stire-model.html` cu un nume nou, de exemplu `stire-ziua-scolii.html` (litere mici, cratime, fără diacritice în numele fișierului).
 2. În fișierul nou, schimbă: `<title>`, meta description, titlul din `page-hero`, data, imaginea și textul articolului.
 3. În `noutati.html`, adaugă un card nou la începutul grilei (copiază un `<article class="card news-card">` existent).
-4. Dacă știrea e importantă, actualizează și cele 3 carduri de pe `index.html` (secțiunea „Ultimele noutăți") și textele din banda ticker (`<div class="ticker-content">`).
+4. Dacă știrea e importantă, actualizează și cele 3 carduri de pe `index.html` (secțiunea „Ultimele noutăți"). Banda ticker NU se editează manual: se alimentează automat din titlurile și datele cardurilor din `noutati.html` (textele statice din `index.html` sunt doar rezervă, dacă citirea eșuează).
 
 ## 6. Cum adaugi imagini în galerie
 
