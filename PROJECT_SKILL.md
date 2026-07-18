@@ -56,7 +56,7 @@ Culorile sunt definite o singură dată, la începutul fișierului `css/style.cs
 | `--color-background` | `#FDFBF7` | fundalul paginilor |
 | `--color-text` | `#1a2433` | text |
 
-Degradeul auriu metalizat este `--gold-gradient` (închis → deschis → mediu → închis). Se aplică textului cu clasa `gold-text`, butoanelor cu `btn-gold`.
+Degradeul auriu metalizat este `--gold-gradient` (închis → deschis → mediu → închis) și este REGULA pentru orice accent auriu de pe site: titluri (`gold-text`), butoane (`btn-gold`), liniile separatoare (header, footer, ticker, page-hero, prin `border-image`) și chenarele elementelor rotunjite (carduri, linkuri de documente, galerie, prin fundal dublu `padding-box / border-box`, care păstrează colțurile rotunjite). Auriu plin (`--color-accent`) se folosește doar la texte mici, unde degradeul ar reduce lizibilitatea. Blocul de reguli e la finalul fișierului `css/style.css`, secțiunea „Aur metalic".
 
 Fonturi: Playfair Display (titluri), Inter (text). Dacă fonturile Google devin indisponibile, site-ul revine automat la Georgia și Segoe UI.
 

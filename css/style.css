@@ -427,3 +427,32 @@ svg.ico { width: 1.05em; height: 1.05em; vertical-align: -0.14em; color: var(--c
     .hero-title, .hero-sub, .hero-cta { opacity: 1; }
     .ticker-content { animation: tickerScroll var(--ticker-dur, 340s) linear infinite !important; }
 }
+
+
+/* ============================================================
+   AUR METALIC: degradeul regal pe toate accentele aurii
+   (închis → deschis → mediu → închis, ca aurul lustruit)
+   ============================================================ */
+
+/* Linii separatoare drepte: degrade prin border-image */
+.site-header { border-bottom: 2px solid transparent; border-image: var(--gold-gradient) 1; }
+.page-hero { border-bottom: 3px solid transparent; border-image: var(--gold-gradient) 1; }
+.ticker { border-block: 2px solid transparent; border-image: var(--gold-gradient) 1; }
+.site-footer { border-top: 3px solid transparent; border-image: var(--gold-gradient) 1; }
+.footer-bottom { border-top: 1.5px solid transparent; border-image: var(--gold-gradient) 1; }
+
+/* Chenare rotunjite: degrade prin fundal dublu (păstrează colțurile) */
+.card { border-color: transparent; background: linear-gradient(var(--color-surface), var(--color-surface)) padding-box, var(--gold-gradient) border-box; }
+.highlight-band .card { background: linear-gradient(var(--color-primary-light), var(--color-primary-light)) padding-box, var(--gold-gradient) border-box; }
+.doc-link { border-color: transparent; background: linear-gradient(#fff, #fff) padding-box, var(--gold-gradient) border-box; }
+.gallery-item { border-color: transparent; background: linear-gradient(var(--color-beige), var(--color-beige)) padding-box, var(--gold-gradient) border-box; }
+.submenu { border-color: transparent; background: linear-gradient(var(--color-surface), var(--color-surface)) padding-box, var(--gold-gradient) border-box; }
+table.styled { border: 1.5px solid transparent; background: linear-gradient(#fff, #fff) padding-box, var(--gold-gradient) border-box; }
+.cookie-banner { border-color: transparent; background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box; }
+.car-btn { border-color: transparent; background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box; }
+.badge { border-color: transparent; background: linear-gradient(rgba(250, 246, 236, .95), rgba(250, 246, 236, .95)) padding-box, var(--gold-gradient) border-box; }
+.highlight-band .badge { background: linear-gradient(var(--color-primary-light), var(--color-primary-light)) padding-box, var(--gold-gradient) border-box; color: var(--color-accent-light); }
+.nav-toggle { border-color: transparent; background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box; }
+
+/* Citate: linia din stânga în degrade */
+.article-page blockquote, blockquote.gold-line { border-left: 4px solid transparent; border-image: var(--gold-gradient) 1; }
