@@ -2,6 +2,42 @@
 (function () {
     'use strict';
 
+    /* Consimțământ cookie-uri și resurse externe (fonturi Google) */
+    var CONSENT_KEY = 'spc-consimtamant';
+    function loadFonts() {
+        if (document.getElementById('spc-fonts')) return;
+        var pre1 = document.createElement('link'); pre1.rel = 'preconnect'; pre1.href = 'https://fonts.googleapis.com';
+        var pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = '';
+        var css = document.createElement('link'); css.id = 'spc-fonts'; css.rel = 'stylesheet';
+        css.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap';
+        document.head.appendChild(pre1); document.head.appendChild(pre2); document.head.appendChild(css);
+    }
+    var consent = null;
+    try { consent = localStorage.getItem(CONSENT_KEY); } catch (e) {}
+    if (consent === 'accept') {
+        loadFonts();
+    } else if (consent !== 'refuz') {
+        var banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Consimțământ cookie-uri');
+        banner.innerHTML = '<p><strong>Confidențialitate.</strong> Acest site nu folosește cookie-uri de urmărire sau de analiză. ' +
+            'Singurele resurse externe sunt fonturile decorative Google, încărcate doar cu acordul tău. ' +
+            'Alegerea se reține pe acest dispozitiv. <a href="documente.html#gdpr">Detalii (GDPR)</a></p>' +
+            '<div class="cookie-actions">' +
+            '<button class="btn btn-gold" data-consent="accept">Accept</button>' +
+            '<button class="btn btn-outline" data-consent="refuz">Refuz</button>' +
+            '</div>';
+        document.body.appendChild(banner);
+        banner.addEventListener('click', function (e) {
+            var choice = e.target.getAttribute && e.target.getAttribute('data-consent');
+            if (!choice) return;
+            try { localStorage.setItem(CONSENT_KEY, choice); } catch (err) {}
+            if (choice === 'accept') loadFonts();
+            banner.remove();
+        });
+    }
+
     /* Header: umbră la scroll */
     var header = document.querySelector('.site-header');
     if (header) {
