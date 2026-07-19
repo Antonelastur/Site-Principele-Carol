@@ -41,12 +41,23 @@ a { color: var(--color-primary); }
 
 h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-primary); line-height: 1.25; }
 
-/* Titlu auriu metalizat */
-.gold-text {
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+/* Titlu auriu metalizat: culoarea solidă e baza, degradeul e doar un plus */
+.gold-text { color: var(--color-accent); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .gold-text {
+        background-image: var(--gold-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+/* modul cu contrast forțat (accesibilitate, mod întunecat de sistem) */
+@media (forced-colors: active) {
+    .gold-text, .names-band p {
+        background: none !important;
+        -webkit-text-fill-color: currentColor !important;
+        color: currentColor !important;
+    }
 }
 
 .section { padding: 72px 0; }
@@ -590,4 +601,42 @@ html.no-gradient-text .names-band p {
 html.no-gradient-text .page-hero h1 {
     -webkit-text-fill-color: var(--color-primary) !important;
     color: var(--color-primary) !important;
+}
+
+
+/* ============================================================
+   SIGURANȚĂ PE MOBIL: titluri și tabele mereu lizibile
+   ============================================================ */
+
+/* Titlul subpaginii: albastru închis solid, indiferent de context */
+.page-hero h1,
+.page-hero h1.gold-text {
+    background: none !important;
+    background-image: none !important;
+    color: #001F3F !important;
+    -webkit-text-fill-color: #001F3F !important;
+}
+
+/* Tabelele: culori explicite, fără trucuri de fundal */
+table.styled { background: #fff !important; color: var(--color-text); border: 1.5px solid var(--color-accent); }
+table.styled th { background: #001F3F !important; color: #F5F0E4 !important; }
+table.styled td { background: #fff; color: #1a2433; }
+table.styled tr:nth-child(even) td { background: #faf6ec; }
+
+/* Sub 767px tabelul devine listă de carduri, ușor de citit pe telefon */
+@media (max-width: 767px) {
+    table.styled, table.styled tbody, table.styled tr, table.styled td { display: block; width: 100%; }
+    table.styled thead { display: none; }
+    table.styled { border: none; background: transparent !important; }
+    table.styled tr {
+        background: #fff; border: 1.5px solid var(--color-accent); border-radius: var(--radius);
+        margin-bottom: 14px; padding: 14px 16px; box-shadow: var(--shadow-card);
+    }
+    table.styled td, table.styled tr:nth-child(even) td { background: transparent; border: none; padding: 4px 0; }
+    table.styled td[data-eticheta]::before {
+        content: attr(data-eticheta);
+        display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em;
+        color: var(--color-accent-dark); font-weight: 700; margin-bottom: 2px;
+    }
+    table.styled td:first-child { font-size: 1.05rem; }
 }
