@@ -7,7 +7,34 @@
     <title>Discursurile șefilor de promoție | Școala Gimnazială „Principele Carol"</title>
     <meta name="description" content="Școala revine la denumirea istorică „Principele Carol": un angajament reînnoit față de excelență, tradiție și valori.">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/style.css?v=14">
+    <link rel="stylesheet" href="css/style.css?v=15">
+    <style>
+    /* stiluri critice, incluse în pagină: funcționează chiar dacă fișierul CSS e vechi în cache */
+    .page-hero { background: #FDFBF7 !important; }
+    .page-hero h1 {
+        background: none !important; background-image: none !important;
+        color: #001F3F !important; -webkit-text-fill-color: #001F3F !important;
+    }
+    .page-hero .lead { color: #5a6678 !important; }
+    table.styled { background: #fff; color: #1a2433; }
+    table.styled th { background: #001F3F !important; color: #F5F0E4 !important; }
+    table.styled td { color: #1a2433 !important; }
+    @media (max-width: 767px) {
+        table.styled, table.styled tbody, table.styled tr, table.styled td { display: block !important; width: 100% !important; }
+        table.styled thead { display: none !important; }
+        table.styled { border: none !important; background: transparent !important; }
+        table.styled tr {
+            background: #fff !important; border: 1.5px solid #D4AF37 !important; border-radius: 12px;
+            margin-bottom: 14px; padding: 14px 16px;
+        }
+        table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
+        table.styled td[data-eticheta]::before {
+            content: attr(data-eticheta); display: block;
+            font-size: .74rem; text-transform: uppercase; letter-spacing: .06em;
+            color: #B89047; font-weight: 700; margin-bottom: 2px;
+        }
+    }
+    </style>
 </head>
 <body>
 <header class="site-header">
@@ -37,7 +64,7 @@
 <main>
     <section class="page-hero">
         <div class="container">
-            <h1 class="gold-text">Discursurile șefilor de promoție 2025-2026</h1>
+            <h1 class="gold-text" style="color:#001F3F;-webkit-text-fill-color:#001F3F;background:none;">Discursurile șefilor de promoție 2025-2026</h1>
         </div>
     </section>
 
@@ -150,6 +177,6 @@
         </div>
     </div>
 </footer>
-<script src="js/main.js?v=14"></script>
+<script src="js/main.js?v=15"></script>
 </body>
 </html>
