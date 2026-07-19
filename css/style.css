@@ -505,3 +505,23 @@ table.styled { border: 1.5px solid transparent; background: linear-gradient(#fff
 .home-card h3 a { color: var(--color-accent-light); }
 .home-card h3 a:hover { color: #fff; }
 .home-card .card-body a { color: var(--color-accent); }
+
+
+/* ============================================================
+   TITLURILE SUBPAGINILOR: albastru închis pe fundal deschis
+   (degradeul pe text nu e redat de unele browsere mobile)
+   ============================================================ */
+.page-hero {
+    background: var(--color-background);
+    border-bottom: 3px solid transparent;
+    border-image: var(--gold-gradient) 1;
+}
+.page-hero h1,
+.page-hero h1.gold-text {
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    color: var(--color-primary);
+    -webkit-text-fill-color: var(--color-primary);
+}
+.page-hero .lead { color: var(--color-text-muted); }
