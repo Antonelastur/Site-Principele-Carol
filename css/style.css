@@ -479,3 +479,29 @@ table.styled { border: 1.5px solid transparent; background: linear-gradient(#fff
 }
 .video-thumb:hover::after { transform: scale(1.08); }
 .video-caption { margin-top: 12px; color: var(--color-text-muted); font-size: .92rem; }
+
+
+/* ============================================================
+   CARDURI PE PRIMA PAGINĂ: fond albastru regal, litere aurii
+   ============================================================ */
+
+/* Banda de acces rapid */
+.quick-band .card,
+.home-card {
+    background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box;
+    border: 2px solid transparent;
+}
+.quick-band .quick-card h3,
+.home-card h3 { color: var(--color-accent-light); }
+.quick-band .quick-card p,
+.home-card p { color: var(--color-beige); }
+.quick-band .quick-card .qc-go { color: var(--color-accent); }
+.quick-band .quick-card svg.ico { color: var(--color-accent); }
+.quick-band .card:hover,
+.home-card:hover { box-shadow: 0 12px 30px rgba(0, 15, 31, .45); }
+
+/* Cardurile de noutăți de pe prima pagină */
+.home-card .news-date { color: var(--color-accent); }
+.home-card h3 a { color: var(--color-accent-light); }
+.home-card h3 a:hover { color: #fff; }
+.home-card .card-body a { color: var(--color-accent); }
