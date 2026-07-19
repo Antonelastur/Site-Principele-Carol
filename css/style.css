@@ -41,8 +41,12 @@ a { color: var(--color-primary); }
 
 h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-primary); line-height: 1.25; }
 
-/* Titlu auriu metalizat: culoarea solidă e baza, degradeul e doar un plus */
-.gold-text { color: var(--color-accent); }
+/* Titlu auriu metalizat: culoarea solidă e baza (albastru pe fundal deschis,
+   auriu pe fundal închis), degradeul e doar un strat suplimentar */
+.gold-text { color: var(--color-primary); }
+.hero .gold-text, .highlight-band .gold-text, .site-footer .gold-text,
+.quick-band .card .gold-text, .quote-box .gold-text, .names-band .gold-text,
+.home-card .gold-text { color: var(--color-accent-light); }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
     .gold-text {
         background-image: var(--gold-gradient);
@@ -639,4 +643,22 @@ table.styled tr:nth-child(even) td { background: #faf6ec; }
         color: var(--color-accent-dark); font-weight: 700; margin-bottom: 2px;
     }
     table.styled td:first-child { font-size: 1.05rem; }
+}
+
+
+/* Când degradeul pe text nu e redat (Chrome Android, mod întunecat forțat),
+   textul primește culoarea solidă potrivită contextului */
+html.no-gradient-text .gold-text {
+    background: none !important; background-image: none !important;
+    -webkit-text-fill-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+}
+html.no-gradient-text .hero .gold-text,
+html.no-gradient-text .highlight-band .gold-text,
+html.no-gradient-text .site-footer .gold-text,
+html.no-gradient-text .quick-band .card .gold-text,
+html.no-gradient-text .home-card .gold-text,
+html.no-gradient-text .names-band p {
+    -webkit-text-fill-color: var(--color-accent-light) !important;
+    color: var(--color-accent-light) !important;
 }
