@@ -5,6 +5,7 @@
    ============================================================ */
 
 :root {
+    color-scheme: only light;   /* site cu paletă proprie: fără modul întunecat forțat */
     --color-primary: #001F3F;          /* albastru regal */
     --color-primary-light: #12365e;    /* albastru deschis pentru fundaluri */
     --color-accent: #D4AF37;           /* auriu mediu */
@@ -575,4 +576,18 @@ table.styled { border: 1.5px solid transparent; background: linear-gradient(#fff
 @media (max-width: 767px) {
     .quote-box { padding: 22px 20px; }
     .quote-box .thoughts { column-count: 1; }
+}
+
+
+/* Rezervă: dacă browserul nu redă degradeul pe text (mod întunecat forțat,
+   browsere vechi), literele rămân aurii pline, niciodată invizibile */
+html.no-gradient-text .gold-text,
+html.no-gradient-text .names-band p {
+    background: none !important;
+    -webkit-text-fill-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+}
+html.no-gradient-text .page-hero h1 {
+    -webkit-text-fill-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
 }

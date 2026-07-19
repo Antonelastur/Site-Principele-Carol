@@ -2,6 +2,18 @@
 (function () {
     'use strict';
 
+    /* Verifică dacă browserul chiar redă degradeul pe text; altfel, litere aurii pline */
+    (function () {
+        var ok = window.CSS && CSS.supports && (CSS.supports('-webkit-background-clip', 'text') || CSS.supports('background-clip', 'text'));
+        var probe = document.createElement('span');
+        probe.style.cssText = 'position:absolute;visibility:hidden;background-image:linear-gradient(#000,#fff);-webkit-background-clip:text;background-clip:text;color:transparent;';
+        probe.textContent = 'A';
+        document.body.appendChild(probe);
+        var painted = getComputedStyle(probe).backgroundImage !== 'none';
+        probe.remove();
+        if (!ok || !painted) document.documentElement.classList.add('no-gradient-text');
+    })();
+
     /* Consimțământ cookie-uri și resurse externe (fonturi Google) */
     var CONSENT_KEY = 'spc-consimtamant';
     function loadFonts() {
