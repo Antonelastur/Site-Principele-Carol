@@ -733,3 +733,20 @@ html.no-gradient-text .news-card h3, html.no-gradient-text .news-card h3 a {
 .card .section-title, .card .section-title .gold-text {
     color: var(--color-accent-light) !important; -webkit-text-fill-color: var(--color-accent-light) !important;
 }
+
+
+/* ============================================================
+   DROPDOWN SUBPAGINI: chenar albastru, titluri aurii
+   ============================================================ */
+.submenu {
+    background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 10px 26px rgba(0, 15, 31, .4);
+}
+.submenu a { color: var(--color-accent-light) !important; font-weight: 600; }
+.submenu a:hover { background: rgba(212, 175, 55, .18) !important; color: #fff !important; }
+@media (max-width: 1099px) {
+    /* în meniul mobil, submeniul rămâne tot chenar albastru cu titluri aurii */
+    .submenu { box-shadow: none; }
+    .submenu a { color: var(--color-accent-light) !important; }
+}
