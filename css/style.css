@@ -674,3 +674,62 @@ html.no-gradient-text .names-band p {
 }
 .card-sursa { font-size: .78rem; color: var(--color-text-muted); margin-top: 12px; }
 .card-sursa a { color: var(--color-primary); text-decoration: underline; }
+
+
+/* ============================================================
+   SISTEM DE TITLURI ȘI CARDURI (unificat)
+   - pe albastru: titluri auriu degrade (bază auriu plin, mereu vizibilă)
+   - pe deschis: text albastru închis
+   - carduri: fond albastru, chenar auriu, titlu auriu
+   ============================================================ */
+
+/* Hero-ul subpaginilor: fond albastru, titlu auriu */
+.page-hero { background: var(--color-primary); border-bottom: 3px solid transparent; border-image: var(--gold-gradient) 1; }
+.page-hero h1, .page-hero .hero-title-gold {
+    color: var(--color-accent-light); -webkit-text-fill-color: var(--color-accent-light); background: none;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .page-hero h1, .page-hero .hero-title-gold {
+        background-image: linear-gradient(110deg,#B89047 0%,#F3E5AB 38%,#D4AF37 62%,#B89047 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+}
+.page-hero .lead { color: var(--color-beige); }
+html.no-gradient-text .page-hero h1, html.no-gradient-text .page-hero .hero-title-gold {
+    background: none !important; -webkit-text-fill-color: var(--color-accent-light) !important; color: var(--color-accent-light) !important;
+}
+
+/* Carduri: fond albastru + chenar auriu + titlu auriu + text deschis */
+.card, .quick-band .card, .home-card, .doc-link {
+    background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box, var(--gold-gradient) border-box;
+    border: 2px solid transparent; color: var(--color-beige);
+}
+.card h3, .quick-card h3, .doc-link, .news-card h3, .news-card h3 a { color: var(--color-accent-light); -webkit-text-fill-color: var(--color-accent-light); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .card h3, .quick-card h3, .news-card h3, .news-card h3 a {
+        background-image: linear-gradient(110deg,#B89047 0%,#F3E5AB 38%,#D4AF37 62%,#B89047 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+}
+html.no-gradient-text .card h3, html.no-gradient-text .quick-card h3,
+html.no-gradient-text .news-card h3, html.no-gradient-text .news-card h3 a {
+    background: none !important; -webkit-text-fill-color: var(--color-accent-light) !important; color: var(--color-accent-light) !important;
+}
+.card p, .card li, .card .card-body, .quick-card p, .news-card p, .doc-link .doc-meta { color: var(--color-beige); }
+.card .news-date, .home-card .news-date { color: var(--color-accent); }
+.card .qc-go { color: var(--color-accent); }
+.card svg.ico, .quick-card svg.ico, .doc-link .doc-ico { color: var(--color-accent-light); }
+.card a:not(.btn) { color: var(--color-accent); }
+.person-card .person-role { color: var(--color-accent); }
+/* tabelele din interiorul cardurilor rămân pe fundal deschis, lizibile */
+.card table.styled { color: var(--color-text); }
+.card table.styled td { color: var(--color-text); }
+
+/* Pe fundal DESCHIS: titlurile de secțiune sunt albastru închis, plin */
+.section-title, .section-title .gold-text {
+    color: var(--color-primary) !important; -webkit-text-fill-color: var(--color-primary) !important;
+    background: none !important; background-image: none !important;
+}
+/* Excepție: pe benzile și cardurile albastre, titlul de secțiune rămâne auriu */
+.highlight-band .section-title, .highlight-band .section-title .gold-text,
+.card .section-title, .card .section-title .gold-text {
+    color: var(--color-accent-light) !important; -webkit-text-fill-color: var(--color-accent-light) !important;
+}

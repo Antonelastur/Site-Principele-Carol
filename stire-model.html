@@ -7,15 +7,19 @@
     <title>Oficial: Identitatea „Principele Carol" | Școala Gimnazială „Principele Carol"</title>
     <meta name="description" content="Școala revine la denumirea istorică „Principele Carol": un angajament reînnoit față de excelență, tradiție și valori.">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/style.css?v=18">
+    <link rel="stylesheet" href="css/style.css?v=19">
     <style>
-    /* stiluri critice, incluse în pagină: funcționează chiar dacă fișierul CSS e vechi în cache */
-    .page-hero { background: #FDFBF7 !important; }
-    .page-hero h1 {
-        background: none !important; background-image: none !important;
-        color: #001F3F !important; -webkit-text-fill-color: #001F3F !important;
+    /* stiluri critice, incluse în pagină: titluri și carduri lizibile chiar cu CSS vechi în cache */
+    .page-hero { background: #001F3F !important; border-bottom: 3px solid #D4AF37 !important; }
+    .page-hero h1 { color: #F3E5AB !important; -webkit-text-fill-color: #F3E5AB !important; background: none !important; }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        .page-hero h1 {
+            background-image: linear-gradient(110deg,#B89047 0%,#F3E5AB 38%,#D4AF37 62%,#B89047 100%) !important;
+            -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important;
+        }
     }
-    .page-hero .lead { color: #5a6678 !important; }
+    html.no-gradient-text .page-hero h1 { background: none !important; -webkit-text-fill-color: #F3E5AB !important; color: #F3E5AB !important; }
+    .page-hero .lead { color: #F5F0E4 !important; }
     table.styled { background: #fff; color: #1a2433; }
     table.styled th { background: #001F3F !important; color: #F5F0E4 !important; }
     table.styled td { color: #1a2433 !important; }
@@ -23,39 +27,9 @@
         table.styled, table.styled tbody, table.styled tr, table.styled td { display: block !important; width: 100% !important; }
         table.styled thead { display: none !important; }
         table.styled { border: none !important; background: transparent !important; }
-        table.styled tr {
-            background: #fff !important; border: 1.5px solid #D4AF37 !important; border-radius: 12px;
-            margin-bottom: 14px; padding: 14px 16px;
-        }
+        table.styled tr { background: #fff !important; border: 1.5px solid #D4AF37 !important; border-radius: 12px; margin-bottom: 14px; padding: 14px 16px; }
         table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
-        table.styled td[data-eticheta]::before {
-            content: attr(data-eticheta); display: block;
-            font-size: .74rem; text-transform: uppercase; letter-spacing: .06em;
-            color: #B89047; font-weight: 700; margin-bottom: 2px;
-        }
-    }
-    .section-title.gold-text, .section-title .gold-text, h2.gold-text, h3.gold-text {
-        color: #001F3F !important; -webkit-text-fill-color: #001F3F !important;
-    }
-    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-        .section-title.gold-text, .section-title .gold-text, h2.gold-text, h3.gold-text {
-            background-image: linear-gradient(110deg, #B89047 0%, #F3E5AB 38%, #D4AF37 62%, #B89047 100%);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent !important;
-        }
-    }
-    .hero .gold-text, .highlight-band .gold-text, .site-footer .gold-text,
-    .quick-band .card .gold-text, .home-card .gold-text {
-        color: #F3E5AB !important;
-    }
-    html.no-gradient-text .section-title.gold-text, html.no-gradient-text .section-title .gold-text,
-    html.no-gradient-text h2.gold-text, html.no-gradient-text h3.gold-text {
-        background: none !important; -webkit-text-fill-color: #001F3F !important; color: #001F3F !important;
-    }
-    html.no-gradient-text .hero .gold-text, html.no-gradient-text .highlight-band .gold-text,
-    html.no-gradient-text .site-footer .gold-text, html.no-gradient-text .quick-band .card .gold-text,
-    html.no-gradient-text .home-card .gold-text, html.no-gradient-text .names-band p {
-        background: none !important; -webkit-text-fill-color: #F3E5AB !important; color: #F3E5AB !important;
+        table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
     }
     </style>
 </head>
@@ -87,7 +61,7 @@
 <main>
     <section class="page-hero">
         <div class="container">
-            <h1 style="color:#001F3F;">Oficial: Identitatea „Principele Carol"</h1>
+            <h1>Oficial: Identitatea „Principele Carol"</h1>
         </div>
     </section>
 
@@ -157,6 +131,6 @@
         </div>
     </div>
 </footer>
-<script src="js/main.js?v=18"></script>
+<script src="js/main.js?v=19"></script>
 </body>
 </html>
