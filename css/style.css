@@ -662,3 +662,15 @@ html.no-gradient-text .names-band p {
     -webkit-text-fill-color: var(--color-accent-light) !important;
     color: var(--color-accent-light) !important;
 }
+
+
+/* Știri „Din educație": badge cu degradeul auriu și linia de sursă */
+.badge-educatie {
+    display: inline-block;
+    background: var(--gold-gradient);
+    color: var(--color-primary);
+    border-radius: 999px; padding: 3px 12px; margin-bottom: 10px;
+    font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800;
+}
+.card-sursa { font-size: .78rem; color: var(--color-text-muted); margin-top: 12px; }
+.card-sursa a { color: var(--color-primary); text-decoration: underline; }
