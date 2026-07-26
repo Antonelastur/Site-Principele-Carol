@@ -443,6 +443,7 @@ svg.ico { width: 1.05em; height: 1.05em; vertical-align: -0.14em; color: var(--c
     .reveal { opacity: 1; transform: none; }
     .hero-title, .hero-sub, .hero-cta { opacity: 1; }
     .ticker-content { animation: tickerScroll var(--ticker-dur, 340s) linear infinite !important; }
+    .hero-bg img { animation: heroKenBurns 36s ease-in-out infinite !important; }
 }
 
 
