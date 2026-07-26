@@ -213,6 +213,44 @@
         }, 3500);
     });
 
+    /* Vizualizator de album (Galerie): click pe copertă deschide panoul, cu subalbume opționale */
+    var albumCards = document.querySelectorAll('.album-card');
+    if (albumCards.length) {
+        albumCards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                var panel = document.getElementById('album-' + card.getAttribute('data-album'));
+                if (!panel) return;
+                panel.classList.add('open');
+                document.body.classList.add('album-open');
+            });
+        });
+        document.querySelectorAll('.album-source').forEach(function (src) {
+            function closeAlbum() {
+                src.classList.remove('open');
+                document.body.classList.remove('album-open');
+            }
+            var closeBtn = src.querySelector('.album-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeAlbum);
+            src.addEventListener('click', function (e) { if (e.target === src) closeAlbum(); });
+            document.addEventListener('keydown', function (e) {
+                if (src.classList.contains('open') && e.key === 'Escape') closeAlbum();
+            });
+            var tabs = src.querySelectorAll('.album-tab');
+            if (tabs.length) {
+                tabs.forEach(function (tab) {
+                    tab.addEventListener('click', function () {
+                        tabs.forEach(function (t) { t.classList.remove('active'); });
+                        tab.classList.add('active');
+                        var sub = tab.getAttribute('data-sub');
+                        src.querySelectorAll('.gallery-item[data-sub]').forEach(function (fig) {
+                            fig.style.display = (sub === 'all' || fig.getAttribute('data-sub') === sub) ? '' : 'none';
+                        });
+                    });
+                });
+            }
+        });
+    }
+
     /* Filtre galerie (butoane cu data-filter) */
     var filterBtns = document.querySelectorAll('[data-filter]');
     if (filterBtns.length) {
