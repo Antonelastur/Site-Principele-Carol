@@ -771,3 +771,37 @@ html.no-gradient-text .card h2, html.no-gradient-text .card h3, html.no-gradient
 /* tabelele din interiorul cardurilor rămân pe fundal alb, cu text închis */
 .card table.styled td { color: var(--color-text) !important; background: #fff; }
 .card table.styled th { color: var(--color-beige) !important; background: var(--color-primary); }
+
+/* ============================================================
+   MIȘCARE: puțină viață în plus, fără să stricăm nimic existent.
+   Tot ce e nou aici e deja acoperit de regula @media (prefers-reduced-motion)
+   de mai sus (linia ~439), care oprește orice animație/tranziție.
+   ============================================================ */
+
+/* Imaginea din hero: zoom lent, abia vizibil, tip „Ken Burns” */
+.hero-bg img { animation: heroKenBurns 24s ease-in-out infinite alternate; transform-origin: center; will-change: transform; }
+@keyframes heroKenBurns { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+/* Butoane: puțin „shine” la hover pe cele aurii, plus senzație de apăsare la click */
+.btn { position: relative; overflow: hidden; }
+.btn:active { transform: scale(.95); }
+.btn-gold::after {
+    content: ""; position: absolute; inset: 0; left: -60%; width: 40%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: skewX(-18deg); transition: left .65s ease;
+}
+.btn-gold:hover::after { left: 130%; }
+
+/* Carduri: iconițele din titluri prind puțină viață la hover pe card */
+.card svg.ico { transition: transform .35s ease; }
+.card:hover svg.ico { transform: scale(1.12) rotate(-4deg); }
+
+/* Cardurile de noutăți: ușoară apropiere a imaginii la hover */
+.news-card img { transition: transform .5s ease; }
+.news-card:hover img { transform: scale(1.06); }
+
+/* Reveal la scroll: pas suplimentar pentru grile mai mari de 4 elemente */
+.reveal:nth-child(5) { transition-delay: .4s; }
+.reveal:nth-child(6) { transition-delay: .5s; }
+.reveal:nth-child(7) { transition-delay: .6s; }
+.reveal:nth-child(8) { transition-delay: .7s; }
