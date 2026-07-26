@@ -750,3 +750,24 @@ html.no-gradient-text .news-card h3, html.no-gradient-text .news-card h3 a {
     .submenu { box-shadow: none; }
     .submenu a { color: var(--color-accent-light) !important; }
 }
+
+
+/* ============================================================
+   CARDURI: tot textul lizibil pe fundal albastru (bate stilurile inline)
+   ============================================================ */
+.card h2, .card h3, .card h4 { color: var(--color-accent-light); -webkit-text-fill-color: var(--color-accent-light); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .card h2, .card h3, .card h4 {
+        background-image: var(--gold-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+}
+html.no-gradient-text .card h2, html.no-gradient-text .card h3, html.no-gradient-text .card h4 {
+    background: none !important; -webkit-text-fill-color: var(--color-accent-light) !important; color: var(--color-accent-light) !important;
+}
+.card p, .card li, .card .card-body, .card ul, .card ol, .card blockquote { color: var(--color-beige) !important; }
+.card .news-date { color: var(--color-accent) !important; }
+.card .badge, .card .badge-educatie { color: var(--color-primary) !important; }
+.card svg.ico { color: var(--color-accent-light); }
+/* tabelele din interiorul cardurilor rămân pe fundal alb, cu text închis */
+.card table.styled td { color: var(--color-text) !important; background: #fff; }
+.card table.styled th { color: var(--color-beige) !important; background: var(--color-primary); }
