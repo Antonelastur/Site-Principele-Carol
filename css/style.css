@@ -180,6 +180,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-primary); li
     opacity: 0; animation: heroFade 1.1s ease .15s forwards;
 }
 .hero-title .gold-text { display: block; }
+.hero-title-break { display: block; }
 .hero-sub {
     color: var(--color-beige); font-size: clamp(1rem, 2vw, 1.2rem); margin-top: 1em;
     opacity: 0; animation: heroFade 1.1s ease .5s forwards;
@@ -779,10 +780,12 @@ html.no-gradient-text .card h2, html.no-gradient-text .card h3, html.no-gradient
    ============================================================ */
 
 /* Imaginea din hero: zoom lent, abia vizibil, tip „Ken Burns” */
-.hero-bg img { animation: heroKenBurns 26s ease-in-out infinite alternate; transform-origin: 50% 42%; will-change: transform; }
+/* Mișcare de cameră tip documentar: pornește apropiată, se îndepărtează lent, apoi se apropie iar */
+.hero-bg img { animation: heroKenBurns 36s ease-in-out infinite; transform-origin: 50% 42%; will-change: transform; }
 @keyframes heroKenBurns {
-    from { transform: scale(1) translate(0, 0); }
-    to   { transform: scale(1.12) translate(-1.5%, -1%); }
+    0%   { transform: scale(1.11) translate(0, 0); }
+    50%  { transform: scale(1.00) translate(.6%, .4%); }
+    100% { transform: scale(1.11) translate(0, 0); }
 }
 
 /* Butoane: puțin „shine” la hover pe cele aurii, plus senzație de apăsare la click */
