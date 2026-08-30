@@ -23,6 +23,15 @@
     .fb-hint { text-align: center; color: #9db0c9; font-size: .88rem; margin-top: 12px; }
     .fb-back { display: inline-block; margin: 22px 0 0; }
     @media (max-width: 600px) { .fb-btn { padding: 9px 15px; } }
+    /* cititor cu zoom pentru o pagina */
+    .fb-zoom { position: fixed; inset: 0; z-index: 9999; background: rgba(6,12,22,.97); display: flex; flex-direction: column; }
+    .fb-zoom[hidden] { display: none; }
+    .fb-zoom-bar { display: flex; gap: 10px; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+    .fb-zoom-scroll { flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 10px; -webkit-overflow-scrolling: touch; }
+    .fb-zoom-scroll img { max-width: 100%; max-height: calc(100vh - 96px); object-fit: contain; cursor: zoom-in; }
+    .fb-zoom-scroll.zoomed { align-items: flex-start; justify-content: flex-start; }
+    .fb-zoom-scroll.zoomed img { max-width: none; max-height: none; width: 1400px; cursor: zoom-out; }
+    @media (max-width: 900px) { .fb-zoom-scroll.zoomed img { width: 1100px; } }
     </style>
 </head>
 <body>
@@ -65,9 +74,21 @@
                 <button class="fb-btn" id="fbPrev" type="button" aria-label="Pagina anterioară">‹ Înapoi</button>
                 <span class="fb-counter" id="fbCounter">1 / 32</span>
                 <button class="fb-btn" id="fbNext" type="button" aria-label="Pagina următoare">Înainte ›</button>
+                <button class="fb-btn" id="fbZoomOpen" type="button">🔍 Mărește pagina</button>
                 <button class="fb-btn" id="fbFull" type="button">Ecran complet</button>
             </div>
-            <p class="fb-hint">Trage de colțul paginii, folosește săgețile de pe tastatură sau butoanele de mai sus.</p>
+            <p class="fb-hint">Trage de colțul paginii sau folosește săgețile. Pentru citit, apasă „Mărește pagina" — o deschide mare, cu zoom la un clic.</p>
+
+            <div id="fbZoom" class="fb-zoom" hidden aria-label="Pagină mărită">
+                <div class="fb-zoom-bar">
+                    <button class="fb-btn" id="fbzPrev" type="button" aria-label="Pagina anterioară">‹</button>
+                    <span class="fb-counter" id="fbzCounter">1 / 32</span>
+                    <button class="fb-btn" id="fbzNext" type="button" aria-label="Pagina următoare">›</button>
+                    <button class="fb-btn" id="fbzToggle" type="button">Zoom +/−</button>
+                    <button class="fb-btn" id="fbzClose" type="button">✕ Închide</button>
+                </div>
+                <div class="fb-zoom-scroll" id="fbzScroll"><img id="fbzImg" alt=""></div>
+            </div>
         </div>
     </section>
 
@@ -170,6 +191,7 @@
     nextBtn.addEventListener('click', function () { pageFlip.flipNext(); });
 
     document.addEventListener('keydown', function (e) {
+        if (!zoom.hidden) return;   // cand cititorul cu zoom e deschis, sagetile navigheaza acolo
         if (e.key === 'ArrowLeft') pageFlip.flipPrev();
         else if (e.key === 'ArrowRight') pageFlip.flipNext();
     });
@@ -185,6 +207,49 @@
     document.addEventListener('fullscreenchange', function () {
         fullBtn.textContent = document.fullscreenElement ? 'Ieși din ecran complet' : 'Ecran complet';
         setTimeout(function () { pageFlip.update(); }, 120);
+    });
+
+    // ---- Cititor cu zoom: o pagina mare, cu prev/next si zoom la clic ----
+    var zoom = document.getElementById('fbZoom');
+    var zImg = document.getElementById('fbzImg');
+    var zScroll = document.getElementById('fbzScroll');
+    var zCounter = document.getElementById('fbzCounter');
+    var zPrev = document.getElementById('fbzPrev');
+    var zNext = document.getElementById('fbzNext');
+    var zCur = 1;
+
+    function zSrc(n) { return 'images/caroline-nr-1/page-' + (n < 10 ? '0' + n : n) + '.jpg'; }
+    function zShow(n) {
+        zCur = Math.min(TOTAL, Math.max(1, n));
+        zImg.src = zSrc(zCur);
+        zImg.alt = 'CAROLine nr. 1 – pagina ' + zCur;
+        zCounter.textContent = zCur + ' / ' + TOTAL;
+        zScroll.classList.remove('zoomed');
+        zScroll.scrollTop = 0; zScroll.scrollLeft = 0;
+        zPrev.disabled = zCur <= 1;
+        zNext.disabled = zCur >= TOTAL;
+    }
+    function zOpen() {
+        zShow(pageFlip.getCurrentPageIndex() + 1);
+        zoom.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+    function zClose() {
+        zoom.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('fbZoomOpen').addEventListener('click', zOpen);
+    document.getElementById('fbzClose').addEventListener('click', zClose);
+    zPrev.addEventListener('click', function () { zShow(zCur - 1); });
+    zNext.addEventListener('click', function () { zShow(zCur + 1); });
+    document.getElementById('fbzToggle').addEventListener('click', function () { zScroll.classList.toggle('zoomed'); });
+    zImg.addEventListener('click', function () { zScroll.classList.toggle('zoomed'); });
+    document.addEventListener('keydown', function (e) {
+        if (zoom.hidden) return;
+        if (e.key === 'Escape') zClose();
+        else if (e.key === 'ArrowLeft') zShow(zCur - 1);
+        else if (e.key === 'ArrowRight') zShow(zCur + 1);
     });
 })();
 </script>
