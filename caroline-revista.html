@@ -41,6 +41,13 @@
     .recenzie-form textarea { resize: vertical; min-height: 96px; }
     .recenzie-form .acord { display: flex; gap: 9px; align-items: flex-start; font-weight: 400; font-size: .9rem; }
     .recenzie-form .acord input { margin-top: 3px; }
+    /* casete bej lizibile (nu folosesc .card: acela e navy cu text bej) */
+    .cr-box { background: var(--color-beige); color: var(--color-text); padding: 20px 24px;
+        border-left: 4px solid transparent; border-image: var(--gold-gradient) 1; border-radius: 0 12px 12px 0; }
+    .cr-box strong { color: var(--color-primary); }
+    .cr-box .muted { color: var(--color-text-muted); }
+    .cr-box blockquote { margin: 0; font-style: italic; }
+    .cr-box figcaption { margin-top: 12px; font-weight: 700; color: var(--color-accent-dark); }
     </style>
 </head>
 <body>
@@ -117,19 +124,23 @@
             <h2 class="section-title">Recenziile <span class="gold-text">cititorilor</span></h2>
             <p class="section-sub">Ce spun elevii, părinții și absolvenții despre revistă</p>
             <div class="grid grid-2">
-                <figure class="card reveal" style="margin:0; padding:20px 24px; border-left:4px solid transparent; border-image:var(--gold-gradient) 1; background:var(--color-beige);">
+                <figure class="cr-box reveal" style="margin:0;">
                     <blockquote style="margin:0; font-style:italic;">„Nu am cuvinte! E minunată! Extraordinară! ❤️ Acum regret că nu m-am implicat mai mult! Acestea sunt amintiri vii care mă leagă de școala mea dragă! Poate că la următoarea ediție veți mai avea nevoie de ajutor. Voi răspunde «prezent»."</blockquote>
                     <figcaption style="margin-top:12px; font-weight:700; color:var(--color-accent-dark);">— Selina</figcaption>
                 </figure>
-                <figure class="card reveal" style="margin:0; padding:20px 24px; border-left:4px solid transparent; border-image:var(--gold-gradient) 1; background:var(--color-beige);">
+                <figure class="cr-box reveal" style="margin:0;">
                     <blockquote style="margin:0; font-style:italic;">„Am rămas surprinsă 😮 este foarte frumos făcută, iar estetica și culorile se îmbină perfect 😍. Am vizionat și clipul de pe YouTube cu șefii de promoție din generația noastră și este atât de nostalgic. 🥹"</blockquote>
                     <figcaption style="margin-top:12px; font-weight:700; color:var(--color-accent-dark);">— Sabrina</figcaption>
+                </figure>
+                <figure class="cr-box reveal" style="margin:0;">
+                    <blockquote style="margin:0; font-style:italic;">„Vai, ce frumoasă este 🥰🥰 Sincer, acum doar am aruncat o privire peste revistă și la câteva articole, dar după ce am văzut ce frumoasă este, o voi citi pe toată — mai ales că îmi face plăcere să retrăiesc amintirile împreună cu fosta mea clasă, citind de acolo."</blockquote>
+                    <figcaption style="margin-top:12px; font-weight:700; color:var(--color-accent-dark);">— Olivia</figcaption>
                 </figure>
             </div>
             <div style="margin-top:28px;">
                 <h3 style="margin-bottom:6px;">Scrie-ne o recenzie</h3>
                 <p style="color:var(--color-text-muted); font-size:.92rem; margin-bottom:4px;">Un singur câmp e obligatoriu. Recenziile sunt citite de redacție și publicate aici cu acordul tău.</p>
-                <p id="rec-multumesc" hidden style="background:var(--color-beige); border-image:var(--gold-gradient) 1; border-left:4px solid transparent; padding:12px 16px; border-radius:0 10px 10px 0; font-weight:700;">Mulțumim! Recenzia ta a ajuns la redacție. 🎉</p>
+                <p id="rec-multumesc" hidden style="background:var(--color-beige); color:var(--color-text); border-image:var(--gold-gradient) 1; border-left:4px solid transparent; padding:12px 16px; border-radius:0 10px 10px 0; font-weight:700;">Mulțumim! Recenzia ta a ajuns la redacție. 🎉</p>
                 <form class="recenzie-form" action="https://formsubmit.co/prof.antoanela.pohoata@gmail.com" method="POST">
                     <div>
                         <label for="rec-text">Recenzia ta</label>
@@ -165,7 +176,7 @@
         <div class="container">
             <h2 class="section-title">Caseta de <span class="gold-text">redacție</span></h2>
             <p class="section-sub">Nr. 1 – „O nouă coroană" · publicație școlară bianuală · ISSN: în curs de atribuire</p>
-            <div class="card reveal" style="padding:24px 28px; border-left:4px solid transparent; border-image:var(--gold-gradient) 1; background:var(--color-beige);">
+            <div class="cr-box reveal" style="padding:24px 28px;">
                 <p style="margin:0 0 1em;">
                     <strong>Director:</strong> prof. Enikö Lămășanu<br>
                     <strong>Coordonator și redactor-șef:</strong> prof. Antoanela Pohoață<br>
@@ -174,10 +185,10 @@
                 </p>
                 <details>
                     <summary style="cursor:pointer; font-weight:700;">Redacția completă</summary>
-                    <p style="margin:.8em 0 0; color:var(--color-text-muted); font-size:.92rem;">
+                    <p style="margin:.8em 0 0; font-size:.92rem;">
                         <strong>Profesori și învățători:</strong> prof. Anca Franciuc, înv. Anca Vultur, prof. Daniela Iulia Moțoc, prof. Emanuela Aluculesei, prof. Emanuela Mona-Lisa Șoiman, înv. Eva Wendling, prof. dr. Katalin Tiron, înv. Laura Bartoș, înv. Loredana-Angela Mihăilescu, prof. Mariana Gherghel, înv. Mihaela Bălăcian, prof. psiholog Mihaela Dranca, prof. Mircea Strugaru, prof. Simona Maria Varvaroi.
                     </p>
-                    <p style="margin:.8em 0 0; color:var(--color-text-muted); font-size:.92rem;">
+                    <p style="margin:.8em 0 0; font-size:.92rem;">
                         <strong>Elevi:</strong> Alessia Marcu, Alessia Popovici, Alexandra Nicoleta Vultur, Alexandra Savițchi, Ana Maria Antonesi, Ana-Maria Florea, Andreea Lehaci, Carla Ștefania Volerat, Costel Scutar, Delia Maria Maxim, Ecaterina Grigoroaia, Emma Gabriella Iancu, Florin Țurcan, Gabriel Cobelea, Gabriela Macovei, George Matei Busuioc, Ilinca Elena Cocar, Iustin-Gabriel Necula, Iustina Crăescu, Iustina Grigoraș, Larisa Olariu, Mara Macovei, Maria Nuțu, Maria Onoi, Maria Ploeșteanu, Matei Bratu, Matei Rusu, Mădlina Slevoacă, Mihaela Popa, Olivia Mangu, Petronela Chiriac, Rareș Negură, Sabrina Mangu, Selina Sarah Filip.
                     </p>
                 </details>
