@@ -31,6 +31,16 @@
         table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
         table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
     }
+    /* formular recenzii */
+    .recenzie-form { max-width: 640px; margin-top: 20px; display: grid; gap: 14px; }
+    .recenzie-form label { display: block; font-weight: 700; font-size: .92rem; margin-bottom: 6px; }
+    .recenzie-form textarea, .recenzie-form input[type="text"], .recenzie-form select {
+        width: 100%; font: inherit; padding: 10px 12px; border: 1.5px solid #C9BE9A;
+        border-radius: 10px; background: #fff; color: #1a2433;
+    }
+    .recenzie-form textarea { resize: vertical; min-height: 96px; }
+    .recenzie-form .acord { display: flex; gap: 9px; align-items: flex-start; font-weight: 400; font-size: .9rem; }
+    .recenzie-form .acord input { margin-top: 3px; }
     </style>
 </head>
 <body>
@@ -82,7 +92,7 @@
                     <h2 class="section-title">Raftul <span class="gold-text">virtual</span></h2>
                     <p style="margin-bottom:1em;">Revistă școlară bianuală a Școlii Gimnaziale „Principele Carol". Numărul 1, „O nouă coroană", adună editorialul, reportaje și interviuri, pagini de istorie a școlii, creații literare și rubrici pentru toate vârstele.</p>
                     <p style="margin-bottom:1.4em;">Revista este realizată de un colectiv de elevi și cadre didactice ale școlii, sub coordonarea prof. Antoanela Pohoață.</p>
-                    <a class="btn btn-gold" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scoala@principelecarol.ro&amp;su=Vreau%20%C3%AEn%20echipa%20CAROLine" target="_blank" rel="noopener">Intră în echipa CAROLine</a>
+                    <a class="btn btn-gold" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=prof.antoanela.pohoata@gmail.com&amp;su=Vreau%20%C3%AEn%20echipa%20CAROLine" target="_blank" rel="noopener">Intră în echipa CAROLine</a>
                 </div>
             </div>
         </div>
@@ -99,6 +109,55 @@
                 <div class="card quick-card reveal"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2z"/><line x1="12" y1="6" x2="12" y2="20"/></svg> </span><h3>Nr. 8</h3><p>Iunie 2023</p></div>
             </div>
             <p style="margin-top:24px; color:var(--color-text-muted); font-size:.9rem;">Edițiile tipărite pot fi consultate la biblioteca școlii. Versiunile digitale se adaugă treptat în raftul virtual.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" id="recenzii">
+        <div class="container">
+            <h2 class="section-title">Recenziile <span class="gold-text">cititorilor</span></h2>
+            <p class="section-sub">Ce spun elevii, părinții și absolvenții despre revistă</p>
+            <div class="grid grid-2">
+                <figure class="card reveal" style="margin:0; padding:20px 24px; border-left:4px solid transparent; border-image:var(--gold-gradient) 1; background:var(--color-beige);">
+                    <blockquote style="margin:0; font-style:italic;">„Nu am cuvinte! E minunată! Extraordinară! ❤️ Acum regret că nu m-am implicat mai mult! Acestea sunt amintiri vii care mă leagă de școala mea dragă! Poate că la următoarea ediție veți mai avea nevoie de ajutor. Voi răspunde «prezent»."</blockquote>
+                    <figcaption style="margin-top:12px; font-weight:700; color:var(--color-accent-dark);">— Selina</figcaption>
+                </figure>
+                <figure class="card reveal" style="margin:0; padding:20px 24px; border-left:4px solid transparent; border-image:var(--gold-gradient) 1; background:var(--color-beige);">
+                    <blockquote style="margin:0; font-style:italic;">„Am rămas surprinsă 😮 este foarte frumos făcută, iar estetica și culorile se îmbină perfect 😍. Am vizionat și clipul de pe YouTube cu șefii de promoție din generația noastră și este atât de nostalgic. 🥹"</blockquote>
+                    <figcaption style="margin-top:12px; font-weight:700; color:var(--color-accent-dark);">— Sabrina</figcaption>
+                </figure>
+            </div>
+            <div style="margin-top:28px;">
+                <h3 style="margin-bottom:6px;">Scrie-ne o recenzie</h3>
+                <p style="color:var(--color-text-muted); font-size:.92rem; margin-bottom:4px;">Un singur câmp e obligatoriu. Recenziile sunt citite de redacție și publicate aici cu acordul tău.</p>
+                <p id="rec-multumesc" hidden style="background:var(--color-beige); border-image:var(--gold-gradient) 1; border-left:4px solid transparent; padding:12px 16px; border-radius:0 10px 10px 0; font-weight:700;">Mulțumim! Recenzia ta a ajuns la redacție. 🎉</p>
+                <form class="recenzie-form" action="https://formsubmit.co/prof.antoanela.pohoata@gmail.com" method="POST">
+                    <div>
+                        <label for="rec-text">Recenzia ta</label>
+                        <textarea id="rec-text" name="recenzie" required placeholder="Ce ți-a plăcut la revistă?"></textarea>
+                    </div>
+                    <div>
+                        <label for="rec-nume">Numele tău <span style="font-weight:400; color:var(--color-text-muted);">(opțional)</span></label>
+                        <input type="text" id="rec-nume" name="nume" placeholder="Prenume sau cum vrei să apari">
+                    </div>
+                    <div>
+                        <label for="rec-rol">Ești… <span style="font-weight:400; color:var(--color-text-muted);">(opțional)</span></label>
+                        <select id="rec-rol" name="rol">
+                            <option value="">—</option>
+                            <option>Elev / elevă</option>
+                            <option>Părinte</option>
+                            <option>Absolvent / absolventă</option>
+                            <option>Profesor / profesoară</option>
+                            <option>Alt cititor</option>
+                        </select>
+                    </div>
+                    <label class="acord"><input type="checkbox" name="acord" value="da" required> Sunt de acord ca recenzia (și prenumele, dacă l-am completat) să fie publicate pe site.</label>
+                    <input type="hidden" name="_subject" value="Recenzie nouă – revista CAROLine">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://principelecarol.ro/caroline-revista.html?trimis=1#recenzii">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div><button class="btn btn-gold" type="submit">Trimite recenzia</button></div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -131,7 +190,7 @@
         <div class="container" style="text-align:center;">
             <h2 class="section-title" style="color:#fff;">Vrei să faci parte din echipa <span class="gold-text">CAROLine</span>?</h2>
             <p style="color:var(--color-beige); max-width:620px; margin:0 auto 1.8em;">Dacă ești pasionat de scris, fotografie sau video, te așteptăm în echipa noastră! Redacția, podcastul și studioul video au mereu nevoie de colegi noi.</p>
-            <a class="btn btn-gold" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scoala@principelecarol.ro&amp;su=%C3%8Enscriere%20echipa%20CAROLine" target="_blank" rel="noopener">Înscrie-te acum</a>
+            <a class="btn btn-gold" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=prof.antoanela.pohoata@gmail.com&amp;su=%C3%8Enscriere%20echipa%20CAROLine" target="_blank" rel="noopener">Înscrie-te acum</a>
         </div>
     </section>
 
@@ -175,5 +234,11 @@
     </div>
 </footer>
 <script src="js/main.js?v=29"></script>
+<script>
+if (new URLSearchParams(location.search).get('trimis') === '1') {
+    var m = document.getElementById('rec-multumesc');
+    if (m) m.hidden = false;
+}
+</script>
 </body>
 </html>
