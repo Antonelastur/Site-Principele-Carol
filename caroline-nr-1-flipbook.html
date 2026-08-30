@@ -156,7 +156,8 @@
         var im = document.createElement('img');
         im.src = 'images/caroline-nr-1/page-' + nn + '.jpg';
         im.alt = 'CAROLine nr. 1 – pagina ' + i;
-        im.loading = (i <= 4 ? 'eager' : 'lazy');
+        im.width = 1400; im.height = 1980;   // dimensiuni intrinseci => aceeasi asezare inainte si dupa incarcare
+        im.loading = (i <= 8 ? 'eager' : 'lazy');
         im.decoding = 'async';
         pg.appendChild(im);
         el.appendChild(pg);
