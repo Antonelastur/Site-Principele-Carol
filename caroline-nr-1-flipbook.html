@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAROLine nr. 1 – răsfoiește online | Școala Gimnazială „Principele Carol"</title>
+    <meta name="description" content="Răsfoiește online numărul 1 al revistei CAROLine, ediția de colecție 2026, pagină cu pagină.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css?v=29">
+    <style>
+    .page-hero { background: #001F3F !important; border-bottom: 3px solid #D4AF37 !important; }
+    .page-hero h1 { color: #F3E5AB !important; -webkit-text-fill-color: #F3E5AB !important; }
+    .fb-wrap { background: #0d1b2e; padding: 28px 12px 34px; }
+    .fb-stage { max-width: 1180px; margin: 0 auto; }
+    #flipbook { margin: 0 auto; touch-action: pan-y; }
+    #flipbook .page { background: #fff; box-shadow: 0 0 18px rgba(0,0,0,.35); }
+    #flipbook .page img { width: 100%; height: 100%; display: block; object-fit: cover; -webkit-user-drag: none; user-select: none; }
+    .fb-controls { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+    .fb-btn { display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(110deg,#B89047,#D4AF37); color: #001F3F; border: none; border-radius: 999px; padding: 10px 20px; font: inherit; font-weight: 700; cursor: pointer; }
+    .fb-btn:disabled { opacity: .4; cursor: default; }
+    .fb-counter { color: #F5F0E4; font-weight: 600; min-width: 92px; text-align: center; }
+    .fb-hint { text-align: center; color: #9db0c9; font-size: .88rem; margin-top: 12px; }
+    .fb-back { display: inline-block; margin: 22px 0 0; }
+    @media (max-width: 600px) { .fb-btn { padding: 9px 15px; } }
+    /* cititor cu zoom pentru o pagina */
+    .fb-zoom { position: fixed; inset: 0; z-index: 9999; background: rgba(6,12,22,.97); display: flex; flex-direction: column; }
+    .fb-zoom[hidden] { display: none; }
+    .fb-zoom-bar { display: flex; gap: 10px; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+    .fb-zoom-scroll { flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 10px; touch-action: none; }
+    .fb-zoom-scroll img { max-width: 100%; max-height: calc(100vh - 96px); object-fit: contain; transform-origin: center center; will-change: transform; -webkit-user-drag: none; }
+    .fb-zoom-scroll.zoomed img { cursor: grab; }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="index.html">
+            <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+            <span class="brand-name"><span>Școala Gimnazială</span><span>„Principele Carol"</span></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Deschide meniul"><span></span><span></span><span></span></button>
+        <nav class="main-nav" aria-label="Meniu principal">
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="istoric.html">Despre noi</a><ul class="submenu"><li><a href="istoric.html">Istoric</a></li><li><a href="misiune-valori.html">Misiune și valori</a></li><li><a href="echipa.html">Echipă</a></li><li><a href="baza-materiala.html">Bază materială</a></li><li><a href="oferta-educationala.html">Oferta educațională</a></li><li><a href="muzeu-virtual.html">Muzeul virtual</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="podium.html">Elevi</a><ul class="submenu"><li><a href="podium.html">Podium</a></li><li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li><li><a href="orar.html">Orarul claselor</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="inscriere.html">Părinți</a><ul class="submenu"><li><a href="inscriere.html">Înscriere</a></li><li><a href="burse.html">Burse și tichete</a></li><li><a href="avizier.html">Avizier</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="erasmus.html">Proiecte</a><ul class="submenu"><li><a href="erasmus.html">Erasmus+</a></li><li><a href="club-limbi-straine.html">Lumea magică a limbilor străine</a></li></ul></li>
+                <li class="nav-item has-sub active"><a class="nav-link" href="caroline-revista.html">CAROLine</a><ul class="submenu"><li><a href="caroline-revista.html">Revista</a></li><li><a href="caroline-tv.html">CAROLine TV</a></li></ul></li>
+                <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link" href="documente.html">Documente</a></li>
+                <li class="nav-item"><a class="nav-link" href="noutati.html">Noutăți</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol><li><a href="index.html">Acasă</a></li><li><a href="caroline-revista.html">CAROLine</a></li><li aria-current="page">Nr. 1 – răsfoiește online</li></ol></div></nav>
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>CAROLine nr. 1 – răsfoiește online</h1>
+        </div>
+    </section>
+
+    <section class="fb-wrap">
+        <div class="fb-stage">
+            <div id="flipbook" aria-label="Revista CAROLine nr. 1, 32 de pagini"></div>
+
+            <div class="fb-controls">
+                <button class="fb-btn" id="fbPrev" type="button" aria-label="Pagina anterioară">‹ Înapoi</button>
+                <span class="fb-counter" id="fbCounter">1 / 32</span>
+                <button class="fb-btn" id="fbNext" type="button" aria-label="Pagina următoare">Înainte ›</button>
+                <button class="fb-btn" id="fbZoomOpen" type="button">🔍 Mărește pagina</button>
+                <button class="fb-btn" id="fbFull" type="button">Ecran complet</button>
+            </div>
+            <p class="fb-hint">Trage de colțul paginii sau folosește săgețile. Pentru citit, apasă „Mărește pagina" — o deschide mare; apropii/depărtezi cu două degete (sau dublu-clic) ca să mărești.</p>
+
+            <div id="fbZoom" class="fb-zoom" hidden aria-label="Pagină mărită">
+                <div class="fb-zoom-bar">
+                    <button class="fb-btn" id="fbzPrev" type="button" aria-label="Pagina anterioară">‹</button>
+                    <span class="fb-counter" id="fbzCounter">1 / 32</span>
+                    <button class="fb-btn" id="fbzNext" type="button" aria-label="Pagina următoare">›</button>
+                    <button class="fb-btn" id="fbzClose" type="button">✕ Închide</button>
+                </div>
+                <div class="fb-zoom-scroll" id="fbzScroll"><img id="fbzImg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding:26px 0 40px;">
+        <div class="container" style="text-align:center;">
+            <a class="btn btn-gold fb-back" href="caroline-revista.html">← Înapoi la revista CAROLine</a>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+                <h4>Școala Gimnazială „Principele Carol"</h4>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li>Bulevardul Bucovinei, Nr. 25<br>Gura Humorului, Suceava</li>
+                    <li><a href="tel:0230230928">0230 230 928</a></li>
+                    <li><a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Linkuri utile</h4>
+                <ul>
+                    <li><a href="documente.html">Informații publice</a></li>
+                    <li><a href="documente.html#gdpr">Politica de confidențialitate (GDPR)</a></li>
+                    <li><a href="https://www.isj.sv.edu.ro" target="_blank" rel="noopener">ISJ Suceava</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Comunitate</h4>
+                <ul>
+                    <li><a href="caroline-revista.html">Revista CAROLine</a></li>
+                    <li><a href="caroline-tv.html">CAROLine TV</a></li>
+                    <li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li>
+                    <li><a href="inscriere.html#asociatia">Asociația de părinți</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.<br>Webmaster: prof. Antoanela Pohoață</p>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js?v=29"></script>
+<script src="js/page-flip.js"></script>
+<script>
+(function () {
+    var TOTAL = 32;
+    var el = document.getElementById('flipbook');
+    var counter = document.getElementById('fbCounter');
+    var prevBtn = document.getElementById('fbPrev');
+    var nextBtn = document.getElementById('fbNext');
+    var fullBtn = document.getElementById('fbFull');
+
+    // Paginile ca <img> reale (mod HTML) — raman clare pe ecrane retina/proiector,
+    // spre deosebire de modul canvas care le afiseaza usor neclare.
+    for (var i = 1; i <= TOTAL; i++) {
+        var nn = (i < 10 ? '0' + i : '' + i);
+        var pg = document.createElement('div');
+        pg.className = 'page';
+        var im = document.createElement('img');
+        im.src = 'images/caroline-nr-1/page-' + nn + '.jpg';
+        im.alt = 'CAROLine nr. 1 – pagina ' + i;
+        im.width = 1400; im.height = 1980;   // dimensiuni intrinseci => aceeasi asezare inainte si dupa incarcare
+        im.loading = (i <= 8 ? 'eager' : 'lazy');
+        im.decoding = 'async';
+        pg.appendChild(im);
+        el.appendChild(pg);
+    }
+
+    var pageFlip = new St.PageFlip(el, {
+        width: 600,
+        height: 848,          // raport 1400 x 1979
+        size: 'stretch',
+        minWidth: 280,
+        maxWidth: 820,
+        minHeight: 396,
+        maxHeight: 1160,
+        maxShadowOpacity: 0.5,
+        showCover: true,
+        mobileScrollSupport: false,
+        useMouseEvents: true
+    });
+
+    pageFlip.loadFromHTML(el.querySelectorAll('.page'));
+
+    function refresh() {
+        var p = pageFlip.getCurrentPageIndex() + 1;
+        counter.textContent = p + ' / ' + TOTAL;
+        prevBtn.disabled = p <= 1;
+        nextBtn.disabled = p >= TOTAL;
+    }
+    pageFlip.on('flip', refresh);
+    pageFlip.on('init', refresh);
+
+    prevBtn.addEventListener('click', function () { pageFlip.flipPrev(); });
+    nextBtn.addEventListener('click', function () { pageFlip.flipNext(); });
+
+    document.addEventListener('keydown', function (e) {
+        if (!zoom.hidden) return;   // cand cititorul cu zoom e deschis, sagetile navigheaza acolo
+        if (e.key === 'ArrowLeft') pageFlip.flipPrev();
+        else if (e.key === 'ArrowRight') pageFlip.flipNext();
+    });
+
+    fullBtn.addEventListener('click', function () {
+        var box = document.querySelector('.fb-wrap');
+        if (!document.fullscreenElement) {
+            (box.requestFullscreen || box.webkitRequestFullscreen || function () {}).call(box);
+        } else {
+            (document.exitFullscreen || document.webkitExitFullscreen || function () {}).call(document);
+        }
+    });
+    document.addEventListener('fullscreenchange', function () {
+        fullBtn.textContent = document.fullscreenElement ? 'Ieși din ecran complet' : 'Ecran complet';
+        setTimeout(function () { pageFlip.update(); }, 120);
+    });
+
+    // ---- Cititor cu zoom: o pagina mare, cu prev/next si zoom la clic ----
+    var zoom = document.getElementById('fbZoom');
+    var zImg = document.getElementById('fbzImg');
+    var zScroll = document.getElementById('fbzScroll');
+    var zCounter = document.getElementById('fbzCounter');
+    var zPrev = document.getElementById('fbzPrev');
+    var zNext = document.getElementById('fbzNext');
+    var zCur = 1;
+
+    function zSrc(n) { return 'images/caroline-nr-1/page-' + (n < 10 ? '0' + n : n) + '.jpg'; }
+    function zShow(n) {
+        zCur = Math.min(TOTAL, Math.max(1, n));
+        zImg.src = zSrc(zCur);
+        zImg.alt = 'CAROLine nr. 1 – pagina ' + zCur;
+        zCounter.textContent = zCur + ' / ' + TOTAL;
+        resetZoom();
+        zPrev.disabled = zCur <= 1;
+        zNext.disabled = zCur >= TOTAL;
+    }
+    function zOpen() {
+        zShow(pageFlip.getCurrentPageIndex() + 1);
+        zoom.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+    function zClose() {
+        zoom.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('fbZoomOpen').addEventListener('click', zOpen);
+    document.getElementById('fbzClose').addEventListener('click', zClose);
+    zPrev.addEventListener('click', function () { zShow(zCur - 1); });
+    zNext.addEventListener('click', function () { zShow(zCur + 1); });
+
+    // ---- Pinch-to-zoom + pan pe pagina marita (ca la o imagine oarecare) ----
+    var scale = 1, tx = 0, ty = 0;
+    var pts = new Map();            // pointerId -> {x, y}
+    var pinchDist = 0, pinchScale = 1, panFrom = null;
+
+    function applyZoom() {
+        zImg.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+        zScroll.classList.toggle('zoomed', scale > 1.01);
+    }
+    function resetZoom() { scale = 1; tx = 0; ty = 0; applyZoom(); }
+
+    function twoPointDist() {
+        var a = Array.from(pts.values());
+        return Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y);
+    }
+    zImg.addEventListener('pointerdown', function (e) {
+        e.preventDefault();
+        pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        try { zImg.setPointerCapture(e.pointerId); } catch (err) {}
+        if (pts.size === 2) { pinchDist = twoPointDist(); pinchScale = scale; }
+        else if (pts.size === 1 && scale > 1) { panFrom = { x: e.clientX - tx, y: e.clientY - ty }; }
+    });
+    zImg.addEventListener('pointermove', function (e) {
+        if (!pts.has(e.pointerId)) return;
+        pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (pts.size === 2 && pinchDist) {
+            scale = Math.min(4, Math.max(1, pinchScale * twoPointDist() / pinchDist));
+            if (scale === 1) { tx = 0; ty = 0; }
+            applyZoom();
+        } else if (pts.size === 1 && panFrom && scale > 1) {
+            tx = e.clientX - panFrom.x; ty = e.clientY - panFrom.y;
+            applyZoom();
+        }
+    });
+    function endPointer(e) {
+        pts.delete(e.pointerId);
+        if (pts.size < 2) pinchDist = 0;
+        if (pts.size === 0) panFrom = null;
+    }
+    zImg.addEventListener('pointerup', endPointer);
+    zImg.addEventListener('pointercancel', endPointer);
+    zImg.addEventListener('dblclick', function () {
+        if (scale > 1) resetZoom(); else { scale = 2; applyZoom(); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (zoom.hidden) return;
+        if (e.key === 'Escape') zClose();
+        else if (e.key === 'ArrowLeft') zShow(zCur - 1);
+        else if (e.key === 'ArrowRight') zShow(zCur + 1);
+    });
+})();
+</script>
+</body>
+</html>
