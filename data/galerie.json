@@ -1,0 +1,213 @@
+{
+  "versiune": 1,
+  "anCurent": "2026-2027",
+  "aniScolari": ["2026-2027", "2025-2026"],
+  "categorii": [
+    { "id": "proiecte",        "nume": "Proiecte" },
+    { "id": "activitati",      "nume": "Activități" },
+    { "id": "excursii",        "nume": "Excursii și vizite" },
+    { "id": "serbari",         "nume": "Serbări și festivități" },
+    { "id": "concursuri",      "nume": "Concursuri și olimpiade" },
+    { "id": "ateliere",        "nume": "Ateliere" },
+    { "id": "erasmus",         "nume": "Erasmus+" },
+    { "id": "sport",           "nume": "Evenimente sportive" },
+    { "id": "traditii",        "nume": "Tradiții și sărbători" },
+    { "id": "viata-claselor",  "nume": "Viața claselor" },
+    { "id": "scoala-altfel",   "nume": "Școala altfel" },
+    { "id": "saptamana-verde", "nume": "Săptămâna verde" },
+    { "id": "premii",          "nume": "Premii și rezultate" },
+    { "id": "comunitate",      "nume": "Comunitatea școlii" },
+    { "id": "altele",          "nume": "Alte evenimente" }
+  ],
+  "albume": [
+    {
+      "id": "clasele-pregatite-2026",
+      "titlu": "Clasele pregătite pentru noul an școlar",
+      "categorie": "viata-claselor",
+      "anScolar": "2026-2027",
+      "data": "2026-09-07",
+      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa a II-a A", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A"],
+      "descriere": "Înainte de prima zi de școală, doamnele învățătoare au pregătit sălile de clasă: baloane, mesaje de bun venit, rechizite așezate pe bănci și decoruri lucrate de mână. Așa își așteaptă școala elevii la începutul anului școlar 2026–2027.",
+      "etichete": ["început de an", "prima zi de școală", "învățământ primar", "săli de clasă"],
+      "publicat": true,
+      "coperta": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-1.jpg",
+      "video": [],
+      "grupuri": [
+        { "id": "pregatitoare-a", "nume": "Clasa pregătitoare A", "subtitlu": "prof. înv. primar Eva Wendling" },
+        { "id": "pregatitoare-b", "nume": "Clasa pregătitoare B", "subtitlu": "prof. înv. primar Gabriela Frîncu" },
+        { "id": "clasa-1a", "nume": "Clasa I A", "subtitlu": "prof. înv. primar Loredana Mihăilescu" },
+        { "id": "clasa-2a", "nume": "Clasa a II-a A", "subtitlu": "prof. înv. primar Laura Bartoș" },
+        { "id": "clasa-3a", "nume": "Clasa a III-a A", "subtitlu": "prof. înv. primar Anca Vultur" },
+        { "id": "clasa-3b", "nume": "Clasa a III-a B", "subtitlu": "prof. înv. primar Rodica Manoliu" },
+        { "id": "clasa-4a", "nume": "Clasa a IV-a A", "subtitlu": "prof. înv. primar Mihaela Bălăcianu" }
+      ],
+      "foto": [
+        { "grup": "pregatitoare-a", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei pregătitoare A, cu băncile așezate în careu și mesajul „Bine ați venit!” pe tablă", "titlu": "„Bine ați venit!” la clasa Albinuțelor" },
+        { "grup": "pregatitoare-a", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-2.jpg", "w": 1600, "h": 1200, "alt": "Băncile clasei pregătitoare A și panoul „Anotimpurile copilăriei”", "titlu": "Panoul „Anotimpurile copilăriei”" },
+        { "grup": "pregatitoare-a", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-3.jpg", "w": 1600, "h": 1200, "alt": "Ferestrele clasei pregătitoare A, decorate cu stupi de hârtie", "titlu": "Decorul „Albinuțele sârguincioase”" },
+        { "grup": "pregatitoare-a", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-a-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-4.jpg", "w": 1200, "h": 1600, "alt": "Peretele pictat cu iarbă, flori și copaci din clasa pregătitoare A", "titlu": "Colțul verde al clasei" },
+        { "grup": "pregatitoare-a", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-5.jpg", "w": 1600, "h": 1200, "alt": "Tabla interactivă și alfabetarul din clasa pregătitoare A", "titlu": "Tabla și alfabetarul" },
+
+        { "grup": "pregatitoare-b", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-b-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-b-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei pregătitoare B, cu baloane colorate și mesajul „Bine ați venit la școală!”", "titlu": "„Bine ați venit la școală!”" },
+        { "grup": "pregatitoare-b", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-b-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-b-2.jpg", "w": 1600, "h": 1200, "alt": "Alfabetarul, calendarul și băncile pregătite din clasa pregătitoare B", "titlu": "Alfabetarul și calendarul clasei" },
+        { "grup": "pregatitoare-b", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-b-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-b-3.jpg", "w": 1600, "h": 1200, "alt": "Mesajul „Învățăm împreună, creștem împreună!” pe peretele clasei pregătitoare B", "titlu": "„Învățăm împreună, creștem împreună!”" },
+
+        { "grup": "clasa-1a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1a-1.jpg", "w": 1600, "h": 900, "alt": "Sala clasei I A, cu baloane galbene la fiecare bancă și decor cu creioane colorate", "titlu": "Baloane galbene la fiecare bancă" },
+        { "grup": "clasa-1a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1a-2.jpg", "w": 1600, "h": 900, "alt": "Mesajul „Intră cu încredere. Învață cu pasiune. Pleacă pregătit să schimbi lumea.” pe peretele clasei I A", "titlu": "„Pleacă pregătit să schimbi lumea.”" },
+        { "grup": "clasa-1a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1a-3.jpg", "w": 1600, "h": 900, "alt": "Catedra clasei I A, cu cutia poștală a doamnei învățătoare și materiale pentru prima zi", "titlu": "Cutia poștală a clasei" },
+
+        { "grup": "clasa-2a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2a-1.jpg", "w": 1600, "h": 1200, "alt": "Mesajul „Fiecare copil este o stea care strălucește în felul său!” deasupra tablei clasei a II-a A", "titlu": "„Fiecare copil este o stea”" },
+        { "grup": "clasa-2a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2a-2.jpg", "w": 1600, "h": 1200, "alt": "Băncile clasei a II-a A, pregătite cu baloane colorate și materiale pentru elevi", "titlu": "Băncile pregătite pentru prima zi" },
+        { "grup": "clasa-2a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2a-3.jpg", "w": 1600, "h": 1200, "alt": "Colțul de lectură și băncile clasei a II-a A, luminate de ferestre", "titlu": "Colțul de lectură" },
+
+        { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-1.jpg", "w": 1600, "h": 1200, "alt": "Curcubeu din hârtie pe peretele clasei a III-a A și mesajul „Fiecare copil este un curcubeu care așteaptă să strălucească.”", "titlu": "Curcubeul clasei" },
+        { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-2.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a III-a A, cu baloane colorate pe fiecare bancă", "titlu": "Sala pregătită pentru elevi" },
+        { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-3.jpg", "w": 1600, "h": 1200, "alt": "Copacul de toamnă și farfuriile pictate de pe peretele clasei a III-a A", "titlu": "Copacul de toamnă" },
+        { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-4.jpg", "w": 1600, "h": 1200, "alt": "Fluture din flori de hârtie și siluete de copii, decor pe holul dinaintea clasei a III-a A", "titlu": "Fluturele de pe hol" },
+        { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-5.jpg", "w": 1600, "h": 1200, "alt": "Mesajul „Bine ați venit la școală!” și băncile pregătite din clasa a III-a A", "titlu": "„Bine ați venit la școală!”" },
+
+        { "grup": "clasa-3b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3b-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3b-1.jpg", "w": 1600, "h": 1204, "alt": "Sala clasei a III-a B, cu baloane albe și lampioane suspendate", "titlu": "Baloane și lampioane" },
+        { "grup": "clasa-3b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3b-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3b-2.jpg", "w": 1600, "h": 1204, "alt": "Băncile clasei a III-a B, cu manuale și rechizite așezate pentru fiecare elev", "titlu": "Băncile pregătite" },
+        { "grup": "clasa-3b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3b-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3b-3.jpg", "w": 1600, "h": 1204, "alt": "Mesajul „Intră cu încredere. Învață cu pasiune. Pleacă pregătit să schimbi lumea.” pe peretele clasei a III-a B", "titlu": "„Intră cu încredere.”" },
+        { "grup": "clasa-3b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3b-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3b-4.jpg", "w": 1204, "h": 1600, "alt": "Breloc-surpriză pentru elevii clasei a III-a B, „Steluțele Vesele”, anul școlar 2026–2027", "titlu": "Surpriza „Steluțelor Vesele”" },
+
+        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-1.jpg", "w": 1200, "h": 1600, "alt": "Ușa clasei a IV-a A, deschisă spre sala pregătită pentru prima zi", "titlu": "Ușa clasei a IV-a A" },
+        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-2.jpg", "w": 1600, "h": 1200, "alt": "Peretele cu rame în formă de carte și băncile clasei a IV-a A, cu baloane roșii", "titlu": "Peretele cu cărți" },
+        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-3.jpg", "w": 1600, "h": 1200, "alt": "Tabla interactivă și băncile clasei a IV-a A, cu manuale așezate pentru fiecare elev", "titlu": "Manualele pe bănci" },
+        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-4.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a IV-a A, luminată de ferestre, pregătită pentru începutul anului școlar", "titlu": "Sala pregătită" },
+        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-5.jpg", "w": 1600, "h": 1200, "alt": "Planșele de gramatică și decorul cu cărți din clasa a IV-a A", "titlu": "Planșele de gramatică" }
+      ]
+    },
+
+    {
+      "id": "erasmus-life-2025",
+      "titlu": "Erasmus+ L.I.F.E. — mobilitățile echipei",
+      "categorie": "erasmus",
+      "anScolar": "2025-2026",
+      "data": "",
+      "clase": [],
+      "descriere": "Cursurile de formare și schimburile de experiență din proiectul Erasmus+ L.I.F.E. (Learning Intelligently For Evaluations): mobilitatea de la Porto și mobilitatea de la Málaga.",
+      "etichete": ["Erasmus+", "L.I.F.E.", "formare", "Porto", "Málaga", "mobilitate"],
+      "publicat": true,
+      "coperta": "images/erasmus/porto-1.jpg",
+      "video": [],
+      "grupuri": [
+        { "id": "proiect", "nume": "Proiectul L.I.F.E.", "subtitlu": "" },
+        { "id": "porto", "nume": "Mobilitate Porto", "subtitlu": "curs de formare" },
+        { "id": "malaga", "nume": "Mobilitate Málaga", "subtitlu": "curs de formare" }
+      ],
+      "foto": [
+        { "grup": "proiect", "src": "images/logo-erasmus-life.jpg", "alt": "Afișul proiectului Erasmus+ L.I.F.E.", "titlu": "Proiectul L.I.F.E." },
+        { "grup": "porto", "src": "images/erasmus/porto-1.jpg", "alt": "Profesori la cursul de formare Erasmus+ din Porto", "titlu": "Curs de formare" },
+        { "grup": "porto", "src": "images/erasmus/porto-2.jpg", "alt": "Sesiune de lucru la cursul Erasmus+ din Porto", "titlu": "Sesiune de lucru" },
+        { "grup": "porto", "src": "images/erasmus/porto-3.jpg", "alt": "Atelier în aer liber la mobilitatea Erasmus+ din Porto", "titlu": "Atelier în aer liber" },
+        { "grup": "porto", "src": "images/erasmus/porto-4.jpg", "alt": "Activitate de formare la mobilitatea Erasmus+ din Porto", "titlu": "Activitate de formare" },
+        { "grup": "porto", "src": "images/erasmus/porto-5.jpg", "alt": "Participanții la cursul Erasmus+ din Porto", "titlu": "Participanții la curs" },
+        { "grup": "malaga", "src": "images/erasmus/malaga-1.jpg", "alt": "Profesoare din echipa Erasmus+ cu certificatele de participare la Málaga", "titlu": "Certificate de participare" },
+        { "grup": "malaga", "src": "images/erasmus/malaga-2.jpg", "alt": "Discuții cu participanții internaționali la mobilitatea din Málaga", "titlu": "Schimb de experiență" },
+        { "grup": "malaga", "src": "images/erasmus/malaga-3.jpg", "alt": "Festivitatea de acordare a certificatelor la cursul Erasmus+ din Málaga", "titlu": "Festivitatea de încheiere" }
+      ]
+    },
+
+    {
+      "id": "zici-lectura-2025",
+      "titlu": "Z.I.C.I. — Ziua Internațională a Cititului Împreună",
+      "categorie": "activitati",
+      "anScolar": "2025-2026",
+      "data": "",
+      "clase": ["Clasa pregătitoare A", "Clasa I A", "Clasa I B", "Clasa a II-a B"],
+      "descriere": "Activități de lectură împreună, la clasele din învățământul primar: povești citite cu voce tare, lucru în echipă și bucuria de a descoperi cărțile.",
+      "etichete": ["lectură", "Z.I.C.I.", "învățământ primar", "citit împreună"],
+      "publicat": true,
+      "coperta": "images/zici/pregatitoare-a-1.jpeg",
+      "video": [],
+      "foto": [
+        { "src": "images/gallery/activitate-elevi.jpg", "alt": "Activități interactive cu elevii", "titlu": "Activități interactive" },
+        { "src": "images/zici/clasa-1a.jpeg", "alt": "Z.I.C.I., clasa I A", "titlu": "Clasa I A" },
+        { "src": "images/zici/clasa-1b.jpeg", "alt": "Z.I.C.I., clasa I B", "titlu": "Clasa I B" },
+        { "src": "images/zici/clasa-2b-1.jpeg", "alt": "Z.I.C.I., clasa a II-a B", "titlu": "Clasa a II-a B" },
+        { "src": "images/zici/clasa-2b-2.jpeg", "alt": "Z.I.C.I., clasa a II-a B, lectură împreună", "titlu": "Clasa a II-a B · lectură împreună" },
+        { "src": "images/zici/clasa-2b-3.jpeg", "alt": "Z.I.C.I., clasa a II-a B, activitate de citit", "titlu": "Clasa a II-a B · activitate de citit" },
+        { "src": "images/zici/pregatitoare-a-1.jpeg", "alt": "Z.I.C.I., clasa pregătitoare A", "titlu": "Pregătitoare A · „Ștrumfii isteți”" },
+        { "src": "images/zici/pregatitoare-a-2.jpeg", "alt": "Z.I.C.I., clasa pregătitoare A, lectură", "titlu": "Pregătitoare A · „Ștrumfii isteți”" },
+        { "src": "images/zici/pregatitoare-a-3.jpeg", "alt": "Z.I.C.I., clasa pregătitoare A, citim împreună", "titlu": "Pregătitoare A · „Ștrumfii isteți”" },
+        { "src": "images/zici/pregatitoare-a-4.jpeg", "alt": "Z.I.C.I., clasa pregătitoare A, activitate de lectură", "titlu": "Pregătitoare A · „Ștrumfii isteți”" },
+        { "src": "images/zici/pregatitoare-a-5.jpeg", "alt": "Z.I.C.I., clasa pregătitoare A, povești", "titlu": "Pregătitoare A · „Ștrumfii isteți”" }
+      ]
+    },
+
+    {
+      "id": "club-limbi-straine-2025",
+      "titlu": "Lumea magică a limbilor străine",
+      "categorie": "ateliere",
+      "anScolar": "2025-2026",
+      "data": "",
+      "clase": [],
+      "descriere": "Din activitatea clubului de limbi străine: ateliere de grup, jocuri de rol și lucrul „detectivilor” pe indicii în limbi străine.",
+      "etichete": ["club", "limbi străine", "opțional", "atelier"],
+      "publicat": true,
+      "coperta": "images/club/foto-1.jpg",
+      "video": [],
+      "foto": [
+        { "src": "images/club/foto-1.jpg", "alt": "Activitate la clubul de limbi străine", "titlu": "Detectivii la lucru" },
+        { "src": "images/club/foto-2.jpg", "alt": "Elevi la clubul de limbi străine", "titlu": "Atelier de club" },
+        { "src": "images/club/foto-3.jpg", "alt": "Activitate de grup la club", "titlu": "Echipa clubului" }
+      ]
+    },
+
+    {
+      "id": "concurs-kendama-atelier-2025",
+      "titlu": "Concursul de kendama și atelierul „Frumusețe în lucruri uitate”",
+      "categorie": "concursuri",
+      "anScolar": "2025-2026",
+      "data": "",
+      "clase": [],
+      "descriere": "Afișele celor două activități propuse elevilor: concursul de kendama și atelierul de reciclare creativă „Frumusețe în lucruri uitate”.",
+      "etichete": ["kendama", "concurs", "reciclare", "atelier", "afiș"],
+      "publicat": true,
+      "coperta": "images/afis-kendama.jpg",
+      "video": [],
+      "foto": [
+        { "src": "images/afis-kendama.jpg", "alt": "Afișul concursului de kendama", "titlu": "Concursul de kendama" },
+        { "src": "images/afis-frumusete-reciclare.jpg", "alt": "Afișul atelierului „Frumusețe în lucruri uitate”", "titlu": "Frumusețe în lucruri uitate" }
+      ]
+    },
+
+    {
+      "id": "halloween-2025",
+      "titlu": "Petrecerea de Halloween",
+      "categorie": "serbari",
+      "anScolar": "2025-2026",
+      "data": "",
+      "clase": [],
+      "descriere": "Afișul petrecerii de Halloween organizate pentru elevii școlii.",
+      "etichete": ["Halloween", "petrecere", "afiș"],
+      "publicat": true,
+      "coperta": "images/afis-halloween.jpg",
+      "video": [],
+      "foto": [
+        { "src": "images/afis-halloween.jpg", "alt": "Afișul petrecerii de Halloween", "titlu": "Petrecerea de Halloween" }
+      ]
+    },
+
+    {
+      "id": "spatiile-scolii-2025",
+      "titlu": "Spațiile școlii",
+      "categorie": "comunitate",
+      "anScolar": "2025-2026",
+      "data": "",
+      "clase": [],
+      "descriere": "Holul principal, sala festivă și sălile de clasă ale Școlii Gimnaziale „Principele Carol”.",
+      "etichete": ["bază materială", "săli de clasă", "sala festivă", "hol"],
+      "publicat": true,
+      "coperta": "images/gallery/hol-scoala.jpg",
+      "video": [],
+      "foto": [
+        { "src": "images/gallery/hol-scoala.jpg", "alt": "Holul principal al școlii", "titlu": "Holul principal" },
+        { "src": "images/gallery/sala-festiva.jpg", "alt": "Sala festivă a școlii", "titlu": "Sala festivă" },
+        { "src": "images/gallery/sala-clasa-1.jpg", "alt": "Sală de clasă", "titlu": "Sală de clasă" },
+        { "src": "images/gallery/sala-clasa-2.jpg", "alt": "Sală de clasă modernă", "titlu": "Clasă modernă" }
+      ]
+    }
+  ]
+}

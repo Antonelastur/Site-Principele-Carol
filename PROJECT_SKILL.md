@@ -27,19 +27,25 @@ Site static: HTML5 semantic, CSS3 cu variabile, JavaScript vanilla. Fără frame
 ├── club-limbi-straine.html     Proiecte → Lumea magică a limbilor străine
 ├── caroline-revista.html       CAROLine → Revista
 ├── caroline-tv.html            CAROLine → TV / multimedia
-├── galerie.html                Galerie foto (cu lightbox și filtre)
+├── galerie.html                Galerie — lista de albume, filtre și căutare
+├── album.html                  Galerie — pagina unui album (album.html?a=<id>)
+├── admin-galerie.html          Unealtă locală de editare a galeriei (nu e în meniu)
 ├── documente.html              Documente publice + organigramă
 ├── noutati.html                Lista de știri
 ├── stire-model.html            ȘABLON pentru o știre nouă
 ├── contact.html                Contact
 ├── css/style.css               Toate stilurile
+├── css/galerie.css             Stilurile galeriei (doar galerie.html și album.html)
 ├── js/main.js                  Toate interacțiunile
-├── images/                     Imagini (subfoldere: gallery, muzeu, zici, club)
+├── js/galerie.js               Galeria: filtre, albume, pagina de album
+├── data/galerie.json           TOT conținutul galeriei (albume, categorii, ani școlari)
+├── tools/pregateste-poze.py    Optimizează pozele și scrie blocul JSON al albumului
+├── images/                     Imagini (subfoldere: galerie, gallery, muzeu, zici, club)
 ├── docs/                       PDF-uri publice (subfolder: orar)
 └── media/                      Audio (imnul clubului)
 ```
 
-Toate paginile sunt în rădăcină (structură plată). Total: 22 de pagini. Avantaj: header-ul și footer-ul folosesc aceleași căi relative peste tot.
+Toate paginile sunt în rădăcină (structură plată). Total: 24 de pagini. Avantaj: header-ul și footer-ul folosesc aceleași căi relative peste tot.
 
 ## 3. Identitatea vizuală
 
@@ -78,18 +84,48 @@ Header-ul, footer-ul și breadcrumb-ul sunt COPIATE identic în fiecare pagină 
 3. În `noutati.html`, adaugă un card nou la începutul grilei (copiază un `<article class="card news-card">` existent).
 4. Dacă știrea e importantă, actualizează și cele 3 carduri de pe `index.html` (secțiunea „Ultimele noutăți"). Banda ticker NU se editează manual: se alimentează automat din titlurile și datele cardurilor din `noutati.html` (textele statice din `index.html` sunt doar rezervă, dacă citirea eșuează).
 
-## 6. Cum adaugi imagini în galerie
+## 6. Cum adaugi un album în galerie
 
-1. Salvează imaginea în `images/gallery/` (sau `images/zici/`, `images/club/` după caz). Nume: litere mici, cratime, fără diacritice și fără spații.
-2. Optimizeaz-o înainte (recomandat sub 300 KB; squoosh.app e gratuit).
-3. Galeria e organizată pe categorii tematice, fiecare cu caruselul ei (secțiuni `gal-cat`). Adaugă imaginea în caruselul categoriei potrivite, în interiorul `car-track`:
-   ```html
-   <figure class="car-slide gallery-item">
-       <img src="images/gallery/nume-imagine.jpg" alt="Descriere" loading="lazy">
-       <figcaption>Titlu</figcaption>
-   </figure>
-   ```
-4. Pentru o categorie nouă, copiază integral o secțiune `gal-cat` existentă (titlu, subtitlu, carusel) și înlocuiește conținutul. Caruselul pornește automat; clic pe fotografie deschide vizualizarea mare și oprește derularea.
+Galeria este o arhivă permanentă. Structura ei NU se schimbă de la un an la altul: se adaugă
+doar albume noi. Totul stă în `data/galerie.json`; paginile `galerie.html` și `album.html`
+se construiesc singure din acel fișier.
+
+Ierarhia: **galerie → categorie → album → fotografii**.
+
+**Pasul 1 — pregătește pozele.** Pune toate fotografiile activității într-un folder (opțional,
+câte un subfolder pentru fiecare clasă sau secțiune) și rulează:
+
+```
+python tools/pregateste-poze.py "C:/cale/catre/poze" 2026-2027 numele-albumului
+```
+
+Scriptul rotește pozele după EXIF, elimină duplicatele, scrie varianta web (max 1600 px) și
+miniatura (max 640 px) în `images/galerie/<an-scolar>/<numele-albumului>/`, apoi afișează
+blocul JSON al albumului. Originalele rămân neatinse.
+
+**Pasul 2 — completează albumul.** Deschide `admin-galerie.html` printr-un server local
+(`python -m http.server`, apoi `http://127.0.0.1:8000/admin-galerie.html`). Acolo poți: crea,
+modifica, duplica sau șterge un album, schimba categoria și coperta, lipi blocul JSON de la
+pasul 1, reordona pozele, scrie titlurile și textele alternative, marca albumul drept ciornă.
+La final descarcă fișierul și pune-l peste `data/galerie.json`.
+
+Alternativ, `data/galerie.json` se editează direct, cu mâna — are aceeași structură.
+
+**Câmpurile unui album:** `id`, `titlu`, `categorie` (un id din lista `categorii`), `anScolar`
+(`2026-2027`), `data` (`AAAA-LL-ZZ`, opțional), `clase`, `descriere`, `etichete`, `publicat`,
+`coperta`, `grupuri` (opțional — secțiuni în interiorul albumului), `foto`, `video`.
+Fiecare poză: `src`, `mic` (miniatura), `w`, `h`, `alt`, `titlu`, `grup`.
+
+**An școlar nou:** schimbă `anCurent` și adaugă anul în `aniScolari`. Nu se șterge nimic;
+anii vechi rămân în arhivă și se văd din filtrul „An școlar".
+
+**Categorie nouă:** adaugă o intrare în `categorii` (`id` fără diacritice, `nume` afișat).
+
+Ciornele (`"publicat": false`) nu apar pe site; le poți vedea deschizând
+`galerie.html?ciorne=1`.
+
+Videoclipurile se pun ca legături (titlu + link), nu ca iframe — la fel ca peste tot pe site,
+ca să nu se încarce resurse externe fără acordul vizitatorului.
 
 ## 7. Cum adaugi un document PDF
 

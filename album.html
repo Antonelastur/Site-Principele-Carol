@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album | Galerie | Școala Gimnazială „Principele Carol"</title>
+    <meta name="description" content="Album din galeria Școlii Gimnaziale „Principele Carol" din Gura Humorului.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css?v=30">
+    <link rel="stylesheet" href="css/galerie.css?v=1">
+    <style>
+    .page-hero { background: #001F3F !important; border-bottom: 3px solid #D4AF37 !important; }
+    .page-hero h1 { color: #F3E5AB !important; -webkit-text-fill-color: #F3E5AB !important; background: none !important; }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        .page-hero h1 {
+            background-image: linear-gradient(110deg,#B89047 0%,#F3E5AB 38%,#D4AF37 62%,#B89047 100%) !important;
+            -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important;
+        }
+    }
+    html.no-gradient-text .page-hero h1 { background: none !important; -webkit-text-fill-color: #F3E5AB !important; color: #F3E5AB !important; }
+    .page-hero .lead { color: #F5F0E4 !important; }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="index.html">
+            <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+            <span class="brand-name"><span>Școala Gimnazială</span><span>„Principele Carol"</span></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Deschide meniul"><span></span><span></span><span></span></button>
+        <nav class="main-nav" aria-label="Meniu principal">
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="istoric.html">Despre noi</a><ul class="submenu"><li><a href="istoric.html">Istoric</a></li><li><a href="misiune-valori.html">Misiune și valori</a></li><li><a href="echipa.html">Echipă</a></li><li><a href="baza-materiala.html">Bază materială</a></li><li><a href="oferta-educationala.html">Oferta educațională</a></li><li><a href="muzeu-virtual.html">Muzeul virtual</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="podium.html">Elevi</a><ul class="submenu"><li><a href="podium.html">Podium</a></li><li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li><li><a href="orar.html">Orarul claselor</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="inscriere.html">Părinți</a><ul class="submenu"><li><a href="inscriere.html">Înscriere</a></li><li><a href="burse.html">Burse și tichete</a></li><li><a href="avizier.html">Avizier</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="erasmus.html">Proiecte</a><ul class="submenu"><li><a href="erasmus.html">Erasmus+</a></li><li><a href="club-limbi-straine.html">Lumea magică a limbilor străine</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="caroline-revista.html">CAROLine</a><ul class="submenu"><li><a href="caroline-revista.html">Revista</a></li><li><a href="caroline-tv.html">CAROLine TV</a></li></ul></li>
+                <li class="nav-item active"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link" href="documente.html">Documente</a></li>
+                <li class="nav-item"><a class="nav-link" href="noutati.html">Noutăți</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol><li><a href="index.html">Acasă</a></li><li><a href="galerie.html">Galerie</a></li><li aria-current="page">Album</li></ol></div></nav>
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Album</h1>
+            <p class="lead"></p>
+            <div class="alb-meta" id="alb-meta"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div id="album-app" data-lightbox-scope>
+                <div class="gal-skeleton" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+                <noscript><p class="gal-eroare">Albumul are nevoie de JavaScript activat pentru a afișa fotografiile.</p></noscript>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+                <h4>Școala Gimnazială „Principele Carol"</h4>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Bulevardul Bucovinei, Nr. 25<br>Gura Humorului, Suceava</li>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> <a href="tel:0230230928">0230 230 928</a></li>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Linkuri utile</h4>
+                <ul>
+                    <li><a href="documente.html">Informații publice</a></li>
+                    <li><a href="documente.html#gdpr">Politica de confidențialitate (GDPR)</a></li>
+                    <li><a href="https://www.isj.sv.edu.ro" target="_blank" rel="noopener">ISJ Suceava</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Comunitate</h4>
+                <ul>
+                    <li><a href="caroline-revista.html">Revista CAROLine</a></li>
+                    <li><a href="caroline-tv.html">CAROLine TV</a></li>
+                    <li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li>
+                    <li><a href="inscriere.html#asociatia">Asociația de părinți</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Școala Gimnazială „Principele Carol". Toate drepturile rezervate.<br>Webmaster: prof. Antoanela Pohoață</p>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js?v=30"></script>
+<script src="js/galerie.js?v=1"></script>
+</body>
+</html>

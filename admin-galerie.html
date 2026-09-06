@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administrare galerie | Școala Gimnazială „Principele Carol"</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css?v=30">
+    <style>
+        body { background: #FDFBF7; }
+        .adm { max-width: 1100px; margin: 0 auto; padding: 26px 20px 70px; }
+        .adm h1 { font-size: 1.7rem; margin-bottom: 4px; }
+        .adm .sub { color: #5a6678; margin-bottom: 24px; }
+        .adm-panou { background: #fff; border: 1px solid rgba(184,144,71,.45); border-radius: 12px; padding: 20px; margin-bottom: 22px; box-shadow: 0 4px 18px rgba(0,31,63,.08); }
+        .adm-panou > h2 { font-size: 1.1rem; margin: 0 0 14px; }
+        .adm-rand { display: flex; flex-wrap: wrap; gap: 14px; }
+        .adm-camp { display: flex; flex-direction: column; gap: 5px; flex: 1 1 220px; margin-bottom: 12px; }
+        .adm-camp.lat { flex-basis: 100%; }
+        .adm-camp label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #B89047; }
+        .adm-camp input, .adm-camp select, .adm-camp textarea {
+            font: inherit; font-size: .93rem; padding: 8px 11px; border: 1.5px solid rgba(0,31,63,.18);
+            border-radius: 8px; background: #FDFBF7; color: #1a2433; width: 100%;
+        }
+        .adm-camp textarea { min-height: 78px; resize: vertical; }
+        .adm-camp small { color: #5a6678; font-size: .78rem; }
+        .adm-actiuni { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .adm-btn { font: inherit; font-size: .88rem; font-weight: 700; padding: 9px 16px; border-radius: 999px; border: 1.5px solid #001F3F; background: #001F3F; color: #fff; cursor: pointer; }
+        .adm-btn.sec { background: #fff; color: #001F3F; }
+        .adm-btn.rau { border-color: #a33; color: #a33; background: #fff; }
+        .adm-btn:hover { opacity: .88; }
+        .adm-poza { display: grid; grid-template-columns: 92px 1fr auto; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(184,144,71,.35); border-radius: 10px; margin-bottom: 10px; background: #FDFBF7; }
+        .adm-poza img { width: 92px; height: 69px; object-fit: cover; border-radius: 6px; background: #F5F0E4; }
+        .adm-poza .adm-camp { margin-bottom: 6px; }
+        .adm-poza-btns { display: flex; flex-direction: column; gap: 5px; }
+        .adm-poza-btns button { font: inherit; font-size: .8rem; padding: 4px 9px; border-radius: 6px; border: 1px solid rgba(0,31,63,.25); background: #fff; cursor: pointer; }
+        .adm-poza.este-coperta { border-color: #D4AF37; box-shadow: 0 0 0 2px rgba(212,175,55,.25); }
+        .adm-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+        .adm-lista button { text-align: left; font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(184,144,71,.4); background: #fff; cursor: pointer; }
+        .adm-lista button.activ { border-color: #001F3F; box-shadow: 0 0 0 2px rgba(0,31,63,.12); }
+        .adm-lista b { display: block; font-size: .92rem; }
+        .adm-lista span { color: #5a6678; font-size: .78rem; }
+        .adm-mesaj { padding: 11px 14px; border-radius: 8px; font-size: .9rem; margin-bottom: 14px; }
+        .adm-mesaj.ok { background: #eaf6ec; border: 1px solid #b6d9bd; color: #235c31; }
+        .adm-mesaj.err { background: #fdecec; border: 1px solid #e3b4b4; color: #8c2b2b; }
+        .adm-cod { width: 100%; min-height: 150px; font-family: ui-monospace, Consolas, monospace; font-size: .82rem; }
+    </style>
+</head>
+<body>
+<div class="adm">
+    <h1>Administrare galerie</h1>
+    <p class="sub">Editezi aici <code>data/galerie.json</code>. Pașii: pregătești pozele cu scriptul,
+        completezi albumul, descarci fișierul și îl pui peste <code>data/galerie.json</code>.
+        Pagina nu salvează singură nimic — nimic nu se pierde din greșeală.</p>
+
+    <div id="adm-mesaj"></div>
+
+    <div class="adm-panou">
+        <h2>1. Pregătește fotografiile</h2>
+        <p class="sub" style="margin:0">Rulează o dată, în folderul site-ului:</p>
+        <pre style="background:#F5F0E4;padding:12px;border-radius:8px;overflow:auto"><code>python tools/pregateste-poze.py "C:/cale/catre/poze" 2026-2027 numele-albumului</code></pre>
+        <p class="sub" style="margin:0">Scriptul rotește pozele, elimină duplicatele, face variantele web și miniaturile,
+            apoi scrie un bloc JSON. Copiază acel bloc și lipește-l mai jos, la pasul 3.</p>
+    </div>
+
+    <div class="adm-panou">
+        <h2>2. Albumul</h2>
+        <div class="adm-actiuni" style="margin-bottom:16px">
+            <button class="adm-btn" id="b-nou">Album nou</button>
+            <button class="adm-btn sec" id="b-duplica">Duplică albumul ales</button>
+            <button class="adm-btn rau" id="b-sterge">Șterge albumul ales</button>
+        </div>
+        <div class="adm-lista" id="lista"></div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>3. Datele albumului</h2>
+        <div class="adm-rand">
+            <div class="adm-camp lat"><label for="f-titlu">Titlu</label><input id="f-titlu" type="text"></div>
+            <div class="adm-camp"><label for="f-cat">Categorie</label><select id="f-cat"></select></div>
+            <div class="adm-camp"><label for="f-an">An școlar</label><input id="f-an" type="text" list="ani" placeholder="2026-2027"><datalist id="ani"></datalist></div>
+            <div class="adm-camp"><label for="f-data">Data activității</label><input id="f-data" type="date"><small>Se poate lăsa gol.</small></div>
+            <div class="adm-camp"><label for="f-publicat">Stare</label><select id="f-publicat"><option value="1">Publicat</option><option value="0">Ciornă (ascuns pe site)</option></select></div>
+            <div class="adm-camp lat"><label for="f-clase">Clase</label><input id="f-clase" type="text" placeholder="Clasa a V-a A, Clasa a VI-a B"><small>Separate prin virgulă. Se poate lăsa gol.</small></div>
+            <div class="adm-camp lat"><label for="f-desc">Descriere</label><textarea id="f-desc"></textarea></div>
+            <div class="adm-camp lat"><label for="f-etichete">Etichete</label><input id="f-etichete" type="text" placeholder="lectură, atelier, toamnă"><small>Separate prin virgulă. Ajută la căutare.</small></div>
+            <div class="adm-camp lat"><label for="f-video">Video (link + titlu)</label><textarea id="f-video" placeholder="Titlul materialului | https://www.youtube.com/watch?v=..."></textarea><small>Câte un video pe rând, în forma <code>titlu | link</code>.</small></div>
+            <div class="adm-camp lat"><label for="f-grupuri">Grupuri în album</label><textarea id="f-grupuri" placeholder="clasa-5a | Clasa a V-a A | prof. Ionescu"></textarea><small>Opțional, câte unul pe rând: <code>id | nume | subtitlu</code>. Folosit, de exemplu, pentru câte o secțiune pe clasă.</small></div>
+        </div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>4. Fotografiile</h2>
+        <div class="adm-camp lat">
+            <label for="f-lipire">Adaugă fotografii (blocul JSON de la pasul 1)</label>
+            <textarea id="f-lipire" class="adm-cod" placeholder='{ "coperta": "...", "foto": [ ... ] }'></textarea>
+        </div>
+        <div class="adm-actiuni" style="margin-bottom:18px">
+            <button class="adm-btn" id="b-adauga">Adaugă pozele în album</button>
+            <button class="adm-btn sec" id="b-goleste">Golește lista de poze</button>
+        </div>
+        <div id="poze"></div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>5. Salvează</h2>
+        <div class="adm-actiuni" style="margin-bottom:14px">
+            <button class="adm-btn" id="b-aplica">Pune modificările în fișier</button>
+            <button class="adm-btn sec" id="b-descarca">Descarcă galerie.json</button>
+            <button class="adm-btn sec" id="b-copiaza">Copiază JSON</button>
+        </div>
+        <p class="sub">Pune fișierul descărcat peste <code>data/galerie.json</code>, apoi publică pe site
+            (fotografiile din <code>images/galerie/</code> merg împreună cu el).</p>
+        <textarea class="adm-cod" id="f-json" readonly></textarea>
+    </div>
+</div>
+
+<script>
+(function () {
+    'use strict';
+    var date = null, ales = -1, poze = [], coperta = '';
+    var $ = function (id) { return document.getElementById(id); };
+
+    function mesaj(text, tip) {
+        $('adm-mesaj').innerHTML = text ? '<div class="adm-mesaj ' + (tip || 'ok') + '">' + text + '</div>' : '';
+    }
+    function lista(s) { return s.split(',').map(function (x) { return x.trim(); }).filter(Boolean); }
+
+    fetch('data/galerie.json', { cache: 'no-cache' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { date = d; porneste(); })
+        .catch(function () {
+            mesaj('Nu am putut citi <code>data/galerie.json</code>. Deschide pagina printr-un server local ' +
+                '(<code>python -m http.server</code>), nu direct din folder.', 'err');
+        });
+
+    function porneste() {
+        $('f-cat').innerHTML = date.categorii.map(function (c) {
+            return '<option value="' + c.id + '">' + c.nume + '</option>';
+        }).join('');
+        $('ani').innerHTML = date.aniScolari.map(function (a) { return '<option value="' + a + '">'; }).join('');
+        deseneazaLista();
+        albumNou();
+    }
+
+    function deseneazaLista() {
+        $('lista').innerHTML = date.albume.map(function (a, i) {
+            return '<button type="button" data-i="' + i + '"' + (i === ales ? ' class="activ"' : '') + '><b>' +
+                a.titlu + '</b><span>' + a.anScolar + ' · ' + a.foto.length + ' foto' +
+                (a.publicat === false ? ' · ciornă' : '') + '</span></button>';
+        }).join('');
+    }
+
+    $('lista').addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-i]');
+        if (b) incarca(Number(b.getAttribute('data-i')));
+    });
+
+    function albumNou() {
+        ales = -1;
+        poze = []; coperta = '';
+        $('f-titlu').value = ''; $('f-cat').value = date.categorii[0].id;
+        $('f-an').value = date.anCurent; $('f-data').value = '';
+        $('f-publicat').value = '1'; $('f-clase').value = ''; $('f-desc').value = '';
+        $('f-etichete').value = ''; $('f-video').value = ''; $('f-grupuri').value = '';
+        deseneazaLista(); deseneazaPoze();
+    }
+
+    function incarca(i) {
+        var a = date.albume[i];
+        ales = i;
+        poze = JSON.parse(JSON.stringify(a.foto || []));
+        coperta = a.coperta || '';
+        $('f-titlu').value = a.titlu || '';
+        $('f-cat').value = a.categorie || date.categorii[0].id;
+        $('f-an').value = a.anScolar || date.anCurent;
+        $('f-data').value = a.data || '';
+        $('f-publicat').value = a.publicat === false ? '0' : '1';
+        $('f-clase').value = (a.clase || []).join(', ');
+        $('f-desc').value = a.descriere || '';
+        $('f-etichete').value = (a.etichete || []).join(', ');
+        $('f-video').value = (a.video || []).map(function (v) { return (v.titlu || '') + ' | ' + v.url; }).join('\n');
+        $('f-grupuri').value = (a.grupuri || []).map(function (g) {
+            return [g.id, g.nume, g.subtitlu || ''].join(' | ');
+        }).join('\n');
+        deseneazaLista(); deseneazaPoze();
+        mesaj('Album încărcat pentru modificare: <strong>' + a.titlu + '</strong>');
+    }
+
+    function grupuriDinCamp() {
+        return $('f-grupuri').value.split('\n').map(function (r) {
+            var p = r.split('|').map(function (x) { return x.trim(); });
+            return p[0] ? { id: p[0], nume: p[1] || p[0], subtitlu: p[2] || '' } : null;
+        }).filter(Boolean);
+    }
+
+    function deseneazaPoze() {
+        var g = grupuriDinCamp();
+        var opt = '<option value="">(fără grup)</option>' + g.map(function (x) {
+            return '<option value="' + x.id + '">' + x.nume + '</option>';
+        }).join('');
+        if (!coperta && poze.length) coperta = poze[0].mic || poze[0].src;
+        $('poze').innerHTML = poze.length ? poze.map(function (p, i) {
+            var e = (p.mic || p.src) === coperta;
+            return '<div class="adm-poza' + (e ? ' este-coperta' : '') + '">' +
+                '<img src="' + (p.mic || p.src) + '" alt="">' +
+                '<div>' +
+                  '<div class="adm-camp"><label>Titlu sub poză</label><input data-c="titlu" data-i="' + i + '" value="' + (p.titlu || '').replace(/"/g, '&quot;') + '"></div>' +
+                  '<div class="adm-camp"><label>Descriere pentru cititorii de ecran (alt)</label><input data-c="alt" data-i="' + i + '" value="' + (p.alt || '').replace(/"/g, '&quot;') + '"></div>' +
+                  (g.length ? '<div class="adm-camp"><label>Grup</label><select data-c="grup" data-i="' + i + '">' + opt + '</select></div>' : '') +
+                  '<small>' + p.src + '</small>' +
+                '</div>' +
+                '<div class="adm-poza-btns">' +
+                  '<button type="button" data-a="sus" data-i="' + i + '">↑</button>' +
+                  '<button type="button" data-a="jos" data-i="' + i + '">↓</button>' +
+                  '<button type="button" data-a="coperta" data-i="' + i + '">' + (e ? '★ copertă' : 'copertă') + '</button>' +
+                  '<button type="button" data-a="sterge" data-i="' + i + '">✕</button>' +
+                '</div></div>';
+        }).join('') : '<p class="sub">Nicio fotografie încă.</p>';
+        poze.forEach(function (p, i) {
+            var s = $('poze').querySelector('select[data-c="grup"][data-i="' + i + '"]');
+            if (s) s.value = p.grup || '';
+        });
+    }
+
+    $('poze').addEventListener('input', function (e) {
+        var c = e.target.getAttribute('data-c');
+        if (!c) return;
+        var i = Number(e.target.getAttribute('data-i'));
+        if (e.target.value) poze[i][c] = e.target.value; else delete poze[i][c];
+    });
+    $('poze').addEventListener('click', function (e) {
+        var a = e.target.getAttribute('data-a');
+        if (!a) return;
+        var i = Number(e.target.getAttribute('data-i'));
+        if (a === 'sus' && i > 0) poze.splice(i - 1, 0, poze.splice(i, 1)[0]);
+        if (a === 'jos' && i < poze.length - 1) poze.splice(i + 1, 0, poze.splice(i, 1)[0]);
+        if (a === 'coperta') coperta = poze[i].mic || poze[i].src;
+        if (a === 'sterge' && confirm('Scoți fotografia din album?')) poze.splice(i, 1);
+        deseneazaPoze();
+    });
+    $('f-grupuri').addEventListener('change', deseneazaPoze);
+
+    $('b-nou').addEventListener('click', function () { albumNou(); mesaj('Album nou. Completează câmpurile.'); });
+
+    $('b-duplica').addEventListener('click', function () {
+        if (ales < 0) return mesaj('Alege întâi un album din listă.', 'err');
+        var titlu = $('f-titlu').value;
+        ales = -1;
+        $('f-titlu').value = titlu + ' (copie)';
+        poze = []; coperta = '';
+        deseneazaLista(); deseneazaPoze();
+        mesaj('Structura albumului a fost copiată (categorie, an, clase, descriere, grupuri). ' +
+              'Schimbă titlul și adaugă fotografiile noi.');
+    });
+
+    $('b-sterge').addEventListener('click', function () {
+        if (ales < 0) return mesaj('Alege întâi un album din listă.', 'err');
+        if (!confirm('Ștergi albumul „' + date.albume[ales].titlu + '” din fișier?')) return;
+        date.albume.splice(ales, 1);
+        albumNou();
+        scrieJSON();
+        mesaj('Album șters din fișier. Descarcă fișierul ca schimbarea să ajungă pe site.');
+    });
+
+    $('b-adauga').addEventListener('click', function () {
+        var t = $('f-lipire').value.trim();
+        if (!t) return mesaj('Lipește întâi blocul JSON generat de script.', 'err');
+        try {
+            var b = JSON.parse(t);
+            var noi = b.foto || (Array.isArray(b) ? b : null);
+            if (!noi) throw new Error('fără foto');
+            poze = poze.concat(noi);
+            if (b.grupuri && !$('f-grupuri').value.trim()) {
+                $('f-grupuri').value = b.grupuri.map(function (g) {
+                    return [g.id, g.nume, g.subtitlu || ''].join(' | ');
+                }).join('\n');
+            }
+            if (!coperta && b.coperta) coperta = b.coperta;
+            $('f-lipire').value = '';
+            deseneazaPoze();
+            mesaj('Am adăugat ' + noi.length + ' fotografii.');
+        } catch (err) {
+            mesaj('Blocul lipit nu este JSON valid. Copiază-l din nou, complet, din fereastra scriptului.', 'err');
+        }
+    });
+
+    $('b-goleste').addEventListener('click', function () {
+        if (confirm('Golești lista de fotografii a albumului?')) { poze = []; coperta = ''; deseneazaPoze(); }
+    });
+
+    function idDin(titlu, an) {
+        var s = titlu.toLowerCase()
+            .replace(/[ăâ]/g, 'a').replace(/[îi]/g, 'i').replace(/[șş]/g, 's').replace(/[țţ]/g, 't')
+            .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
+        return (s || 'album') + '-' + an.split('-')[0];
+    }
+
+    $('b-aplica').addEventListener('click', function () {
+        var titlu = $('f-titlu').value.trim();
+        var an = $('f-an').value.trim();
+        if (!titlu) return mesaj('Albumul are nevoie de un titlu.', 'err');
+        if (!/^\d{4}-\d{4}$/.test(an)) return mesaj('Anul școlar se scrie ca 2026-2027.', 'err');
+        if (!poze.length) return mesaj('Albumul are nevoie de cel puțin o fotografie.', 'err');
+
+        var album = {
+            id: ales >= 0 ? date.albume[ales].id : idDin(titlu, an),
+            titlu: titlu,
+            categorie: $('f-cat').value,
+            anScolar: an,
+            data: $('f-data').value || '',
+            clase: lista($('f-clase').value),
+            descriere: $('f-desc').value.trim(),
+            etichete: lista($('f-etichete').value),
+            publicat: $('f-publicat').value === '1',
+            coperta: coperta || poze[0].mic || poze[0].src,
+            video: $('f-video').value.split('\n').map(function (r) {
+                var p = r.split('|').map(function (x) { return x.trim(); });
+                return p.length > 1 && p[1] ? { titlu: p[0], url: p[1] } : null;
+            }).filter(Boolean),
+            foto: poze
+        };
+        var g = grupuriDinCamp();
+        if (g.length) album.grupuri = g;
+
+        if (date.aniScolari.indexOf(an) < 0) {
+            date.aniScolari.push(an);
+            date.aniScolari.sort().reverse();
+        }
+        if (ales >= 0) date.albume[ales] = album;
+        else { date.albume.unshift(album); ales = 0; }
+
+        deseneazaLista();
+        scrieJSON();
+        mesaj('Gata. Acum descarcă fișierul și pune-l peste <code>data/galerie.json</code>.');
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    function scrieJSON() { $('f-json').value = JSON.stringify(date, null, 2); }
+
+    $('b-descarca').addEventListener('click', function () {
+        if (!$('f-json').value) scrieJSON();
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([$('f-json').value], { type: 'application/json' }));
+        a.download = 'galerie.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    $('b-copiaza').addEventListener('click', function () {
+        if (!$('f-json').value) scrieJSON();
+        $('f-json').select();
+        document.execCommand('copy');
+        mesaj('JSON copiat.');
+    });
+})();
+</script>
+</body>
+</html>

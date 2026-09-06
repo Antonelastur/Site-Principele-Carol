@@ -136,51 +136,64 @@
             .finally(startTicker);
     }
 
-    /* Lightbox pentru galerie */
-    var items = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
-    if (items.length) {
-        var lb = document.createElement('div');
-        lb.className = 'lightbox';
-        lb.setAttribute('role', 'dialog');
-        lb.setAttribute('aria-label', 'Vizualizare imagine');
-        lb.innerHTML = '<button class="lightbox-close" aria-label="Închide">×</button>' +
-            '<button class="lightbox-prev" aria-label="Imaginea anterioară">❮</button>' +
-            '<img src="" alt="">' +
-            '<button class="lightbox-next" aria-label="Imaginea următoare">❯</button>' +
-            '<p class="lightbox-caption"></p>';
-        document.body.appendChild(lb);
-        var lbImg = lb.querySelector('img');
-        var lbCap = lb.querySelector('.lightbox-caption');
-        var current = 0;
+    /* Lightbox pentru galerie — delegat, ca să meargă și pe fotografiile adăugate din JS */
+    (function () {
+        var lb = null, lbImg, lbCap, items = [], current = 0;
 
+        function build() {
+            if (lb) return;
+            lb = document.createElement('div');
+            lb.className = 'lightbox';
+            lb.setAttribute('role', 'dialog');
+            lb.setAttribute('aria-label', 'Vizualizare imagine');
+            lb.innerHTML = '<button class="lightbox-close" aria-label="Închide">×</button>' +
+                '<button class="lightbox-prev" aria-label="Imaginea anterioară">❮</button>' +
+                '<img src="" alt="">' +
+                '<button class="lightbox-next" aria-label="Imaginea următoare">❯</button>' +
+                '<p class="lightbox-caption"></p>';
+            document.body.appendChild(lb);
+            lbImg = lb.querySelector('img');
+            lbCap = lb.querySelector('.lightbox-caption');
+            lb.querySelector('.lightbox-close').addEventListener('click', close);
+            lb.querySelector('.lightbox-prev').addEventListener('click', function () { show(current - 1); });
+            lb.querySelector('.lightbox-next').addEventListener('click', function () { show(current + 1); });
+            lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+        }
         function show(i) {
+            if (!items.length) return;
             current = (i + items.length) % items.length;
             var img = items[current].querySelector('img');
             var cap = items[current].querySelector('figcaption');
-            lbImg.src = img.currentSrc || img.src;
+            /* data-full: varianta mare, când în grilă se afișează miniatura */
+            lbImg.src = img.getAttribute('data-full') || img.currentSrc || img.src;
             lbImg.alt = img.alt || '';
             lbCap.textContent = cap ? cap.textContent : (img.alt || '');
             lb.classList.add('open');
             document.body.style.overflow = 'hidden';
         }
         function close() {
+            if (!lb) return;
             lb.classList.remove('open');
             document.body.style.overflow = '';
         }
-        items.forEach(function (it, i) {
-            it.addEventListener('click', function () { show(i); });
+        document.addEventListener('click', function (e) {
+            var fig = e.target.closest && e.target.closest('.gallery-item');
+            if (!fig) return;
+            /* navigarea merge peste tot grupul de fotografii vizibile din care face parte poza */
+            var scope = fig.closest('[data-lightbox-scope]') || fig.closest('.album-photos') ||
+                fig.closest('.gallery-grid') || document;
+            items = Array.prototype.slice.call(scope.querySelectorAll('.gallery-item'))
+                .filter(function (f) { return f.offsetParent !== null; });
+            build();
+            show(items.indexOf(fig));
         });
-        lb.querySelector('.lightbox-close').addEventListener('click', close);
-        lb.querySelector('.lightbox-prev').addEventListener('click', function () { show(current - 1); });
-        lb.querySelector('.lightbox-next').addEventListener('click', function () { show(current + 1); });
-        lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
         document.addEventListener('keydown', function (e) {
-            if (!lb.classList.contains('open')) return;
+            if (!lb || !lb.classList.contains('open')) return;
             if (e.key === 'Escape') close();
             if (e.key === 'ArrowLeft') show(current - 1);
             if (e.key === 'ArrowRight') show(current + 1);
         });
-    }
+    })();
 
     /* Carusele galerie: derulare automată lentă; clic = oprire definitivă */
     document.querySelectorAll('[data-carousel]').forEach(function (car) {
@@ -213,56 +226,4 @@
         }, 3500);
     });
 
-    /* Vizualizator de album (Galerie): click pe copertă deschide panoul, cu subalbume opționale */
-    var albumCards = document.querySelectorAll('.album-card');
-    if (albumCards.length) {
-        albumCards.forEach(function (card) {
-            card.addEventListener('click', function () {
-                var panel = document.getElementById('album-' + card.getAttribute('data-album'));
-                if (!panel) return;
-                panel.classList.add('open');
-                document.body.classList.add('album-open');
-            });
-        });
-        document.querySelectorAll('.album-source').forEach(function (src) {
-            function closeAlbum() {
-                src.classList.remove('open');
-                document.body.classList.remove('album-open');
-            }
-            var closeBtn = src.querySelector('.album-close');
-            if (closeBtn) closeBtn.addEventListener('click', closeAlbum);
-            src.addEventListener('click', function (e) { if (e.target === src) closeAlbum(); });
-            document.addEventListener('keydown', function (e) {
-                if (src.classList.contains('open') && e.key === 'Escape') closeAlbum();
-            });
-            var tabs = src.querySelectorAll('.album-tab');
-            if (tabs.length) {
-                tabs.forEach(function (tab) {
-                    tab.addEventListener('click', function () {
-                        tabs.forEach(function (t) { t.classList.remove('active'); });
-                        tab.classList.add('active');
-                        var sub = tab.getAttribute('data-sub');
-                        src.querySelectorAll('.gallery-item[data-sub]').forEach(function (fig) {
-                            fig.style.display = (sub === 'all' || fig.getAttribute('data-sub') === sub) ? '' : 'none';
-                        });
-                    });
-                });
-            }
-        });
-    }
-
-    /* Filtre galerie (butoane cu data-filter) */
-    var filterBtns = document.querySelectorAll('[data-filter]');
-    if (filterBtns.length) {
-        filterBtns.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(function (b) { b.classList.remove('btn-gold'); b.classList.add('btn-navy'); });
-                btn.classList.add('btn-gold'); btn.classList.remove('btn-navy');
-                var f = btn.getAttribute('data-filter');
-                document.querySelectorAll('.gallery-item[data-cat]').forEach(function (el) {
-                    el.style.display = (f === 'all' || el.getAttribute('data-cat') === f) ? '' : 'none';
-                });
-            });
-        });
-    }
 })();
