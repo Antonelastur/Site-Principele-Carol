@@ -26,9 +26,9 @@
       "categorie": "viata-claselor",
       "anScolar": "2026-2027",
       "data": "2026-09-07",
-      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa a II-a A", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A"],
-      "descriere": "Înainte de prima zi de școală, doamnele învățătoare au pregătit sălile de clasă: baloane, mesaje de bun venit, rechizite așezate pe bănci și decoruri lucrate de mână. Așa își așteaptă școala elevii la începutul anului școlar 2026–2027.",
-      "etichete": ["început de an", "prima zi de școală", "învățământ primar", "săli de clasă"],
+      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa a II-a A", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A", "Clasa a V-a A", "Clasa a VIII-a A"],
+      "descriere": "Înainte de prima zi de școală, învățătoarele și diriginții au pregătit sălile de clasă: baloane, mesaje de bun venit, rechizite așezate pe bănci și decoruri lucrate de mână. Așa își așteaptă școala elevii la începutul anului școlar 2026–2027.",
+      "etichete": ["început de an", "prima zi de școală", "învățământ primar", "gimnaziu", "săli de clasă"],
       "publicat": true,
       "coperta": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-1.jpg",
       "video": [],
@@ -39,7 +39,9 @@
         { "id": "clasa-2a", "nume": "Clasa a II-a A", "subtitlu": "prof. înv. primar Laura Bartoș" },
         { "id": "clasa-3a", "nume": "Clasa a III-a A", "subtitlu": "prof. înv. primar Anca Vultur" },
         { "id": "clasa-3b", "nume": "Clasa a III-a B", "subtitlu": "prof. înv. primar Rodica Manoliu" },
-        { "id": "clasa-4a", "nume": "Clasa a IV-a A", "subtitlu": "prof. înv. primar Mihaela Bălăcianu" }
+        { "id": "clasa-4a", "nume": "Clasa a IV-a A", "subtitlu": "prof. înv. primar Mihaela Bălăcianu" },
+        { "id": "clasa-5a", "nume": "Clasa a V-a A", "subtitlu": "diriginte, prof. Daniela Iulia Moțoc" },
+        { "id": "clasa-8a", "nume": "Clasa a VIII-a A", "subtitlu": "diriginte, prof. Mariana Gherghel" }
       ],
       "foto": [
         { "grup": "pregatitoare-a", "src": "images/galerie/2026-2027/clasele-pregatite/pregatitoare-a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/pregatitoare-a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei pregătitoare A, cu băncile așezate în careu și mesajul „Bine ați venit!” pe tablă", "titlu": "„Bine ați venit!” la clasa Albinuțelor" },
@@ -75,7 +77,45 @@
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-2.jpg", "w": 1600, "h": 1200, "alt": "Peretele cu rame în formă de carte și băncile clasei a IV-a A, cu baloane roșii", "titlu": "Peretele cu cărți" },
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-3.jpg", "w": 1600, "h": 1200, "alt": "Tabla interactivă și băncile clasei a IV-a A, cu manuale așezate pentru fiecare elev", "titlu": "Manualele pe bănci" },
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-4.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a IV-a A, luminată de ferestre, pregătită pentru începutul anului școlar", "titlu": "Sala pregătită" },
-        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-5.jpg", "w": 1600, "h": 1200, "alt": "Planșele de gramatică și decorul cu cărți din clasa a IV-a A", "titlu": "Planșele de gramatică" }
+        { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-5.jpg", "w": 1600, "h": 1200, "alt": "Planșele de gramatică și decorul cu cărți din clasa a IV-a A", "titlu": "Planșele de gramatică" },
+
+        { "grup": "clasa-5a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-5a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-5a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a V-a A, cu tabla verde, tabla interactivă și decorul cu flori de hârtie", "titlu": "Sala clasei a V-a A" },
+
+        { "grup": "clasa-8a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-8a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-8a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a VIII-a A, cu mesajul pentru noul an școlar scris cu creta pe tablă și plante verzi", "titlu": "Mesajul de pe tablă" },
+        { "grup": "clasa-8a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-8a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-8a-2.jpg", "w": 1600, "h": 1200, "alt": "Băncile clasei a VIII-a A și ferestrele cu vedere spre oraș", "titlu": "Băncile pregătite" }
+      ]
+    },
+
+    {
+      "id": "scoala-pregatita-2026",
+      "titlu": "Școala pregătită pentru noul an școlar",
+      "categorie": "comunitate",
+      "anScolar": "2026-2027",
+      "data": "2026-09-07",
+      "clase": [],
+      "descriere": "Nu doar sălile de clasă au fost pregătite pentru prima zi: holurile au primit decoruri noi, lucrate de elevi și profesori, iar cabinetul de limba engleză și-a aranjat rafturile, panourile și băncile pentru primele ore.",
+      "etichete": ["început de an", "holul școlii", "cabinet de limba engleză", "spațiile școlii"],
+      "publicat": true,
+      "coperta": "images/galerie/2026-2027/scoala-pregatita/mici/hol-1.jpg",
+      "video": [],
+      "grupuri": [
+        { "id": "hol", "nume": "Holurile școlii", "subtitlu": "" },
+        { "id": "cabinet-engleza", "nume": "Cabinetul de limba engleză", "subtitlu": "prof. Simona Maria Varvaroi" }
+      ],
+      "foto": [
+        { "grup": "hol", "src": "images/galerie/2026-2027/scoala-pregatita/hol-1.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/hol-1.jpg", "w": 1600, "h": 1200, "alt": "Fluture din flori de hârtie și siluete de copii, pe peretele holului școlii", "titlu": "Fluturele de pe hol" },
+        { "grup": "hol", "src": "images/galerie/2026-2027/scoala-pregatita/hol-2.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/hol-2.jpg", "w": 1200, "h": 1600, "alt": "Holul de la intrare, cu ușile de lemn și un panou pictat de elevi", "titlu": "Holul de la intrare" },
+        { "grup": "hol", "src": "images/galerie/2026-2027/scoala-pregatita/hol-3.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/hol-3.jpg", "w": 1600, "h": 1200, "alt": "Ușa clasei a IV-a A, deschisă spre sală, văzută de pe hol", "titlu": "Pe holul de la clase" },
+        { "grup": "hol", "src": "images/galerie/2026-2027/scoala-pregatita/hol-4.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/hol-4.jpg", "w": 1600, "h": 1200, "alt": "Farfuriile pictate și florile decorative de pe holul școlii", "titlu": "Farfuriile pictate" },
+        { "grup": "hol", "src": "images/galerie/2026-2027/scoala-pregatita/hol-5.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/hol-5.jpg", "w": 1600, "h": 1200, "alt": "Panoul de la intrare, cu îndemnurile pentru noul an școlar și „Rugăciunea elevului”", "titlu": "Panoul de bun venit" },
+
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-1.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-1.jpg", "w": 1600, "h": 1200, "alt": "Cabinetul de limba engleză, cu băncile aranjate și rafturile pregătite", "titlu": "Cabinetul, pregătit pentru primele ore" },
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-2.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-2.jpg", "w": 1600, "h": 1200, "alt": "Cabinetul de limba engleză, cu planșele despre Marea Britanie și autobuzul londonez", "titlu": "Colțul britanic" },
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-3.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-3.jpg", "w": 1600, "h": 1200, "alt": "Băncile cabinetului de limba engleză și panourile înrămate de pe perete", "titlu": "Panourile de pe perete" },
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-4.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-4.jpg", "w": 1600, "h": 1200, "alt": "Planșele „United Kingdom” și „United States of America”, cu autobuzul londonez între ele", "titlu": "United Kingdom și United States" },
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-5.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-5.jpg", "w": 1600, "h": 1200, "alt": "Cabinetul de limba engleză, cu cabina telefonică roșie lângă ferestre", "titlu": "Cabina roșie" },
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-6.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-6.jpg", "w": 1600, "h": 1200, "alt": "Vedere spre tabla cabinetului de limba engleză și panourile decorative", "titlu": "Vedere spre tablă" },
+        { "grup": "cabinet-engleza", "src": "images/galerie/2026-2027/scoala-pregatita/cabinet-engleza-7.jpg", "mic": "images/galerie/2026-2027/scoala-pregatita/mici/cabinet-engleza-7.jpg", "w": 1600, "h": 1200, "alt": "Ceasurile cu ora din Londra, București și New York, deasupra panourilor cu lucrări", "titlu": "London · Bucharest · New York" }
       ]
     },
 

@@ -80,13 +80,15 @@
 .gal-card:hover .gal-card-img img { transform: scale(1.04); }
 .gal-card-cat {
     position: absolute; top: 10px; left: 10px;
-    background: rgba(0, 31, 63, .88); color: var(--color-accent-light);
+    background: var(--color-beige); color: var(--color-primary);
+    border: 1px solid rgba(184, 144, 71, .55);
     font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
     padding: 5px 11px; border-radius: 999px;
 }
 .gal-card-n {
     position: absolute; bottom: 10px; right: 10px;
-    background: rgba(0, 31, 63, .82); color: #fff;
+    background: var(--color-beige); color: var(--color-primary);
+    border: 1px solid rgba(184, 144, 71, .55);
     font-size: .74rem; font-weight: 600; padding: 4px 10px; border-radius: 999px;
 }
 .gal-card-body { padding: 15px 17px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
@@ -125,7 +127,7 @@
 
 /* ---------- Pagina de album ---------- */
 .alb-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
-.alb-meta .badge { background: rgba(243, 229, 171, .18); color: var(--color-accent-light); border-color: rgba(212, 175, 55, .7); }
+.alb-meta .badge { background: var(--color-beige); color: var(--color-primary); border-color: var(--color-accent); }
 .alb-descriere { max-width: 70ch; margin-top: 8px; }
 .alb-group { margin-bottom: 42px; }
 .alb-group-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
