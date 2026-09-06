@@ -125,22 +125,18 @@
         var elReset = document.getElementById('gal-reset');
 
         function card(a) {
-            var n = (a.foto || []).length;
-            var nv = (a.video || []).length;
             return '<a class="gal-card' + (a.publicat === false ? ' gal-draft' : '') +
                 '" href="album.html?a=' + encodeURIComponent(a.id) + '">' +
                 '<div class="gal-card-img">' +
                   '<img src="' + esc(a.coperta) + '" alt="" loading="lazy" decoding="async">' +
                   '<span class="gal-card-cat">' + esc(numeCat[a.categorie] || a.categorie) + '</span>' +
-                  '<span class="gal-card-n">' + n + (n === 1 ? ' fotografie' : ' fotografii') +
-                     (nv ? ' · foto + video' : '') + '</span>' +
+                  ((a.video || []).length ? '<span class="gal-card-n">Foto + video</span>' : '') +
                 '</div>' +
                 '<div class="gal-card-body">' +
                   '<p class="gal-card-meta">' + esc(dataText(a)) + '</p>' +
                   '<h3>' + esc(a.titlu) + (a.publicat === false ? ' <em>(ciornă)</em>' : '') + '</h3>' +
                   '<p class="gal-card-desc">' + esc((a.descriere || '').slice(0, 120)) +
                      ((a.descriere || '').length > 120 ? '…' : '') + '</p>' +
-                  ((a.clase || []).length ? '<p class="gal-card-clase">' + esc(a.clase.join(' · ')) + '</p>' : '') +
                 '</div></a>';
         }
 
@@ -334,9 +330,7 @@
             meta.innerHTML =
                 '<span class="badge">' + esc(catNume) + '</span>' +
                 (a.data ? '<span class="badge">' + esc(dataText(a)) + '</span>' : '') +
-                '<span class="badge">Anul școlar ' + esc(a.anScolar.replace('-', '–')) + '</span>' +
-                '<span class="badge">' + a.foto.length + (a.foto.length === 1 ? ' fotografie' : ' fotografii') + '</span>' +
-                ((a.clase || []).length ? '<span class="badge">' + esc(a.clase.join(' · ')) + '</span>' : '');
+                '<span class="badge">Anul școlar ' + esc(a.anScolar.replace('-', '–')) + '</span>';
             var lead = document.querySelector('.page-hero .lead');
             if (lead && a.descriere) lead.textContent = a.descriere;
         }
