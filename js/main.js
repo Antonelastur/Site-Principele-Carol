@@ -99,7 +99,7 @@
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* Ticker: se alimentează automat din noutati.html; textele din HTML rămân rezervă */
+    /* Ticker: se alimentează automat din data/noutati.json; textele din HTML rămân rezervă */
     var tickerContent = document.querySelector('.ticker-content');
     if (tickerContent) {
         var setSpeed = function () {
@@ -112,20 +112,26 @@
         };
         window.addEventListener('resize', setSpeed);
 
-        fetch('noutati.html')
-            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-            .then(function (html) {
-                var doc = new DOMParser().parseFromString(html, 'text/html');
-                var items = [];
-                doc.querySelectorAll('.news-card').forEach(function (card) {
-                    var titlu = card.querySelector('h3');
-                    var data = card.querySelector('.news-date');
-                    if (titlu) {
-                        items.push(titlu.textContent.trim() + (data ? ' (' + data.textContent.trim() + ')' : ''));
+        var LUNI_T = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie',
+            'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'];
+
+        fetch('data/noutati.json', { cache: 'no-cache' })
+            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(function (d) {
+                var items = (d.stiri || []).filter(function (s) {
+                    return s.publicat !== false && !s.arhivat;
+                }).sort(function (a, b) {
+                    return String(b.data || '').localeCompare(String(a.data || ''));
+                }).slice(0, 6).map(function (s) {
+                    var data = s.dataText;
+                    if (!data && s.data) {
+                        var p = String(s.data).split('-');
+                        data = Number(p[2]) + ' ' + LUNI_T[Number(p[1]) - 1] + ' ' + p[0];
                     }
+                    return s.titlu + (data ? ' (' + data + ')' : '');
                 });
                 if (items.length) {
-                    tickerContent.innerHTML = items.slice(0, 6).map(function (x) {
+                    tickerContent.innerHTML = items.map(function (x) {
                         var s = document.createElement('span');
                         s.textContent = x;
                         return s.outerHTML;

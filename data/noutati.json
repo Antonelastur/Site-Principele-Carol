@@ -1,0 +1,102 @@
+{
+  "versiune": 1,
+  "anCurent": "2026-2027",
+  "aniScolari": ["2026-2027", "2025-2026"],
+  "stiri": [
+    {
+      "id": "denumire-principele-carol",
+      "titlu": "Oficial: de la 1 septembrie, Școala Gimnazială „Principele Carol”",
+      "data": "2026-09-01",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": false,
+      "context": "Comunicat al școlii",
+      "imagine": "images/scoala-hero.jpg",
+      "imagineAlt": "Clădirea Școlii Gimnaziale „Principele Carol”",
+      "rezumat": "Consiliul Local Gura Humorului a aprobat schimbarea denumirii din „Petru Comarnescu” în „Principele Carol” (Hotărârea nr. 195 din 22 decembrie 2025). Se schimbă numele, nu școala: aceeași adresă, aceeași echipă, aceiași elevi.",
+      "corp": "Începând cu anul școlar 2026-2027, școala noastră poartă oficial numele **Școala Gimnazială „Principele Carol”**. Schimbarea denumirii a fost aprobată de Consiliul Local al orașului Gura Humorului prin Hotărârea nr. 195 din 22 decembrie 2025.\n\nPrin această hotărâre, unitatea de învățământ își schimbă denumirea din **Școala Gimnazială „Petru Comarnescu”** în **Școala Gimnazială „Principele Carol”**, la aceeași adresă și în aceleași clădiri. Rămân neschimbate echipa de cadre didactice, clasele și elevii: se schimbă numele, nu școala.\n\nNoua denumire se aplică în documentele oficiale de la 1 septembrie 2026. Punerea în aplicare a fost asigurată de Primăria orașului Gura Humorului, împreună cu Inspectoratul Școlar Județean Suceava și conducerea școlii.\n\n## De unde vine numele\n\nNumele „Principele Carol” readuce în prezent o pagină din istoria învățământului din Gura Humorului și se leagă de tradiția locală a școlii. Etapele prin care a trecut instituția de-a lungul timpului sunt descrise în pagina [Istoric](istoric.html).\n\n## Ce se schimbă pentru elevi și părinți\n\n- Adresa, numerele de telefon și adresa de e-mail ale școlii rămân neschimbate.\n- Structura claselor, cadrele didactice și programul rămân aceleași.\n- Actele și adeverințele eliberate anterior își păstrează valabilitatea; documentele emise după 1 septembrie 2026 poartă noua denumire.\n\nPentru orice nelămurire legată de acte sau înscrieri, secretariatul școlii vă stă la dispoziție la datele din pagina [Contact](contact.html)."
+    },
+    {
+      "id": "structura-2026-2027",
+      "titlu": "Structura anului școlar 2026-2027. Prima zi de școală: luni, 7 septembrie",
+      "data": "2026-08-30",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "rezumat": "Ministerul Educației și Cercetării a stabilit structura anului școlar 2026-2027. Anul școlar începe la 1 septembrie 2026, iar **cursurile încep luni, 7 septembrie 2026** — prima zi de școală pentru elevii noștri. Anul are 36 de săptămâni de cursuri (35 pentru clasa a VIII-a); cursurile se încheie pe 18 iunie 2027, respectiv 11 iunie 2027 pentru clasa a VIII-a.\n\n- Vacanța de toamnă: 24 octombrie – 1 noiembrie 2026\n- Vacanța de iarnă: 23 decembrie 2026 – 10 ianuarie 2027\n- Vacanța mobilă (o săptămână): în perioada 15 februarie – 7 martie 2027, la decizia ISJ Suceava\n- Vacanța de primăvară: 24 aprilie – 4 mai 2027\n- Vacanța de vară: din 19 iunie 2027\n\nPe 5 octombrie, Ziua Educației, nu se organizează cursuri. Programele „Școala altfel” și „Săptămâna verde” se desfășoară în câte 5 zile, în intervalul 7 septembrie 2026 – 23 aprilie 2027.",
+      "sursa": {
+        "text": "Ministerul Educației și Cercetării — Ordinul nr. 3.194/2026 (Monitorul Oficial, Partea I, nr. 126 / 16 februarie 2026).",
+        "url": "https://www.edu.ro",
+        "urlText": "edu.ro"
+      }
+    },
+    {
+      "id": "caroline-nr-1",
+      "titlu": "A apărut numărul 1 al revistei CAROLine",
+      "data": "2026-08-30",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "imagine": "images/caroline-coperta.jpg?v=2",
+      "imagineAlt": "Coperta revistei CAROLine, nr. 1",
+      "rezumat": "Primul număr al revistei școlii, „O nouă coroană”, este acum disponibil online: 32 de pagini care pot fi răsfoite direct în browser, ca o revistă tipărită.",
+      "link": "caroline-nr-1-flipbook.html",
+      "linkText": "Răsfoiește revista →"
+    },
+    {
+      "id": "standarde-evaluare-gimnaziu",
+      "titlu": "Standarde naționale de evaluare pentru gimnaziu, puse în consultare publică",
+      "data": "2026-07-13",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "rezumat": "Ministerul Educației și Cercetării a lansat în consultare publică proiectul de ordin care aprobă standardele naționale de evaluare pentru învățământul primar și gimnazial. Documentul stabilește nivelul la care se evaluează competențele elevilor, așa că privește direct activitatea de la clasă.",
+      "sursa": {
+        "text": "Ministerul Educației și Cercetării.",
+        "url": "https://edu.ro/press_rel_49_26_conspub_standarde_primar_gimnazial",
+        "urlText": "Comunicatul integral"
+      }
+    },
+    {
+      "id": "sefi-promotie-2026",
+      "titlu": "Discursurile șefilor de promoție 2025-2026",
+      "data": "2026-06-15",
+      "dataText": "Iunie 2026",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "imagine": "images/sefi-promotie-2026.jpg",
+      "imagineAlt": "Șefii de promoție ai clasei a VIII-a A",
+      "rezumat": "Patru elevi ai clasei a VIII-a A au încheiat gimnaziul cu media generală 10. Discursurile lor pot fi urmărite pe Carol TV.",
+      "link": "stire-sefi-promotie.html",
+      "linkText": "Citește articolul →"
+    },
+    {
+      "id": "caroline-lansare",
+      "titlu": "Lansare digitală: Platforma și revista „CAROLine”",
+      "data": "2026-01-25",
+      "anScolar": "2025-2026",
+      "publicat": true,
+      "arhivat": true,
+      "imagine": "images/caroline-coperta.jpg?v=2",
+      "imagineAlt": "Coperta revistei CAROLine",
+      "rezumat": "Suntem încântați să anunțăm lansarea oficială a hubului media al școlii, „CAROLine”: un spațiu de exprimare liberă și creativă dedicat elevilor pasionați de jurnalism, fotografie, vlogging, design grafic și podcasting.\n\nEchipa editorială CAROLine, formată din elevi și cadre didactice ale școlii, produce conținut original care reflectă viața școlii prin ochii lor: revista școlii, podcasturi și vlog.",
+      "link": "caroline-revista.html",
+      "linkText": "Vizitează pagina CAROLine →"
+    },
+    {
+      "id": "calendar-simulari-en",
+      "titlu": "Calendarul simulărilor pentru Evaluarea Națională",
+      "data": "2026-01-20",
+      "anScolar": "2025-2026",
+      "publicat": true,
+      "arhivat": true,
+      "imagine": "images/gallery/sala-clasa-1.jpg",
+      "imagineAlt": "Sală de clasă",
+      "rezumat": "Pregătirea intră în linie dreaptă! Ministerul Educației a publicat calendarul oficial al simulărilor naționale, o etapă importantă pentru verificarea nivelului de cunoștințe și familiarizarea cu rigoarea examenului.\n\n- Accesul în săli: până la ora 08:30; probele încep la 09:00\n- Notele se comunică individual, la data anunțată de minister\n- Notele NU se trec în catalog din oficiu, ci doar la solicitarea scrisă a elevului sau a părintelui\n\nȘcoala organizează sesiuni suplimentare de pregătire la matematică și limba română. Mult succes tuturor absolvenților noștri!"
+    }
+  ]
+}

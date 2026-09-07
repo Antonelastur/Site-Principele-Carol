@@ -79,10 +79,42 @@ Header-ul, footer-ul și breadcrumb-ul sunt COPIATE identic în fiecare pagină 
 
 ## 5. Cum adaugi o știre nouă
 
-1. Duplică `stire-model.html` cu un nume nou, de exemplu `stire-ziua-scolii.html` (litere mici, cratime, fără diacritice în numele fișierului).
-2. În fișierul nou, schimbă: `<title>`, meta description, titlul din `page-hero`, data, imaginea și textul articolului.
-3. În `noutati.html`, adaugă un card nou la începutul grilei (copiază un `<article class="card news-card">` existent).
-4. Dacă știrea e importantă, actualizează și cele 3 carduri de pe `index.html` (secțiunea „Ultimele noutăți"). Banda ticker NU se editează manual: se alimentează automat din titlurile și datele cardurilor din `noutati.html` (textele statice din `index.html` sunt doar rezervă, dacă citirea eșuează).
+Noutățile sunt conduse din `data/noutati.json`, ca și galeria. NU se mai editează HTML la
+publicarea unei știri: paginile `noutati.html`, `arhiva-stiri.html`, `stire.html`, cardurile
+de pe `index.html` și banda ticker se construiesc singure din acel fișier.
+
+**Pasul 1 — scrie știrea.** Deschide `admin-noutati.html` printr-un server local
+(`python -m http.server`, apoi `http://127.0.0.1:8000/admin-noutati.html`). Acolo poți: crea,
+modifica, duplica sau șterge o știre, o poți muta în arhivă sau scoate din arhivă, o poți ține
+ciornă până e gata. Ai previzualizare pentru card și pentru articol.
+
+**Pasul 2 — pune fișierul la loc.** La final apeși „Pune modificările în fișier", descarci
+`noutati.json` și îl pui peste `data/noutati.json`. Apoi publici pe site.
+
+Ce înseamnă câmpurile:
+
+| Câmp | Rol |
+| --- | --- |
+| `titlu`, `data`, `rezumat` | obligatorii; `rezumat` este textul de pe card |
+| `dataText` | data scrisă altfel, de exemplu „Iunie 2026" (opțional) |
+| `anScolar` | grupează știrea în arhivă; se completează singur (anul școlar începe la 1 septembrie) |
+| `publicat` | `false` = ciornă, ascunsă pe site |
+| `arhivat` | `true` = trece de pe pagina Noutăți în `arhiva-stiri.html` |
+| `dinEducatie` | pune eticheta „Din educație" |
+| `pePrimaPagina` | `false` = nu apare pe prima pagină; acasă apar cele mai noi 3 știri |
+| `imagine`, `imagineAlt` | poza cardului (pusă întâi în `images/`) |
+| `link`, `linkText` | trimite cardul spre o pagină care există deja (revistă, flipbook, articol vechi) |
+| `corp` | textul articolului întreg; dacă e completat, știrea primește pagina ei la `stire.html?id=…` |
+| `context` | ce apare lângă dată în articol, de exemplu „Comunicat al școlii" |
+| `sursa` | linia „Sursa: …" de la știrile preluate |
+
+Textul din `rezumat` și `corp` se scrie simplu: rând gol între paragrafe, `## Subtitlu`,
+`- ` pentru listă, `**îngroșat**`, `[text](pagina.html)`, `![descriere](images/poza.jpg)`.
+
+Ciornele se văd local adăugând `?ciorne=1` la adresă (`noutati.html?ciorne=1`).
+
+Articolele bogate, cu citate și video, rămân pagini de sine stătătoare (de exemplu
+`stire-sefi-promotie.html`); în JSON li se pune doar `link` către ele.
 
 ## 6. Cum adaugi un album în galerie
 

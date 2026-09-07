@@ -245,6 +245,13 @@ h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-primary); li
 .news-card h3 { font-size: 1.15rem; margin-top: .3em; }
 .news-card h3 a { text-decoration: none; color: var(--color-primary); }
 .news-card h3 a:hover { color: var(--color-accent-dark); }
+.news-card .card-body p { margin-bottom: .8em; }
+.news-card .card-body p:last-child { margin-bottom: 0; }
+.news-card .card-body ul { padding-left: 1.2em; color: var(--color-text-muted); font-size: .92rem; margin-bottom: .8em; }
+.news-mai-mult { margin-top: 12px; }
+.news-mai-mult a { color: var(--color-accent-dark); font-weight: 700; text-decoration: none; }
+.news-mai-mult a:hover { text-decoration: underline; }
+.gal-eroare { text-align: center; color: var(--color-text-muted); padding: 30px 0; }
 
 /* Articol / știre */
 .article-page { max-width: 780px; margin-inline: auto; }

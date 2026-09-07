@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administrare noutăți | Școala Gimnazială „Principele Carol”</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css?v=31">
+    <style>
+        body { background: #FDFBF7; }
+        .adm { max-width: 1100px; margin: 0 auto; padding: 26px 20px 70px; }
+        .adm h1 { font-size: 1.7rem; margin-bottom: 4px; }
+        .adm .sub { color: #5a6678; margin-bottom: 24px; }
+        .adm-panou { background: #fff; border: 1px solid rgba(184,144,71,.45); border-radius: 12px; padding: 20px; margin-bottom: 22px; box-shadow: 0 4px 18px rgba(0,31,63,.08); }
+        .adm-panou > h2 { font-size: 1.1rem; margin: 0 0 14px; }
+        .adm-camp { display: flex; flex-direction: column; gap: 5px; flex: 1 1 220px; margin-bottom: 12px; }
+        .adm-camp.lat { flex-basis: 100%; }
+        .adm-camp label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #B89047; }
+        .adm-camp input, .adm-camp select, .adm-camp textarea {
+            font: inherit; font-size: .93rem; padding: 8px 11px; border: 1.5px solid rgba(0,31,63,.18);
+            border-radius: 8px; background: #FDFBF7; color: #1a2433; width: 100%;
+        }
+        .adm-camp textarea { min-height: 78px; resize: vertical; }
+        .adm-camp small { color: #5a6678; font-size: .78rem; }
+        .adm-rand { display: flex; flex-wrap: wrap; gap: 14px; }
+        .adm-actiuni { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .adm-btn { font: inherit; font-size: .88rem; font-weight: 700; padding: 9px 16px; border-radius: 999px; border: 1.5px solid #001F3F; background: #001F3F; color: #fff; cursor: pointer; }
+        .adm-btn.sec { background: #fff; color: #001F3F; }
+        .adm-btn.rau { border-color: #a33; color: #a33; background: #fff; }
+        .adm-btn:hover { opacity: .88; }
+        .adm-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+        .adm-lista button { text-align: left; font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(184,144,71,.4); background: #fff; cursor: pointer; }
+        .adm-lista button.activ { border-color: #001F3F; box-shadow: 0 0 0 2px rgba(0,31,63,.12); }
+        .adm-lista b { display: block; font-size: .92rem; }
+        .adm-lista span { color: #5a6678; font-size: .78rem; }
+        .adm-mesaj { padding: 11px 14px; border-radius: 8px; font-size: .9rem; margin-bottom: 14px; }
+        .adm-mesaj.ok { background: #eaf6ec; border: 1px solid #b6d9bd; color: #235c31; }
+        .adm-mesaj.err { background: #fdecec; border: 1px solid #e3b4b4; color: #8c2b2b; }
+        .adm-cod { width: 100%; min-height: 150px; font-family: ui-monospace, Consolas, monospace; font-size: .82rem; }
+        .adm-ajutor { background: #F5F0E4; border-radius: 8px; padding: 12px 14px; font-size: .86rem; color: #1a2433; }
+        .adm-ajutor code { background: #fff; padding: 1px 5px; border-radius: 4px; }
+        .adm-previz { background: #FDFBF7; border: 1px dashed rgba(184,144,71,.6); border-radius: 10px; padding: 16px; }
+        .adm-previz .grid-3 { grid-template-columns: 1fr; max-width: 380px; }
+    </style>
+</head>
+<body>
+<div class="adm">
+    <h1>Administrare noutăți</h1>
+    <p class="sub">Editezi aici <code>data/noutati.json</code>. Scrii știrea în formular, o pui în fișier,
+        descarci fișierul și îl pui peste <code>data/noutati.json</code>.
+        Pagina nu salvează singură nimic — nimic nu se pierde din greșeală.</p>
+
+    <div id="adm-mesaj"></div>
+
+    <div class="adm-panou">
+        <h2>1. Știrile</h2>
+        <div class="adm-actiuni" style="margin-bottom:16px">
+            <button class="adm-btn" id="b-nou">Știre nouă</button>
+            <button class="adm-btn sec" id="b-duplica">Duplică știrea aleasă</button>
+            <button class="adm-btn sec" id="b-arhiva">Mută în arhivă / scoate din arhivă</button>
+            <button class="adm-btn rau" id="b-sterge">Șterge știrea aleasă</button>
+        </div>
+        <div class="adm-lista" id="lista"></div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>2. Datele știrii</h2>
+        <div class="adm-rand">
+            <div class="adm-camp lat"><label for="f-titlu">Titlu</label><input id="f-titlu" type="text"></div>
+            <div class="adm-camp"><label for="f-data">Data</label><input id="f-data" type="date"></div>
+            <div class="adm-camp"><label for="f-datatext">Data, scrisă altfel</label><input id="f-datatext" type="text" placeholder="Iunie 2026"><small>Opțional. Înlocuiește data afișată.</small></div>
+            <div class="adm-camp"><label for="f-an">An școlar</label><input id="f-an" type="text" list="ani" placeholder="2026-2027"><datalist id="ani"></datalist><small>Grupează știrea în arhivă.</small></div>
+            <div class="adm-camp"><label for="f-publicat">Stare</label><select id="f-publicat"><option value="1">Publicată</option><option value="0">Ciornă (ascunsă pe site)</option></select></div>
+            <div class="adm-camp"><label for="f-arhivat">Loc</label><select id="f-arhivat"><option value="0">Pe pagina Noutăți</option><option value="1">În arhivă</option></select></div>
+            <div class="adm-camp"><label for="f-educatie">Etichetă</label><select id="f-educatie"><option value="0">Știre a școlii</option><option value="1">„Din educație”</option></select></div>
+            <div class="adm-camp"><label for="f-prima">Prima pagină</label><select id="f-prima"><option value="1">Poate apărea acasă</option><option value="0">Nu apare acasă</option></select><small>Acasă apar cele mai noi 3 știri bifate aici.</small></div>
+            <div class="adm-camp lat"><label for="f-rezumat">Textul de pe card</label><textarea id="f-rezumat" style="min-height:120px"></textarea></div>
+            <div class="adm-camp"><label for="f-imagine">Imagine</label><input id="f-imagine" type="text" placeholder="images/nume-poza.jpg"><small>Opțional. Pune întâi fișierul în <code>images/</code>.</small></div>
+            <div class="adm-camp"><label for="f-imaginealt">Descrierea imaginii</label><input id="f-imaginealt" type="text" placeholder="Elevii clasei a V-a în curtea școlii"></div>
+            <div class="adm-camp"><label for="f-link">Trimite către altă pagină</label><input id="f-link" type="text" placeholder="caroline-revista.html"><small>Opțional. Se completează doar dacă știrea duce la o pagină care există deja.</small></div>
+            <div class="adm-camp"><label for="f-linktext">Textul linkului</label><input id="f-linktext" type="text" placeholder="Citește articolul →"></div>
+            <div class="adm-camp"><label for="f-sursa">Sursa (text)</label><input id="f-sursa" type="text" placeholder="Ministerul Educației și Cercetării."></div>
+            <div class="adm-camp"><label for="f-sursaurl">Sursa (link)</label><input id="f-sursaurl" type="text" placeholder="https://www.edu.ro"></div>
+            <div class="adm-camp"><label for="f-sursaurltext">Sursa (textul linkului)</label><input id="f-sursaurltext" type="text" placeholder="edu.ro"></div>
+        </div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>3. Articolul întreg (opțional)</h2>
+        <p class="sub" style="margin-bottom:12px">Dacă scrii ceva aici, știrea primește pagina ei, la adresa
+            <code>stire.html?id=&lt;numele știrii&gt;</code>, iar cardul trimite automat acolo. Dacă lași gol,
+            știrea rămâne doar card pe pagina Noutăți.</p>
+        <div class="adm-rand">
+            <div class="adm-camp lat"><label for="f-corp">Textul articolului</label><textarea id="f-corp" style="min-height:260px"></textarea></div>
+            <div class="adm-camp lat"><label for="f-context">Sub titlu, lângă dată</label><input id="f-context" type="text" placeholder="Comunicat al școlii"></div>
+        </div>
+        <div class="adm-ajutor">
+            <strong>Cum se scrie textul</strong> (la fel și pe card, și în articol):
+            rând gol între paragrafe · <code>## Subtitlu</code> pentru un titlu de secțiune ·
+            <code>- </code> la începutul rândului pentru o listă · <code>**îngroșat**</code> ·
+            <code>[text](pagina.html)</code> pentru link · <code>![descriere](images/poza.jpg)</code> pentru o imagine în articol.
+        </div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>4. Previzualizare</h2>
+        <div class="adm-previz">
+            <div class="grid grid-3" id="previz-card"></div>
+            <div class="article-page" id="previz-articol" style="margin-top:20px"></div>
+        </div>
+    </div>
+
+    <div class="adm-panou">
+        <h2>5. Salvează</h2>
+        <div class="adm-actiuni" style="margin-bottom:14px">
+            <button class="adm-btn" id="b-aplica">Pune modificările în fișier</button>
+            <button class="adm-btn sec" id="b-descarca">Descarcă noutati.json</button>
+            <button class="adm-btn sec" id="b-copiaza">Copiază JSON</button>
+        </div>
+        <p class="sub" style="margin-bottom:10px">Pune fișierul descărcat peste <code>data/noutati.json</code>,
+            apoi publică pe site. Ciornele se văd local cu
+            <code>noutati.html?ciorne=1</code>.</p>
+        <textarea class="adm-cod" id="f-json" readonly></textarea>
+    </div>
+</div>
+
+<script src="js/noutati.js?v=1"></script>
+<script>
+(function () {
+    'use strict';
+    var date = null, ales = -1;
+    var $ = function (id) { return document.getElementById(id); };
+
+    function mesaj(text, tip) {
+        $('adm-mesaj').innerHTML = '<div class="adm-mesaj ' + (tip || 'ok') + '">' + text + '</div>';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    fetch('data/noutati.json', { cache: 'no-cache' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { date = d; porneste(); })
+        .catch(function () {
+            mesaj('Nu am putut citi <code>data/noutati.json</code>. Deschide pagina printr-un server local ' +
+                '(<code>python -m http.server</code>), nu direct din fișier.', 'err');
+        });
+
+    function porneste() {
+        $('ani').innerHTML = (date.aniScolari || []).map(function (a) {
+            return '<option value="' + a + '">';
+        }).join('');
+        deseneazaLista();
+        if (date.stiri.length) incarca(0);
+        scrieJSON();
+    }
+
+    function stareText(s) {
+        var st = [];
+        if (s.publicat === false) st.push('ciornă');
+        st.push(s.arhivat ? 'arhivă' : 'noutăți');
+        return st.join(' · ');
+    }
+
+    function deseneazaLista() {
+        $('lista').innerHTML = date.stiri.map(function (s, i) {
+            return '<button data-i="' + i + '"' + (i === ales ? ' class="activ"' : '') + '>' +
+                '<b>' + (s.titlu || '(fără titlu)') + '</b>' +
+                '<span>' + (s.data || '') + ' · ' + stareText(s) + '</span></button>';
+        }).join('');
+    }
+
+    $('lista').addEventListener('click', function (e) {
+        var b = e.target.closest('button');
+        if (b) incarca(Number(b.dataset.i));
+    });
+
+    function stireNoua() {
+        var azi = new Date().toISOString().slice(0, 10);
+        date.stiri.unshift({
+            id: '', titlu: '', data: azi, anScolar: anDin(azi),
+            publicat: false, arhivat: false, rezumat: ''
+        });
+        ales = 0;
+        deseneazaLista();
+        incarca(0);
+    }
+
+    /* Anul școlar începe la 1 septembrie. */
+    function anDin(iso) {
+        var p = String(iso || '').split('-');
+        if (p.length < 2) return date.anCurent || '';
+        var an = Number(p[0]), luna = Number(p[1]);
+        return luna >= 9 ? an + '-' + (an + 1) : (an - 1) + '-' + an;
+    }
+
+    function incarca(i) {
+        ales = i;
+        var s = date.stiri[i];
+        deseneazaLista();
+        $('f-titlu').value = s.titlu || '';
+        $('f-data').value = s.data || '';
+        $('f-datatext').value = s.dataText || '';
+        $('f-an').value = s.anScolar || '';
+        $('f-publicat').value = s.publicat === false ? '0' : '1';
+        $('f-arhivat').value = s.arhivat ? '1' : '0';
+        $('f-educatie').value = s.dinEducatie ? '1' : '0';
+        $('f-prima').value = s.pePrimaPagina === false ? '0' : '1';
+        $('f-rezumat').value = s.rezumat || '';
+        $('f-imagine').value = s.imagine || '';
+        $('f-imaginealt').value = s.imagineAlt || '';
+        $('f-link').value = s.link || '';
+        $('f-linktext').value = s.linkText || '';
+        $('f-sursa').value = (s.sursa && s.sursa.text) || '';
+        $('f-sursaurl').value = (s.sursa && s.sursa.url) || '';
+        $('f-sursaurltext').value = (s.sursa && s.sursa.urlText) || '';
+        $('f-corp').value = s.corp || '';
+        $('f-context').value = s.context || '';
+        previzualizeaza();
+    }
+
+    function idDin(titlu, data) {
+        var t = (titlu || 'stire').toLowerCase()
+            .replace(/ă|â/g, 'a').replace(/î/g, 'i').replace(/ș|ş/g, 's').replace(/ț|ţ/g, 't')
+            .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').split('-').slice(0, 6).join('-');
+        return t + '-' + String(data || '').slice(0, 4);
+    }
+
+    function dinFormular() {
+        var s = {
+            id: (ales >= 0 && date.stiri[ales].id) || idDin($('f-titlu').value, $('f-data').value),
+            titlu: $('f-titlu').value.trim(),
+            data: $('f-data').value,
+            anScolar: $('f-an').value.trim() || anDin($('f-data').value),
+            publicat: $('f-publicat').value === '1',
+            arhivat: $('f-arhivat').value === '1',
+            rezumat: $('f-rezumat').value.trim()
+        };
+        if ($('f-datatext').value.trim()) s.dataText = $('f-datatext').value.trim();
+        if ($('f-educatie').value === '1') s.dinEducatie = true;
+        if ($('f-prima').value === '0') s.pePrimaPagina = false;
+        if ($('f-imagine').value.trim()) s.imagine = $('f-imagine').value.trim();
+        if ($('f-imaginealt').value.trim()) s.imagineAlt = $('f-imaginealt').value.trim();
+        if ($('f-link').value.trim()) s.link = $('f-link').value.trim();
+        if ($('f-linktext').value.trim()) s.linkText = $('f-linktext').value.trim();
+        if ($('f-context').value.trim()) s.context = $('f-context').value.trim();
+        if ($('f-corp').value.trim()) s.corp = $('f-corp').value.trim();
+        if ($('f-sursa').value.trim()) {
+            s.sursa = { text: $('f-sursa').value.trim() };
+            if ($('f-sursaurl').value.trim()) s.sursa.url = $('f-sursaurl').value.trim();
+            if ($('f-sursaurltext').value.trim()) s.sursa.urlText = $('f-sursaurltext').value.trim();
+        }
+        return s;
+    }
+
+    function previzualizeaza() {
+        if (!window.Noutati) return;
+        var s = dinFormular();
+        $('previz-card').innerHTML = window.Noutati.card(s);
+        $('previz-card').querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+        $('previz-articol').innerHTML = s.corp
+            ? '<p class="news-date">' + window.Noutati.dataText(s) +
+              (s.context ? ' · ' + s.context : '') + '</p>' + window.Noutati.bogat(s.corp, 'lead')
+            : '';
+    }
+
+    document.querySelectorAll('.adm-camp input, .adm-camp select, .adm-camp textarea')
+        .forEach(function (el) { el.addEventListener('input', previzualizeaza); });
+
+    $('f-data').addEventListener('change', function () {
+        if (!$('f-an').value.trim()) $('f-an').value = anDin($('f-data').value);
+    });
+
+    $('b-nou').addEventListener('click', function () {
+        stireNoua();
+        mesaj('Știre nouă. Completează titlul și textul, apoi apasă „Pune modificările în fișier”.');
+    });
+
+    $('b-duplica').addEventListener('click', function () {
+        if (ales < 0) return mesaj('Alege întâi o știre.', 'err');
+        var copie = JSON.parse(JSON.stringify(date.stiri[ales]));
+        copie.id = copie.id + '-copie';
+        copie.titlu = copie.titlu + ' (copie)';
+        copie.publicat = false;
+        date.stiri.splice(ales, 0, copie);
+        incarca(ales);
+        scrieJSON();
+        mesaj('Am duplicat știrea, ca ciornă.');
+    });
+
+    $('b-arhiva').addEventListener('click', function () {
+        if (ales < 0) return mesaj('Alege întâi o știre.', 'err');
+        date.stiri[ales].arhivat = !date.stiri[ales].arhivat;
+        incarca(ales);
+        scrieJSON();
+        mesaj(date.stiri[ales].arhivat
+            ? 'Știrea a trecut în arhivă, la anul școlar ' + (date.stiri[ales].anScolar || '—') + '.'
+            : 'Știrea a revenit pe pagina Noutăți.');
+    });
+
+    $('b-sterge').addEventListener('click', function () {
+        if (ales < 0) return mesaj('Alege întâi o știre.', 'err');
+        if (!confirm('Ștergi definitiv „' + date.stiri[ales].titlu + '”?')) return;
+        date.stiri.splice(ales, 1);
+        ales = -1;
+        deseneazaLista();
+        scrieJSON();
+        mesaj('Știrea a fost ștearsă din fișier.');
+    });
+
+    $('b-aplica').addEventListener('click', function () {
+        var s = dinFormular();
+        if (!s.titlu) return mesaj('Știrea are nevoie de titlu.', 'err');
+        if (!s.rezumat) return mesaj('Scrie textul care apare pe card.', 'err');
+        if (ales < 0) { date.stiri.unshift(s); ales = 0; } else { date.stiri[ales] = s; }
+        date.stiri.sort(function (a, b) {
+            return String(b.data || '').localeCompare(String(a.data || ''));
+        });
+        ales = date.stiri.indexOf(s);
+        if (date.aniScolari.indexOf(s.anScolar) < 0 && s.anScolar) {
+            date.aniScolari.push(s.anScolar);
+            date.aniScolari.sort().reverse();
+        }
+        deseneazaLista();
+        scrieJSON();
+        mesaj('Gata. Acum descarcă fișierul și pune-l peste <code>data/noutati.json</code>.');
+    });
+
+    $('b-descarca').addEventListener('click', function () {
+        var b = new Blob([$('f-json').value], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(b);
+        a.download = 'noutati.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    $('b-copiaza').addEventListener('click', function () {
+        navigator.clipboard.writeText($('f-json').value).then(function () {
+            mesaj('JSON copiat.');
+        });
+    });
+
+    function scrieJSON() { $('f-json').value = JSON.stringify(date, null, 2); }
+})();
+</script>
+</body>
+</html>

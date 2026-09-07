@@ -29,8 +29,9 @@ Google Drive este spațiul de LUCRU (redactare, colectare, aprobare). Site-ul es
 3. APROBARE. Autorul notifică webmasterul (email sau comentariu în Doc). Direcțiunea aprobă știrile oficiale (comunicate, decizii).
 4. PUBLICARE (webmaster):
    - descarcă imaginile, le optimizează (sub 300 KB) și le redenumește fără diacritice;
-   - duplică `stire-model.html`, completează titlul, data, textul, imaginea (pași detaliați în PROJECT_SKILL.md, secțiunea 5);
-   - actualizează `noutati.html`, iar pentru știri importante și homepage-ul (carduri + ticker);
+   - scrie știrea în `admin-noutati.html` și pune fișierul descărcat peste `data/noutati.json`
+     (pași detaliați în PROJECT_SKILL.md, secțiunea 5);
+   - pagina Noutăți, arhiva, cardurile de pe prima pagină și banda ticker se actualizează singure;
    - commit și push pe GitHub.
 5. ARHIVARE. Subfolderul știrii se mută în „05 Publicate", iar în Registru se notează data publicării și linkul paginii.
 
