@@ -13,6 +13,7 @@
     { "id": "sport",           "nume": "Evenimente sportive" },
     { "id": "traditii",        "nume": "Tradiții și sărbători" },
     { "id": "viata-claselor",  "nume": "Viața claselor" },
+    { "id": "gradinite",       "nume": "Grădinițe" },
     { "id": "scoala-altfel",   "nume": "Școala altfel" },
     { "id": "saptamana-verde", "nume": "Săptămâna verde" },
     { "id": "premii",          "nume": "Premii și rezultate" },
@@ -20,6 +21,42 @@
     { "id": "altele",          "nume": "Alte evenimente" }
   ],
   "albume": [
+    {
+      "id": "gradinite-2026",
+      "titlu": "Grădinițele pregătite pentru noul an școlar",
+      "categorie": "gradinite",
+      "anScolar": "2026-2027",
+      "data": "2026-09-07",
+      "clase": ["Grupa mică — Fluturașii", "Grupa mică — Albinuțele", "Grupa mijlocie — Ursuleții", "Grupa mijlocie — Exploratorii", "Grupa mijlocie — Buburuzele", "Grupa mare — Ștrumfii", "Grupa mare — Fluturașii", "Grupa mare — Steluțele"],
+      "descriere": "Înainte de prima zi, doamnele educatoare și-au pregătit sălile de grupă: baloane la fiecare măsuță, ecusoane și daruri pentru copii, panouri de bun venit și decoruri de toamnă lucrate de mână. Așa își așteaptă grupele de grădiniță copiii la începutul anului școlar 2026–2027.",
+      "etichete": ["început de an", "grădiniță", "educație timpurie", "prima zi", "săli de grupă"],
+      "publicat": true,
+      "coperta": "images/galerie/2026-2027/gradinite/mici/1.jpg",
+      "video": [],
+      "grupuri": [
+        { "id": "gr-mica-fluturasii", "nume": "Grupa mică — Fluturașii", "subtitlu": "prof. educație timpurie Nicoleta Ursan" },
+        { "id": "ursuletii", "nume": "Grupa mijlocie — Ursuleții", "subtitlu": "prof. educație timpurie Ioana Diana Dolhascanu" },
+        { "id": "exploratorii", "nume": "Grupa mijlocie — Exploratorii", "subtitlu": "prof. educație timpurie Andreea Ruscan" },
+        { "id": "strumfii", "nume": "Grupa mare — Ștrumfii", "subtitlu": "prof. educație timpurie Doina Chiriac" },
+        { "id": "gr-mare-fluturasii", "nume": "Grupa mare — Fluturașii", "subtitlu": "prof. educație timpurie Luminița Adomniței" },
+        { "id": "buburuzele", "nume": "Grupa mijlocie — Buburuzele", "subtitlu": "prof. educație timpurie Mihaela Popa" },
+        { "id": "albinutele", "nume": "Grupa mică — Albinuțele", "subtitlu": "prof. educație timpurie Rodica Șuhane" },
+        { "id": "steluțele", "nume": "Grupa mare — Steluțele", "subtitlu": "prof. educație timpurie Oana Vultur Gavrilean" },
+        { "id": "grupa-hanek", "nume": "Grupa prof. Rita Hanek", "subtitlu": "prof. educație timpurie Rita Hanek" }
+      ],
+      "foto": [
+        { "grup": "gr-mica-fluturasii", "src": "images/galerie/2026-2027/gradinite/1.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/1.jpg", "w": 2048, "h": 1536, "alt": "Sala grupei mici Fluturașii, în mansardă, cu măsuțe colorate, baloane și ghirlanda de fluturi de la fereastră", "titlu": "Fluturașii, gata de prima zi" },
+        { "grup": "ursuletii", "src": "images/galerie/2026-2027/gradinite/2.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/2.jpg", "w": 1600, "h": 1200, "alt": "Sala grupei Ursuleții, cu panourile „Toamna” și „Bine ați venit” și ecranul cu emblema grupei", "titlu": "„Bine ați venit”, la Ursuleții" },
+        { "grup": "exploratorii", "src": "images/galerie/2026-2027/gradinite/3.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/3.jpg", "w": 1600, "h": 1200, "alt": "Sala grupei Exploratorii, cu vitraliile colorate de la ferestre, covorul de joacă și bucătăria de jucărie", "titlu": "Vitraliile Exploratorilor" },
+        { "grup": "strumfii", "src": "images/galerie/2026-2027/gradinite/4.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/4.jpg", "w": 1536, "h": 2040, "alt": "Sala grupei mari Ștrumfii, cu măsuțe pregătite, baloane pe covor și coșulețul cu surprize pentru copii", "titlu": "Surprizele Ștrumfilor" },
+        { "grup": "gr-mare-fluturasii", "src": "images/galerie/2026-2027/gradinite/5.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/5.jpg", "w": 2048, "h": 1536, "alt": "Sala grupei mari Fluturașii, cu raftul în formă de măr și ecusoanele pregătite pe masa roșie", "titlu": "Ecusoanele așezate pe masă" },
+        { "grup": "buburuzele", "src": "images/galerie/2026-2027/gradinite/6.jpg", "mic": "images/galerie/2026-2027/gradinite/mici/6.jpg", "w": 1536, "h": 2048, "alt": "Sala grupei Buburuzele, cu panoul „Bine ați venit” și buburuzele așezate pe fiecare loc de la masă", "titlu": "Buburuzele, la locurile lor" },
+        { "grup": "albinutele", "src": "images/galerie/2026-2027/gradinite/7.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/7.jpg", "w": 1600, "h": 720, "alt": "Panoul grupei Albinuțele, cu ecusoanele copiilor și măsuțele verde, roșie și galbenă pregătite dedesubt", "titlu": "Panoul cu ecusoanele Albinuțelor" },
+        { "grup": "steluțele", "src": "images/galerie/2026-2027/gradinite/8.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/8.jpg", "w": 2000, "h": 1500, "alt": "Sala grupei mari Steluțele, cu alfabetarul colorat, emblema grupei pe ecran și darurile așezate pe măsuțe", "titlu": "Darurile Steluțelor" },
+        { "grup": "grupa-hanek", "src": "images/galerie/2026-2027/gradinite/9.jpeg", "mic": "images/galerie/2026-2027/gradinite/mici/9.jpg", "w": 1500, "h": 2000, "alt": "Sală de grupă spațioasă, proaspăt amenajată, cu măsuțe împodobite cu baloane și rafturi noi de lemn", "titlu": "Sala proaspăt amenajată" }
+      ]
+    },
+
     {
       "id": "clasele-pregatite-2026",
       "titlu": "Clasele pregătite pentru noul an școlar",
