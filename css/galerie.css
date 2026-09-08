@@ -147,9 +147,9 @@
 @media (max-width: 560px) {
     .gal-tools { padding: 14px; }
     .gal-select { flex: 1 1 45%; }
-    .gal-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .gal-grid { grid-template-columns: 1fr; gap: 16px; }
     .gal-card-body { padding: 11px 12px 14px; }
     .gal-card-body h3 { font-size: .93rem; }
-    .gal-card .gal-card-desc { display: none; }
+    .gal-card .gal-card-desc { font-size: .82rem; }
     .gal-cat-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 }

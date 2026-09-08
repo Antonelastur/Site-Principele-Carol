@@ -135,8 +135,7 @@
                 '<div class="gal-card-body">' +
                   '<p class="gal-card-meta">' + esc(dataText(a)) + '</p>' +
                   '<h3>' + esc(a.titlu) + (a.publicat === false ? ' <em>(ciornă)</em>' : '') + '</h3>' +
-                  '<p class="gal-card-desc">' + esc((a.descriere || '').slice(0, 120)) +
-                     ((a.descriere || '').length > 120 ? '…' : '') + '</p>' +
+                  '<p class="gal-card-desc">' + esc(a.descriere || '') + '</p>' +
                 '</div></a>';
         }
 

@@ -1,4 +1,4 @@
-/* Școala Gimnazială „Principele Carol" — interacțiuni de bază (vanilla JS) */
+/* Școala Gimnazială „Principele Carol” — interacțiuni de bază (vanilla JS) */
 (function () {
     'use strict';
 
