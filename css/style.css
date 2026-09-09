@@ -241,7 +241,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-primary); li
 
 /* Noutăți */
 .news-card img { height: 190px; width: 100%; object-fit: cover; }
-.news-date { color: var(--color-accent-dark); font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.news-date { display: block; color: var(--color-accent-dark); font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
 .news-card h3 { font-size: 1.15rem; margin-top: .3em; }
 .news-card h3 a { text-decoration: none; color: var(--color-primary); }
 .news-card h3 a:hover { color: var(--color-accent-dark); }
@@ -681,6 +681,15 @@ html.no-gradient-text .names-band p {
     border-radius: 999px; padding: 3px 12px; margin-bottom: 10px;
     font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800;
 }
+.badge-educatie + .badge-termen { margin-left: 6px; }
+.badge-termen {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-accent-light);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px; padding: 3px 12px; margin: 0 0 10px 0;
+    font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 800;
+}
 .card-sursa { font-size: .78rem; color: var(--color-text-muted); margin-top: 12px; }
 .card-sursa a { color: var(--color-primary); text-decoration: underline; }
 
@@ -776,6 +785,8 @@ html.no-gradient-text .card h2, html.no-gradient-text .card h3, html.no-gradient
 .card p, .card li, .card .card-body, .card ul, .card ol, .card blockquote { color: var(--color-beige) !important; }
 .card .news-date { color: var(--color-accent) !important; }
 .card .badge, .card .badge-educatie { color: var(--color-primary) !important; }
+.card .badge-educatie + .badge-termen { margin-left: 6px; }
+.badge-termen { color: var(--color-accent-light) !important; }
 .card svg.ico { color: var(--color-accent-light); }
 /* tabelele din interiorul cardurilor rămân pe fundal alb, cu text închis */
 .card table.styled td { color: var(--color-text) !important; background: #fff; }

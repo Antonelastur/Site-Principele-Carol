@@ -101,6 +101,7 @@
         h += '<div class="card-body">';
         if (s.publicat === false) h += '<span class="badge-educatie">Ciornă</span>';
         if (s.dinEducatie) h += '<span class="badge-educatie">Din educație</span>';
+        if (s.termen) h += '<span class="badge-termen">Termen: ' + esc(s.termen) + '</span>';
         h += '<span class="news-date">' + esc(dataText(s)) + '</span>';
         h += '<h3>' + titlu + '</h3>';
         h += bogat(acasa ? primulParagraf(s.rezumat) : s.rezumat);
