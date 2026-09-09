@@ -21,12 +21,41 @@
     html.no-gradient-text .page-hero h1 { background: none !important; -webkit-text-fill-color: #F3E5AB !important; color: #F3E5AB !important; }
     .page-hero .lead { color: #F5F0E4 !important; }
 
-    /* Calendarul anului: reia timeline-ul din foaia de stil, cu vacanțele marcate cu auriu */
-    .an-timeline .tl-item.vacanta::before { background: #D4AF37; border-color: #001F3F; }
-    .an-timeline .tl-item.vacanta .tl-year { color: #12365e; }
-    .an-timeline .tl-item h3 { font-size: 1.15rem; }
-    .an-timeline .tl-item p { color: var(--color-text-muted); margin-top: .2em; }
-    .an-timeline .badge { margin-top: 9px; }
+    /* Cardurile de săptămâni: navy cu numărul în auriu degrade */
+    .modul-titlu { font-family: var(--font-serif); font-size: 1.45rem; color: var(--color-primary); margin: 40px 0 4px; }
+    .modul-titlu:first-of-type { margin-top: 0; }
+    .modul-perioada { display: block; font-family: var(--font-sans); font-size: .88rem; font-weight: 600; color: var(--color-accent-dark); letter-spacing: .03em; margin-top: 2px; }
+    .sapt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+    .sapt-card {
+        background: var(--color-primary); border: 1px solid rgba(212, 175, 55, .45);
+        border-radius: var(--radius); padding: 15px 17px; display: flex; flex-direction: column; gap: 3px;
+        transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .sapt-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold); border-color: var(--color-accent); }
+    .sapt-card.cu-nota { border-color: var(--color-accent); border-width: 1.5px; }
+    .sapt-card.acum { border: 2px solid var(--color-accent); box-shadow: var(--shadow-gold); }
+    .sapt-card.acum .sapt-nr::after { content: " \00B7 acum"; font-family: var(--font-sans); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+    .sapt-nr { font-family: var(--font-serif); font-size: 1.18rem; font-weight: 700; line-height: 1.2; color: #F3E5AB; }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        .sapt-nr {
+            background-image: var(--gold-gradient);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+    }
+    html.no-gradient-text .sapt-nr { background: none; -webkit-text-fill-color: #F3E5AB; color: #F3E5AB; }
+    .sapt-data { color: var(--color-beige); font-size: .93rem; }
+    .sapt-nota { color: var(--color-accent-light); font-size: .81rem; line-height: 1.35; margin-top: 5px; border-top: 1px solid rgba(212, 175, 55, .3); padding-top: 6px; }
+
+    /* Banda de vacanță dintre module */
+    .vacanta-strip {
+        background: var(--gold-gradient); color: #3d2f08; border-radius: var(--radius);
+        padding: 12px 20px; margin-top: 18px; font-size: .96rem; letter-spacing: .01em;
+    }
+    .vacanta-strip .vac-nota { display: block; font-size: .84rem; opacity: .8; margin-top: 1px; }
+
+    @media (max-width: 1080px) { .sapt-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 800px) { .sapt-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .sapt-grid { grid-template-columns: 1fr; } }
 
     /* Cardul „unde suntem acum” */
     .acum-card { background: var(--color-primary); color: var(--color-beige); border: 1px solid var(--color-accent); border-radius: var(--radius); padding: 22px 26px; box-shadow: var(--shadow-card); }
@@ -63,6 +92,12 @@
         .reveal { opacity: 1 !important; transform: none !important; }
         .acum-card { background: #fff !important; color: #1a2433 !important; }
         .acum-card .acum-titlu, .acum-card .acum-detaliu { color: #001F3F !important; }
+        .sapt-card { background: #fff !important; border: 1px solid #B89047 !important; break-inside: avoid; }
+        .sapt-nr { color: #001F3F !important; -webkit-text-fill-color: #001F3F !important; background: none !important; }
+        .sapt-data { color: #1a2433 !important; }
+        .sapt-nota { color: #5a6678 !important; }
+        .vacanta-strip { background: #F5F0E4 !important; color: #001F3F !important; border: 1px solid #B89047; }
+        .sapt-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 8px; }
         a[href]::after { content: ""; }
     }
     </style>
@@ -104,79 +139,194 @@
         <div class="container">
             <div id="acum" class="acum-card reveal" hidden></div>
 
-            <h2 class="section-title" style="margin-top:46px;">Calendarul <span class="gold-text">cursurilor și vacanțelor</span></h2>
-            <p style="color:var(--color-text-muted); max-width:70ch;">Anul școlar are cinci module de cursuri, despărțite de vacanțe. Săptămâna Verde și programul „Școala altfel” se desfășoară în interiorul modulelor, cu program special.</p>
+            <h2 class="section-title" style="margin-top:40px;">Anul școlar, <span class="gold-text">săptămână cu săptămână</span></h2>
+            <p style="color:var(--color-text-muted); max-width:78ch; margin-bottom:26px;">Cele 36 de săptămâni de cursuri, grupate pe cele cinci module. Săptămânile cu program special sau cu zile libere sunt marcate cu auriu.</p>
 
-            <div class="timeline an-timeline">
-                <div class="tl-item reveal">
-                    <span class="tl-year">7 septembrie &ndash; 23 octombrie 2026</span>
-                    <h3>Modulul 1</h3>
-                    <p>Primul modul de cursuri al anului școlar.</p>
-                    <span class="badge">Săptămâna Verde: 19&ndash;23 octombrie 2026</span>
-                </div>
-                <div class="tl-item vacanta reveal">
-                    <span class="tl-year">24 octombrie &ndash; 1 noiembrie 2026</span>
-                    <h3>Vacanța de toamnă</h3>
-                    <p>O săptămână de vacanță pentru toți elevii.</p>
-                </div>
-                <div class="tl-item reveal">
-                    <span class="tl-year">2 noiembrie &ndash; 22 decembrie 2026</span>
-                    <h3>Modulul 2</h3>
-                    <p>Al doilea modul de cursuri, până în preajma sărbătorilor.</p>
-                    <span class="badge">„Școala altfel”: 14&ndash;18 decembrie 2026</span>
-                </div>
-                <div class="tl-item vacanta reveal">
-                    <span class="tl-year">23 decembrie 2026 &ndash; 10 ianuarie 2027</span>
-                    <h3>Vacanța de iarnă</h3>
-                    <p>Sărbătorile de iarnă.</p>
-                </div>
-                <div class="tl-item reveal">
-                    <span class="tl-year">11 ianuarie &ndash; 12 februarie 2027</span>
-                    <h3>Modulul 3</h3>
-                    <p>Cel mai scurt modul al anului școlar.</p>
-                </div>
-                <div class="tl-item vacanta reveal">
-                    <span class="tl-year">15 &ndash; 21 februarie 2027</span>
-                    <h3>Vacanța de schi</h3>
-                    <p>Stabilită la nivelul județului Suceava, de către ISJ Suceava.</p>
-                </div>
-                <div class="tl-item reveal">
-                    <span class="tl-year">22 februarie &ndash; 23 aprilie 2027</span>
-                    <h3>Modulul 4</h3>
-                    <p>Cel mai lung modul de cursuri al anului.</p>
-                </div>
-                <div class="tl-item vacanta reveal">
-                    <span class="tl-year">24 aprilie &ndash; 4 mai 2027</span>
-                    <h3>Vacanța de primăvară</h3>
-                    <p>Include Sfintele Paști ortodoxe.</p>
-                </div>
-                <div class="tl-item reveal">
-                    <span class="tl-year">5 mai &ndash; 18 iunie 2027</span>
-                    <h3>Modulul 5</h3>
-                    <p>Ultimul modul de cursuri. Pentru clasa a VIII-a, cursurile se încheie pe 11 iunie 2027.</p>
-                </div>
-                <div class="tl-item vacanta reveal">
-                    <span class="tl-year">19 iunie &ndash; 5 septembrie 2027</span>
-                    <h3>Vacanța de vară</h3>
-                    <p>Finalul anului școlar 2026&ndash;2027.</p>
-                </div>
+            <h3 class="modul-titlu">Modulul 1 <span class="modul-perioada">7 septembrie &ndash; 23 octombrie 2026</span></h3>
+            <div class="sapt-grid">
+                    <div class="sapt-card" data-sapt="1">
+                        <span class="sapt-nr">Săptămâna 1</span>
+                        <span class="sapt-data">7 &ndash; 11 septembrie 2026</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="2">
+                        <span class="sapt-nr">Săptămâna 2</span>
+                        <span class="sapt-data">14 &ndash; 18 septembrie 2026</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="3">
+                        <span class="sapt-nr">Săptămâna 3</span>
+                        <span class="sapt-data">21 &ndash; 25 septembrie 2026</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="4">
+                        <span class="sapt-nr">Săptămâna 4</span>
+                        <span class="sapt-data">28 septembrie &ndash; 2 octombrie 2026</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="5">
+                        <span class="sapt-nr">Săptămâna 5</span>
+                        <span class="sapt-data">5 &ndash; 9 octombrie 2026</span>
+                        <span class="sapt-nota">Luni, 5 octombrie, nu se fac ore &mdash; Ziua Educației</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="6">
+                        <span class="sapt-nr">Săptămâna 6</span>
+                        <span class="sapt-data">12 &ndash; 16 octombrie 2026</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="7">
+                        <span class="sapt-nr">Săptămâna 7</span>
+                        <span class="sapt-data">19 &ndash; 23 octombrie 2026</span>
+                        <span class="sapt-nota">Săptămâna Verde</span>
+                    </div>
             </div>
-        </div>
-    </section>
+            <div class="vacanta-strip reveal"><strong>Vacanța de toamnă</strong> &middot; 24 octombrie &ndash; 1 noiembrie 2026</div>
+            <h3 class="modul-titlu">Modulul 2 <span class="modul-perioada">2 noiembrie &ndash; 22 decembrie 2026</span></h3>
+            <div class="sapt-grid">
+                    <div class="sapt-card" data-sapt="8">
+                        <span class="sapt-nr">Săptămâna 8</span>
+                        <span class="sapt-data">2 &ndash; 6 noiembrie 2026</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="9">
+                        <span class="sapt-nr">Săptămâna 9</span>
+                        <span class="sapt-data">9 &ndash; 13 noiembrie 2026</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="10">
+                        <span class="sapt-nr">Săptămâna 10</span>
+                        <span class="sapt-data">16 &ndash; 20 noiembrie 2026</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="11">
+                        <span class="sapt-nr">Săptămâna 11</span>
+                        <span class="sapt-data">23 &ndash; 27 noiembrie 2026</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="12">
+                        <span class="sapt-nr">Săptămâna 12</span>
+                        <span class="sapt-data">30 noiembrie &ndash; 4 decembrie 2026</span>
+                        <span class="sapt-nota">Luni și marți, 30 noiembrie &ndash; 1 decembrie, nu se fac ore</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="13">
+                        <span class="sapt-nr">Săptămâna 13</span>
+                        <span class="sapt-data">7 &ndash; 11 decembrie 2026</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="14">
+                        <span class="sapt-nr">Săptămâna 14</span>
+                        <span class="sapt-data">14 &ndash; 18 decembrie 2026</span>
+                        <span class="sapt-nota">„Școala altfel”</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="15">
+                        <span class="sapt-nr">Săptămâna 15</span>
+                        <span class="sapt-data">21 &ndash; 22 decembrie 2026</span>
+                        <span class="sapt-nota">Săptămână scurtă, de două zile, înainte de vacanță</span>
+                    </div>
+            </div>
+            <div class="vacanta-strip reveal"><strong>Vacanța de iarnă</strong> &middot; 23 decembrie 2026 &ndash; 10 ianuarie 2027<span class="vac-nota">Sărbătorile de iarnă</span></div>
+            <h3 class="modul-titlu">Modulul 3 <span class="modul-perioada">11 ianuarie &ndash; 12 februarie 2027</span></h3>
+            <div class="sapt-grid">
+                    <div class="sapt-card" data-sapt="16">
+                        <span class="sapt-nr">Săptămâna 16</span>
+                        <span class="sapt-data">11 &ndash; 15 ianuarie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="17">
+                        <span class="sapt-nr">Săptămâna 17</span>
+                        <span class="sapt-data">18 &ndash; 22 ianuarie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="18">
+                        <span class="sapt-nr">Săptămâna 18</span>
+                        <span class="sapt-data">25 &ndash; 29 ianuarie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="19">
+                        <span class="sapt-nr">Săptămâna 19</span>
+                        <span class="sapt-data">1 &ndash; 5 februarie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="20">
+                        <span class="sapt-nr">Săptămâna 20</span>
+                        <span class="sapt-data">8 &ndash; 12 februarie 2027</span>
+                    </div>
+            </div>
+            <div class="vacanta-strip reveal"><strong>Vacanța de schi</strong> &middot; 15 &ndash; 21 februarie 2027<span class="vac-nota">Stabilită de ISJ Suceava</span></div>
+            <h3 class="modul-titlu">Modulul 4 <span class="modul-perioada">22 februarie &ndash; 23 aprilie 2027</span></h3>
+            <div class="sapt-grid">
+                    <div class="sapt-card" data-sapt="21">
+                        <span class="sapt-nr">Săptămâna 21</span>
+                        <span class="sapt-data">22 &ndash; 26 februarie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="22">
+                        <span class="sapt-nr">Săptămâna 22</span>
+                        <span class="sapt-data">1 &ndash; 5 martie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="23">
+                        <span class="sapt-nr">Săptămâna 23</span>
+                        <span class="sapt-data">8 &ndash; 12 martie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="24">
+                        <span class="sapt-nr">Săptămâna 24</span>
+                        <span class="sapt-data">15 &ndash; 19 martie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="25">
+                        <span class="sapt-nr">Săptămâna 25</span>
+                        <span class="sapt-data">22 &ndash; 26 martie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="26">
+                        <span class="sapt-nr">Săptămâna 26</span>
+                        <span class="sapt-data">29 martie &ndash; 2 aprilie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="27">
+                        <span class="sapt-nr">Săptămâna 27</span>
+                        <span class="sapt-data">5 &ndash; 9 aprilie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="28">
+                        <span class="sapt-nr">Săptămâna 28</span>
+                        <span class="sapt-data">12 &ndash; 16 aprilie 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="29">
+                        <span class="sapt-nr">Săptămâna 29</span>
+                        <span class="sapt-data">19 &ndash; 23 aprilie 2027</span>
+                    </div>
+            </div>
+            <div class="vacanta-strip reveal"><strong>Vacanța de primăvară</strong> &middot; 24 aprilie &ndash; 4 mai 2027<span class="vac-nota">Include Sfintele Paști ortodoxe</span></div>
+            <h3 class="modul-titlu">Modulul 5 <span class="modul-perioada">5 mai &ndash; 18 iunie 2027</span></h3>
+            <div class="sapt-grid">
+                    <div class="sapt-card cu-nota" data-sapt="30">
+                        <span class="sapt-nr">Săptămâna 30</span>
+                        <span class="sapt-data">5 &ndash; 7 mai 2027</span>
+                        <span class="sapt-nota">Miercuri &ndash; vineri, după vacanța de Paște</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="31">
+                        <span class="sapt-nr">Săptămâna 31</span>
+                        <span class="sapt-data">10 &ndash; 14 mai 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="32">
+                        <span class="sapt-nr">Săptămâna 32</span>
+                        <span class="sapt-data">17 &ndash; 21 mai 2027</span>
+                    </div>
+                    <div class="sapt-card" data-sapt="33">
+                        <span class="sapt-nr">Săptămâna 33</span>
+                        <span class="sapt-data">24 &ndash; 28 mai 2027</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="34">
+                        <span class="sapt-nr">Săptămâna 34</span>
+                        <span class="sapt-data">31 mai &ndash; 4 iunie 2027</span>
+                        <span class="sapt-nota">Marți, 1 iunie, nu se fac ore &mdash; Ziua Copilului</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="35">
+                        <span class="sapt-nr">Săptămâna 35</span>
+                        <span class="sapt-data">7 &ndash; 11 iunie 2027</span>
+                        <span class="sapt-nota">Ultima săptămână pentru clasa a VIII-a</span>
+                    </div>
+                    <div class="sapt-card cu-nota" data-sapt="36">
+                        <span class="sapt-nr">Săptămâna 36</span>
+                        <span class="sapt-data">14 &ndash; 18 iunie 2027</span>
+                        <span class="sapt-nota">Ultima săptămână pentru clasele pregătitoare &ndash; a VII-a</span>
+                    </div>
+            </div>
+            <div class="vacanta-strip reveal"><strong>Vacanța de vară</strong> &middot; 19 iunie &ndash; 5 septembrie 2027<span class="vac-nota">Finalul anului școlar</span></div>
 
-    <section class="section" style="background:var(--color-beige);">
-        <div class="container">
-            <h2 class="section-title">Zile libere <span class="gold-text">legale și sărbători</span></h2>
-            <p style="color:var(--color-text-muted); max-width:70ch; margin-bottom:26px;">Unele sărbători legale pică în interiorul unei vacanțe, deci nu schimbă programul. Cele marcate „fără cursuri” sunt zile libere în timpul modulelor de cursuri.</p>
+            <h2 class="section-title" style="margin-top:56px;">Zile libere <span class="gold-text">legale și sărbători</span></h2>
+            <p style="color:var(--color-text-muted); max-width:78ch; margin-bottom:22px;">Cele marcate „fără cursuri” sunt zile libere în timpul modulelor. Restul cad oricum în vacanță sau în weekend, deci nu schimbă programul.</p>
             <div class="table-wrap">
                 <table class="styled">
                     <thead>
                         <tr><th>Data</th><th>Sărbătoare / eveniment</th><th>Situația cursurilor</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 5 octombrie 2026</td><td data-eticheta="Sărbătoare">Ziua Internațională a Educației</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
-                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 30 noiembrie 2026</td><td data-eticheta="Sărbătoare">Sfântul Andrei</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
-                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Marți, 1 decembrie 2026</td><td data-eticheta="Sărbătoare">Ziua Națională a României</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 5 octombrie 2026</td><td data-eticheta="Sărbătoare">Ziua Internațională a Educației</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 30 noiembrie 2026</td><td data-eticheta="Sărbătoare">Sfântul Andrei</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Marți, 1 decembrie 2026</td><td data-eticheta="Sărbătoare">Ziua Națională a României</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Fără cursuri</span></td></tr>
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Vineri, 25 decembrie 2026</td><td data-eticheta="Sărbătoare">Crăciunul</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Vineri, 1 ianuarie 2027</td><td data-eticheta="Sărbătoare">Anul Nou</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Miercuri, 6 ianuarie 2027</td><td data-eticheta="Sărbătoare">Boboteaza</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
@@ -184,45 +334,17 @@
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Duminică, 24 ianuarie 2027</td><td data-eticheta="Sărbătoare">Unirea Principatelor Române</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">Cade în weekend</span></td></tr>
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Vineri, 30 aprilie 2027</td><td data-eticheta="Sărbătoare">Vinerea Mare</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de primăvară</span></td></tr>
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 3 mai 2027</td><td data-eticheta="Sărbătoare">A doua zi de Paște ortodox</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de primăvară</span></td></tr>
-                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Marți, 1 iunie 2027</td><td data-eticheta="Sărbătoare">Ziua Copilului</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Marți, 1 iunie 2027</td><td data-eticheta="Sărbătoare">Ziua Copilului</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Fără cursuri</span></td></tr>
                         <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 21 iunie 2027</td><td data-eticheta="Sărbătoare">A doua zi de Rusalii</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de vară</span></td></tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Mențiuni <span class="gold-text">specifice</span></h2>
-            <div class="grid grid-4 mentiuni" style="margin-top:26px;">
-                <div class="card reveal"><div class="card-body">
-                    <span class="person-role">19&ndash;23 octombrie 2026</span>
-                    <h3>Săptămâna Verde</h3>
-                    <p>Se desfășoară în Modulul 1, cu activități de educație ecologică.</p>
-                </div></div>
-                <div class="card reveal"><div class="card-body">
-                    <span class="person-role">14&ndash;18 decembrie 2026</span>
-                    <h3>„Școala altfel”</h3>
-                    <p>Se desfășoară în Modulul 2, cu program special de activități.</p>
-                </div></div>
-                <div class="card reveal"><div class="card-body">
-                    <span class="person-role">15&ndash;21 februarie 2027</span>
-                    <h3>Vacanța de schi</h3>
-                    <p>Stabilită de ISJ Suceava pentru județul nostru.</p>
-                </div></div>
-                <div class="card reveal"><div class="card-body">
-                    <span class="person-role">11 iunie 2027</span>
-                    <h3>Clasa a VIII-a</h3>
-                    <p>Pentru elevii clasei a VIII-a, cursurile se încheie cu o săptămână mai devreme.</p>
-                </div></div>
-            </div>
-
-            <p class="no-print" style="margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+            <p class="no-print" style="margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
                 <button type="button" class="btn btn-navy" id="btn-tipar">Tipărește calendarul</button>
                 <a class="btn btn-gold" href="avizier.html">Vezi avizierul școlii</a>
             </p>
-            <p style="margin-top:22px; color:var(--color-text-muted);">Structura poate fi modificată prin ordin al ministrului educației sau prin decizie a ISJ Suceava. Pentru situații speciale, contactați <a href="contact.html">secretariatul școlii</a>.</p>
+            <p style="margin-top:20px; color:var(--color-text-muted); font-size:.92rem;">Structura poate fi modificată prin ordin al ministrului educației sau prin decizie a ISJ Suceava. Pentru situații speciale, contactați <a href="contact.html">secretariatul școlii</a>.</p>
         </div>
     </section>
 
@@ -267,25 +389,41 @@
 </footer>
 <script src="js/main.js?v=31"></script>
 <script>
-/* Cardul „unde suntem acum”: caută ziua de azi în calendarul anului și spune ce urmează. */
+/* Cardul „unde suntem acum” + evidențierea săptămânii curente. */
 (function () {
     var perioade = [
-        { tip: 'modul',   nume: 'Modulul 1',              de: '2026-09-07', pana: '2026-10-23' },
-        { tip: 'vacanta', nume: 'vacanța de toamnă',      de: '2026-10-24', pana: '2026-11-01' },
-        { tip: 'modul',   nume: 'Modulul 2',              de: '2026-11-02', pana: '2026-12-22' },
-        { tip: 'vacanta', nume: 'vacanța de iarnă',       de: '2026-12-23', pana: '2027-01-10' },
-        { tip: 'modul',   nume: 'Modulul 3',              de: '2027-01-11', pana: '2027-02-12' },
-        { tip: 'vacanta', nume: 'vacanța de schi',        de: '2027-02-15', pana: '2027-02-21' },
-        { tip: 'modul',   nume: 'Modulul 4',              de: '2027-02-22', pana: '2027-04-23' },
-        { tip: 'vacanta', nume: 'vacanța de primăvară',   de: '2027-04-24', pana: '2027-05-04' },
-        { tip: 'modul',   nume: 'Modulul 5',              de: '2027-05-05', pana: '2027-06-18' },
-        { tip: 'vacanta', nume: 'vacanța de vară',        de: '2027-06-19', pana: '2027-09-05' }
+        { tip: 'modul',   nume: 'Modulul 1',            de: '2026-09-07', pana: '2026-10-23' },
+        { tip: 'vacanta', nume: 'vacanța de toamnă',    de: '2026-10-24', pana: '2026-11-01' },
+        { tip: 'modul',   nume: 'Modulul 2',            de: '2026-11-02', pana: '2026-12-22' },
+        { tip: 'vacanta', nume: 'vacanța de iarnă',     de: '2026-12-23', pana: '2027-01-10' },
+        { tip: 'modul',   nume: 'Modulul 3',            de: '2027-01-11', pana: '2027-02-12' },
+        { tip: 'vacanta', nume: 'vacanța de schi',      de: '2027-02-15', pana: '2027-02-21' },
+        { tip: 'modul',   nume: 'Modulul 4',            de: '2027-02-22', pana: '2027-04-23' },
+        { tip: 'vacanta', nume: 'vacanța de primăvară', de: '2027-04-24', pana: '2027-05-04' },
+        { tip: 'modul',   nume: 'Modulul 5',            de: '2027-05-05', pana: '2027-06-18' },
+        { tip: 'vacanta', nume: 'vacanța de vară',      de: '2027-06-19', pana: '2027-09-05' }
+    ];
+    /* [numărul săptămânii, prima zi, ultima zi de cursuri] */
+    var saptamani = [
+        [1,'2026-09-07','2026-09-11'],  [2,'2026-09-14','2026-09-18'],  [3,'2026-09-21','2026-09-25'],
+        [4,'2026-09-28','2026-10-02'],  [5,'2026-10-05','2026-10-09'],  [6,'2026-10-12','2026-10-16'],
+        [7,'2026-10-19','2026-10-23'],  [8,'2026-11-02','2026-11-06'],  [9,'2026-11-09','2026-11-13'],
+        [10,'2026-11-16','2026-11-20'], [11,'2026-11-23','2026-11-27'], [12,'2026-11-30','2026-12-04'],
+        [13,'2026-12-07','2026-12-11'], [14,'2026-12-14','2026-12-18'], [15,'2026-12-21','2026-12-22'],
+        [16,'2027-01-11','2027-01-15'], [17,'2027-01-18','2027-01-22'], [18,'2027-01-25','2027-01-29'],
+        [19,'2027-02-01','2027-02-05'], [20,'2027-02-08','2027-02-12'], [21,'2027-02-22','2027-02-26'],
+        [22,'2027-03-01','2027-03-05'], [23,'2027-03-08','2027-03-12'], [24,'2027-03-15','2027-03-19'],
+        [25,'2027-03-22','2027-03-26'], [26,'2027-03-29','2027-04-02'], [27,'2027-04-05','2027-04-09'],
+        [28,'2027-04-12','2027-04-16'], [29,'2027-04-19','2027-04-23'], [30,'2027-05-05','2027-05-07'],
+        [31,'2027-05-10','2027-05-14'], [32,'2027-05-17','2027-05-21'], [33,'2027-05-24','2027-05-28'],
+        [34,'2027-05-31','2027-06-04'], [35,'2027-06-07','2027-06-11'], [36,'2027-06-14','2027-06-18']
     ];
     var LUNI = ['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'];
     var ZILE = ['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
 
     function zi(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
     function textData(d) { return ZILE[d.getDay()] + ', ' + d.getDate() + ' ' + LUNI[d.getMonth()] + ' ' + d.getFullYear(); }
+    function faraZi(d) { return d.getDate() + ' ' + LUNI[d.getMonth()] + ' ' + d.getFullYear(); }
     function inZile(n) {
         if (n <= 0) return 'astăzi';
         if (n === 1) return 'mâine';
@@ -299,25 +437,26 @@
     }
     if (curenta < 0) return;   /* în afara anului școlar: cardul rămâne ascuns */
 
+    /* săptămâna curentă: de luni până duminică, ca să acopere și weekendul */
+    var sapt = null;
+    for (i = 0; i < saptamani.length; i++) {
+        var s1 = zi(saptamani[i][1]), s2 = zi(saptamani[i][1]);
+        s2.setDate(s2.getDate() + 6);
+        if (azi >= s1 && azi <= s2) { sapt = saptamani[i]; break; }
+    }
+
     var p = perioade[curenta], urm = perioade[curenta + 1], titlu, detaliu;
     if (p.tip === 'modul') {
-        titlu = 'Suntem în ' + p.nume + '.';
-        if (urm) {
-            var start = zi(urm.de);
-            detaliu = 'Începe ' + urm.nume + ' ' + inZile(Math.round((start - azi) / 86400000)) +
-                      ', pe ' + textData(start).replace(/^[^,]+, /, '') + '.';
-        } else {
-            detaliu = 'Ultimul modul al anului școlar.';
-        }
+        titlu = sapt ? 'Suntem în săptămâna ' + sapt[0] + ', din ' + p.nume + '.'
+                     : 'Suntem în ' + p.nume + '.';
+        detaliu = urm
+            ? 'Începe ' + urm.nume + ' ' + inZile(Math.round((zi(urm.de) - azi) / 86400000)) + ', pe ' + faraZi(zi(urm.de)) + '.'
+            : 'Ultimul modul al anului școlar.';
     } else {
         titlu = 'Suntem în ' + p.nume + '.';
-        if (urm) {
-            var reluare = zi(urm.de);
-            detaliu = 'Cursurile se reiau ' + inZile(Math.round((reluare - azi) / 86400000)) +
-                      ', ' + textData(reluare) + '.';
-        } else {
-            detaliu = 'Anul școlar 2026' + '–' + '2027 s-a încheiat.';
-        }
+        detaliu = urm
+            ? 'Cursurile se reiau ' + inZile(Math.round((zi(urm.de) - azi) / 86400000)) + ', ' + textData(zi(urm.de)) + '.'
+            : 'Anul școlar 2026–2027 s-a încheiat.';
     }
 
     var el = document.getElementById('acum');
@@ -325,6 +464,11 @@
                    '<span class="acum-titlu">' + titlu + '</span>' +
                    '<p class="acum-detaliu">' + detaliu + '</p>';
     el.hidden = false;
+
+    if (sapt) {
+        var card = document.querySelector('.sapt-card[data-sapt="' + sapt[0] + '"]');
+        if (card) card.classList.add('acum');
+    }
 })();
 
 document.getElementById('btn-tipar').addEventListener('click', function () { window.print(); });
