@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structura anului școlar 2026-2027 | Școala Gimnazială „Principele Carol”</title>
+    <meta name="description" content="Structura anului școlar 2026-2027 la Școala Gimnazială „Principele Carol”, Gura Humorului: cele cinci module, vacanțele, Săptămâna Verde, „Școala altfel” și zilele libere legale.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css?v=31">
+    <style>
+    /* stiluri critice, incluse în pagină: titluri lizibile chiar cu CSS vechi în cache */
+    .page-hero { background: #001F3F !important; border-bottom: 3px solid #D4AF37 !important; }
+    .page-hero h1 { color: #F3E5AB !important; -webkit-text-fill-color: #F3E5AB !important; background: none !important; }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        .page-hero h1 {
+            background-image: linear-gradient(110deg,#B89047 0%,#F3E5AB 38%,#D4AF37 62%,#B89047 100%) !important;
+            -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important;
+        }
+    }
+    html.no-gradient-text .page-hero h1 { background: none !important; -webkit-text-fill-color: #F3E5AB !important; color: #F3E5AB !important; }
+    .page-hero .lead { color: #F5F0E4 !important; }
+
+    /* Calendarul anului: reia timeline-ul din foaia de stil, cu vacanțele marcate cu auriu */
+    .an-timeline .tl-item.vacanta::before { background: #D4AF37; border-color: #001F3F; }
+    .an-timeline .tl-item.vacanta .tl-year { color: #12365e; }
+    .an-timeline .tl-item h3 { font-size: 1.15rem; }
+    .an-timeline .tl-item p { color: var(--color-text-muted); margin-top: .2em; }
+    .an-timeline .badge { margin-top: 9px; }
+
+    /* Cardul „unde suntem acum” */
+    .acum-card { background: var(--color-primary); color: var(--color-beige); border: 1px solid var(--color-accent); border-radius: var(--radius); padding: 22px 26px; box-shadow: var(--shadow-card); }
+    .acum-card .acum-eticheta { color: var(--color-accent); font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; display: block; margin-bottom: 6px; }
+    .acum-card .acum-titlu { font-family: var(--font-serif); font-size: 1.5rem; color: #fff; line-height: 1.25; }
+    .acum-card .acum-detaliu { margin-top: 8px; font-size: .98rem; color: var(--color-accent-light); }
+
+    /* Etichete în tabelul zilelor libere */
+    .eticheta-liber { background: rgba(212,175,55,.18); color: #7d6220; border: 1px solid var(--color-accent); border-radius: 20px; padding: 2px 11px; font-size: .76rem; font-weight: 700; display: inline-block; white-space: nowrap; }
+    .eticheta-vacanta { background: #eef2f7; color: var(--color-text-muted); border: 1px solid #c9d4e2; border-radius: 20px; padding: 2px 11px; font-size: .76rem; font-weight: 700; display: inline-block; white-space: nowrap; }
+
+    /* pe telefon, cardurile de mențiuni stau unul sub altul, nu doua inguste */
+    @media (max-width: 560px) { .mentiuni.grid-4 { grid-template-columns: 1fr; } }
+
+    table.styled { background: #fff; color: #1a2433; }
+    table.styled th { background: #001F3F !important; color: #F5F0E4 !important; }
+    table.styled td { color: #1a2433 !important; }
+    @media (max-width: 767px) {
+        table.styled, table.styled tbody, table.styled tr, table.styled td { display: block !important; width: 100% !important; }
+        table.styled thead { display: none !important; }
+        table.styled { border: none !important; background: transparent !important; }
+        table.styled tr { background: #fff !important; border: 1.5px solid #D4AF37 !important; border-radius: 12px; margin-bottom: 14px; padding: 14px 16px; }
+        table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
+        table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
+    }
+
+    /* Tipărire: rămân doar calendarul și tabelele */
+    @media print {
+        .site-header, .breadcrumb, .site-footer, .no-print { display: none !important; }
+        .page-hero { background: #fff !important; border-bottom: 2px solid #B89047 !important; padding: 0 0 12px !important; }
+        .page-hero h1 { color: #001F3F !important; -webkit-text-fill-color: #001F3F !important; background: none !important; }
+        .page-hero .lead { color: #333 !important; }
+        .section { padding: 18px 0 !important; }
+        .reveal { opacity: 1 !important; transform: none !important; }
+        .acum-card { background: #fff !important; color: #1a2433 !important; }
+        .acum-card .acum-titlu, .acum-card .acum-detaliu { color: #001F3F !important; }
+        a[href]::after { content: ""; }
+    }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="index.html">
+            <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+            <span class="brand-name"><span>Școala Gimnazială</span><span>„Principele Carol”</span></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Deschide meniul"><span></span><span></span><span></span></button>
+        <nav class="main-nav" aria-label="Meniu principal">
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="istoric.html">Despre noi</a><ul class="submenu"><li><a href="istoric.html">Istoric</a></li><li><a href="misiune-valori.html">Misiune și valori</a></li><li><a href="echipa.html">Echipă</a></li><li><a href="baza-materiala.html">Bază materială</a></li><li><a href="oferta-educationala.html">Oferta educațională</a></li><li><a href="muzeu-virtual.html">Muzeul virtual</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="podium.html">Elevi</a><ul class="submenu"><li><a href="podium.html">Podium</a></li><li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li><li><a href="orar.html">Orarul claselor</a></li></ul></li>
+                <li class="nav-item has-sub active"><a class="nav-link" href="inscriere.html">Părinți</a><ul class="submenu"><li><a href="inscriere.html">Înscriere</a></li><li><a href="burse.html">Burse și tichete</a></li><li><a href="avizier.html">Avizier</a></li><li><a href="structura-anului-scolar.html">Structura anului școlar</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="erasmus.html">Proiecte</a><ul class="submenu"><li><a href="erasmus.html">Erasmus+</a></li><li><a href="club-limbi-straine.html">Lumea magică a limbilor străine</a></li></ul></li>
+                <li class="nav-item has-sub"><a class="nav-link" href="caroline-revista.html">CAROLine</a><ul class="submenu"><li><a href="caroline-revista.html">Revista</a></li><li><a href="caroline-tv.html">CAROLine TV</a></li></ul></li>
+                <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link" href="documente.html">Documente</a></li>
+                <li class="nav-item"><a class="nav-link" href="noutati.html">Noutăți</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol><li><a href="index.html">Acasă</a></li><li><a href="avizier.html">Avizier</a></li><li aria-current="page">Structura anului școlar</li></ol></div></nav>
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Structura anului școlar 2026&ndash;2027</h1>
+            <p class="lead">Cele cinci module de cursuri, vacanțele și zilele libere legale, așa cum se aplică la Școala Gimnazială „Principele Carol”, Gura Humorului.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div id="acum" class="acum-card reveal" hidden></div>
+
+            <h2 class="section-title" style="margin-top:46px;">Calendarul <span class="gold-text">cursurilor și vacanțelor</span></h2>
+            <p style="color:var(--color-text-muted); max-width:70ch;">Anul școlar are cinci module de cursuri, despărțite de vacanțe. Săptămâna Verde și programul „Școala altfel” se desfășoară în interiorul modulelor, cu program special.</p>
+
+            <div class="timeline an-timeline">
+                <div class="tl-item reveal">
+                    <span class="tl-year">7 septembrie &ndash; 23 octombrie 2026</span>
+                    <h3>Modulul 1</h3>
+                    <p>Primul modul de cursuri al anului școlar.</p>
+                    <span class="badge">Săptămâna Verde: 19&ndash;23 octombrie 2026</span>
+                </div>
+                <div class="tl-item vacanta reveal">
+                    <span class="tl-year">24 octombrie &ndash; 1 noiembrie 2026</span>
+                    <h3>Vacanța de toamnă</h3>
+                    <p>O săptămână de vacanță pentru toți elevii.</p>
+                </div>
+                <div class="tl-item reveal">
+                    <span class="tl-year">2 noiembrie &ndash; 22 decembrie 2026</span>
+                    <h3>Modulul 2</h3>
+                    <p>Al doilea modul de cursuri, până în preajma sărbătorilor.</p>
+                    <span class="badge">„Școala altfel”: 14&ndash;18 decembrie 2026</span>
+                </div>
+                <div class="tl-item vacanta reveal">
+                    <span class="tl-year">23 decembrie 2026 &ndash; 10 ianuarie 2027</span>
+                    <h3>Vacanța de iarnă</h3>
+                    <p>Sărbătorile de iarnă.</p>
+                </div>
+                <div class="tl-item reveal">
+                    <span class="tl-year">11 ianuarie &ndash; 12 februarie 2027</span>
+                    <h3>Modulul 3</h3>
+                    <p>Cel mai scurt modul al anului școlar.</p>
+                </div>
+                <div class="tl-item vacanta reveal">
+                    <span class="tl-year">15 &ndash; 21 februarie 2027</span>
+                    <h3>Vacanța de schi</h3>
+                    <p>Stabilită la nivelul județului Suceava, de către ISJ Suceava.</p>
+                </div>
+                <div class="tl-item reveal">
+                    <span class="tl-year">22 februarie &ndash; 23 aprilie 2027</span>
+                    <h3>Modulul 4</h3>
+                    <p>Cel mai lung modul de cursuri al anului.</p>
+                </div>
+                <div class="tl-item vacanta reveal">
+                    <span class="tl-year">24 aprilie &ndash; 4 mai 2027</span>
+                    <h3>Vacanța de primăvară</h3>
+                    <p>Include Sfintele Paști ortodoxe.</p>
+                </div>
+                <div class="tl-item reveal">
+                    <span class="tl-year">5 mai &ndash; 18 iunie 2027</span>
+                    <h3>Modulul 5</h3>
+                    <p>Ultimul modul de cursuri. Pentru clasa a VIII-a, cursurile se încheie pe 11 iunie 2027.</p>
+                </div>
+                <div class="tl-item vacanta reveal">
+                    <span class="tl-year">19 iunie &ndash; 5 septembrie 2027</span>
+                    <h3>Vacanța de vară</h3>
+                    <p>Finalul anului școlar 2026&ndash;2027.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--color-beige);">
+        <div class="container">
+            <h2 class="section-title">Zile libere <span class="gold-text">legale și sărbători</span></h2>
+            <p style="color:var(--color-text-muted); max-width:70ch; margin-bottom:26px;">Unele sărbători legale pică în interiorul unei vacanțe, deci nu schimbă programul. Cele marcate „fără cursuri” sunt zile libere în timpul modulelor de cursuri.</p>
+            <div class="table-wrap">
+                <table class="styled">
+                    <thead>
+                        <tr><th>Data</th><th>Sărbătoare / eveniment</th><th>Situația cursurilor</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 5 octombrie 2026</td><td data-eticheta="Sărbătoare">Ziua Internațională a Educației</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 30 noiembrie 2026</td><td data-eticheta="Sărbătoare">Sfântul Andrei</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Marți, 1 decembrie 2026</td><td data-eticheta="Sărbătoare">Ziua Națională a României</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Vineri, 25 decembrie 2026</td><td data-eticheta="Sărbătoare">Crăciunul</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Vineri, 1 ianuarie 2027</td><td data-eticheta="Sărbătoare">Anul Nou</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Miercuri, 6 ianuarie 2027</td><td data-eticheta="Sărbătoare">Boboteaza</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Joi, 7 ianuarie 2027</td><td data-eticheta="Sărbătoare">Sfântul Ioan Botezătorul</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de iarnă</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Duminică, 24 ianuarie 2027</td><td data-eticheta="Sărbătoare">Unirea Principatelor Române</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">Cade în weekend</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Vineri, 30 aprilie 2027</td><td data-eticheta="Sărbătoare">Vinerea Mare</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de primăvară</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 3 mai 2027</td><td data-eticheta="Sărbătoare">A doua zi de Paște ortodox</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de primăvară</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Marți, 1 iunie 2027</td><td data-eticheta="Sărbătoare">Ziua Copilului</td><td data-eticheta="Cursuri"><span class="eticheta-liber">Zi liberă &middot; fără cursuri</span></td></tr>
+                        <tr><td data-eticheta="Data" style="white-space:nowrap;">Luni, 21 iunie 2027</td><td data-eticheta="Sărbătoare">A doua zi de Rusalii</td><td data-eticheta="Cursuri"><span class="eticheta-vacanta">În vacanța de vară</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Mențiuni <span class="gold-text">specifice</span></h2>
+            <div class="grid grid-4 mentiuni" style="margin-top:26px;">
+                <div class="card reveal"><div class="card-body">
+                    <span class="person-role">19&ndash;23 octombrie 2026</span>
+                    <h3>Săptămâna Verde</h3>
+                    <p>Se desfășoară în Modulul 1, cu activități de educație ecologică.</p>
+                </div></div>
+                <div class="card reveal"><div class="card-body">
+                    <span class="person-role">14&ndash;18 decembrie 2026</span>
+                    <h3>„Școala altfel”</h3>
+                    <p>Se desfășoară în Modulul 2, cu program special de activități.</p>
+                </div></div>
+                <div class="card reveal"><div class="card-body">
+                    <span class="person-role">15&ndash;21 februarie 2027</span>
+                    <h3>Vacanța de schi</h3>
+                    <p>Stabilită de ISJ Suceava pentru județul nostru.</p>
+                </div></div>
+                <div class="card reveal"><div class="card-body">
+                    <span class="person-role">11 iunie 2027</span>
+                    <h3>Clasa a VIII-a</h3>
+                    <p>Pentru elevii clasei a VIII-a, cursurile se încheie cu o săptămână mai devreme.</p>
+                </div></div>
+            </div>
+
+            <p class="no-print" style="margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+                <button type="button" class="btn btn-navy" id="btn-tipar">Tipărește calendarul</button>
+                <a class="btn btn-gold" href="avizier.html">Vezi avizierul școlii</a>
+            </p>
+            <p style="margin-top:22px; color:var(--color-text-muted);">Structura poate fi modificată prin ordin al ministrului educației sau prin decizie a ISJ Suceava. Pentru situații speciale, contactați <a href="contact.html">secretariatul școlii</a>.</p>
+        </div>
+    </section>
+
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo-rotund.png" alt="Logo Școala Gimnazială Principele Carol">
+                <h4>Școala Gimnazială „Principele Carol”</h4>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Bulevardul Bucovinei, Nr. 25<br>Gura Humorului, Suceava</li>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> <a href="tel:0230230928">0230 230 928</a></li>
+                    <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> <a href="mailto:scoala@principelecarol.ro">scoala@principelecarol.ro</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Linkuri utile</h4>
+                <ul>
+                    <li><a href="documente.html">Informații publice</a></li>
+                    <li><a href="documente.html#gdpr">Politica de confidențialitate (GDPR)</a></li>
+                    <li><a href="https://www.isj.sv.edu.ro" target="_blank" rel="noopener">ISJ Suceava</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Comunitate</h4>
+                <ul>
+                    <li><a href="caroline-revista.html">Revista CAROLine</a></li>
+                    <li><a href="caroline-tv.html">CAROLine TV</a></li>
+                    <li><a href="consiliul-elevilor.html">Consiliul elevilor</a></li>
+                    <li><a href="inscriere.html#asociatia">Asociația de părinți</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Școala Gimnazială „Principele Carol”. Toate drepturile rezervate.<br>Webmaster: prof. Antoanela Pohoață</p>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js?v=31"></script>
+<script>
+/* Cardul „unde suntem acum”: caută ziua de azi în calendarul anului și spune ce urmează. */
+(function () {
+    var perioade = [
+        { tip: 'modul',   nume: 'Modulul 1',              de: '2026-09-07', pana: '2026-10-23' },
+        { tip: 'vacanta', nume: 'vacanța de toamnă',      de: '2026-10-24', pana: '2026-11-01' },
+        { tip: 'modul',   nume: 'Modulul 2',              de: '2026-11-02', pana: '2026-12-22' },
+        { tip: 'vacanta', nume: 'vacanța de iarnă',       de: '2026-12-23', pana: '2027-01-10' },
+        { tip: 'modul',   nume: 'Modulul 3',              de: '2027-01-11', pana: '2027-02-12' },
+        { tip: 'vacanta', nume: 'vacanța de schi',        de: '2027-02-15', pana: '2027-02-21' },
+        { tip: 'modul',   nume: 'Modulul 4',              de: '2027-02-22', pana: '2027-04-23' },
+        { tip: 'vacanta', nume: 'vacanța de primăvară',   de: '2027-04-24', pana: '2027-05-04' },
+        { tip: 'modul',   nume: 'Modulul 5',              de: '2027-05-05', pana: '2027-06-18' },
+        { tip: 'vacanta', nume: 'vacanța de vară',        de: '2027-06-19', pana: '2027-09-05' }
+    ];
+    var LUNI = ['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'];
+    var ZILE = ['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+
+    function zi(s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+    function textData(d) { return ZILE[d.getDay()] + ', ' + d.getDate() + ' ' + LUNI[d.getMonth()] + ' ' + d.getFullYear(); }
+    function inZile(n) {
+        if (n <= 0) return 'astăzi';
+        if (n === 1) return 'mâine';
+        return 'peste ' + n + (n >= 20 ? ' de zile' : ' zile');
+    }
+
+    var azi = new Date(); azi.setHours(0, 0, 0, 0);
+    var i, curenta = -1;
+    for (i = 0; i < perioade.length; i++) {
+        if (azi >= zi(perioade[i].de) && azi <= zi(perioade[i].pana)) { curenta = i; break; }
+    }
+    if (curenta < 0) return;   /* în afara anului școlar: cardul rămâne ascuns */
+
+    var p = perioade[curenta], urm = perioade[curenta + 1], titlu, detaliu;
+    if (p.tip === 'modul') {
+        titlu = 'Suntem în ' + p.nume + '.';
+        if (urm) {
+            var start = zi(urm.de);
+            detaliu = 'Începe ' + urm.nume + ' ' + inZile(Math.round((start - azi) / 86400000)) +
+                      ', pe ' + textData(start).replace(/^[^,]+, /, '') + '.';
+        } else {
+            detaliu = 'Ultimul modul al anului școlar.';
+        }
+    } else {
+        titlu = 'Suntem în ' + p.nume + '.';
+        if (urm) {
+            var reluare = zi(urm.de);
+            detaliu = 'Cursurile se reiau ' + inZile(Math.round((reluare - azi) / 86400000)) +
+                      ', ' + textData(reluare) + '.';
+        } else {
+            detaliu = 'Anul școlar 2026' + '–' + '2027 s-a încheiat.';
+        }
+    }
+
+    var el = document.getElementById('acum');
+    el.innerHTML = '<span class="acum-eticheta">Astăzi, ' + textData(azi) + '</span>' +
+                   '<span class="acum-titlu">' + titlu + '</span>' +
+                   '<p class="acum-detaliu">' + detaliu + '</p>';
+    el.hidden = false;
+})();
+
+document.getElementById('btn-tipar').addEventListener('click', function () { window.print(); });
+</script>
+</body>
+</html>
