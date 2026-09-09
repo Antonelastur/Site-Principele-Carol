@@ -1,2 +1,7 @@
 # Folder de lucru: poze primite, neprocesate. Nu se publica.
 poze-noi/
+
+# Copii si materiale locale, care nu fac parte din site
+images/Arhivă/
+Site nou/
+.claude/
