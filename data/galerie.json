@@ -63,7 +63,7 @@
       "categorie": "viata-claselor",
       "anScolar": "2026-2027",
       "data": "2026-09-07",
-      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa I B", "Clasa a II-a A", "Clasa a II-a B", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A", "Clasa a V-a A", "Clasa a V-a B", "Clasa a VI-a A", "Clasa a VIII-a A"],
+      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa I B", "Clasa a II-a A", "Clasa a II-a B", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A", "Clasa a IV-a B", "Clasa a V-a A", "Clasa a V-a B", "Clasa a VI-a A", "Clasa a VIII-a A"],
       "descriere": "Înainte de prima zi de școală, învățătoarele și diriginții au pregătit sălile de clasă: baloane, mesaje de bun venit, rechizite așezate pe bănci și decoruri lucrate de mână. Așa își așteaptă școala elevii la începutul anului școlar 2026–2027.",
       "etichete": ["început de an", "prima zi de școală", "învățământ primar", "gimnaziu", "săli de clasă"],
       "publicat": true,
@@ -79,6 +79,7 @@
         { "id": "clasa-3a", "nume": "Clasa a III-a A", "subtitlu": "prof. înv. primar Anca Vultur" },
         { "id": "clasa-3b", "nume": "Clasa a III-a B", "subtitlu": "prof. înv. primar Rodica Manoliu" },
         { "id": "clasa-4a", "nume": "Clasa a IV-a A", "subtitlu": "prof. înv. primar Mihaela Bălăcianu" },
+        { "id": "clasa-4b", "nume": "Clasa a IV-a B", "subtitlu": "prof. înv. primar Maria Floare" },
         { "id": "clasa-5a", "nume": "Clasa a V-a A", "subtitlu": "diriginte, prof. Daniela Iulia Moțoc" },
         { "id": "clasa-5b", "nume": "Clasa a V-a B", "subtitlu": "diriginte, prof. Emanuela Aluculesei" },
         { "id": "clasa-6a", "nume": "Clasa a VI-a A", "subtitlu": "diriginte, prof. Nicoleta Beleca" },
@@ -127,6 +128,12 @@
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-3.jpg", "w": 1600, "h": 1200, "alt": "Tabla interactivă și băncile clasei a IV-a A, cu manuale așezate pentru fiecare elev", "titlu": "Manualele pe bănci" },
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-4.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a IV-a A, luminată de ferestre, pregătită pentru începutul anului școlar", "titlu": "Sala pregătită" },
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-5.jpg", "w": 1600, "h": 1200, "alt": "Planșele de gramatică și decorul cu cărți din clasa a IV-a A", "titlu": "Planșele de gramatică" },
+
+        { "grup": "clasa-4b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4b-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4b-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a IV-a B, cu baloane aurii la fiecare bancă, lampioane de hârtie și decorul cu creioane colorate de pe perete", "titlu": "Baloanele aurii de pe bănci" },
+        { "grup": "clasa-4b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4b-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4b-2.jpg", "w": 1600, "h": 1200, "alt": "Manualele așezate pe bănci și tabla interactivă din clasa a IV-a B", "titlu": "Manualele pe bănci" },
+        { "grup": "clasa-4b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4b-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4b-3.jpg", "w": 1600, "h": 1200, "alt": "Panoul „Bine ați venit!” pentru anul școlar 2026–2027 și băncile pregătite ale clasei a IV-a B", "titlu": "„Bine ați venit!”" },
+        { "grup": "clasa-4b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4b-4.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4b-4.jpg", "w": 1600, "h": 1200, "alt": "Băncile clasei a IV-a B, cu baloane aurii, și ferestrele cu vedere spre oraș", "titlu": "Băncile pregătite" },
+        { "grup": "clasa-4b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4b-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4b-5.jpg", "w": 1600, "h": 1200, "alt": "Lampioanele colorate de pe tavanul clasei a IV-a B, deasupra băncilor pregătite pentru prima zi", "titlu": "Lampioanele de pe tavan" },
 
         { "grup": "clasa-5a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-5a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-5a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a V-a A, cu tabla verde, tabla interactivă și decorul cu flori de hârtie", "titlu": "Sala clasei a V-a A" },
 
