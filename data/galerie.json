@@ -63,7 +63,7 @@
       "categorie": "viata-claselor",
       "anScolar": "2026-2027",
       "data": "2026-09-07",
-      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa a II-a A", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A", "Clasa a V-a A", "Clasa a VI-a A", "Clasa a VIII-a A"],
+      "clase": ["Clasa pregătitoare A", "Clasa pregătitoare B", "Clasa I A", "Clasa I B", "Clasa a II-a A", "Clasa a II-a B", "Clasa a III-a A", "Clasa a III-a B", "Clasa a IV-a A", "Clasa a V-a A", "Clasa a V-a B", "Clasa a VI-a A", "Clasa a VIII-a A"],
       "descriere": "Înainte de prima zi de școală, învățătoarele și diriginții au pregătit sălile de clasă: baloane, mesaje de bun venit, rechizite așezate pe bănci și decoruri lucrate de mână. Așa își așteaptă școala elevii la începutul anului școlar 2026–2027.",
       "etichete": ["început de an", "prima zi de școală", "învățământ primar", "gimnaziu", "săli de clasă"],
       "publicat": true,
@@ -73,11 +73,14 @@
         { "id": "pregatitoare-a", "nume": "Clasa pregătitoare A", "subtitlu": "prof. înv. primar Eva Wendling" },
         { "id": "pregatitoare-b", "nume": "Clasa pregătitoare B", "subtitlu": "prof. înv. primar Gabriela Frîncu" },
         { "id": "clasa-1a", "nume": "Clasa I A", "subtitlu": "prof. înv. primar Loredana Mihăilescu" },
+        { "id": "clasa-1b", "nume": "Clasa I B", "subtitlu": "prof. înv. primar Cecilia Dobrea" },
         { "id": "clasa-2a", "nume": "Clasa a II-a A", "subtitlu": "prof. înv. primar Laura Bartoș" },
+        { "id": "clasa-2b", "nume": "Clasa a II-a B", "subtitlu": "prof. înv. primar Dorina Enea" },
         { "id": "clasa-3a", "nume": "Clasa a III-a A", "subtitlu": "prof. înv. primar Anca Vultur" },
         { "id": "clasa-3b", "nume": "Clasa a III-a B", "subtitlu": "prof. înv. primar Rodica Manoliu" },
         { "id": "clasa-4a", "nume": "Clasa a IV-a A", "subtitlu": "prof. înv. primar Mihaela Bălăcianu" },
         { "id": "clasa-5a", "nume": "Clasa a V-a A", "subtitlu": "diriginte, prof. Daniela Iulia Moțoc" },
+        { "id": "clasa-5b", "nume": "Clasa a V-a B", "subtitlu": "diriginte, prof. Emanuela Aluculesei" },
         { "id": "clasa-6a", "nume": "Clasa a VI-a A", "subtitlu": "diriginte, prof. Nicoleta Beleca" },
         { "id": "clasa-8a", "nume": "Clasa a VIII-a A", "subtitlu": "diriginte, prof. Mariana Gherghel" }
       ],
@@ -96,9 +99,17 @@
         { "grup": "clasa-1a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1a-2.jpg", "w": 1600, "h": 900, "alt": "Mesajul „Intră cu încredere. Învață cu pasiune. Pleacă pregătit să schimbi lumea.” pe peretele clasei I A", "titlu": "„Pleacă pregătit să schimbi lumea.”" },
         { "grup": "clasa-1a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1a-3.jpg", "w": 1600, "h": 900, "alt": "Catedra clasei I A, cu cutia poștală a doamnei învățătoare și materiale pentru prima zi", "titlu": "Cutia poștală a clasei" },
 
+        { "grup": "clasa-1b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1b-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1b-1.jpg", "w": 1600, "h": 900, "alt": "Sala clasei I B, cu baloane colorate la fiecare bancă și planșele de pe pereți", "titlu": "Primele bănci de clasa I" },
+        { "grup": "clasa-1b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1b-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1b-2.jpg", "w": 1600, "h": 900, "alt": "Tabla interactivă a clasei I B, cu mesajul „Bine ați venit la școală!”, și băncile cu baloane", "titlu": "„Bine ați venit la școală!”" },
+        { "grup": "clasa-1b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-1b-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-1b-3.jpg", "w": 900, "h": 1600, "alt": "Arcada de baloane roz și albe de la intrarea în clasa I B", "titlu": "Arcada de baloane" },
+
         { "grup": "clasa-2a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2a-1.jpg", "w": 1600, "h": 1200, "alt": "Mesajul „Fiecare copil este o stea care strălucește în felul său!” deasupra tablei clasei a II-a A", "titlu": "„Fiecare copil este o stea”" },
         { "grup": "clasa-2a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2a-2.jpg", "w": 1600, "h": 1200, "alt": "Băncile clasei a II-a A, pregătite cu baloane colorate și materiale pentru elevi", "titlu": "Băncile pregătite pentru prima zi" },
         { "grup": "clasa-2a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2a-3.jpg", "w": 1600, "h": 1200, "alt": "Colțul de lectură și băncile clasei a II-a A, luminate de ferestre", "titlu": "Colțul de lectură" },
+
+        { "grup": "clasa-2b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2b-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2b-1.jpg", "w": 1205, "h": 1600, "alt": "Sala clasei a II-a B, cu mesajul „Bine ați venit în clasa a II-a!” scris pe tablă și baloane la fiecare bancă", "titlu": "„Bine ați venit în clasa a II-a!”" },
+        { "grup": "clasa-2b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2b-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2b-2.jpg", "w": 1205, "h": 1600, "alt": "Manualele așezate pe bănci și decorul cu fluturi de pe peretele clasei a II-a B", "titlu": "Manualele pe bănci" },
+        { "grup": "clasa-2b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-2b-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-2b-3.jpg", "w": 1205, "h": 1600, "alt": "Băncile clasei a II-a B, cu baloane pastel, și peretele cu farfuriile pictate", "titlu": "Peretele cu farfurii pictate" },
 
         { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-1.jpg", "w": 1600, "h": 1200, "alt": "Curcubeu din hârtie pe peretele clasei a III-a A și mesajul „Fiecare copil este un curcubeu care așteaptă să strălucească.”", "titlu": "Curcubeul clasei" },
         { "grup": "clasa-3a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-3a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-3a-2.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a III-a A, cu baloane colorate pe fiecare bancă", "titlu": "Sala pregătită pentru elevi" },
@@ -118,6 +129,10 @@
         { "grup": "clasa-4a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-4a-5.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-4a-5.jpg", "w": 1600, "h": 1200, "alt": "Planșele de gramatică și decorul cu cărți din clasa a IV-a A", "titlu": "Planșele de gramatică" },
 
         { "grup": "clasa-5a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-5a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-5a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a V-a A, cu tabla verde, tabla interactivă și decorul cu flori de hârtie", "titlu": "Sala clasei a V-a A" },
+
+        { "grup": "clasa-5a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-5a-2.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-5a-2.jpg", "w": 1200, "h": 1600, "alt": "Tabla clasei a V-a A, cu mesajul „Mult succes în noul an școlar 2026–2027”, și băncile cu baloane", "titlu": "Mesajul de pe tablă" },
+        { "grup": "clasa-5a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-5a-3.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-5a-3.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a V-a A, cu baloane pe fiecare bancă și decorul cu flori de hârtie de lângă tabla interactivă", "titlu": "Sala pregătită pentru prima zi" },
+        { "grup": "clasa-5b", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-5b-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-5b-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a V-a B, cu mesajul „Bine ați venit la școală” din litere colorate și florile de hârtie de pe perete", "titlu": "„Bine ați venit la școală”" },
 
         { "grup": "clasa-6a", "src": "images/galerie/2026-2027/clasele-pregatite/clasa-6a-1.jpg", "mic": "images/galerie/2026-2027/clasele-pregatite/mici/clasa-6a-1.jpg", "w": 1600, "h": 1200, "alt": "Sala clasei a VI-a A, cu manualele așezate teancuri pe bănci și câte un trandafir roșu pentru fiecare elev", "titlu": "Manualele și trandafirii de pe bănci" },
 
