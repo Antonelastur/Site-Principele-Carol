@@ -1,6 +1,9 @@
 # Folder de lucru: poze primite, neprocesate. Nu se publica.
 poze-noi/
 
+# Materiale primite pentru proiecte (pot contine date personale ale elevilor). Nu se publica.
+Proiecte/
+
 # Copii si materiale locale, care nu fac parte din site
 images/Arhivă/
 Site nou/

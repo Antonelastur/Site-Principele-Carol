@@ -25,6 +25,7 @@ Site static: HTML5 semantic, CSS3 cu variabile, JavaScript vanilla. Fără frame
 ├── avizier.html                Părinți → Avizier
 ├── erasmus.html                Proiecte → Erasmus+ L.I.F.E.
 ├── club-limbi-straine.html     Proiecte → Lumea magică a limbilor străine
+├── sper.html                   Proiecte → SPER (FSE+, copii cu CES)
 ├── caroline-revista.html       CAROLine → Revista
 ├── caroline-tv.html            CAROLine → TV / multimedia
 ├── galerie.html                Galerie — lista de albume, filtre și căutare
