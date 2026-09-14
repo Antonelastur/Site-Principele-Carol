@@ -4,6 +4,24 @@
   "aniScolari": ["2026-2027", "2025-2026"],
   "stiri": [
     {
+      "id": "ore-remediale-2026-2027",
+      "titlu": "Orele remediale în anul școlar 2026-2027: ce trebuie să știe părinții",
+      "data": "2026-09-14",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "pePrimaPagina": true,
+      "context": "Informare pentru părinți",
+      "rezumat": "În anul școlar 2026-2027, elevii au ore de învățare remedială: la ciclul primar, **2 ore pe săptămână**, iar la gimnaziu, **25% din orele fiecărei discipline** sunt dedicate recuperării și consolidării. Pentru elevii din clasele primare, părinții pot depune o cerere la învățătoarea clasei; modelul de cerere se descarcă din articol.",
+      "corp": "Orele remediale îi ajută pe elevi să recupereze ce nu au înțeles, să consolideze ce au învățat și să meargă mai departe acolo unde sunt pregătiți. Activitățile nu se notează: profesorii urmăresc progresul fiecărui copil prin evaluare formativă.\n\n## La ciclul primar (clasa pregătitoare – clasa a IV-a)\n\n- Învățătorii organizează **2 ore pe săptămână** de învățare remedială.\n- Participă elevii ai căror părinți depun o **cerere scrisă la învățătoarea sau învățătorul clasei**. Un elev poate fi inclus în program și la recomandarea scrisă a învățătorului.\n- Cererea poate fi făcută pentru o singură unitate de învățare sau pentru tot anul școlar.\n\n**[Descarcă modelul de cerere (PDF)](docs/model-cerere-invatare-remediala-primar.pdf)**, completează-l și predă-l învățătoarei clasei.\n\n## La gimnaziu (clasele V–VIII)\n\n- Profesorii dedică **25% din orele fiecărei discipline** activităților de remediere, consolidare și aprofundare.\n- Aceste activități au loc **în orele obișnuite din orar**, așa că **nu este nevoie de nicio cerere** din partea părinților.\n- Elevii pot lucra pe grupe, după nivelul fiecăruia, sau individual.\n\nPentru întrebări, părinții se pot adresa învățătoarei sau dirigintelui clasei.",
+      "sursa": {
+        "text": "Ministerul Educației și Cercetării — Ordinul nr. 6.423/2025 (învățământ primar) și Instrucțiunea nr. 8 (gimnaziu și liceu), prezentate de Edupedu.ro.",
+        "url": "https://www.edupedu.ro/orele-remediale-pentru-elevi-in-anul-scolar-2026-2027-2-ore-pe-saptamana-la-primar-si-25-din-ore-la-gimnaziu-si-liceu-activitatile-prevazute-si-model-de-cerere-pentru-inscriere/",
+        "urlText": "edupedu.ro"
+      }
+    },
+    {
       "id": "rechizite-gratuite-2026",
       "titlu": "Rechizite școlare gratuite: cererile se depun până vineri, 11 septembrie",
       "data": "2026-09-09",
