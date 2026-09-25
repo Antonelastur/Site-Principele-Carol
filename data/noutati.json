@@ -4,6 +4,24 @@
   "aniScolari": ["2026-2027", "2025-2026"],
   "stiri": [
     {
+      "id": "simulare-regionala-en-decembrie-2026",
+      "titlu": "Simulare regională a Evaluării Naționale, în decembrie, pentru elevii de clasa a VIII-a",
+      "data": "2026-09-25",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "pePrimaPagina": true,
+      "context": "Anunț ISJ Suceava",
+      "rezumat": "Elevii de clasa a VIII-a din județul Suceava vor susține, în perioada **7–9 decembrie 2026**, o simulare regională a Evaluării Naționale, alături de elevii din Botoșani, Neamț, Iași, Bacău și Vaslui. Probele sunt la Limba și literatura română, Matematică și limba maternă, iar lucrările se corectează pe platforma Ministerului Educației.",
+      "corp": "Inspectoratul Școlar Județean Suceava, împreună cu alte cinci județe din regiune — Botoșani, Neamț, Iași, Bacău și Vaslui — organizează în luna decembrie o simulare regională a Evaluării Naționale pentru elevii de clasa a VIII-a (și a Bacalaureatului pentru elevii de clasa a XII-a), în perioada **7–9 decembrie 2026**.\n\n## Ce trebuie să știe elevii de clasa a VIII-a\n\n- Probele sunt la **Limba și literatura română**, **Matematică** și **Limba și literatura maternă** (pentru elevii care studiază în limba maternă).\n- Fiecare județ din regiune pregătește câte o variantă de subiecte pentru fiecare disciplină; una dintre variante este aleasă pentru a fi susținută de toți elevii din cele șase județe.\n- Corectarea lucrărilor se face **pe platforma Ministerului Educației**, la fel ca la Evaluarea Națională propriu-zisă.\n\nSimularea este o repetiție utilă înaintea Evaluării Naționale din vară: elevii se obișnuiesc cu formatul probelor și cu modul de notare, iar profesorii și părinții pot vedea din timp la ce capitole mai este nevoie de recapitulare.",
+      "sursa": {
+        "text": "Declarațiile șefului ISJ Suceava, potrivit Edupedu.ro.",
+        "url": "https://www.edupedu.ro/elevii-de-clasele-a-viii-a-si-a-xii-a-din-judetele-suceava-botosani-neamt-iasi-bacau-si-vaslui-vor-sustine-in-luna-decembrie-o-simulare-regionala-pentru-evaluarea-nationala-si-bac-2027-seful-isj/",
+        "urlText": "edupedu.ro"
+      }
+    },
+    {
       "id": "ore-remediale-2026-2027",
       "titlu": "Orele remediale în anul școlar 2026-2027: ce trebuie să știe părinții",
       "data": "2026-09-14",
