@@ -49,8 +49,13 @@
                 return;
             }
             randuri.forEach(function (r) {
+                var btn = r.match(/^=>\s*\[([^\]]+)\]\(([^)\s]+)\)$/);
                 var img = r.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
-                if (img) {
+                if (btn) {
+                    var ext = /^https?:/i.test(btn[2]);
+                    out.push('<p class="news-btn"><a class="btn btn-gold" href="' + esc(btn[2]) + '"' +
+                        (ext ? ' target="_blank" rel="noopener"' : '') + '>' + esc(btn[1]) + '</a></p>');
+                } else if (img) {
                     out.push('<img class="article-hero-img" src="' + esc(img[2]) +
                         '" alt="' + esc(img[1]) + '" loading="lazy">');
                 } else if (r.indexOf('## ') === 0) {
@@ -96,7 +101,8 @@
             (s.id ? ' id="' + esc(s.id) + '"' : '') + '>';
         if (s.imagine) {
             h += '<img src="' + esc(s.imagine) + '" alt="' + esc(s.imagineAlt || s.titlu) +
-                '" loading="lazy">';
+                '" loading="lazy"' +
+                (s.imaginePoz ? ' style="object-position:' + esc(s.imaginePoz) + '"' : '') + '>';
         }
         h += '<div class="card-body">';
         if (s.publicat === false) h += '<span class="badge-educatie">Ciornă</span>';
