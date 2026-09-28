@@ -4,6 +4,40 @@
   "aniScolari": ["2026-2027", "2025-2026"],
   "stiri": [
     {
+      "id": "protest-uniforma-obligatorie-2026",
+      "titlu": "Proiect de lege pentru uniformă obligatorie în școli: elevii au protestat în toată țara",
+      "data": "2026-09-28",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "context": "Din educație",
+      "rezumat": "Pe 28 septembrie, mii de elevi din toată țara s-au îmbrăcat în negru pentru a protesta față de un proiect de lege care ar introduce uniforma obligatorie în școlile de stat. Proiectul este, pentru moment, doar în dezbatere parlamentară și nu este o regulă în vigoare.",
+      "corp": "Pe 28 septembrie 2026, mii de elevi din școli din toată țara s-au îmbrăcat în negru, la inițiativa Consiliului Național al Elevilor, pentru a protesta față de un proiect de lege care ar introduce uniforma obligatorie în învățământul de stat. Protestul s-a desfășurat fără întreruperea cursurilor, elevii adunându-se în curțile școlilor cu mesaje precum „Educația nu se repară la croitorie!”.\n\n## Ce prevede proiectul\n\nProiectul de lege a fost inițiat de senatorul PSD Daniel Zamfir și ar impune uniforma obligatorie în școlile de stat. Este, pentru moment, doar un proiect legislativ, aflat în dezbatere parlamentară — **nu o regulă în vigoare**. Nu se schimbă nimic la Școala Gimnazială „Principele Carol” în urma acestui proiect, atâta timp cât el nu este adoptat.\n\n## De ce privește și gimnaziul\n\nDacă proiectul ar fi adoptat, uniforma obligatorie s-ar aplica întregului învățământ de stat, inclusiv gimnaziului. Vom urmări evoluția proiectului și vă vom informa dacă apar modificări care privesc direct elevii noștri.",
+      "sursa": {
+        "text": "Edupedu.ro.",
+        "url": "https://www.edupedu.ro/foto-mii-de-elevi-s-au-imbracat-in-negru-in-scoli-din-tara-in-protestul-fata-de-proiectul-de-lege-care-le-ar-impune-uniforma-obligatorie-la-scoala/",
+        "urlText": "edupedu.ro"
+      }
+    },
+    {
+      "id": "regula-teme-max-2-ore-gimnaziu",
+      "titlu": "Câte teme pot primi elevii de gimnaziu? Regula celor 2 ore pe zi",
+      "data": "2026-09-28",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "context": "Din educație",
+      "rezumat": "Elevii de gimnaziu și de liceu pot primi cel mult 2 ore de teme pe zi, potrivit Ordinului nr. 6.854/2025 al Ministerului Educației. Temele nu pot fi folosite ca pedeapsă, iar respectarea limitei este monitorizată de diriginți.",
+      "corp": "Un consilier educațional a reamintit, într-un interviu pentru Edupedu.ro, regulile în vigoare privind temele pentru acasă, în contextul unor date recente PISA potrivit cărora 75% dintre elevii români cer ajutor atunci când temele sunt prea dificile.\n\n## Ce prevede regula\n\n- Elevii de **gimnaziu și liceu** pot primi cel mult **2 ore de teme pe zi**, potrivit Ordinului nr. 6.854/2025 al Ministerului Educației.\n- Temele **nu pot fi folosite ca pedeapsă**.\n- Volumul temelor este **limitat și în vacanțe**; se pot da doar teme suplimentare opționale, la nivel primar și gimnazial.\n- **Diriginții monitorizează** respectarea limitei și, dacă este cazul, semnalează situațiile în care aceasta este depășită.\n\n## Ce pot face părinții\n\nDacă un elev primește constant mai mult de 2 ore de teme pe zi, părinții pot discuta întâi cu profesorul disciplinei respective și, dacă problema persistă, se pot adresa dirigintelui clasei.",
+      "sursa": {
+        "text": "Edupedu.ro.",
+        "url": "https://www.edupedu.ro/consilier-educational-cred-ca-fiecare-profesor-poate-sa-decida-fara-sa-fie-neaparat-supravegheat-de-cineva-daca-sunt-necesare-sau-nu-anumite-teme-la-anumite-lectii-75-dintre-elevii-romani-cer-aju/",
+        "urlText": "edupedu.ro"
+      }
+    },
+    {
       "id": "simulare-regionala-en-decembrie-2026",
       "titlu": "Simulare regională a Evaluării Naționale, în decembrie, pentru elevii de clasa a VIII-a",
       "data": "2026-09-25",
