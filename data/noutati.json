@@ -4,6 +4,26 @@
   "aniScolari": ["2026-2027", "2025-2026"],
   "stiri": [
     {
+      "id": "future-ready-7-inscrieri-2026",
+      "titlu": "Future Ready 7.0: cursuri gratuite pentru elevi de 10–14 ani, despre siguranță online, gândire critică și educație financiară",
+      "data": "2026-09-28",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "context": "Din educație",
+      "imagine": "images/future-ready-7-afis.jpg",
+      "imagineAlt": "Afiș Future Ready 7.0: program național gratuit pentru copii de 10-14 ani, octombrie 2026 - iunie 2027, securitate cibernetică, gândire critică, educație financiară, printare 3D",
+      "imaginePoz": "top",
+      "rezumat": "Simplon România a deschis înscrierile la **Future Ready 7.0**, program național gratuit pentru copii de 10–14 ani — exact vârsta elevilor de gimnaziu. Din octombrie 2026 până în iunie 2027 sunt cursuri online și ateliere despre securitate cibernetică, gândire critică, educație financiară și printare 3D, mai ales pentru elevii din mediul rural și din orașele mici.",
+      "corp": "Organizația nonprofit **Simplon România** a deschis înscrierile pentru **Future Ready 7.0**, un program național de educație non-formală, complet gratuit, pentru copii de **10–14 ani** — exact vârsta elevilor de gimnaziu, clasele V–VIII. Programul se adresează în special elevilor din mediul rural și din orașele mici și se desfășoară din **octombrie 2026 până în iunie 2027**.\n\n## Ce cuprinde programul\n\n- **Securitate cibernetică** — prima sesiune online, în perioada **6–8 octombrie 2026**\n- **Gândire critică și analiza informației** — sesiune online, **10–12 noiembrie 2026**\n- **Educație financiară**\n- **Printare 3D și tehnologie creativă** — temă nouă, la prima ei ediție în program\n\nPe lângă cursurile online, programul include **ateliere practice** și activități de implicare a comunității.\n\n## Cum se înscrie un copil\n\nToate activitățile sunt gratuite. Înscrierea se face pe pagina proiectului, de pe site-ul Simplon România:\n\n=> [Înscrie copilul la Future Ready 7.0](https://simplonromania.org/proiect/future-ready-7/)\n\nArticolul-sursă nu menționează un termen-limită de înscriere, dar prima sesiune (securitate cibernetică) începe deja pe **6 octombrie**, așa că recomandăm părinților interesați să nu amâne înscrierea.",
+      "sursa": {
+        "text": "Edupedu.ro.",
+        "url": "https://www.edupedu.ro/inscrieri-deschise-pentru-elevii-de-10-14-ani-la-cursurile-gratuite-din-future-ready-7-0-programul-national-de-educatie-non-formala-pentru-dezvoltarea-unor-competente-utile-in-viata-de-zi-cu-zi-secu/",
+        "urlText": "edupedu.ro"
+      }
+    },
+    {
       "id": "protest-uniforma-obligatorie-2026",
       "titlu": "Proiect de lege pentru uniformă obligatorie în școli: elevii au protestat în toată țara",
       "data": "2026-09-28",
