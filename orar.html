@@ -49,7 +49,6 @@
     .orar-cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; margin: 26px 0 12px; }
     .orar-cap .orar-titlu { margin: 0; }
     .orar-pdf { display: flex; flex-wrap: wrap; gap: 8px; }
-    .orar-pdf .btn-outline, .orar-pdf .btn-outline:visited { color: #001F3F !important; border: 1.5px solid #D4AF37 !important; background: #fff !important; }
     .orar-zile { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
     .orar-zi { background: #fff; border: 1.5px solid #e7dcc0; border-radius: 12px; overflow: hidden; }
     .orar-zi.azi { border-color: #D4AF37; box-shadow: 0 0 0 2px #D4AF37; }
@@ -113,7 +112,7 @@
             <div id="orar-clase" class="orar-clase" role="tablist" aria-label="Clasa"></div>
             <div class="orar-cap">
                 <h3 id="orar-titlu" class="orar-titlu"></h3>
-                <div class="orar-pdf"><a id="orar-pdf" class="btn btn-navy" href="docs/orar/orar_gimnaziu.pdf" download>Descarcă PDF</a><a class="btn btn-outline" href="docs/orar/orar_gimnaziu.pdf" download>Toate clasele V-VIII (PDF)</a></div>
+                <div class="orar-pdf"><a id="orar-pdf" class="btn btn-navy" href="#" download>Descarcă PDF</a></div>
             </div>
             <div id="orar-zile" class="orar-zile"><p>Se încarcă orarul…</p></div>
 
@@ -173,6 +172,7 @@ fetch('data/orar.json', { cache: 'no-cache' }).then(function (r) { return r.json
     function arata(c) {
         bara.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-selected', b.textContent === c); });
         document.getElementById('orar-pdf').href = 'docs/orar/orar_' + { V: 5, VI: 6, VII: 7, VIII: 8 }[c.split(' ')[0]] + c.split(' ')[1].toLowerCase() + '.pdf';
+        document.getElementById('orar-pdf').textContent = 'Descarcă orarul clasei a ' + c.replace(' ', '-a ') + ' (PDF)';
         document.getElementById('orar-titlu').textContent = 'Clasa a ' + c.replace(' ', '-a ') + ' · ' + o.anScolar;
         document.getElementById('orar-zile').innerHTML = o.zile.map(function (z) {
             var ore = o.clase[c][z].map(function (m, i) { return m ? '<li><span>' + o.ore[i] + '</span>' + m + '</li>' : ''; }).join('');
