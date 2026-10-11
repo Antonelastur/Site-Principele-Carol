@@ -1,0 +1,397 @@
+{
+ "anScolar": "2026-2027",
+ "ore": [
+  "8-9",
+  "9-10",
+  "10-11",
+  "11-12",
+  "12-13",
+  "13-14",
+  "14-15"
+ ],
+ "zile": [
+  "Luni",
+  "Marți",
+  "Miercuri",
+  "Joi",
+  "Vineri"
+ ],
+ "clase": {
+  "V A": {
+   "Luni": [
+    "Română",
+    "Tehnologie",
+    "Matematică",
+    "Istorie",
+    "Religie",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Engleză",
+    "Română",
+    "Opțional",
+    "Biologie",
+    "Muzică",
+    "Desen",
+    ""
+   ],
+   "Miercuri": [
+    "Ed. socială",
+    "Consiliere",
+    "Română",
+    "Matematică",
+    "Ed. fizică",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Engleză",
+    "Franceză",
+    "Geografie",
+    "TIC",
+    "Matematică",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Matematică",
+    "Franceză",
+    "Română",
+    "Istorie",
+    "Ed. fizică",
+    "",
+    ""
+   ]
+  },
+  "V B": {
+   "Luni": [
+    "Ed. fizică",
+    "Română",
+    "Istorie",
+    "Matematică",
+    "Tehnologie",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Desen",
+    "Matematică",
+    "Franceză",
+    "Română",
+    "Opțional",
+    "Muzică",
+    ""
+   ],
+   "Miercuri": [
+    "Ed. fizică",
+    "Română",
+    "Geografie",
+    "Engleză",
+    "Religie",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Matematică",
+    "Consiliere",
+    "Franceză",
+    "Biologie",
+    "TIC",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Română",
+    "Matematică",
+    "Istorie",
+    "Engleză",
+    "Ed. socială",
+    "",
+    ""
+   ]
+  },
+  "VI A": {
+   "Luni": [
+    "Română",
+    "Română",
+    "Matematică",
+    "Biologie",
+    "Geografie",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Franceză",
+    "Muzică",
+    "Opțional",
+    "Matematică",
+    "Desen",
+    "Istorie",
+    ""
+   ],
+   "Miercuri": [
+    "Tehnologie",
+    "Ed. fizică",
+    "Engleză",
+    "Matematică",
+    "Consiliere",
+    "Religie",
+    ""
+   ],
+   "Joi": [
+    "Biologie",
+    "Fizică",
+    "Română",
+    "Română",
+    "Franceză",
+    "TIC",
+    ""
+   ],
+   "Vineri": [
+    "Ed. fizică",
+    "Matematică",
+    "Ed. socială",
+    "Engleză",
+    "Fizică",
+    "",
+    ""
+   ]
+  },
+  "VI B": {
+   "Luni": [
+    "Matematică",
+    "Opțional",
+    "Română",
+    "Română",
+    "Franceză",
+    "Consiliere",
+    ""
+   ],
+   "Marți": [
+    "Matematică",
+    "Fizică",
+    "Desen",
+    "Istorie",
+    "Biologie",
+    "Religie",
+    ""
+   ],
+   "Miercuri": [
+    "Română",
+    "Română",
+    "Tehnologie",
+    "Ed. fizică",
+    "Engleză",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Franceză",
+    "TIC",
+    "Matematică",
+    "Matematică",
+    "Biologie",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Muzică",
+    "Ed. fizică",
+    "Engleză",
+    "Fizică",
+    "Geografie",
+    "Ed. socială",
+    ""
+   ]
+  },
+  "VII A": {
+   "Luni": [
+    "Franceză",
+    "Muzică",
+    "Biologie",
+    "Fizică",
+    "Matematică",
+    "Chimie",
+    "TIC"
+   ],
+   "Marți": [
+    "Fizică",
+    "Matematică",
+    "Chimie",
+    "Desen",
+    "Engleză",
+    "Ed. fizică",
+    ""
+   ],
+   "Miercuri": [
+    "Matematică",
+    "Tehnologie",
+    "Română",
+    "Română",
+    "Consiliere",
+    "Ed. fizică",
+    ""
+   ],
+   "Joi": [
+    "Latină",
+    "Biologie",
+    "Engleză",
+    "Istorie",
+    "Matematică",
+    "Franceză",
+    ""
+   ],
+   "Vineri": [
+    "Română",
+    "Română",
+    "Opțional",
+    "Religie",
+    "Geografie",
+    "Ed. socială",
+    ""
+   ]
+  },
+  "VII B": {
+   "Luni": [
+    "Muzică",
+    "Franceză",
+    "Tehnologie",
+    "Matematică",
+    "Biologie",
+    "TIC",
+    "Desen"
+   ],
+   "Marți": [
+    "Matematică",
+    "Franceză",
+    "Română",
+    "Română",
+    "Religie",
+    "Opțional",
+    ""
+   ],
+   "Miercuri": [
+    "Chimie",
+    "Istorie",
+    "Matematică",
+    "Engleză",
+    "Ed. fizică",
+    "Consiliere",
+    ""
+   ],
+   "Joi": [
+    "Matematică",
+    "Latină",
+    "Biologie",
+    "Chimie",
+    "Fizică",
+    "Engleză",
+    ""
+   ],
+   "Vineri": [
+    "Fizică",
+    "Ed. socială",
+    "Română",
+    "Română",
+    "Ed. fizică",
+    "Geografie",
+    ""
+   ]
+  },
+  "VIII A": {
+   "Luni": [
+    "Matematică",
+    "Ed. fizică",
+    "Franceză",
+    "Tehnologie",
+    "Fizică",
+    "Istorie",
+    ""
+   ],
+   "Marți": [
+    "Română",
+    "Română",
+    "Matematică",
+    "Muzică",
+    "Geografie",
+    "Biologie",
+    "TIC"
+   ],
+   "Miercuri": [
+    "Engleză",
+    "Chimie",
+    "Ed. socială",
+    "Desen",
+    "Matematică",
+    "Consiliere",
+    ""
+   ],
+   "Joi": [
+    "Română",
+    "Română",
+    "Fizică",
+    "Matematică",
+    "Engleză",
+    "Istorie",
+    ""
+   ],
+   "Vineri": [
+    "Franceză",
+    "Religie",
+    "Chimie",
+    "Ed. fizică",
+    "Engleză",
+    "Geografie",
+    ""
+   ]
+  },
+  "VIII B": {
+   "Luni": [
+    "Tehnologie",
+    "Matematică",
+    "Română",
+    "Franceză",
+    "Engleză",
+    "Religie",
+    ""
+   ],
+   "Marți": [
+    "Română",
+    "Desen",
+    "Istorie",
+    "Consiliere",
+    "Ed. fizică",
+    "TIC",
+    "Muzică"
+   ],
+   "Miercuri": [
+    "Română",
+    "Matematică",
+    "Chimie",
+    "Istorie",
+    "Geografie",
+    "Engleză",
+    ""
+   ],
+   "Joi": [
+    "Fizică",
+    "Matematică",
+    "Opțional",
+    "Franceză",
+    "Geografie",
+    "Biologie",
+    ""
+   ],
+   "Vineri": [
+    "Matematică",
+    "Fizică",
+    "Ed. fizică",
+    "Română",
+    "Ed. socială",
+    "Chimie",
+    ""
+   ]
+  }
+ }
+}
