@@ -42,9 +42,8 @@
         table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
         table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
     }
-    .orar-clase { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .orar-clase button { font: inherit; font-weight: 700; padding: 8px 16px; border-radius: 999px; border: 1.5px solid #D4AF37; background: #fff; color: #001F3F; cursor: pointer; }
-    .orar-clase button[aria-selected="true"] { background: #001F3F; color: #F3E5AB; }
+    #orar-clase .quick-card[aria-current="true"] { box-shadow: 0 0 0 3px #D4AF37; }
+    .orar-cap { scroll-margin-top: 110px; }
     .orar-titlu { margin: 26px 0 12px; color: #001F3F; }
     .orar-cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; margin: 26px 0 12px; }
     .orar-cap .orar-titlu { margin: 0; }
@@ -108,9 +107,17 @@
             </div>
 
             <h2 class="section-title" id="gimnaziu" style="margin-top:56px;">Ciclul <span class="gold-text">gimnazial</span></h2>
-            <p style="margin-top:10px; color:var(--color-text-muted);">Alege clasa. Ziua de azi e evidențiată.</p>
-            <div id="orar-clase" class="orar-clase" role="tablist" aria-label="Clasa"></div>
-            <div class="orar-cap">
+            <div id="orar-clase" class="grid grid-4" style="margin-top:26px;">
+                <a class="card quick-card reveal" href="#VA" data-clasa="V A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a V-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VB" data-clasa="V B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a V-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VIA" data-clasa="VI A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VI-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VIB" data-clasa="VI B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VI-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VIIA" data-clasa="VII A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VII-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VIIB" data-clasa="VII B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VII-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VIIIA" data-clasa="VIII A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VIII-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#VIIIB" data-clasa="VIII B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VIII-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+            </div>
+            <div id="orar-cap" class="orar-cap">
                 <h3 id="orar-titlu" class="orar-titlu"></h3>
                 <div class="orar-pdf"><a id="orar-pdf" class="btn btn-navy" href="#" download>Descarcă PDF</a></div>
             </div>
@@ -166,11 +173,11 @@
 <script>
 // Orarul gimnaziului, din data/orar.json (generat cu tools/orar_din_docx.py). Clasa aleasă stă în adresă: orar.html#VA
 fetch('data/orar.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (o) {
-    var clase = Object.keys(o.clase), bara = document.getElementById('orar-clase');
+    var clase = Object.keys(o.clase), carduri = document.querySelectorAll('#orar-clase a');
     var azi = ['', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', ''][new Date().getDay()];
     var cheie = function (c) { return c.replace(/\s/g, ''); };
     function arata(c) {
-        bara.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-selected', b.textContent === c); });
+        carduri.forEach(function (a) { a.setAttribute('aria-current', a.dataset.clasa === c); });
         document.getElementById('orar-pdf').href = 'docs/orar/orar_' + { V: 5, VI: 6, VII: 7, VIII: 8 }[c.split(' ')[0]] + c.split(' ')[1].toLowerCase() + '.pdf';
         document.getElementById('orar-pdf').textContent = 'Descarcă orarul clasei a ' + c.replace(' ', '-a ') + ' (PDF)';
         document.getElementById('orar-titlu').textContent = 'Clasa a ' + c.replace(' ', '-a ') + ' · ' + o.anScolar;
@@ -179,14 +186,14 @@ fetch('data/orar.json', { cache: 'no-cache' }).then(function (r) { return r.json
             return '<div class="orar-zi' + (z === azi ? ' azi' : '') + '"><h4>' + z + '</h4><ol>' + ore + '</ol></div>';
         }).join('');
     }
-    clase.forEach(function (c) {
-        var b = document.createElement('button');
-        b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = c;
-        b.onclick = function () { history.replaceState(null, '', '#' + cheie(c)); arata(c); };
-        bara.appendChild(b);
-    });
-    var h = location.hash.slice(1).toUpperCase();
-    arata(clase.filter(function (c) { return cheie(c) === h; })[0] || clase[0]);
+    // cardurile sunt linkuri #VA, #VB ...: clic pe card = schimba adresa = arata orarul clasei, sub carduri
+    function dinAdresa(sari) {
+        var h = location.hash.slice(1).toUpperCase(), c = clase.filter(function (c) { return cheie(c) === h; })[0];
+        arata(c || clase[0]);
+        if (c && sari) document.getElementById('orar-cap').scrollIntoView({ behavior: 'smooth' });
+    }
+    window.addEventListener('hashchange', function () { dinAdresa(true); });
+    dinAdresa(true);
 }).catch(function () {
     document.getElementById('orar-zile').innerHTML = '<p>Orarul nu s-a putut încărca. Reîncarcă pagina.</p>';
 });
