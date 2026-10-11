@@ -42,8 +42,19 @@
         table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
         table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
     }
-    #orar-clase .quick-card[aria-current="true"] { box-shadow: 0 0 0 3px #D4AF37; }
+    /* carduri pe ani de studiu: coloana = anul, sus A, jos B; aceeasi latime a cardului la primar (5) si gimnaziu (4) */
+    .orar-grid { display: grid; gap: 20px; margin-top: 26px; grid-auto-flow: column; grid-template-rows: auto auto; grid-auto-columns: 1fr; }
+    .orar-grid-4 { width: calc(80% - 4px); margin-left: auto; margin-right: auto; }
+    @media (max-width: 1023px) {
+        .orar-grid { grid-auto-flow: row; grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+        .orar-grid-4 { width: auto; }
+    }
+    .orar-grid .quick-card[aria-current="true"] { box-shadow: 0 0 0 3px #D4AF37; }
+    .orar-grid .orar-curand { pointer-events: none; box-shadow: none; }
+    .orar-grid .orar-curand > * { opacity: .45; }
     .orar-cap { scroll-margin-top: 110px; }
+    .orar-nota { margin-top: 14px; color: #001F3F; font-weight: 600; }
+    .orar-nota:empty { display: none; }
     .orar-titlu { margin: 26px 0 12px; color: #001F3F; }
     .orar-cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; margin: 26px 0 12px; }
     .orar-cap .orar-titlu { margin: 0; }
@@ -95,19 +106,21 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Ciclul <span class="gold-text">primar</span></h2>
-            <div class="grid grid-4" style="margin-top:26px;">
-                <a class="card quick-card reveal" href="docs/orar/orar_1a.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa I A</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_1b.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa I B</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_2a.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a II-a A</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_2b.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a II-a B</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_3a.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a III-a A</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_3b.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a III-a B</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_4a.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a IV-a A</h3><span class="qc-go">Deschide PDF →</span></a>
-                <a class="card quick-card reveal" href="docs/orar/orar_4b.pdf" target="_blank" rel="noopener"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a IV-a B</h3><span class="qc-go">Deschide PDF →</span></a>
+            <div class="orar-grid orar-grid-5">
+                <a class="card quick-card reveal" href="#CPA" data-clasa="CP A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa pregătitoare A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#CPB" data-clasa="CP B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa pregătitoare B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IA" data-clasa="I A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa I A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IB" data-clasa="I B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa I B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IIA" data-clasa="II A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a II-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IIB" data-clasa="II B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a II-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IIIA" data-clasa="III A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a III-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IIIB" data-clasa="III B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a III-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IVA" data-clasa="IV A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a IV-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
+                <a class="card quick-card reveal" href="#IVB" data-clasa="IV B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a IV-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
             </div>
 
             <h2 class="section-title" id="gimnaziu" style="margin-top:56px;">Ciclul <span class="gold-text">gimnazial</span></h2>
-            <div id="orar-clase" class="grid grid-4" style="margin-top:26px;">
+            <div class="orar-grid orar-grid-4">
                 <a class="card quick-card reveal" href="#VA" data-clasa="V A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a V-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
                 <a class="card quick-card reveal" href="#VB" data-clasa="V B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a V-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
                 <a class="card quick-card reveal" href="#VIA" data-clasa="VI A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VI-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
@@ -117,11 +130,15 @@
                 <a class="card quick-card reveal" href="#VIIIA" data-clasa="VIII A"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VIII-a A</h3><span class="qc-go">Vezi orarul ↓</span></a>
                 <a class="card quick-card reveal" href="#VIIIB" data-clasa="VIII B"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg> </span><h3>Clasa a VIII-a B</h3><span class="qc-go">Vezi orarul ↓</span></a>
             </div>
-            <div id="orar-cap" class="orar-cap">
-                <h3 id="orar-titlu" class="orar-titlu"></h3>
-                <div class="orar-pdf"><a id="orar-pdf" class="btn btn-navy" href="#" download>Descarcă PDF</a></div>
+
+            <div id="orar-vedere" hidden>
+                <div id="orar-cap" class="orar-cap">
+                    <h3 id="orar-titlu" class="orar-titlu"></h3>
+                    <div class="orar-pdf"><a id="orar-pdf" class="btn btn-navy" href="#" download>Descarcă PDF</a></div>
+                </div>
+                <div id="orar-zile" class="orar-zile"></div>
+                <p id="orar-nota" class="orar-nota"></p>
             </div>
-            <div id="orar-zile" class="orar-zile"><p>Se încarcă orarul…</p></div>
 
             <div class="grid grid-2" style="margin-top:40px; max-width:620px;">
                 <a class="card quick-card reveal" href="structura-anului-scolar.html"><span class="qc-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg> </span><h3>Structura anului școlar</h3><p>Module, vacanțe și zile libere, 2026-2027</p><span class="qc-go">Vezi calendarul →</span></a>
@@ -171,31 +188,47 @@
 </footer>
 <script src="js/main.js?v=32"></script>
 <script>
-// Orarul gimnaziului, din data/orar.json (generat cu tools/orar_din_docx.py). Clasa aleasă stă în adresă: orar.html#VA
+// Orarul claselor, din data/orar.json (generat cu tools/orar_din_docx.py; PDF-urile cu tools/orar_pdf.py).
+// Cardurile sunt linkuri #CPA, #VA ...: clic = orarul clasei apare sub grupul ei de carduri. Clasa fara orar in JSON = „Orar în curând”.
 fetch('data/orar.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (o) {
-    var clase = Object.keys(o.clase), carduri = document.querySelectorAll('#orar-clase a');
+    var carduri = [].slice.call(document.querySelectorAll('.orar-grid a[data-clasa]'));
+    var vedere = document.getElementById('orar-vedere'), pdf = document.getElementById('orar-pdf');
     var azi = ['', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', ''][new Date().getDay()];
+    var AN = { CP: 'cp', I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8 };
     var cheie = function (c) { return c.replace(/\s/g, ''); };
+    var eticheta = function (c) {
+        var p = c.split(' ');
+        return 'Clasa ' + (p[0] === 'CP' ? 'pregătitoare ' : p[0] === 'I' ? 'I ' : 'a ' + p[0] + '-a ') + p[1];
+    };
+    carduri.forEach(function (a) {
+        if (o.clase[a.dataset.clasa]) return;
+        a.classList.add('orar-curand'); a.removeAttribute('href');
+        a.querySelector('.qc-go').textContent = 'Orar în curând';
+    });
     function arata(c) {
         carduri.forEach(function (a) { a.setAttribute('aria-current', a.dataset.clasa === c); });
-        document.getElementById('orar-pdf').href = 'docs/orar/orar_' + { V: 5, VI: 6, VII: 7, VIII: 8 }[c.split(' ')[0]] + c.split(' ')[1].toLowerCase() + '.pdf';
-        document.getElementById('orar-pdf').textContent = 'Descarcă orarul clasei a ' + c.replace(' ', '-a ') + ' (PDF)';
-        document.getElementById('orar-titlu').textContent = 'Clasa a ' + c.replace(' ', '-a ') + ' · ' + o.anScolar;
+        var card = carduri.filter(function (a) { return a.dataset.clasa === c; })[0];
+        card.parentNode.parentNode.insertBefore(vedere, card.parentNode.nextSibling);
+        vedere.hidden = false;
+        var p = c.split(' ');
+        pdf.href = 'docs/orar/orar_' + AN[p[0]] + p[1].toLowerCase() + '.pdf';
+        pdf.textContent = 'Descarcă orarul (PDF)';
+        document.getElementById('orar-titlu').textContent = eticheta(c) + ' · ' + o.anScolar;
         document.getElementById('orar-zile').innerHTML = o.zile.map(function (z) {
             var ore = o.clase[c][z].map(function (m, i) { return m ? '<li><span>' + o.ore[i] + '</span>' + m + '</li>' : ''; }).join('');
             return '<div class="orar-zi' + (z === azi ? ' azi' : '') + '"><h4>' + z + '</h4><ol>' + ore + '</ol></div>';
         }).join('');
+        document.getElementById('orar-nota').textContent = (o.note || {})[c] || '';
     }
-    // cardurile sunt linkuri #VA, #VB ...: clic pe card = schimba adresa = arata orarul clasei, sub carduri
     function dinAdresa(sari) {
-        var h = location.hash.slice(1).toUpperCase(), c = clase.filter(function (c) { return cheie(c) === h; })[0];
-        arata(c || clase[0]);
-        if (c && sari) document.getElementById('orar-cap').scrollIntoView({ behavior: 'smooth' });
+        var h = location.hash.slice(1).toUpperCase();
+        var c = Object.keys(o.clase).filter(function (c) { return cheie(c) === h; })[0];
+        if (!c) { vedere.hidden = true; return; }
+        arata(c);
+        if (sari) document.getElementById('orar-cap').scrollIntoView({ behavior: 'smooth' });
     }
     window.addEventListener('hashchange', function () { dinAdresa(true); });
     dinAdresa(true);
-}).catch(function () {
-    document.getElementById('orar-zile').innerHTML = '<p>Orarul nu s-a putut încărca. Reîncarcă pagina.</p>';
 });
 </script>
 </body>

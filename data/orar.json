@@ -17,6 +17,194 @@
   "Vineri"
  ],
  "clase": {
+  "CP A": {
+   "Luni": [
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Educație fizică",
+    "Dezvoltare personală",
+    "",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Comunicare în limba română",
+    "Religie",
+    "Matematică și explorarea mediului",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Dezvoltare personală",
+    "",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Comunicare în limba română",
+    "Limba engleză",
+    "Matematică și explorarea mediului",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Arte vizuale și abilități practice",
+    "Educație fizică",
+    "Arte vizuale și abilități practice",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "CP B": {
+   "Luni": [
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Religie",
+    "Dezvoltare personală",
+    "",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Comunicare în limba română",
+    "Educație fizică",
+    "Matematică și explorarea mediului",
+    "Arte vizuale și abilități practice",
+    "",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Comunicare în limba română",
+    "Educație fizică",
+    "Matematică și explorarea mediului",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Matematică și explorarea mediului",
+    "Comunicare în limba română",
+    "Dezvoltare personală",
+    "Muzică și mișcare",
+    "Pregătire remedială",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Comunicare în limba română",
+    "Limba engleză",
+    "Arte vizuale și abilități practice",
+    "Pregătire remedială",
+    "",
+    "",
+    ""
+   ]
+  },
+  "III A": {
+   "Luni": [
+    "Matematică",
+    "Limba engleză",
+    "Limba și literatura română",
+    "Joc și mișcare",
+    "Opțional - „Scriem frumos, scriem cu plăcere”",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Matematică",
+    "Limba și literatura română",
+    "Educație fizică",
+    "Limba și literatura română",
+    "Pregătire remedială / de performanță",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Matematică",
+    "Limba și literatura română",
+    "Religie",
+    "Muzică și mișcare",
+    "Pregătire remedială / de performanță",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Matematică",
+    "Limba și literatura română",
+    "Educație civică",
+    "Limba engleză",
+    "",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Științe ale naturii",
+    "Arte vizuale și abilități practice",
+    "Educație fizică",
+    "Arte vizuale și abilități practice",
+    "",
+    "",
+    ""
+   ]
+  },
+  "IV A": {
+   "Luni": [
+    "Educație fizică",
+    "Limba și literatura română",
+    "Matematică",
+    "Educație civică",
+    "Pregătire remedială",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Religie",
+    "Limba și literatura română",
+    "Matematică",
+    "Istorie",
+    "",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Limba și literatura română",
+    "Matematică",
+    "Geografie",
+    "Muzică și mișcare",
+    "Pregătire pentru performanță",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Educație fizică",
+    "Limba și literatura română",
+    "Matematică",
+    "Științe ale naturii",
+    "",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Limba și literatura română",
+    "Arte vizuale și abilități practice",
+    "Limba engleză",
+    "Limba engleză",
+    "Joc și mișcare",
+    "",
+    ""
+   ]
+  },
   "V A": {
    "Luni": [
     "Română",
@@ -393,5 +581,10 @@
     ""
    ]
   }
+ },
+ "note": {
+  "CP A": "Consiliere cu părinții: luni, 9-10",
+  "CP B": "Consiliere cu părinții: marți, 9-10",
+  "IV A": "Consiliere cu părinții: luni, 8-9"
  }
 }
