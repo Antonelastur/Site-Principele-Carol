@@ -42,6 +42,12 @@
         table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
         table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
     }
+    .echipa-grup { margin: 40px 0 18px; color: #001F3F; font-size: 1.25rem; }
+    .grid-4.echipa-grid { grid-template-columns: repeat(auto-fill, minmax(min(190px, 40%), 1fr)); gap: 20px; }
+    .echipa-grid .avatar, .echipa-grid img { display: flex; align-items: center; justify-content: center; width: 110px; height: 110px; border-radius: 50%; margin: 24px auto 0; border: 3px solid #D4AF37; background: #12365e; color: #F3E5AB; font-family: var(--font-serif); font-size: 2.1rem; font-weight: 700; letter-spacing: .04em; object-fit: cover; }
+    .echipa-grid .card-body { padding: 16px 16px 22px; }
+    .echipa-grid h3 { font-size: 1.02rem; margin: 4px 0 .3em; }
+    .echipa-grid p { font-size: .88rem; }
     </style>
 </head>
 <body>
@@ -122,6 +128,66 @@
                 <div class="card reveal"><div class="card-body"><h3>Catedra Diriginților</h3><p>Coordonarea educativă a claselor</p></div></div>
             </div>
             <p style="margin-top:30px;"><a class="btn btn-navy" href="documente.html#organigrama">Vezi organigrama completă</a></p>
+        </div>
+    </section>
+
+    <section class="section" id="cadre-didactice" style="padding-top:0;">
+        <div class="container">
+            <h2 class="section-title">Cadrele <span class="gold-text">didactice</span></h2>
+            <p class="section-sub">Anul școlar 2026-2027</p>
+            <h3 class="echipa-grup">Educație timpurie</h3>
+            <div class="grid grid-4 echipa-grid">
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">AL</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Adomniței Luminița</h3><p>Profesor educație timpurie</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">CD</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Chiriac Doina</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">DI</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Dolhascanu Ioana Diana</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">PM</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Popa Mihaela</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">RA</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Ruscan Andreea Daniela</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">ȘL</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Șoldănescu Laura Alexandra</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">ȘR</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Șuhani Rodica</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">UN</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Ursan Nicoleta</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">VG</span><div class="card-body"><span class="person-role">Grădiniță</span><h3>Vultur Gavrilean Oana</h3></div></div>
+            </div>
+            <h3 class="echipa-grup">Învățământ primar</h3>
+            <div class="grid grid-4 echipa-grid">
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">WE</span><div class="card-body"><span class="person-role">Clasa pregătitoare A</span><h3>Wendling Eva Petronela</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">FG</span><div class="card-body"><span class="person-role">Clasa pregătitoare B</span><h3>Frîncu Gabriela</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">ML</span><div class="card-body"><span class="person-role">Clasa I A</span><h3>Mihăilescu Loredana</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">DC</span><div class="card-body"><span class="person-role">Clasa I B</span><h3>Dobrea Cecilia Petruța</h3><p>Institutor</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">BE</span><div class="card-body"><span class="person-role">Clasa a II-a A</span><h3>Bartoș Eleonora</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">ED</span><div class="card-body"><span class="person-role">Clasa a II-a B</span><h3>Enia Dorina</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">VA</span><div class="card-body"><span class="person-role">Clasa a III-a A</span><h3>Vultur Anca</h3><p>Învățător</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">MR</span><div class="card-body"><span class="person-role">Clasa a III-a B</span><h3>Manoliu Rodica Elena</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">BM</span><div class="card-body"><span class="person-role">Clasa a IV-a A</span><h3>Bălăcian Mihaela</h3><p>Profesor învățământ primar</p></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">FM</span><div class="card-body"><span class="person-role">Clasa a IV-a B</span><h3>Floare Maria</h3><p>Profesor învățământ primar</p></div></div>
+            </div>
+            <h3 class="echipa-grup">Gimnaziu · Limbă și comunicare</h3>
+            <div class="grid grid-4 echipa-grid">
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">BN</span><div class="card-body"><span class="person-role">Limba și literatura română</span><h3>Beleca Nicoleta Viorica</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">PA</span><div class="card-body"><span class="person-role">Limba și literatura română</span><h3>Pohoață Antoanela</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">NN</span><div class="card-body"><span class="person-role">Limba engleză</span><h3>Nechitoaia Nicoleta Liliana</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">VS</span><div class="card-body"><span class="person-role">Limba engleză</span><h3>Varvaroi Simona Maria</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">ȘE</span><div class="card-body"><span class="person-role">Limba franceză</span><h3>Șoiman Emanuela Mona-Lisa</h3></div></div>
+            </div>
+            <h3 class="echipa-grup">Gimnaziu · Matematică și științe</h3>
+            <div class="grid grid-4 echipa-grid">
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">AE</span><div class="card-body"><span class="person-role">Matematică</span><h3>Aluculesei Emanuela</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">GM</span><div class="card-body"><span class="person-role">Matematică</span><h3>Gherghel Mariana</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">AA</span><div class="card-body"><span class="person-role">Biologie</span><h3>Andronic Adriana</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">BI</span><div class="card-body"><span class="person-role">Biologie</span><h3>Bîrzu Irina</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">DC</span><div class="card-body"><span class="person-role">Fizică-chimie</span><h3>Duca Cristina</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">BM</span><div class="card-body"><span class="person-role">Informatică</span><h3>Bratu Mihaela</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">CM</span><div class="card-body"><span class="person-role">Informatică</span><h3>Culidiuc Militina</h3></div></div>
+            </div>
+            <h3 class="echipa-grup">Gimnaziu · Om și societate, arte, sport</h3>
+            <div class="grid grid-4 echipa-grid">
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">SM</span><div class="card-body"><span class="person-role">Istorie-geografie</span><h3>Strugariu Mircea Nicolae</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">CM</span><div class="card-body"><span class="person-role">Geografie</span><h3>Crețu Mihaiela</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">MD</span><div class="card-body"><span class="person-role">Religie ortodoxă</span><h3>Moțoc Daniela Iulia</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">BF</span><div class="card-body"><span class="person-role">Educație plastică</span><h3>Batîr-Rusu Florin</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">FA</span><div class="card-body"><span class="person-role">Educație muzicală</span><h3>Franciuc Anca</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">MC</span><div class="card-body"><span class="person-role">Educație fizică și sport</span><h3>Mihalea Cristina</h3></div></div>
+                <div class="card person-card reveal"><span class="avatar" aria-hidden="true">PD</span><div class="card-body"><span class="person-role">Educație fizică și sport</span><h3>Pascal Dimitrie Dragomir</h3></div></div>
+            </div>
         </div>
     </section>
 
