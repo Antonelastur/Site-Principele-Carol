@@ -76,7 +76,7 @@ def main():
     o = json.load(open('data/orar.json', encoding='utf-8'))
     for clasa in o['clase']:
         an, lit = clasa.split()
-        c = canvas.Canvas('docs/orar/orar_%s%s.pdf' % (AN[an], lit.lower()), pagesize=(W, H))
+        c = canvas.Canvas('docs/orar/orar_%s%s.pdf' % (AN[an], lit.lower()), pagesize=(W, H), invariant=1)  # invariant: PDF-urile neschimbate raman identice
         c.setTitle('Orarul: %s, %s' % (eticheta(clasa), o['anScolar']))
         c.setAuthor(SCOALA); c.setCreator(SCOALA); c.setProducer(SCOALA)  # fara „ReportLab” in proprietatile PDF-ului
         pagina(c, o, clasa); c.save()
