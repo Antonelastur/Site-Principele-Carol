@@ -36,7 +36,7 @@ def pagina(c, o, clasa):
 
     zile = o['zile']; ore = o['clase'][clasa]
     n = max(i + 1 for z in zile for i, m in enumerate(ore[z]) if m)  # fara randurile goale de la final
-    date = [['Ora'] + zile] + [[o['ore'][i]] + [ore[z][i] for z in zile] for i in range(n)]
+    date = [['Ora'] + zile] + [[o['ore'][i]] + [ore[z][i].replace(' - ', '\n') for z in zile] for i in range(n)]
     lat = (W - 72 - 70) / 5
     t = Table(date, colWidths=[70] + [lat] * 5, rowHeights=[30] + [min(52, 360 / n)] * n)
     t.setStyle(TableStyle([
