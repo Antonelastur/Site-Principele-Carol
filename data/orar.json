@@ -111,6 +111,53 @@
     ""
    ]
   },
+  "I A": {
+   "Luni": [
+    "Matematică și explorarea mediului",
+    "Religie",
+    "Comunicare în limba română",
+    "Dezvoltare personală",
+    "",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Educație fizică",
+    "Limba engleză",
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Pregătire remedială",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Matematică și explorarea mediului",
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Matematică și explorarea mediului",
+    "Educație fizică",
+    "Arte vizuale și abilități practice",
+    "Arte vizuale și abilități practice",
+    "Pregătire pentru performanță",
+    "",
+    ""
+   ]
+  },
   "II B": {
    "Luni": [
     "Matematică și explorarea mediului",
@@ -295,6 +342,53 @@
     "Limba engleză",
     "Limba engleză",
     "Joc și mișcare",
+    "",
+    ""
+   ]
+  },
+  "IV B": {
+   "Luni": [
+    "Limba și literatura română",
+    "Matematică",
+    "Limba engleză",
+    "Educație fizică",
+    "Pregătire remedială",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Educație civică",
+    "Limba și literatura română",
+    "Matematică",
+    "Geografie",
+    "Muzică și mișcare",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Limba și literatura română",
+    "Matematică",
+    "Educație fizică",
+    "Religie",
+    "Pregătire pentru performanță",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Matematică",
+    "Limba și literatura română",
+    "Istorie",
+    "Științe ale naturii",
+    "Joc și mișcare",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Limba engleză",
+    "Limba și literatura română",
+    "Opțional - „Comorile lecturii, izvor de cunoaștere”",
+    "Arte vizuale și abilități practice",
+    "",
     "",
     ""
    ]
@@ -679,8 +773,10 @@
  "note": {
   "CP A": "Consiliere cu părinții: luni, 10-11",
   "CP B": "Consiliere cu părinții: marți, 9-10",
+  "I A": "Consiliere cu părinții: vineri, 9-10",
   "II B": "Consiliere cu părinții: vineri, 12-13",
   "III B": "Pregătire remedială: marți, 7.10-7.55 · Pregătire pentru performanță: miercuri, 7.10-7.55 · Consiliere cu părinții: vineri, 13-14",
-  "IV A": "Consiliere cu părinții: luni, 8-9"
+  "IV A": "Consiliere cu părinții: luni, 8-9",
+  "IV B": "Consiliere cu părinții: luni, 11-12"
  }
 }
