@@ -97,7 +97,7 @@
     "Comunicare în limba română",
     "Dezvoltare personală",
     "Muzică și mișcare",
-    "Pregătire remedială",
+    "",
     "",
     ""
    ],
@@ -105,7 +105,7 @@
     "Comunicare în limba română",
     "Limba engleză",
     "Arte vizuale și abilități practice",
-    "Pregătire remedială",
+    "",
     "",
     "",
     ""
@@ -126,7 +126,7 @@
     "Limba engleză",
     "Comunicare în limba română",
     "Comunicare în limba română",
-    "Pregătire remedială",
+    "",
     "",
     ""
    ],
@@ -153,7 +153,7 @@
     "Educație fizică",
     "Arte vizuale și abilități practice",
     "Arte vizuale și abilități practice",
-    "Pregătire pentru performanță",
+    "",
     "",
     ""
    ]
@@ -211,7 +211,7 @@
     "Comunicare în limba română",
     "Comunicare în limba română",
     "Muzică și mișcare",
-    "Pregătire remedială",
+    "",
     "",
     ""
    ],
@@ -229,7 +229,7 @@
     "Matematică și explorarea mediului",
     "Muzică și mișcare",
     "Educație fizică",
-    "Pregătire de performanță",
+    "",
     "",
     ""
    ],
@@ -267,7 +267,7 @@
     "Limba și literatura română",
     "Educație fizică",
     "Limba și literatura română",
-    "Pregătire remedială / de performanță",
+    "",
     "",
     ""
    ],
@@ -276,7 +276,7 @@
     "Limba și literatura română",
     "Religie",
     "Muzică și mișcare",
-    "Pregătire remedială / de performanță",
+    "",
     "",
     ""
    ],
@@ -352,7 +352,7 @@
     "Limba și literatura română",
     "Matematică",
     "Educație civică",
-    "Pregătire remedială / de performanță",
+    "",
     "",
     ""
    ],
@@ -370,7 +370,7 @@
     "Matematică",
     "Geografie",
     "Muzică și mișcare",
-    "Pregătire remedială / de performanță",
+    "",
     "",
     ""
    ],
@@ -399,7 +399,7 @@
     "Matematică",
     "Limba engleză",
     "Educație fizică",
-    "Pregătire remedială",
+    "",
     "",
     ""
    ],
@@ -417,7 +417,7 @@
     "Matematică",
     "Educație fizică",
     "Religie",
-    "Pregătire pentru performanță",
+    "",
     "",
     ""
    ],
@@ -819,12 +819,13 @@
  },
  "note": {
   "CP A": "Consiliere cu părinții: luni, 10-11",
-  "CP B": "Consiliere cu părinții: marți, 9-10",
-  "I A": "Consiliere cu părinții: vineri, 9-10",
+  "CP B": "Pregătire remedială: joi, 12-13 și vineri, 11-12 · Consiliere cu părinții: marți, 9-10",
+  "I A": "Pregătire remedială: marți, 12-13 · Pregătire pentru performanță: vineri, 12-13 · Consiliere cu părinții: vineri, 9-10",
   "II A": "Pregătire remedială, grupa 1: luni, 12-13 · Pregătire remedială, grupa 2: vineri, 12-13",
-  "II B": "Consiliere cu părinții: vineri, 12-13",
+  "II B": "Pregătire remedială: luni, 12-13 · Pregătire de performanță: miercuri, 12-13 · Consiliere cu părinții: vineri, 12-13",
+  "III A": "Pregătire remedială / de performanță: marți și miercuri, 12-13",
   "III B": "Pregătire remedială: marți, 7.10-7.55 · Pregătire pentru performanță: miercuri, 7.10-7.55 · Consiliere cu părinții: vineri, 13-14",
-  "IV A": "Consiliere cu părinții: luni, 8-9",
-  "IV B": "Consiliere cu părinții: luni, 11-12"
+  "IV A": "Pregătire remedială / de performanță: luni și miercuri, 12-13 · Consiliere cu părinții: luni, 8-9",
+  "IV B": "Pregătire remedială: luni, 12-13 · Pregătire pentru performanță: miercuri, 12-13 · Consiliere cu părinții: luni, 11-12"
  }
 }
