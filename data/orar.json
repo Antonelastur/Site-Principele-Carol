@@ -158,20 +158,67 @@
     ""
    ]
   },
-  "II A": {
+  "I B": {
    "Luni": [
+    "Limba engleză",
+    "Educație fizică",
     "Comunicare în limba română",
     "Matematică și explorarea mediului",
-    "Dezvoltare personală",
-    "Muzică și mișcare",
     "",
     "",
     ""
    ],
    "Marți": [
     "Comunicare în limba română",
-    "Limba engleză",
     "Religie",
+    "Comunicare în limba română",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Miercuri": [
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Dezvoltare personală",
+    "",
+    "",
+    ""
+   ],
+   "Joi": [
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Muzică și mișcare",
+    "",
+    "",
+    ""
+   ],
+   "Vineri": [
+    "Matematică și explorarea mediului",
+    "Arte vizuale și abilități practice",
+    "Arte vizuale și abilități practice",
+    "Educație fizică",
+    "",
+    "",
+    ""
+   ]
+  },
+  "II A": {
+   "Luni": [
+    "Comunicare în limba română",
+    "Matematică și explorarea mediului",
+    "Dezvoltare personală",
+    "Religie",
+    "",
+    "",
+    ""
+   ],
+   "Marți": [
+    "Comunicare în limba română",
+    "Comunicare în limba română",
+    "Limba engleză",
     "Educație fizică",
     "",
     "",
@@ -180,8 +227,8 @@
    "Miercuri": [
     "Educație fizică",
     "Comunicare în limba română",
-    "Comunicare în limba română",
     "Matematică și explorarea mediului",
+    "Muzică și mișcare",
     "",
     "",
     ""
@@ -821,7 +868,8 @@
   "CP A": "Consiliere cu părinții: luni, 10-11",
   "CP B": "Pregătire remedială: joi, 12-13 și vineri, 11-12 · Consiliere cu părinții: marți, 9-10",
   "I A": "Pregătire remedială: marți, 12-13 · Pregătire pentru performanță: vineri, 12-13 · Consiliere cu părinții: vineri, 9-10",
-  "II A": "Pregătire remedială, grupa 1: luni, 12-13 · Pregătire remedială, grupa 2: vineri, 12-13",
+  "I B": "Pregătire remedială: luni și miercuri, 12-12.35 · Consiliere cu părinții: luni, 9-10",
+  "II A": "Pregătire remedială, grupa 1: luni, 12-13 · Pregătire remedială, grupa 2: vineri, 12-13 · Consiliere cu părinții: luni, 11-12",
   "II B": "Pregătire remedială: luni, 12-13 · Pregătire de performanță: miercuri, 12-13 · Consiliere cu părinții: vineri, 12-13",
   "III A": "Pregătire remedială / de performanță: marți și miercuri, 12-13",
   "III B": "Pregătire remedială: marți, 7.10-7.55 · Pregătire pentru performanță: miercuri, 7.10-7.55 · Consiliere cu părinții: vineri, 13-14",
