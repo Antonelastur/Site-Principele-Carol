@@ -202,8 +202,14 @@
             var h = '<p class="news-date" style="margin-top:26px;">' + esc(dataText(s)) +
                 (s.context ? ' · ' + esc(s.context) : '') + '</p>';
             if (s.imagine) {
-                h += '<img class="article-hero-img" src="' + esc(s.imagine) +
-                    '" alt="' + esc(s.imagineAlt || s.titlu) + '">';
+                var hero = '<img class="article-hero-img" src="' + esc(s.imagine) +
+                    '" alt="' + esc(s.imagineAlt || s.titlu) + '"' +
+                    (s.imagineLegenda ? ' style="margin:0;"' : '') + '>';
+                h += s.imagineLegenda
+                    ? '<figure style="margin:26px 0;">' + hero +
+                      '<figcaption style="margin-top:8px;font-size:.92em;font-style:italic;text-align:center;opacity:.8;">' +
+                      esc(s.imagineLegenda) + '</figcaption></figure>'
+                    : hero;
             }
             h += bogat(s.corp, 'lead');
             h += sursaHtml(s);
