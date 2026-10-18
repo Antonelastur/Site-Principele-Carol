@@ -1,8 +1,25 @@
 {
   "versiune": 1,
   "anCurent": "2026-2027",
-  "aniScolari": ["2026-2027", "2025-2026"],
+  "aniScolari": [
+    "2026-2027",
+    "2025-2026"
+  ],
   "stiri": [
+    {
+      "id": "alegeri-consiliul-elevilor-2026",
+      "titlu": "Alegeri pentru Consiliul elevilor",
+      "data": "2026-10-19",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": false,
+      "context": "Comunicat al școlii",
+      "imagine": "images/alegeri-consiliul-elevilor-2026.jpg",
+      "imagineAlt": "Elevi candidați la Consiliul elevilor, alături de o profesoară, într-o sală de clasă",
+      "rezumat": "Luni, 19 octombrie 2026, între orele 8:00 și 12:00, elevii școlii noastre își aleg reprezentanții în **Consiliul elevilor**. Mai mulți colegi au hotărât să candideze pentru funcțiile de președinte, vicepreședinte, secretar și responsabil proiecte și activități.",
+      "corp": "În aceste zile, școala noastră trăiește o mică lecție de democrație. Luni, 19 octombrie 2026, între orele 8:00 și 12:00, elevii Școlii Gimnaziale „Principele Carol” își aleg reprezentanții în Consiliul elevilor.\n\nMai mulți elevi ai școlii noastre au hotărât să candideze. Și-au pregătit programele, au discutat cu ceilalți elevi și au venit cu idei pentru o școală mai bună pentru toți. Ei sunt:\n\n## Candidați pentru funcția de președinte\n\n- Gabriela Macovei, clasa a VIII-a B\n- Emma Gabriela Iancu, clasa a VIII-a A\n- Antonia Maria Puițău, clasa a VIII-a A\n- Roberta Petruța Plai, clasa a VIII-a A\n- David Petrovan, clasa a VII-a A\n\n## Pentru vicepreședinte\n\n- Maria Nuțu, clasa a VIII-a A\n\n## Pentru secretar\n\n- Iustina Grigoraș, clasa a VIII-a B\n\n## Responsabil proiecte și activități\n\n- Maria Zaharia, clasa a VII-a B\n- Daria Ana Maria Cramariuc, clasa a VIII-a A\n\nLe mulțumim candidaților pentru curaj și implicare. Indiferent de rezultat, au arătat deja că le pasă de școala lor. Mult succes tuturor!"
+    },
     {
       "id": "saptamana-verde-2026-program",
       "titlu": "Săptămâna verde, 19-23 octombrie: programul activităților",
