@@ -7,6 +7,26 @@
   ],
   "stiri": [
     {
+      "id": "calendar-admitere-liceu-2027",
+      "titlu": "Calendarul admiterii la liceu pentru anul școlar 2027-2028",
+      "data": "2026-10-26",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": true,
+      "pePrimaPagina": true,
+      "context": "Din educație",
+      "imagine": "images/calendar-admitere-liceu-2027.jpg",
+      "imagineAlt": "Ilustrație cu un calendar într-un medalion auriu și textul: Calendarul admiterii la liceu, repartizarea computerizată are loc pe 22 iulie 2027",
+      "rezumat": "Ministerul Educației și Cercetării a aprobat calendarul admiterii la liceu pentru anul școlar 2027-2028, anul în care actualii elevi de clasa a VIII-a vor intra la liceu. Ierarhia județeană a absolvenților se anunță pe **9 iulie 2027**, opțiunile se completează între 12 și 19 iulie, iar **repartizarea computerizată are loc pe 22 iulie 2027**.",
+      "corp": "Ministerul Educației și Cercetării a aprobat Calendarul de desfășurare a repartizării și admiterii în învățământul liceal pentru anul școlar 2027-2028, adică anul în care actualii elevi de clasa a VIII-a vor începe liceul. Ordinul nr. 5.831/2026 a fost publicat în Monitorul Oficial pe 26 octombrie 2026.\n\n## Etapele principale, pentru toți elevii de clasa a VIII-a\n\n- **7 iulie 2027:** comisia națională transmite comisiilor județene mediile de admitere și ierarhia județeană.\n- **9 iulie 2027:** se anunță ierarhia la nivel județean a absolvenților clasei a VIII-a.\n- **12-16 și 19 iulie 2027:** elevii și părinții completează opțiunile în fișele de înscriere, cu sprijinul diriginților.\n- **22 iulie 2027:** repartizarea computerizată la liceu și afișarea rezultatelor; tot atunci se afișează și locurile neocupate rămase în județ.\n- **23-27 iulie 2027:** depunerea dosarelor de înscriere la liceul la care au fost repartizați.\n- **28 iulie 2027:** liceele transmit situația locurilor rămase libere.\n- **29-30 iulie 2027:** comisia județeană rezolvă situațiile speciale apărute după repartizare.\n\n## Etape care privesc doar unii elevi\n\nCalendarul cuprinde și termene pentru elevii care candidează pe alte căi decât repartizarea computerizată obișnuită:\n\n- **Probe de aptitudini** (licee vocaționale): înscriere 19-21 mai 2027, probele se susțin 24-28 mai, rezultatele finale pe 2 iunie.\n- **Probe de verificare a limbii moderne sau materne** (clase bilingve, minorități): aceleași perioade ca la probele de aptitudini; actele pentru certificatele lingvistice internaționale se depun până pe 31 mai 2027.\n- **Probe suplimentare de admitere** (licee tehnologice/duale): înscriere 6-12 mai, probele se susțin 13-18 mai.\n- **Locuri speciale pentru elevii romi:** recomandarea scrisă de apartenență la etnia romă se depune la școală până pe **31 martie 2027**.\n- **Locuri distincte pentru elevii cu dizabilități și/sau CES:** certificatul de orientare școlară de la CJRAE/CMBRAE se depune tot până pe **31 martie 2027**.\n\nPentru elevii care nu se încadrează la niciuna dintre aceste situații, calea obișnuită este repartizarea computerizată din etapa principală, pe baza mediei de admitere și a opțiunilor completate.\n\nCalendarul complet, cu toate termenele, se află în ordinul publicat în Monitorul Oficial:\n\n=> [Vezi ordinul din Monitorul Oficial (PDF)](https://cdn.edupedu.ro/wp-content/uploads/2026/10/Ordinul-nr.-5.8312026-Calendar-admitere-liceu-2027-Monitorul-Oficial-Partea-I-nr.-893.pdf)",
+      "sursa": {
+        "text": "Edupedu.ro și Ordinul ministrului Educației și Cercetării nr. 5.831/2026, publicat în Monitorul Oficial, Partea I, nr. 893, din 26 octombrie 2026.",
+        "url": "https://www.edupedu.ro/oficial-calendar-admitere-liceu-2027-ierarhia-absolventilor-de-clasa-a-viii-a-va-fi-anuntata-pe-9-iulie-si-repartizarea-computerizata-are-loc-pe-22-iulie/",
+        "urlText": "edupedu.ro"
+      }
+    },
+    {
       "id": "alegeri-consiliul-elevilor-2026",
       "titlu": "Alegeri pentru Consiliul elevilor",
       "data": "2026-10-19",
