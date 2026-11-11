@@ -42,6 +42,8 @@
         table.styled td, table.styled tr:nth-child(even) td { background: transparent !important; border: none !important; padding: 4px 0 !important; }
         table.styled td[data-eticheta]::before { content: attr(data-eticheta); display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: #B89047; font-weight: 700; margin-bottom: 2px; }
     }
+    /* Consiliul elevilor: pe telefon, vicepreședinții câte unul pe rând, ca eticheta „Vicepreședinte” să încapă */
+    @media (max-width: 480px) { .cse-vicepresedinti { grid-template-columns: 1fr !important; } }
     </style>
 </head>
 <body>
@@ -94,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-4" style="margin-top:30px;">
+            <div class="grid grid-4 cse-vicepresedinti" style="margin-top:30px;">
                 <div class="card person-card reveal">
                     <img src="images/consiliu-elevi-2026-maria-nutu.jpg" alt="Maria Nuțu, vicepreședintă a Consiliului elevilor" width="480" height="480">
                     <div class="card-body">
