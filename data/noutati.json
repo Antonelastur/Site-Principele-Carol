@@ -7,6 +7,21 @@
   ],
   "stiri": [
     {
+      "id": "carnaval-de-toamna-2026",
+      "titlu": "Carnavalul de toamnă: vă așteptăm vineri, 13 noiembrie, cu cele mai frumoase costume",
+      "data": "2026-11-11",
+      "anScolar": "2026-2027",
+      "publicat": true,
+      "arhivat": false,
+      "dinEducatie": false,
+      "context": "Consiliul elevilor",
+      "imagine": "images/afis-carnaval-toamna-2026.jpg",
+      "imagineAlt": "Afișul Carnavalului de toamnă: 13 noiembrie, ora 17:00, în sala de sport a școlii, bilet 20 de lei",
+      "imaginePoz": "center 30%",
+      "rezumat": "Consiliul elevilor organizează **Carnavalul de toamnă**, prima activitate a noii echipe. Ne vedem **vineri, 13 noiembrie, de la ora 17:00**, în sala de sport a școlii. Biletul costă **20 de lei**. Veniți cu cele mai frumoase și mai inventive costume!",
+      "corp": "Toamna aceasta, sala de sport a școlii se umple de măști, culori și frunze aurii. **Consiliul elevilor** vă invită la **Carnavalul de toamnă**, prima activitate organizată de noua echipă de conducere.\n\n## Când și unde\n\n- **Vineri, 13 noiembrie 2026**, de la ora **17:00**\n- În **sala de sport a școlii**\n- Biletul costă **20 de lei**\n\n## Ce costum alegi?\n\nLa carnaval contează imaginația. Poți veni în rolul personajului tău preferat dintr-o carte sau dintr-un film, poți fi un spiriduș al pădurii, o frunză de arțar sau orice altceva îți trece prin minte. Cu cât costumul e mai neobișnuit și mai bine gândit, cu atât mai bine! O mască, câteva frunze uscate sau materiale refolosite te pot ajuta să-ți faci un costum cum nu mai are nimeni.\n\nVă așteptăm pe toți, cu zâmbetul pe buze și cu cele mai frumoase și inventive costume. Hai să sărbătorim împreună toamna!\n\n=> [Vezi pagina Consiliului elevilor](consiliul-elevilor.html)"
+    },
+    {
       "id": "calendar-admitere-liceu-2027",
       "titlu": "Calendarul admiterii la liceu pentru anul școlar 2027-2028",
       "data": "2026-10-26",
