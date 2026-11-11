@@ -43,8 +43,13 @@
   </url>
   <url>
        <loc>https://principelecarol.ro/consiliul-elevilor.html</loc>
-       <lastmod>2026-09-09T19:31:01+00:00</lastmod>
+       <lastmod>2026-11-11T05:00:00+00:00</lastmod>
        <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://principelecarol.ro/arhiva-consiliul-elevilor.html</loc>
+       <lastmod>2026-11-11T05:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://principelecarol.ro/orar.html</loc>
