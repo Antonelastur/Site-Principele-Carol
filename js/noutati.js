@@ -25,10 +25,12 @@
     }
 
     /* Text scris simplu, în admin: rând gol = paragraf nou, „## ” = subtitlu,
-       „- ” = listă, „![text](poza.jpg)” = imagine, **îngroșat**, [text](link). */
+       „- ” = listă, „![text](poza.jpg)” = imagine, **îngroșat**, [text](link),
+       ==etichetă aurie==, „> ” la început de rând = casetă aurie (notă evidențiată). */
     function inline(t) {
         return esc(t)
             .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/==([^=]+)==/g, '<span class="eticheta-aurie">$1</span>')
             .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_, text, url) {
                 var extern = /^https?:/i.test(url);
                 return '<a href="' + url + '"' +
@@ -58,6 +60,8 @@
                 } else if (img) {
                     out.push('<img class="article-hero-img" src="' + esc(img[2]) +
                         '" alt="' + esc(img[1]) + '" loading="lazy">');
+                } else if (r.indexOf('> ') === 0) {
+                    out.push('<p class="caseta-aurie">' + inline(r.slice(2)) + '</p>');
                 } else if (r.indexOf('## ') === 0) {
                     out.push('<h2>' + inline(r.slice(3)) + '</h2>');
                 } else {

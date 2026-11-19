@@ -110,7 +110,9 @@ Ce înseamnă câmpurile:
 | `sursa` | linia „Sursa: …" de la știrile preluate |
 
 Textul din `rezumat` și `corp` se scrie simplu: rând gol între paragrafe, `## Subtitlu`,
-`- ` pentru listă, `**îngroșat**`, `[text](pagina.html)`, `![descriere](images/poza.jpg)`.
+`- ` pentru listă, `**îngroșat**`, `[text](pagina.html)`, `![descriere](images/poza.jpg)`,
+`==text==` pentru o etichetă aurie (litere navy pe auriu; la începutul unui rând de listă trece
+pe rând separat, iar lista pierde bulinele) și `> ` la început de rând pentru o casetă aurie.
 
 Ciornele se văd local adăugând `?ciorne=1` la adresă (`noutati.html?ciorne=1`).
 

@@ -264,6 +264,19 @@ h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--color-primary); li
     padding: 18px 22px; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.4em 0;
     font-style: italic;
 }
+/* Etichetă aurie (==text== în noutati.json): litere navy pe auriu, contrast bun */
+.eticheta-aurie {
+    display: inline-block; background: var(--gold-gradient); color: var(--color-primary);
+    font-weight: 700; padding: 3px 12px; border-radius: 6px; line-height: 1.5;
+}
+.article-page li > .eticheta-aurie:first-child { display: table; margin-bottom: 4px; }
+.article-page ul:has(> li > .eticheta-aurie:first-child) { list-style: none; padding-left: 0; }
+.article-page ul:has(> li > .eticheta-aurie:first-child) > li { margin-bottom: .9em; }
+/* Casetă aurie („> ” la început de rând în noutati.json) */
+.article-page .caseta-aurie {
+    border: 2px solid var(--color-accent); background: var(--color-beige);
+    padding: 16px 20px; border-radius: var(--radius); margin: 1.2em 0;
+}
 
 /* Timeline istoric */
 .timeline { position: relative; margin-top: 40px; }
