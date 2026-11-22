@@ -19,4 +19,8 @@ cardul de mână în `noutati.html`, e depășită — are prioritate fișierul 
 
 ## Publicare
 
-`git push` pe `main` = publicare pe site (GitHub Pages). Se cere aprobarea Antoanelei înainte de push.
+`git push` pe `main` = publicare pe site: principelecarol.ro e găzduit pe Cloudflare, care preia automat
+fiecare push din GitHub (noua versiune apare în câteva minute). Se cere aprobarea Antoanelei înainte de push.
+
+Push-ul se face din terminalul de pe calculator (PowerShell, GitHub Desktop sau VS Code); din Cowork,
+`git push` spre GitHub este blocat.
