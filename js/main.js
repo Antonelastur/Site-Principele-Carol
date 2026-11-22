@@ -21,7 +21,7 @@
         var pre1 = document.createElement('link'); pre1.rel = 'preconnect'; pre1.href = 'https://fonts.googleapis.com';
         var pre2 = document.createElement('link'); pre2.rel = 'preconnect'; pre2.href = 'https://fonts.gstatic.com'; pre2.crossOrigin = '';
         var css = document.createElement('link'); css.id = 'spc-fonts'; css.rel = 'stylesheet';
-        css.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap';
+        css.href = 'https://fonts.googleapis.com/css2?family=Alegreya:wght@500;600;700;800&family=Figtree:wght@400;600;700;800&display=swap';
         document.head.appendChild(pre1); document.head.appendChild(pre2); document.head.appendChild(css);
     }
     var consent = null;
